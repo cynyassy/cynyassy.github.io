@@ -1,7 +1,75 @@
 <h1><script src="https://cdn.jsdelivr.net/gh/ncase/nutshell@1.0.2/nutshell.min.js"></script></h1>
-<h2> The beginning of something</h2>
-<p> This would be so much easier with an actual text editor, but I am not sure how or why. Maybe this is the way to go. And I don't have any CSS here. 
-  That's another issue.</p>
+<h2> The Ultimate Guide : MIS and NRML</h2>
+<p> What is MIS?
+
+
+What is an NRML order?
+
+What is NRML and MIS
+“Overnight also” vs “intra-day only”
+
+3 key points:
+Intra-day vs overnight
+Leverage
+Auto-square off
+
+Leverage
+Back in the day, marking an order as MIS allowed you to take more leverage in your trading (whether cash segment or FnO segment), as long as the trading was intra-day. Now, you only get 5x leverage with MIS orders for cash, no extra leverage for FnO. However, trading in FnO is implicitly leveraged - see blogs.
+
+https://algotest.in/blog/leverage-in-trading-futures-contracts/
+
+https://algotest.in/blog/leverage-in-trading-long-options/
+
+https://algotest.in/blog/leverage-in-trading-short-options/
+
+Auto square off
+As an FnO trader, you can think of an MIS order as a broker-level auto-square off algo.
+But algos can fuck up, eg Kotak MIS fuckup - RESEARCH Chintan Jaggi
+As a stock trader, you can use MIS to get leverage from your broker, as well as avail of the auto-square off functionality
+
+Different brokers handle it differently
+Different brokers have different MIS times
+Table of broker-wise MIS cutoff times (Prakhar has this)
+Tweet this, asking others to reply with their broker not listed
+This page will be a master list of MIS cutoff times for brokers, with their respective web links if available
+What about the order types? Do different brokers handle it with limit orders, or market orders?
+Zerodha
+IIFL
+Angel one
+
+How does it make a difference in our lives?
+We’re FnO traders, for my intra-day strategies, I will use MIS. If there’s an intra-day strategy with my potential exit time being greater than the MIS cutoff time, then I will use NRML.
+For positional trades/strategies, I will use NRML
+
+
+
+
+**********************************
+Notes
+
+What is NRML and MIS
+“Overnight also” vs “intra-day only”
+
+Why was MIS used historically?
+Leverage benefit when trading with MIS orders (We have a blog series on leverage which we can refer to here)
+Even now, there exists 5x leverage for cash segment for MIS orders
+https://zerodha.com/margin-calculator/Equity/
+
+Auto square off
+As an FnO trader, you can think of an MIS order as a broker-level auto-square off algo.
+But algos can fuck up, eg Kotak MIS fuckup
+As a stock trader, you can use MIS to get leverage, as well as avail of the auto-square off functionality
+
+
+Leverage
+https://investingexpert.in/zerodha-leverage-intraday/
+https://www.livemint.com/market/stock-market-news/dreaded-day-zerodha-founder-as-sebi-s-new-peak-margin-rules-comes-into-effect-today-11630475100061.html
+
+
+MIS leverage rules:
+https://economictimes.indiatimes.com/markets/stocks/news/explained-what-will-new-sebi-margin-rules-mean-for-intraday-traders/articleshow/85693011.cms?from=mdr
+
+</p>
 <p><a href="https://youtu.be/pQ2dI_B_Ycg?t=36">:Knife-Wielding Tentacle, starting at 0:36</a> links to <code>https://youtu.be/pQ2dI_B_Ycg?t=36</code></p>
 <h3> This can be very interesting</h3>
-<p> I am going to link this to a previous thing like <a href = '#TheBeginningOfSomething'> :A reference</a>!</p>
+<p> I am going to link this to a previous thing like <a href = '#The Ultimate Guide: MIS and NRML'> :A reference</a>!</p>

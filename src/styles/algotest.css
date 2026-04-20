@@ -1,0 +1,584 @@
+:root {
+  --algotest-ink: #111111;
+  --algotest-muted: #4f4f4f;
+  --algotest-panel: #ffffff;
+  --algotest-surface: #ffffff;
+  --algotest-accent: #ff4400;
+  --algotest-accent-deep: #ff4400;
+}
+
+html {
+  scroll-padding-top: 6rem;
+}
+
+.algotest-page {
+  color: var(--algotest-ink);
+}
+
+.algotest-skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 60;
+  padding: 0.75rem 1rem;
+  border: 2px solid #000;
+  background: #fff;
+  color: #000;
+}
+
+.algotest-skip-link:focus {
+  top: 1rem;
+}
+
+.algotest-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 3px solid #000;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+}
+
+.algotest-back-link,
+.algotest-nav-link {
+  font-size: 0.84rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.algotest-back-link:hover,
+.algotest-back-link:focus-visible,
+.algotest-nav-link:hover,
+.algotest-nav-link:focus-visible {
+  color: var(--algotest-accent-deep);
+}
+
+.algotest-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--algotest-muted);
+}
+
+.algotest-hero-grid,
+.algotest-proof-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+  align-items: start;
+}
+
+.algotest-problem-grid,
+.algotest-pillar-grid,
+.algotest-leverage-grid,
+.algotest-beyond-grid,
+.algotest-reflection-list,
+.algotest-betsizer-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.algotest-highlight-list,
+.algotest-problem-grid,
+.algotest-pillar-grid,
+.algotest-leverage-grid,
+.algotest-beyond-grid,
+.algotest-reflection-list,
+.algotest-coverage-list,
+.algotest-betsizer-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.algotest-highlight-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.algotest-brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.algotest-brand-lockup__logo {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.algotest-brand-lockup__name {
+  margin-top: 0.15rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #222;
+}
+
+.algotest-role-strip {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.algotest-role-strip__label {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--algotest-muted);
+}
+
+.algotest-role-strip__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.algotest-role-strip__items span {
+  border: 1.5px solid #000;
+  background: #fff;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.86rem;
+  line-height: 1.2;
+}
+
+.algotest-problem-card,
+.algotest-pillar-card,
+.algotest-proof-board,
+.algotest-proof-note,
+.algotest-beyond-card,
+.algotest-reflection-item {
+  border: 2px solid #000;
+  background: var(--algotest-panel);
+}
+
+.algotest-problem-card,
+.algotest-pillar-card,
+.algotest-proof-board,
+.algotest-proof-note,
+.algotest-beyond-card,
+.algotest-reflection-item {
+  padding: 1.25rem;
+}
+
+.algotest-highlight-item {
+  display: grid;
+  gap: 0.3rem;
+  padding-left: 1.15rem;
+  position: relative;
+}
+
+.algotest-highlight-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--algotest-accent);
+  border: 1.5px solid #000;
+  border-radius: 999px;
+}
+
+.algotest-highlight-item__label {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--algotest-muted);
+}
+
+.algotest-highlight-item__text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  color: #2a2a2a;
+  line-height: 1.6;
+}
+
+.algotest-highlight-item__text strong {
+  color: #111111;
+  font-weight: 700;
+}
+
+.algotest-recruiter-summary {
+  max-width: 48rem;
+  border-left: 4px solid var(--algotest-accent);
+  background: var(--algotest-surface);
+  padding: 1rem 1.1rem;
+  line-height: 1.7;
+  color: #232323;
+}
+
+.algotest-growth-panel {
+  border: 2px solid #000;
+  background: var(--algotest-surface);
+  padding: 1.35rem;
+}
+
+.algotest-growth-panel__eyebrow,
+.algotest-proof-board__eyebrow {
+  margin-bottom: 0.8rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--algotest-muted);
+}
+
+.algotest-growth-panel__chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #000;
+  background: #fff;
+}
+
+.algotest-growth-panel__chip span {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--algotest-muted);
+}
+
+.algotest-growth-panel__chip img {
+  max-width: 9rem;
+  width: 100%;
+  object-fit: contain;
+}
+
+.algotest-growth-track {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+
+.algotest-growth-track span:not(:nth-child(2n)) {
+  border: 1px solid #000;
+  background: #fff;
+  padding: 0.5rem 0.7rem;
+  border-radius: 999px;
+}
+
+.algotest-growth-track span:nth-child(2n) {
+  color: #000;
+  font-weight: 700;
+}
+
+.algotest-growth-bars {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.algotest-growth-bars__label {
+  font-size: 0.92rem;
+  color: #55524d;
+}
+
+.algotest-growth-bars__row {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.algotest-growth-bars__bar {
+  height: 1rem;
+  background: linear-gradient(90deg, #ffd8cc, var(--algotest-accent));
+}
+
+.algotest-growth-bars__bar--short {
+  width: 28%;
+}
+
+.algotest-growth-bars__bar--long {
+  width: 100%;
+}
+
+.algotest-problem-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.algotest-problem-card {
+  border-left: 6px solid var(--algotest-accent);
+}
+
+.algotest-pillar-grid,
+.algotest-beyond-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.algotest-pillar-card,
+.algotest-beyond-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.algotest-pillar-card h3,
+.algotest-beyond-card h3 {
+  font-size: 1.4rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.algotest-pillar-card p,
+.algotest-beyond-card p,
+.algotest-problem-card p,
+.algotest-reflection-item,
+.algotest-execution-list li,
+.algotest-proof-note,
+.algotest-coverage-block__intro p,
+.algotest-betsizer-summary__copy p,
+.algotest-betsizer-card figcaption span {
+  color: #55524d;
+  line-height: 1.75;
+}
+
+.algotest-coverage-block {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  border: 2px solid #000;
+  background: #fff;
+  padding: 1.25rem;
+}
+
+.algotest-coverage-block__intro {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.algotest-coverage-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.algotest-coverage-figure {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  grid-column: 1 / -1;
+}
+
+.algotest-coverage-figure img {
+  width: 100%;
+  display: block;
+  border: 1.5px solid #000;
+  background: #fff;
+}
+
+.algotest-coverage-figure figcaption {
+  color: #444;
+  line-height: 1.65;
+}
+
+.algotest-coverage-list li,
+.algotest-betsizer-points li {
+  position: relative;
+  padding-left: 1rem;
+  line-height: 1.65;
+  color: #222;
+}
+
+.algotest-coverage-list li::before,
+.algotest-betsizer-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62rem;
+  width: 0.38rem;
+  height: 0.38rem;
+  background: var(--algotest-accent);
+  border-radius: 999px;
+}
+
+.algotest-leverage-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.algotest-leverage-item {
+  border-top: 3px solid #000;
+  padding-top: 0.9rem;
+  font-size: 1.15rem;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.algotest-execution-list {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding-left: 1.4rem;
+  list-style: disc;
+}
+
+.algotest-execution-list li::marker {
+  color: var(--algotest-accent);
+}
+
+.algotest-proof-stats {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.algotest-proof-stat {
+  border: 1px solid #000;
+  background: #ffffff;
+  padding: 0.9rem;
+}
+
+.algotest-proof-stat span {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--algotest-muted);
+}
+
+.algotest-proof-stat strong {
+  display: block;
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.algotest-proof-stat small {
+  color: #5c5954;
+}
+
+.algotest-proof-notes {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.algotest-proof-image,
+.algotest-beyond-card__image {
+  margin-top: 1rem;
+  background: #fff;
+}
+
+.algotest-proof-images {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.algotest-proof-image-card {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.algotest-proof-image-card img,
+.algotest-beyond-card__image img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.algotest-proof-image-card img {
+  border: 1.5px solid #000;
+  background: #fff;
+}
+
+.algotest-proof-image-card figcaption {
+  color: #444;
+  line-height: 1.65;
+}
+
+.algotest-proof-image-card strong {
+  color: #111;
+}
+
+.algotest-betsizer-summary {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  border: 2px solid #000;
+  background: #fff;
+  padding: 1.25rem;
+}
+
+.algotest-betsizer-summary__copy {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.algotest-betsizer-summary__copy h3 {
+  font-size: 1.35rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.algotest-betsizer-points {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.algotest-betsizer-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.algotest-betsizer-card {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  border: 2px solid #000;
+  background: #fff;
+  padding: 1rem;
+}
+
+.algotest-betsizer-card img {
+  width: 100%;
+  display: block;
+  border: 1px solid #000;
+  background: #fff;
+}
+
+.algotest-betsizer-card figcaption {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.algotest-betsizer-card figcaption strong {
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: #111;
+}
+
+.algotest-reflection-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.algotest-reflection-item {
+  border-left: 6px solid var(--algotest-accent);
+}
+
+@media (max-width: 1100px) {
+  .algotest-hero-grid,
+  .algotest-proof-grid,
+  .algotest-problem-grid,
+  .algotest-pillar-grid,
+  .algotest-leverage-grid,
+  .algotest-beyond-grid,
+  .algotest-reflection-list,
+  .algotest-betsizer-grid,
+  .algotest-coverage-block,
+  .algotest-betsizer-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 820px) {
+  .algotest-proof-stats {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,723 @@
+:root {
+  --coffee-ink: #111111;
+  --coffee-muted: #4f4f4f;
+  --coffee-panel: #ffffff;
+  --coffee-surface: #f5f5f5;
+  --coffee-accent: #111111;
+  --coffee-line: #111111;
+}
+
+html {
+  scroll-padding-top: 6rem;
+}
+
+.coffee-tools-page {
+  color: var(--coffee-ink);
+}
+
+.coffee-tools-skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 60;
+  padding: 0.75rem 1rem;
+  border: 2px solid #000;
+  background: #fff;
+  color: #000;
+}
+
+.coffee-tools-skip-link:focus {
+  top: 1rem;
+}
+
+.coffee-tools-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 3px solid #000;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+}
+
+.coffee-tools-back-link,
+.coffee-tools-nav-link {
+  font-size: 0.84rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.coffee-tools-back-link:hover,
+.coffee-tools-back-link:focus-visible,
+.coffee-tools-nav-link:hover,
+.coffee-tools-nav-link:focus-visible {
+  color: #000;
+}
+
+.coffee-tools-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--coffee-muted);
+}
+
+.coffee-tools-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000;
+  background: #fff;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.coffee-tools-hero-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 29rem);
+  align-items: start;
+}
+
+.coffee-tools-hero-meta {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.coffee-tools-hero-meta__item {
+  border-top: 3px solid #000;
+  padding-top: 0.85rem;
+}
+
+.coffee-tools-hero-meta__item dt {
+  margin-bottom: 0.35rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--coffee-muted);
+}
+
+.coffee-tools-hero-meta__item dd {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.coffee-tools-note,
+.coffee-tools-story-panel,
+.coffee-tools-pillar-card,
+.coffee-tools-carousel,
+.coffee-tools-summary-card {
+  border: 2px solid #000;
+  background: var(--coffee-panel);
+}
+
+.coffee-tools-note,
+.coffee-tools-story-panel,
+.coffee-tools-pillar-card,
+.coffee-tools-summary-card {
+  padding: 1.4rem;
+}
+
+.coffee-tools-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000;
+  background: #111111;
+  color: #fff;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.coffee-tools-button:hover,
+.coffee-tools-button:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000;
+}
+
+.coffee-tools-button--secondary {
+  background: #fff;
+  color: var(--coffee-ink);
+}
+
+.coffee-tools-hero-visual {
+  position: relative;
+  min-height: 42rem;
+}
+
+.coffee-tools-device {
+  overflow: hidden;
+  border-radius: 2rem;
+  background: #fff;
+}
+
+.coffee-tools-device img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top;
+}
+
+.coffee-tools-device--large {
+  width: min(100%, 24rem);
+  margin-left: auto;
+}
+
+.coffee-tools-device--small {
+  position: absolute;
+  left: 0;
+  bottom: 2rem;
+  width: 11rem;
+}
+
+.coffee-tools-story-grid,
+.coffee-tools-proof-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.coffee-tools-story-panel h3,
+.coffee-tools-pillar-card h3,
+.coffee-tools-carousel h3,
+.coffee-tools-summary-card h3 {
+  font-size: 1.45rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #111111;
+}
+
+.coffee-tools-story-panel p,
+.coffee-tools-pillar-card p,
+.coffee-tools-carousel p,
+.coffee-tools-summary-card p {
+  color: #4f4f4f;
+  line-height: 1.75;
+}
+
+.coffee-tools-story-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.coffee-tools-story-panel--accent {
+  background: #f5f5f5;
+  border-width: 2px;
+}
+
+.coffee-tools-pillars {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.coffee-tools-backend-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.coffee-tools-flow-wrap {
+  border: 2px solid #000;
+  background: #ffffff;
+  padding: 1.4rem;
+}
+
+.coffee-tools-flow-rail {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 0.85rem;
+}
+
+.coffee-tools-flow-lane {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.7rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #000;
+}
+
+.coffee-tools-flow-column {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #000;
+  border-radius: 0.7rem;
+  background: #fff;
+  font-size: 0.84rem;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.coffee-tools-flow-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: start;
+}
+
+.coffee-tools-flow-step__index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  border: 1px solid #000;
+  border-radius: 999px;
+  background: #f5f5f5;
+  font-size: 0.82rem;
+}
+
+.coffee-tools-flow-step p {
+  margin: 0;
+  color: #4f4f4f;
+  line-height: 1.35;
+}
+
+.coffee-tools-flow-arrow-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 2.55rem;
+  color: #4f4f4f;
+  font-size: 0.92rem;
+}
+
+.coffee-tools-flow-arrow-row span:not(:nth-child(2n)) {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #000;
+  border-radius: 999px;
+  background: #fff;
+}
+
+.coffee-tools-flow-arrow-row span:nth-child(2n) {
+  font-size: 1rem;
+}
+
+.coffee-tools-number-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.7rem;
+  color: #4f4f4f;
+  line-height: 1.7;
+}
+
+.coffee-tools-detail-list {
+  display: grid;
+  gap: 0.95rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.coffee-tools-detail-list li {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.coffee-tools-detail-list strong {
+  font-weight: 700;
+  color: #111111;
+}
+
+.coffee-tools-detail-list span {
+  color: #4f4f4f;
+  line-height: 1.7;
+}
+
+.coffee-tools-inline-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.coffee-tools-inline-list li {
+  border: 1px solid #000;
+  background: #fff;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  color: #4f4f4f;
+}
+
+.coffee-tools-pillar-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border-left: 6px solid #111111;
+}
+
+.coffee-tools-step-index,
+.coffee-tools-summary-card__eyebrow {
+  font-size: 0.76rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--coffee-muted);
+}
+
+.coffee-tools-carousel {
+  padding: 1.4rem;
+}
+
+.coffee-tools-carousel--workflow {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.coffee-tools-workflow-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.75rem;
+  min-height: 34rem;
+}
+
+.coffee-tools-workflow-card__copy {
+  max-width: 44rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.coffee-tools-workflow-card__copy p:last-child {
+  max-width: 42rem;
+}
+
+.coffee-tools-workflow-card__image-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.coffee-tools-workflow-card__image-frame {
+  width: min(100%, 30rem);
+  border-radius: 2rem;
+  background: #f5f5f5;
+  padding: 1rem;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.45);
+}
+
+.coffee-tools-workflow-card__image-frame img {
+  width: 100%;
+  max-height: 30rem;
+  display: block;
+  object-fit: contain;
+  object-position: center top;
+}
+
+.coffee-tools-workflow-card__image-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.coffee-tools-workflow-card__image-pair--triple {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.coffee-tools-workflow-card__image-pair img {
+  width: 100%;
+  max-height: 30rem;
+  display: block;
+  object-fit: contain;
+  object-position: center top;
+}
+
+.coffee-tools-workflow-card__nav {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.coffee-tools-carousel__meta {
+  margin-bottom: 1.25rem;
+}
+
+.coffee-tools-carousel__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  max-width: 40rem;
+}
+
+.coffee-tools-carousel__copy p:last-child {
+  max-width: 38rem;
+}
+
+.coffee-tools-carousel__stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 40rem);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.coffee-tools-carousel__image-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.coffee-tools-carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.coffee-tools-carousel__image-frame {
+  overflow: hidden;
+  border: 2px solid #000;
+  border-radius: 1.75rem;
+  background: #f5f5f5;
+  padding: 1rem;
+  min-height: 20rem;
+  max-width: 42rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.coffee-tools-carousel__image-frame img,
+.coffee-tools-summary-card img {
+  width: 100%;
+  max-height: 28rem;
+  display: block;
+  object-fit: contain;
+  object-position: center top;
+  margin: 0 auto;
+}
+
+.coffee-tools-carousel__arrow {
+  min-width: 4.75rem;
+  border: 2px solid #000;
+  background: #fff;
+  padding: 0.85rem 0.9rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: transform 180ms ease, box-shadow 180ms ease, color 180ms ease;
+}
+
+.coffee-tools-carousel__arrow:hover,
+.coffee-tools-carousel__arrow:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 #000;
+  color: #000;
+}
+
+.coffee-tools-carousel__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.coffee-tools-carousel__dot {
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 2px solid #000;
+  border-radius: 999px;
+  background: transparent;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.coffee-tools-carousel__dot.is-active {
+  background: #111111;
+  transform: scale(1.06);
+}
+
+.coffee-tools-proof-list {
+  display: grid;
+  gap: 0.85rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.coffee-tools-proof-list li {
+  border-left: 4px solid #111111;
+  padding-left: 1rem;
+  color: #4f4f4f;
+  line-height: 1.75;
+}
+
+.coffee-tools-summary-card img,
+.coffee-tools-next-block img {
+  border-radius: 1.5rem;
+  background: #fff;
+}
+
+.coffee-tools-next-block {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 20rem);
+  align-items: start;
+  border-top: 2px solid #000;
+  padding-top: 1.5rem;
+}
+
+.coffee-tools-next-block h3 {
+  font-size: 1.45rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #111111;
+}
+
+.coffee-tools-next-block p {
+  color: #4f4f4f;
+  line-height: 1.75;
+}
+
+.coffee-tools-next-list {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.coffee-tools-next-list li {
+  display: grid;
+  gap: 0.15rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.coffee-tools-next-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: #111111;
+}
+
+.coffee-tools-next-list strong {
+  color: #111111;
+}
+
+.coffee-tools-next-list span {
+  color: #4f4f4f;
+  line-height: 1.7;
+}
+
+@media (max-width: 1100px) {
+  .coffee-tools-hero-grid,
+  .coffee-tools-proof-grid,
+  .coffee-tools-pillars,
+  .coffee-tools-backend-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .coffee-tools-flow-lane {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .coffee-tools-hero-visual {
+    min-height: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+
+  .coffee-tools-device--small {
+    position: static;
+    width: 10rem;
+    margin-top: 1.2rem;
+    margin-left: -3rem;
+  }
+}
+
+@media (max-width: 820px) {
+  .coffee-tools-hero-meta,
+  .coffee-tools-story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .coffee-tools-carousel__stage {
+    grid-template-columns: 1fr;
+  }
+
+  .coffee-tools-flow-lane {
+    grid-template-columns: 1fr;
+  }
+
+  .coffee-tools-flow-arrow-row {
+    padding-left: 0;
+  }
+
+  .coffee-tools-workflow-card {
+    min-height: 0;
+  }
+
+  .coffee-tools-workflow-card__nav {
+    grid-template-columns: 1fr;
+  }
+
+  .coffee-tools-carousel__controls {
+    flex-wrap: wrap;
+  }
+
+  .coffee-tools-carousel__arrow {
+    width: 100%;
+  }
+
+  .coffee-tools-carousel__image-frame {
+    min-height: 16rem;
+    max-width: 100%;
+  }
+
+  .coffee-tools-carousel__image-frame img {
+    max-height: 22rem;
+  }
+
+  .coffee-tools-workflow-card__image-frame {
+    width: 100%;
+    padding: 0.85rem;
+  }
+
+  .coffee-tools-workflow-card__image-frame img {
+    max-height: 20rem;
+  }
+
+  .coffee-tools-workflow-card__image-pair {
+    gap: 0.85rem;
+  }
+
+  .coffee-tools-workflow-card__image-pair--triple {
+    gap: 0.6rem;
+  }
+
+  .coffee-tools-workflow-card__image-pair img {
+    max-height: 20rem;
+  }
+
+  .coffee-tools-next-block {
+    grid-template-columns: 1fr;
+  }
+
+  .coffee-tools-device--large {
+    margin: 0 auto;
+  }
+
+  .coffee-tools-device--small {
+    margin-left: 0;
+  }
+}

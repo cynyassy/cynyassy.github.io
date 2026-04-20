@@ -1,0 +1,126 @@
+.other-projects-page {
+  color: #111111;
+}
+
+.other-projects-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 3px solid #000;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+}
+
+.other-projects-back-link,
+.other-projects-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.other-projects-back-link:hover,
+.other-projects-back-link:focus-visible,
+.other-projects-inline-link:hover,
+.other-projects-inline-link:focus-visible {
+  color: #ff4400;
+}
+
+.other-projects-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #666666;
+}
+
+.other-projects-highlight {
+  border-left: 4px solid #ff4400;
+  background: #fff;
+  padding: 1rem 1.1rem;
+  line-height: 1.75;
+  color: #232323;
+}
+
+.other-projects-highlight p {
+  color: #55524d;
+}
+
+.other-projects-grid,
+.other-projects-next-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.other-projects-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.other-projects-next-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.other-projects-card,
+.other-projects-next-card {
+  border: 2px solid #000;
+  background: #fff;
+  padding: 1.25rem;
+}
+
+.other-projects-card h3,
+.other-projects-next-card h3 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+}
+
+.other-projects-card p,
+.other-projects-next-card p {
+  color: #55524d;
+  line-height: 1.75;
+}
+
+.other-projects-status {
+  display: inline-block;
+  margin-bottom: 1rem;
+  border: 2px solid #000;
+  background: #ff4400;
+  color: #fff;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.other-projects-card ul {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.5rem;
+  color: #222;
+}
+
+.other-projects-footer {
+  display: grid;
+  gap: 1rem;
+  border: 2px solid #000;
+  background: #fff;
+  padding: 1.5rem;
+}
+
+.other-projects-footer p {
+  color: #55524d;
+  line-height: 1.75;
+}
+
+@media (max-width: 1100px) {
+  .other-projects-grid,
+  .other-projects-next-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { Mail, Linkedin, Instagram, Github, ArrowRight } from 'lucide-react';
-import { WireframeButton } from './wireframe/WireframeButton';
 import { WireframeCard } from './wireframe/WireframeCard';
 
 const socialLinks = [
@@ -29,11 +28,6 @@ const socialLinks = [
     label: 'github.com/cynyassy'
   }
 ];
-
-const bootDevProfile = {
-  href: 'https://www.boot.dev/u/cynyassy',
-  image: 'https://api.boot.dev/v1/users/public/76e094d1-ba89-49fb-9372-b8e9ee053c16/thumbnail',
-};
 
 export function ContactSection() {
   return (
@@ -122,50 +116,6 @@ export function ContactSection() {
             </motion.a>
           ))}
         </motion.div>
-
-        <motion.div
-          className="max-w-3xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.65 }}
-        >
-          <motion.a
-            href={bootDevProfile.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block"
-            whileHover={{ y: -6 }}
-          >
-            <WireframeCard className="bg-white hover:bg-[#FF4400] transition-all duration-300 group">
-              <div className="grid md:grid-cols-[minmax(0,0.95fr)_minmax(18rem,1.05fr)] gap-8 items-center">
-                <div className="relative border-2 border-black rounded-[8px] overflow-hidden bg-[#f7f7f7]">
-                  <img
-                    src={bootDevProfile.image}
-                    alt="Boot.dev profile badge for Cynyassy"
-                    className="w-full h-auto block"
-                  />
-                </div>
-
-                <div>
-                  <p className="text-sm uppercase tracking-[0.18em] text-[#666] group-hover:text-white transition-colors mb-3">
-                    Learning Profile
-                  </p>
-                  <h3 className="text-3xl font-semibold tracking-[-0.04em] text-[#333] group-hover:text-white transition-colors mb-3">
-                    Boot.dev
-                  </h3>
-                  <p className="text-base leading-relaxed text-[#333] group-hover:text-white transition-colors opacity-80 group-hover:opacity-100 mb-4">
-                    A live snapshot of my backend learning path and coding practice. It fits here as a public proof-of-learning link alongside GitHub and the rest of the portfolio.
-                  </p>
-                  <p className="text-sm font-medium text-[#FF4400] group-hover:text-white transition-colors">
-                    boot.dev/u/cynyassy
-                  </p>
-                </div>
-              </div>
-            </WireframeCard>
-          </motion.a>
-        </motion.div>
-
         {/* Additional info */}
         <motion.div
           className="text-center max-w-2xl mx-auto"

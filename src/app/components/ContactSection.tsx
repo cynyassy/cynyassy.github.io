@@ -7,8 +7,8 @@ const socialLinks = [
   {
     name: 'Email',
     icon: <Mail size={24} />,
-    href: 'mailto:shashank@cynyassy.com',
-    label: 'shashank@cynyassy.com'
+    href: 'mailto:cynyassy@gmail.com',
+    label: 'cynyassy@gmail.com'
   },
   {
     name: 'LinkedIn',

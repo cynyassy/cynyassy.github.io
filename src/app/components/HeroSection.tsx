@@ -33,8 +33,8 @@ const personas = [
 ];
 
 export function HeroSection() {
-  const scrollToSkills = () => {
-    document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToWork = () => {
+    document.getElementById('featured-work')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -157,7 +157,7 @@ export function HeroSection() {
               whileHover={{ y: -2 }}
               className="inline-block"
             >
-              <WireframeButton onClick={scrollToSkills} variant="primary" className="w-auto">
+              <WireframeButton onClick={scrollToWork} variant="primary" className="w-auto">
                 Explore My Work
               </WireframeButton>
             </motion.div>

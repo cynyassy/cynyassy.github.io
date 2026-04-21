@@ -70,7 +70,7 @@ export function QualificationsSection() {
         </p>
       </motion.div>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8">
         {qualifications.map((item, index) => {
           const content = (
             <article className="border-2 border-black bg-white p-8 rounded-[8px] hover:shadow-[8px_8px_0px_rgba(0,0,0,1)] transition-all duration-300 h-full">

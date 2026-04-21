@@ -10,7 +10,6 @@ import { SkillsNetwork } from './components/SkillsNetwork';
 import { ToolsStrip } from './components/ToolsStrip';
 import { QualificationsSection } from './components/QualificationsSection';
 import { OtherProjects } from './components/OtherProjects';
-import { CurrentFocus } from './components/CurrentFocus';
 import { ContactSection } from './components/ContactSection';
 
 export default function App() {
@@ -40,7 +39,6 @@ export default function App() {
         <QualificationsSection />
         <ClientsCarousel />
         <OtherProjects />
-        <CurrentFocus />
         <div id="contact">
           <ContactSection />
         </div>

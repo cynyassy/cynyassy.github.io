@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Client {
   name: string;
@@ -22,22 +21,18 @@ const clients: Client[] = [
   { name: 'AlgoTest', logoUrl: 'https://www.google.com/s2/favicons?sz=256&domain_url=docs.algotest.in' }
 ];
 
-export function ClientsCarousel() {
-  const scroll = (direction: 'left' | 'right') => {
-    const container = document.getElementById('clients-scroll');
-    if (container) {
-      const scrollAmount = 300;
-      const currentPosition = container.scrollLeft;
-      const newPosition = direction === 'left' 
-        ? Math.max(0, currentPosition - scrollAmount)
-        : Math.min(container.scrollWidth - container.clientWidth, currentPosition + scrollAmount);
-      
-      container.scrollTo({ left: newPosition, behavior: 'smooth' });
-    }
-  };
+const duplicatedClients = [...clients, ...clients];
 
+export function ClientsCarousel() {
   return (
     <section className="py-24 px-6 bg-white relative overflow-hidden">
+      <style>{`
+        @keyframes employers-marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
+
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -50,53 +45,40 @@ export function ClientsCarousel() {
         </motion.div>
 
         <div className="relative">
-          {/* Navigation buttons */}
-          <button
-            onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border-2 border-black p-3 hover:bg-black hover:text-white transition-colors -ml-4 hidden md:block"
-            aria-label="Scroll left"
-          >
-            <ChevronLeft size={24} />
-          </button>
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-white via-white/90 to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-white via-white/90 to-transparent" />
 
-          <button
-            onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white border-2 border-black p-3 hover:bg-black hover:text-white transition-colors -mr-4 hidden md:block"
-            aria-label="Scroll right"
-          >
-            <ChevronRight size={24} />
-          </button>
-
-          {/* Carousel */}
-          <div
-            id="clients-scroll"
-            className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide px-2"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            {clients.map((client, index) => (
-              <motion.div
-                key={client.name}
-                className="flex-shrink-0 w-56 text-center group cursor-pointer"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -6 }}
-              >
-                <div className="h-28 flex items-center justify-center px-6">
-                  <img
-                    src={client.logoUrl}
-                    alt={`${client.name} logo`}
-                    className="max-h-20 max-w-full object-contain"
-                    loading="lazy"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <h3 className="text-2xl font-semibold tracking-[-0.03em] mt-3 group-hover:text-[#FF4400] transition-colors">
-                  {client.name}
-                </h3>
-              </motion.div>
-            ))}
+          <div className="overflow-hidden rounded-[10px] border-y-2 border-black bg-white py-6">
+            <div
+              className="flex w-max items-center gap-10"
+              style={{ animation: 'employers-marquee 40s linear infinite' }}
+            >
+              {duplicatedClients.map((client, index) => (
+                <motion.div
+                  key={`${client.name}-${index}`}
+                  className="flex-shrink-0 w-56 text-center group cursor-pointer"
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: (index % clients.length) * 0.04 }}
+                  whileHover={{ y: -4 }}
+                  title={client.name}
+                >
+                  <div className="h-24 flex items-center justify-center px-6">
+                    <img
+                      src={client.logoUrl}
+                      alt={`${client.name} logo`}
+                      className="max-h-16 max-w-full object-contain opacity-75 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-semibold tracking-[-0.03em] mt-3 group-hover:text-[#FF4400] transition-colors">
+                    {client.name}
+                  </h3>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
 

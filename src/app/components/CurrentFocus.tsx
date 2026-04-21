@@ -86,21 +86,22 @@ export function CurrentFocus() {
         </div>
 
         {/* Additional info */}
-        <motion.div
-          className="mt-16 text-center border-2 border-black p-8 bg-[#fafafa] max-w-3xl mx-auto"
+        <motion.a
+          href="#contact"
+          className="mt-16 block text-center border-2 border-black p-8 bg-[#fafafa] max-w-3xl mx-auto transition-all duration-300 hover:shadow-[8px_8px_0px_rgba(0,0,0,1)] hover:-translate-y-1 cursor-pointer"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
           <p className="font-['Patrick_Hand',sans-serif] text-lg leading-relaxed mb-4">
-            I'm always open to interesting projects and collaborations.
+            Available for projects, collaborations, and thoughtful freelance work.
           </p>
           <p className="font-['Patrick_Hand',sans-serif] opacity-60">
-            If you're working on something that involves systems thinking, design, or building 
-            something that matters—let's talk.
+            If you're building something that needs systems thinking, product clarity, design,
+            or storytelling, let's talk.
           </p>
-        </motion.div>
+        </motion.a>
       </div>
 
       {/* Background decorative elements */}

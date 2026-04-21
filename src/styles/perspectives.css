@@ -148,6 +148,27 @@ html {
   line-height: 1.7;
 }
 
+.perspectives-video-shell {
+  border: 2px solid #000;
+  background: #fff;
+  padding: 1rem;
+}
+
+.perspectives-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.perspectives-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .perspectives-side-panel,
 .perspectives-story-panel,
 .perspectives-pillar-card,

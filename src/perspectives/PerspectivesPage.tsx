@@ -348,6 +348,29 @@ export default function PerspectivesPage() {
           </div>
         </section>
 
+        <section className="px-6 py-20 border-b border-black bg-white" id="thesis-presentation">
+          <div className="max-w-6xl mx-auto space-y-6">
+            <SectionHeader
+              eyebrow="Thesis Presentation"
+              title="The project was also presented as a formal thesis"
+              description="This presentation captures how I framed the game academically: not just as a board game, but as a systems artifact for exploring privilege, access, and structural inequity."
+            />
+
+            <div className="perspectives-video-shell">
+              <div className="perspectives-video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/G3VoClPmiKM"
+                  title="Perspectives thesis presentation"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="px-6 py-20 border-b border-black" id="context">
           <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-[1.3fr_0.7fr] items-start">
             <div className="space-y-6">

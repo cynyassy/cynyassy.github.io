@@ -31,12 +31,12 @@ export default function App() {
         {/* Main content */}
         <HeroSection />
         <AboutSection />
-        <ClientsCarousel />
         <div id="featured-work">
           <FeaturedWork />
         </div>
         <SkillsNetwork />
         <QualificationsSection />
+        <ClientsCarousel />
         <OtherProjects />
         <CurrentFocus />
         <div id="contact">

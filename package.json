@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "sync:pages": "./scripts/sync-to-pages.sh",
+    "deploy:pages": "./scripts/deploy-to-pages.sh"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

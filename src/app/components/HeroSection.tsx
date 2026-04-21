@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { HeroProofCarousel } from './HeroProofCarousel';
 import { WireframeButton } from './wireframe/WireframeButton';
 import productDevelopmentImage from '../../assets/hero-personas/product-development.png';
+import techstackBuilderImage from '../../assets/hero-personas/techstack_builder.png';
 import artImage from '../../assets/hero-personas/art.png';
 import designImage from '../../assets/hero-personas/design.png';
 
@@ -10,24 +11,28 @@ const personas = [
     title: 'Systems Thinker',
     description: 'Designing simulations, feedback loops, and behavioral systems that reveal how outcomes emerge over time.',
     image: designImage,
+    targetId: 'perspectives',
     className: 'md:-translate-y-2',
   },
   {
     title: 'Builder',
     description: 'Building real systems end-to-end with backend logic, APIs, databases, and working prototypes.',
-    image: productDevelopmentImage,
+    image: techstackBuilderImage,
+    targetId: 'coffee-tools',
     className: 'md:translate-y-12',
   },
   {
     title: 'Product Strategist',
     description: 'Improving onboarding, growth, and product outcomes by connecting user behavior to business impact.',
     image: productDevelopmentImage,
+    targetId: 'algotest-growth-strategy',
     className: 'md:-translate-y-6',
   },
   {
     title: 'Storyteller',
     description: 'Communicating ideas through narrative, comics, and simple stories that make complex ideas accessible.',
     image: artImage,
+    targetId: 'cynyassy-platform',
     className: 'md:translate-y-10',
   },
 ];
@@ -35,6 +40,10 @@ const personas = [
 export function HeroSection() {
   const scrollToWork = () => {
     document.getElementById('featured-work')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToProject = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
@@ -172,13 +181,16 @@ export function HeroSection() {
             <div className="absolute inset-0 rounded-[28px] bg-[radial-gradient(circle_at_top,_rgba(255,68,0,0.08),_transparent_55%)]" />
             <div className="relative grid gap-5 sm:grid-cols-2">
               {personas.map((persona, index) => (
-                <motion.figure
+                <motion.button
                   key={persona.title}
-                  className={`relative bg-white p-5 rounded-[18px] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-4 border-black min-h-[23rem] ${persona.className}`}
+                  type="button"
+                  onClick={() => scrollToProject(persona.targetId)}
+                  className={`relative bg-white p-5 rounded-[18px] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-4 border-black min-h-[23rem] text-left ${persona.className}`}
                   initial={{ opacity: 0, y: 24, rotate: index === 1 ? 2 : -2 }}
                   animate={{ opacity: 1, y: 0, rotate: index === 1 ? 2 : -2 }}
                   transition={{ delay: 0.75 + index * 0.12, duration: 0.55 }}
                   whileHover={{ y: -8, rotate: 0 }}
+                  whileTap={{ scale: 0.985 }}
                 >
                   <div className="absolute -top-3 left-4 inline-flex items-center rounded-full border-2 border-black bg-[#FF4400] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white">
                     Persona {index + 1}
@@ -190,15 +202,18 @@ export function HeroSection() {
                       className="h-full w-full object-contain"
                     />
                   </div>
-                  <figcaption className="pt-4">
+                  <div className="pt-4">
                     <p className="text-xl md:text-2xl font-semibold text-black tracking-[-0.03em]">
                       {persona.title}
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-[#555]">
                       {persona.description}
                     </p>
-                  </figcaption>
-                </motion.figure>
+                    <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#FF4400]">
+                      <span>Jump to related project</span>
+                    </p>
+                  </div>
+                </motion.button>
               ))}
             </div>
           </motion.div>

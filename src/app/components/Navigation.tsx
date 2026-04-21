@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
+import chaddimanPortraitLogo from '../../assets/chaddiman-portrait-logo.png';
 
 const navItems = [
   { label: 'Home', id: 'hero' },
@@ -53,11 +54,18 @@ export function Navigation() {
             {/* Logo */}
             <motion.button
               onClick={() => scrollToSection('hero')}
-              className="text-2xl font-semibold tracking-[-0.03em] hover:text-[#FF4400] transition-colors"
+              className="flex items-center gap-3 text-left hover:text-[#FF4400] transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Cynyassy
+              <img
+                src={chaddimanPortraitLogo}
+                alt="ChaddiMan logo"
+                className="h-12 w-12 rounded-full bg-white object-cover"
+              />
+              <span className="text-lg md:text-2xl font-semibold tracking-[-0.03em]">
+                Shashank/Cynyassy&apos;s Portfolio
+              </span>
             </motion.button>
 
             {/* Desktop Menu */}

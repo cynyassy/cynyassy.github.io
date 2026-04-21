@@ -7,6 +7,7 @@ import { AboutSection } from './components/AboutSection';
 import { ClientsCarousel } from './components/ClientsCarousel';
 import { FeaturedWork } from './components/FeaturedWork';
 import { SkillsNetwork } from './components/SkillsNetwork';
+import { ToolsStrip } from './components/ToolsStrip';
 import { QualificationsSection } from './components/QualificationsSection';
 import { OtherProjects } from './components/OtherProjects';
 import { CurrentFocus } from './components/CurrentFocus';
@@ -35,6 +36,7 @@ export default function App() {
           <FeaturedWork />
         </div>
         <SkillsNetwork />
+        <ToolsStrip />
         <QualificationsSection />
         <ClientsCarousel />
         <OtherProjects />

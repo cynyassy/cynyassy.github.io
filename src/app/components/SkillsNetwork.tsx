@@ -47,9 +47,6 @@ export function SkillsNetwork() {
         <h2 className="text-5xl md:text-6xl font-semibold tracking-[-0.05em] text-[#111] mb-4">
           The capabilities underneath the case studies
         </h2>
-        <p className="text-lg text-[#555] max-w-3xl mx-auto">
-          A clearer view of the skills that show up repeatedly across systems work, product strategy, building, and storytelling.
-        </p>
       </motion.div>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">

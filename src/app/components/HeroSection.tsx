@@ -102,7 +102,7 @@ export function HeroSection() {
               transition={{ delay: 0.2 }}
             >
               <div className="relative bg-white px-6 py-2 inline-block transform -rotate-1 rounded-[4px]">
-                <span className="text-sm font-semibold tracking-[0.18em] uppercase text-[#333]">Cynyassy / Shashank Sharma</span>
+                <span className="text-sm font-semibold tracking-[0.18em] uppercase text-[#333]">Shashank/Cynyassy&apos;s Portfolio</span>
                 <div aria-hidden="true" className="absolute border-4 border-[#333] border-solid inset-0 pointer-events-none rounded-[4px]" />
               </div>
             </motion.div>

@@ -352,8 +352,8 @@ export default function PerspectivesPage() {
           <div className="max-w-6xl mx-auto space-y-6">
             <SectionHeader
               eyebrow="Thesis Presentation"
-              title="The project was also presented as a formal thesis"
-              description="This presentation captures how I framed the game academically: not just as a board game, but as a systems artifact for exploring privilege, access, and structural inequity."
+              title="Thesis Presentation at DSI, SVA"
+              description="This video captures how I framed the game academically: a board game that functions as a systems artifact for starting conversations around exploring privilege, access, and structural inequity."
             />
 
             <div className="perspectives-video-shell">

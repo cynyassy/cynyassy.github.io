@@ -231,11 +231,11 @@ export default function CynyassyPage() {
           <div className="space-y-8">
             <div className="space-y-5">
               <p className="cynyassy-eyebrow">Storytelling System / Audience Understanding</p>
-              <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] md:text-7xl">
-                Cynyassy — Building a <span className="text-[#FF4400]">100K+</span> Audience Through Daily Storytelling
+              <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] md:text-5xl">
+                Building a <span className="text-[#FF4400]">100K+</span> community through emotional storytelling
               </h1>
-              <p className="text-2xl font-medium leading-tight text-[#1f1f1f] md:text-4xl">
-                A two-year experiment in content, emotion, and audience understanding.
+              <p className="text-2xl font-medium leading-tight text-[#1f1f1f] md:text-3xl">
+                A storytelling system for mental health education, community care, and audience understanding.
               </p>
               <p className="max-w-3xl text-lg leading-relaxed text-[#55524d] md:text-xl">
                 Cynyassy started after a difficult stretch in my twenties, when I spent years trying to understand my

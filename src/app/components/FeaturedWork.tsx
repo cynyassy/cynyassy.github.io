@@ -16,6 +16,7 @@ type CaseStudyLink = {
 
 interface Project {
   title: string;
+  headline: string;
   persona: string;
   category: string;
   problem: string;
@@ -27,6 +28,7 @@ interface Project {
   illustration: ReactNode;
   imageHref?: string;
   titleLogo?: string;
+  id: string;
 }
 
 function CoffeeToolsShowcase() {
@@ -115,7 +117,9 @@ function CynyassyShowcase() {
 
 const projects: Project[] = [
   {
+    id: 'perspectives',
     title: 'Perspectives',
+    headline: 'A board game about how systems create inequality',
     persona: 'Systems Thinker',
     category: 'Thesis / Board Game',
     problem:
@@ -133,7 +137,9 @@ const projects: Project[] = [
     imageHref: 'projects/perspectives.html',
   },
   {
+    id: 'coffee-tools',
     title: 'Coffee Tools',
+    headline: 'Designing a bag-centered brew tracker for repeatability',
     persona: 'Builder',
     category: 'Backend / Product System',
     problem:
@@ -152,7 +158,9 @@ const projects: Project[] = [
     imageHref: 'projects/coffee-tools.html',
   },
   {
-    title: 'AlgoTest Growth Strategy',
+    id: 'algotest-growth-strategy',
+    title: 'AlgoTest',
+    headline: 'How documentation-led growth helped drive 3x revenue',
     persona: 'Product & Growth Strategist',
     category: 'Growth Strategy',
     problem:
@@ -171,7 +179,9 @@ const projects: Project[] = [
     titleLogo: algotestLogoImage,
   },
   {
-    title: 'Cynyassy Platform',
+    id: 'cynyassy-platform',
+    title: 'Cynyassy / ChaddiMan',
+    headline: 'Building a 100K community through emotional storytelling',
     persona: 'Storyteller & Creator',
     category: 'Platform / Content System',
     problem:
@@ -213,7 +223,7 @@ export function FeaturedWork() {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              id={project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
+              id={project.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -255,7 +265,7 @@ export function FeaturedWork() {
                       </div>
                     </div>
 
-                    <div className="mb-6 flex items-center gap-3">
+                    <div className="mb-2 flex items-center gap-3">
                       {project.titleLogo ? (
                         <img
                           src={project.titleLogo}
@@ -264,10 +274,14 @@ export function FeaturedWork() {
                           className="h-10 w-10 rounded-[10px] bg-white object-cover"
                         />
                       ) : null}
-                      <h3 className="text-3xl md:text-4xl font-semibold tracking-[-0.04em] text-[#333]">
+                      <p className="text-lg md:text-xl font-semibold tracking-[-0.03em] text-[#333]">
                         {project.title}
-                      </h3>
+                      </p>
                     </div>
+
+                    <h3 className="mb-6 text-3xl md:text-4xl font-semibold tracking-[-0.04em] text-[#111]">
+                      {project.headline}
+                    </h3>
 
                     <div className="space-y-6">
                       <div>

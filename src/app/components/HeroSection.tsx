@@ -6,6 +6,20 @@ import techstackBuilderImage from '../../assets/hero-personas/techstack_builder.
 import artImage from '../../assets/hero-personas/art.png';
 import designImage from '../../assets/hero-personas/design.png';
 
+const roleAreas = [
+  'Product Strategy',
+  'Growth Systems',
+  'Backend / Prototyping',
+  'Storytelling & Communication',
+];
+
+const impactProof = [
+  '150K monthly organic traffic at AlgoTest',
+  '3x revenue impact through docs-led growth',
+  '100K+ community built through Cynyassy',
+  'Playable systems design through Perspectives',
+];
+
 const personas = [
   {
     title: 'Systems Thinker',
@@ -122,9 +136,9 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-                <span className="block text-5xl md:text-6xl lg:text-[5.15rem] font-semibold tracking-[-0.06em] leading-[0.98] mb-4 relative">
+                <span className="block text-5xl md:text-6xl lg:text-[4.5rem] font-semibold tracking-[-0.06em] leading-[0.98] mb-4 relative">
                   <span className="inline-block transform hover:scale-105 transition-transform cursor-default">
-                    Storyteller
+                    Product Strategist
                   </span>
                   <span className="text-[#FF4400] mx-3">•</span><br></br>
                   <span className="inline-block transform hover:scale-105 transition-transform cursor-default">
@@ -133,7 +147,7 @@ export function HeroSection() {
                   <span className="text-[#FF4400] mx-3">•</span><br></br>
                   <span className="block mt-2">
                     <span className="inline-block transform hover:scale-105 transition-transform cursor-default">
-                      Systems Thinker
+                      Storyteller
                     </span>
                   </span>
                 </span>
@@ -146,7 +160,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              Systems thinker, builder, and storyteller shaping useful systems people can actually understand.
+              I design products, growth systems, and learning experiences that turn complexity into clear outcomes.
             </motion.p>
 
             <motion.p
@@ -155,8 +169,35 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
             >
-              Multiple lenses, one practice: understanding complexity, building clearly, driving outcomes, and telling stories that make ideas stick.
+              I work across product strategy, backend systems, and storytelling, especially where clarity, behavior, trust, and communication matter most.
             </motion.p>
+
+            <motion.div
+              className="mb-8 space-y-4 max-w-3xl mx-auto lg:mx-0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.74 }}
+            >
+              <div className="flex flex-wrap gap-3">
+                {roleAreas.map((item) => (
+                  <span
+                    key={item}
+                    className="inline-flex items-center rounded-[4px] border-2 border-black bg-white px-3 py-2 text-sm font-medium text-[#222]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+
+              <ul className="space-y-2 text-sm md:text-base text-[#444]">
+                {impactProof.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 shrink-0 bg-[#FF4400]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
 
             {/* CTA */}
             <motion.div

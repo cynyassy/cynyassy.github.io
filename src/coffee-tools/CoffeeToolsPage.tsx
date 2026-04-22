@@ -233,11 +233,11 @@ export default function CoffeeToolsPage() {
 
             <div className="space-y-5">
               <p className="coffee-tools-eyebrow">Coffee Tools</p>
-              <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] md:text-7xl">
-                Brew Tracker
+              <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] md:text-5xl">
+                Designing a bag-centered brew tracker for repeatability
               </h1>
-              <p className="text-2xl font-medium leading-tight text-[#1f1f1f] md:text-4xl">
-                Building a bag-centered brewing workflow for serious coffee nerds
+              <p className="text-2xl font-medium leading-tight text-[#1f1f1f] md:text-3xl">
+                A product and backend system built around how serious home brewers actually work
               </p>
               <p className="max-w-3xl text-lg leading-relaxed text-[#4f4f4f] md:text-xl">
                 I buy multiple bags of coffee at the same time and switch between a J-Ultra, ZP6, Baratza Encore ESP,

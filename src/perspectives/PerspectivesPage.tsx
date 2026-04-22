@@ -287,19 +287,15 @@ export default function PerspectivesPage() {
                 <div className="space-y-6">
                   <p className="perspectives-eyebrow">Case Study</p>
                   <div className="space-y-4">
-                    <h1 className="text-6xl md:text-8xl lg:text-[6.5rem] font-semibold leading-[0.92] tracking-[-0.07em] inline-block relative text-[#171717]">
-                      Perspectives
+                    <h1 className="text-6xl md:text-8xl lg:text-[4.5rem] font-semibold leading-[0.98] tracking-[-0.07em] inline-block relative text-[#171717]">
+                      A board game about how systems create inequality
                       <span aria-hidden="true" className="absolute left-0 bottom-2 h-3 md:h-4 w-full bg-[#ffdf00] -z-10" />
                     </h1>
-                    <p className="max-w-3xl text-xl md:text-2xl leading-relaxed text-[#3d3d3d]">
-                      A board game that reveals how systems, not individuals, create and sustain inequality over time.
+                    <p className="max-w-3xl text-xl md:text-1xl leading-relaxed text-[#3d3d3d]">
+                      Perspectives is a thesis project that turns privilege, access, and institutional power into something players can experience through rules, geography, and compounding outcomes.
                     </p>
                   </div>
                 </div>
-
-                <p className="perspectives-hero-deck">
-                  Designed as a thesis project, this case study sits at the intersection of systems thinking, game design, and critical pedagogy. The goal was not just to explain inequity, but to let players encounter it through structure, sequence, and consequence.
-                </p>
 
                 <div className="flex flex-wrap gap-3">
                   {projectTags.map((tag) => (

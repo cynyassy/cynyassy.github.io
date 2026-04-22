@@ -1,6 +1,6 @@
 import { CustomCursor } from '../app/components/CustomCursor';
 import algotestLogoImg from '../assets/algotest-case-study/algotest-logo.png';
-import algotestDocsScreenshot from '../assets/algotest-case-study/algotest-docs-screenshot.png';
+import algotestDocsScreenshot from '../assets/algotest_documentation.png';
 import google_search_console1 from '../assets/algotest-case-study/google_search_console1.png';
 import google_search_console2 from '../assets/algotest-case-study/google_search_console2.png';
 import tradersPathFrame1 from '../assets/algotest-bet-sizer/BS - Trader\'s Path 1.png';
@@ -213,11 +213,11 @@ export default function AlgoTestPage() {
                   <p className="algotest-brand-lockup__name">AlgoTest</p>
                 </div>
               </div>
-              <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] md:text-7xl">
-                AlgoTest Growth Strategy
+              <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] md:text-5xl">
+                Documentation led growth helped drive 3x revenue at AlgoTest
               </h1>
-              <p className="text-2xl font-medium leading-tight text-[#1f1f1f] md:text-4xl">
-                How product documentation became AlgoTest’s primary growth and lead-generation channel
+              <p className="text-2xl font-medium leading-tight text-[#1f1f1f] md:text-2xl">
+                Product education became the acquisition, onboarding, and support system.
               </p>
               <p className="max-w-3xl text-lg leading-relaxed text-[#55524d] md:text-xl">
                 I built a documentation-led growth system that improved acquisition, onboarding, and support efficiency
@@ -347,7 +347,7 @@ export default function AlgoTestPage() {
               ))}
             </ul>
             <figure className="algotest-coverage-figure">
-              <img src={algotestDocsScreenshot} alt="Published AlgoTest documentation homepage with sidebar navigation and resource sections" />
+              <img src={algotestDocsScreenshot} alt="Published AlgoTest documentation homepage with navigation and educational resources" />
               <figcaption>
                 The published docs became a real product surface: navigable, structured, and broad enough to support
                 onboarding, education, and ongoing support at scale.

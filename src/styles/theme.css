@@ -131,16 +131,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Hide default cursor on desktop for custom cursor */
-  @media (hover: hover) and (pointer: fine) {
-    body {
-      cursor: none;
-    }
-    a, button, [role="button"], .cursor-pointer {
-      cursor: none;
-    }
-  }
-
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { CustomCursor } from '../app/components/CustomCursor';
 import { PerspectivesCoverArt } from './PerspectivesCoverArt';
 import { PerspectivesPlayableProof } from './PerspectivesPlayableProof';
 import UpgradeAndCostSheetV from './imports/UpgradeAndCostSheetV1/UpgradeAndCostSheetV1';
@@ -261,7 +260,6 @@ export default function PerspectivesPage() {
 
   return (
     <div className="min-h-screen bg-white text-black perspectives-page">
-      <CustomCursor />
       <a href="#main-content" className="perspectives-skip-link">
         Skip to content
       </a>

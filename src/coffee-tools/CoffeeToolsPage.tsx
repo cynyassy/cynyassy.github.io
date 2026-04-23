@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { CustomCursor } from '../app/components/CustomCursor';
 import authScreenImg from '../assets/coffee-tools-case-study/authentication-screen.png';
 import myBagsImg from '../assets/coffee-tools-case-study/my-bags-view.png';
 import myBagsViewImageImg from '../assets/coffee-tools-case-study/my-bags-view-image.png';
@@ -204,7 +203,6 @@ function SectionHeader({ eyebrow, title, description }: { eyebrow?: string; titl
 export default function CoffeeToolsPage() {
   return (
     <div className="coffee-tools-page min-h-screen bg-[#ffffff] text-[#111111]">
-      <CustomCursor />
       <a href="#coffee-tools-main" className="coffee-tools-skip-link">
         Skip to content
       </a>

@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import awsIcon from '../../assets/aws-icon.webp';
 
 type Tool = {
   name: string;
@@ -50,7 +51,7 @@ const tools: Tool[] = [
   },
   {
     name: 'AWS',
-    logo: 'https://cdn.simpleicons.org/amazonaws/FF9900',
+    logo: awsIcon,
     usage: 'Used in deployment-oriented and cloud-adjacent product work.',
   },
   {

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { CustomCursor } from '../app/components/CustomCursor';
 import artImage from '../assets/hero-personas/art.png';
 import purposeComic from '../assets/cynyassy-comics/purpose.png';
 import feelingLostComic from '../assets/cynyassy-comics/feeling-lost.png';
@@ -207,7 +206,6 @@ export default function CynyassyPage() {
 
   return (
     <div className="cynyassy-page min-h-screen bg-white text-[#111111]">
-      <CustomCursor />
       <a href="#cynyassy-main" className="cynyassy-skip-link">
         Skip to content
       </a>

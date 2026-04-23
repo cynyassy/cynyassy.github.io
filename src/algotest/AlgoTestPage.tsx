@@ -1,4 +1,3 @@
-import { CustomCursor } from '../app/components/CustomCursor';
 import algotestLogoImg from '../assets/algotest-case-study/algotest-logo.png';
 import algotestDocsScreenshot from '../assets/algotest_documentation.png';
 import google_search_console1 from '../assets/algotest-case-study/google_search_console1.png';
@@ -181,7 +180,6 @@ function SectionHeader({ eyebrow, title, description }: { eyebrow?: string; titl
 export default function AlgoTestPage() {
   return (
     <div className="algotest-page min-h-screen bg-[#ffffff] text-[#111111]">
-      <CustomCursor />
       <a href="#algotest-main" className="algotest-skip-link">
         Skip to content
       </a>

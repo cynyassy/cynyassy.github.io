@@ -76,6 +76,11 @@ const proofPoints = [
   'Balanced practical utility with a product direction that feels specific to coffee culture.',
 ];
 
+const roleSummary = {
+  role: 'Product Builder',
+  scope: 'Backend-first workflow design, API thinking, data modeling, and UX structure',
+};
+
 function ScreenCarousel({
   items,
   label,
@@ -244,6 +249,17 @@ export default function CoffeeToolsPage() {
                 and Timemore C2. Most logging tools made recipe tracking feel laborious, when the real goal was
                 consistency. Coffee Tools came from that gap.
               </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                <p className="coffee-tools-eyebrow mb-2">Role</p>
+                <p className="text-lg font-semibold tracking-[-0.03em] text-[#111]">{roleSummary.role}</p>
+              </div>
+              <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                <p className="coffee-tools-eyebrow mb-2">Scope</p>
+                <p className="text-base leading-relaxed text-[#444]">{roleSummary.scope}</p>
+              </div>
             </div>
 
             <dl className="coffee-tools-hero-meta">

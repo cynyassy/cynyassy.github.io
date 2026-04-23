@@ -7,17 +7,17 @@ import artImage from '../../assets/hero-personas/art.png';
 import designImage from '../../assets/hero-personas/design.png';
 
 const roleAreas = [
-  'Product Strategy',
-  'Growth Systems',
-  'Backend / Prototyping',
-  'Storytelling & Communication',
+  'Design engineering',
+  'Product strategy',
+  'Backend systems',
+  'Growth & communication',
 ];
 
 const impactProof = [
   '150K monthly organic traffic at AlgoTest',
   '3x revenue impact through docs-led growth',
   '100K+ community built through Cynyassy',
-  'Playable systems design through Perspectives',
+  'Backend-first product build through Coffee Tools',
 ];
 
 const personas = [
@@ -129,6 +129,15 @@ export function HeroSection() {
               <HeroProofCarousel />
             </motion.div>
 
+            <motion.p
+              className="mb-4 text-[0.85rem] font-semibold uppercase tracking-[0.2em] text-[#666] mx-auto lg:mx-0"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.34, duration: 0.5 }}
+            >
+              Design engineer / hybrid product builder
+            </motion.p>
+
             {/* Main title */}
             <motion.h1
               className="mb-8 relative"
@@ -136,18 +145,18 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-                <span className="block text-5xl md:text-6xl lg:text-[4.5rem] font-semibold tracking-[-0.06em] leading-[0.98] mb-4 relative">
+                <span className="block text-5xl md:text-5xl lg:text-[4.0rem] tracking-[-0.04em] leading-[1.1] mb-4 relative">
                   <span className="inline-block transform hover:scale-105 transition-transform cursor-default">
-                    Product Strategist
+                    Design Engineer
                   </span>
                   <span className="text-[#FF4400] mx-3">•</span><br></br>
                   <span className="inline-block transform hover:scale-105 transition-transform cursor-default">
-                    Builder
+                    Product Builder
                   </span>
                   <span className="text-[#FF4400] mx-3">•</span><br></br>
                   <span className="block mt-2">
                     <span className="inline-block transform hover:scale-105 transition-transform cursor-default">
-                      Storyteller
+                      Complex Systems
                     </span>
                   </span>
                 </span>
@@ -160,7 +169,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              I design products, growth systems, and learning experiences that turn complexity into clear outcomes.
+              Design engineer for complex products, combining design, growth, and technical execution.
             </motion.p>
 
             <motion.p
@@ -169,7 +178,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
             >
-              I work across product strategy, backend systems, and storytelling, especially where clarity, behavior, trust, and communication matter most.
+              Currently focused on product, design engineering, and hybrid product roles in complex or technical products.
             </motion.p>
 
             <motion.div

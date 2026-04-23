@@ -117,10 +117,31 @@ function CynyassyShowcase() {
 
 const projects: Project[] = [
   {
+    id: 'algotest-growth-strategy',
+    title: 'AlgoTest',
+    headline: 'How documentation-led growth helped drive 3x revenue',
+    persona: 'Product & Growth',
+    category: 'Growth Strategy',
+    problem:
+      'AlgoTest needed stronger acquisition and activation: better SEO visibility, better onboarding, and a more coherent path from first visit to product value.',
+    approach:
+      'I treated growth as a product problem by improving onboarding, tightening the user journey, strengthening SEO strategy, and using analytics to connect changes to real business outcomes.',
+    outcome:
+      'This case study shows product strategy in action: clearer activation, better discovery, and measurable business impact across traffic, engagement, and revenue.',
+    highlights: ['SEO growth', 'Onboarding improvements', 'Analytics-backed product decisions'],
+    metrics: ['Organic traffic: 25K -> 150K/month', 'Revenue impact: 3x growth', 'Improved onboarding and engagement'],
+    links: [
+      { label: 'Open case study', href: 'projects/algotest.html' },
+    ],
+    illustration: <AlgoTestShowcase />,
+    imageHref: 'projects/algotest.html',
+    titleLogo: algotestLogoImage,
+  },
+  {
     id: 'perspectives',
     title: 'Perspectives',
     headline: 'A board game about how systems create inequality',
-    persona: 'Systems Thinker',
+    persona: 'Systems Design / Simulation Thinking',
     category: 'Thesis / Board Game',
     problem:
       'How do you help people understand privilege, institutional power, and unequal starting conditions without turning the learning experience into a lecture?',
@@ -140,7 +161,7 @@ const projects: Project[] = [
     id: 'coffee-tools',
     title: 'Coffee Tools',
     headline: 'Designing a bag-centered brew tracker for repeatability',
-    persona: 'Builder',
+    persona: 'Design Engineer / Product Builder',
     category: 'Backend / Product System',
     problem:
       'As someone buying multiple bags at once and switching between a J-Ultra, ZP6, Baratza Encore ESP, and Timemore C2, I found most coffee logging tools too laborious for the one thing that matters most: consistency.',
@@ -158,31 +179,10 @@ const projects: Project[] = [
     imageHref: 'projects/coffee-tools.html',
   },
   {
-    id: 'algotest-growth-strategy',
-    title: 'AlgoTest',
-    headline: 'How documentation-led growth helped drive 3x revenue',
-    persona: 'Product & Growth Strategist',
-    category: 'Growth Strategy',
-    problem:
-      'AlgoTest needed stronger acquisition and activation: better SEO visibility, better onboarding, and a more coherent path from first visit to product value.',
-    approach:
-      'I treated growth as a product problem by improving onboarding, tightening the user journey, strengthening SEO strategy, and using analytics to connect changes to real business outcomes.',
-    outcome:
-      'This case study shows product strategy in action: clearer activation, better discovery, and measurable business impact across traffic, engagement, and revenue.',
-    highlights: ['SEO growth', 'Onboarding improvements', 'Analytics-backed product decisions'],
-    metrics: ['Organic traffic: 25K -> 150K/month', 'Revenue impact: 3x growth', 'Improved onboarding and engagement'],
-    links: [
-      { label: 'Open case study', href: 'projects/algotest.html' },
-    ],
-    illustration: <AlgoTestShowcase />,
-    imageHref: 'projects/algotest.html',
-    titleLogo: algotestLogoImage,
-  },
-  {
     id: 'cynyassy-platform',
     title: 'Cynyassy / ChaddiMan',
     headline: 'Building a 100K community through emotional storytelling',
-    persona: 'Storyteller & Creator',
+    persona: 'Storytelling Systems / User Insight',
     category: 'Platform / Content System',
     problem:
       'How do you make ideas around emotion, mental health, and inner life feel approachable enough that people actually engage with them instead of scrolling past them?',

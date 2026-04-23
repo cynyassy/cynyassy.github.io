@@ -108,6 +108,11 @@ const translationPoints = [
   'Building systems that improve through repeated use',
 ];
 
+const roleSummary = {
+  role: 'Storytelling Systems Builder',
+  scope: 'Content system design, audience learning, narrative experimentation, and community building',
+};
+
 const formatExperiments = [
   {
     label: 'Comic system',
@@ -243,6 +248,17 @@ export default function CynyassyPage() {
                 wanted to make some of those ideas easier to access through comics, humor, and care. That became
                 ChaddiMan.
               </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                <p className="cynyassy-eyebrow mb-2">Role</p>
+                <p className="text-lg font-semibold tracking-[-0.03em] text-[#111]">{roleSummary.role}</p>
+              </div>
+              <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                <p className="cynyassy-eyebrow mb-2">Scope</p>
+                <p className="text-base leading-relaxed text-[#444]">{roleSummary.scope}</p>
+              </div>
             </div>
 
             <ul className="cynyassy-highlight-list" aria-label="Key outcomes">

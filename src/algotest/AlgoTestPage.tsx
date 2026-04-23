@@ -40,6 +40,9 @@ const roleAreas = [
   'Cross-functional delivery',
 ];
 
+const roleScope =
+  'Scope: strategy, documentation systems, acquisition, onboarding clarity, and product education.';
+
 const problemPoints = [
   'Customer support was overloaded with repetitive setup and onboarding questions.',
   'Onboarding friction was limiting activation and conversions.',
@@ -238,6 +241,7 @@ export default function AlgoTestPage() {
                 ))}
               </div>
             </div>
+            <p className="text-sm md:text-base leading-relaxed text-[#55524d]">{roleScope}</p>
 
             <ul className="algotest-highlight-list" aria-label="Key outcomes">
               {heroMetrics.map((metric) => (

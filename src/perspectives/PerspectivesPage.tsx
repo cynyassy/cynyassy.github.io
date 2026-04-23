@@ -164,6 +164,11 @@ const whatThisShows = [
   },
 ];
 
+const roleSummary = {
+  role: 'Systems Designer & Builder',
+  scope: 'Research, game design, simulation thinking, and facilitation framing',
+};
+
 function SectionHeader({ eyebrow, title, description }: { eyebrow?: string; title: string; description?: string }) {
   return (
     <header className="space-y-4">
@@ -313,6 +318,17 @@ export default function PerspectivesPage() {
                     </div>
                   ))}
                 </dl>
+
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                    <p className="perspectives-eyebrow mb-2">Role</p>
+                    <p className="text-lg font-semibold tracking-[-0.03em] text-[#111]">{roleSummary.role}</p>
+                  </div>
+                  <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                    <p className="perspectives-eyebrow mb-2">Scope</p>
+                    <p className="text-base leading-relaxed text-[#444]">{roleSummary.scope}</p>
+                  </div>
+                </div>
               </div>
 
               <div className="space-y-4">

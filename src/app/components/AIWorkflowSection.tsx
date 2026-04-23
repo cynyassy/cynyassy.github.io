@@ -20,7 +20,7 @@ const aiLanes = [
 
 export function AIWorkflowSection() {
   return (
-    <section className="border-y-2 border-black bg-white px-6 py-20">
+    <section className="border-y-2 bg-white px-6 py-20">
       <div className="mx-auto max-w-6xl">
         <motion.div
           className="max-w-4xl"
@@ -43,7 +43,7 @@ export function AIWorkflowSection() {
           {aiLanes.map((lane, index) => (
             <motion.div
               key={lane.title}
-              className="rounded-[14px] border-2 border-black bg-white p-6 shadow-[6px_6px_0px_rgba(0,0,0,1)]"
+              className="rounded-[14px] border-2 bg-white p-6"
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

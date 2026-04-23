@@ -34,13 +34,11 @@ interface Project {
 function CoffeeToolsShowcase() {
   return (
     <div className="flex h-full w-full items-center justify-center">
-      <div className="flex w-full max-w-[34rem] items-center justify-center overflow-hidden rounded-[18px] border-2 border-black bg-white p-5 shadow-[6px_6px_0px_rgba(0,0,0,1)]">
-        <img
+      <img
           src={coffeeToolsDetailImage}
           alt="Coffee Tools bag detail and brew history screen"
-          className="h-full max-h-[26rem] w-full rounded-[16px] border-2 border-black bg-white object-contain object-center shadow-[4px_4px_0px_rgba(0,0,0,1)]"
+          className="h-full max-h-[26rem] w-full rounded-[16px] border-2 bg-white object-contain object-center "
         />
-      </div>
     </div>
   );
 }
@@ -48,7 +46,7 @@ function CoffeeToolsShowcase() {
 function AlgoTestShowcase() {
   return (
     <div className="flex h-full w-full items-center justify-center">
-      <div className="flex w-full max-w-[34rem] flex-col gap-5 rounded-[18px] border-2 border-black bg-white p-5 shadow-[6px_6px_0px_rgba(0,0,0,1)]">
+      <div className="flex w-full max-w-[34rem] flex-col gap-5 rounded-[18px] border-2 border-black bg-white p-5">
         <div className="flex items-center gap-3 border-b-2 border-black pb-4">
           <img
             src={algotestLogoImage}
@@ -104,7 +102,7 @@ function AlgoTestShowcase() {
 function CynyassyShowcase() {
   return (
     <div className="flex h-full w-full items-center justify-center">
-      <div className="flex w-full max-w-[34rem] items-center justify-center overflow-hidden rounded-[18px] border-2 border-black bg-white p-5 shadow-[4px_4px_0px_rgba(0,0,0,0.85)]">
+      <div className="flex w-full max-w-[34rem] items-center justify-center overflow-hidden rounded-[18px] border-2 bg-white p-5">
         <img
           src={cynyassyCoverImage}
           alt="Cynyassy comic about suffering and emotional understanding"

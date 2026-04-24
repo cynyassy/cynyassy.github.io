@@ -80,6 +80,12 @@ const roleSummary = {
   scope: 'Backend-first workflow design, API thinking, data modeling, and UX structure',
 };
 
+const impactSummary = [
+  'Mapped a real enthusiast workflow into a usable product model',
+  'Built around a bag-centered system instead of isolated brew notes',
+  'Connected product structure to backend thinking and data design',
+];
+
 function ScreenCarousel({
   items,
   label,
@@ -258,6 +264,15 @@ export default function CoffeeToolsPage() {
                 <p className="coffee-tools-eyebrow mb-2">Scope</p>
                 <p className="text-base leading-relaxed text-[#444]">{roleSummary.scope}</p>
               </div>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              {impactSummary.map((item) => (
+                <div key={item} className="rounded-[8px] border-2 border-black bg-white p-4">
+                  <p className="coffee-tools-eyebrow mb-2">Impact</p>
+                  <p className="text-base font-semibold leading-relaxed tracking-[-0.02em] text-[#111]">{item}</p>
+                </div>
+              ))}
             </div>
 
             <dl className="coffee-tools-hero-meta">

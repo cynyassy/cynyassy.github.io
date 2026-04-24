@@ -112,6 +112,12 @@ const roleSummary = {
   scope: 'Content system design, audience learning, narrative experimentation, and community building',
 };
 
+const impactSummary = [
+  'Built a 100K+ community through daily storytelling',
+  'Turned emotional education into a repeatable content system',
+  'Created community care, resonance, and long-term audience trust',
+];
+
 const formatExperiments = [
   {
     label: 'Comic system',
@@ -257,6 +263,15 @@ export default function CynyassyPage() {
                 <p className="cynyassy-eyebrow mb-2">Scope</p>
                 <p className="text-base leading-relaxed text-[#444]">{roleSummary.scope}</p>
               </div>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              {impactSummary.map((item) => (
+                <div key={item} className="rounded-[8px] border-2 border-black bg-white p-4">
+                  <p className="cynyassy-eyebrow mb-2">Impact</p>
+                  <p className="text-base font-semibold leading-relaxed tracking-[-0.02em] text-[#111]">{item}</p>
+                </div>
+              ))}
             </div>
 
             <ul className="cynyassy-highlight-list" aria-label="Key outcomes">

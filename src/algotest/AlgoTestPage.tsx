@@ -42,6 +42,12 @@ const roleAreas = [
 const roleScope =
   'Scope: strategy, documentation systems, acquisition, onboarding clarity, and product education.';
 
+const impactHighlights = [
+  '25K → 150K monthly organic traffic',
+  '₹15L → ₹50L+ monthly revenue',
+  'Documentation-led acquisition engine',
+];
+
 const problemPoints = [
   'Customer support was overloaded with repetitive setup and onboarding questions.',
   'Onboarding friction was limiting activation and conversions.',
@@ -231,15 +237,24 @@ export default function AlgoTestPage() {
               </p>
             </div>
 
+            <div className="grid gap-4 md:grid-cols-3">
+              {impactHighlights.map((item) => (
+                <div key={item} className="rounded-[8px] border-2 border-black bg-white p-4">
+                  <p className="algotest-eyebrow mb-2">Impact</p>
+                  <p className="text-base font-semibold leading-relaxed tracking-[-0.02em] text-[#111]">{item}</p>
+                </div>
+              ))}
+            </div>
+
             <div className="algotest-role-strip" aria-label="My role">
-              <span className="algotest-role-strip__label">My role</span>
+              <span className="algotest-role-strip__label">Role</span>
               <div className="algotest-role-strip__items">
                 {roleAreas.map((role) => (
                   <span key={role}>{role}</span>
                 ))}
               </div>
             </div>
-            <p className="text-sm md:text-base leading-relaxed text-[#55524d]">{roleScope}</p>
+            <p className="text-sm md:text-base leading-relaxed text-[#55524d]"><strong>Scope:</strong> {roleScope.replace('Scope: ', '')}</p>
 
             <ul className="algotest-highlight-list" aria-label="Key outcomes">
               {heroMetrics.map((metric) => (

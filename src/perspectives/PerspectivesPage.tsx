@@ -168,6 +168,12 @@ const roleSummary = {
   scope: 'Research, game design, simulation thinking, and facilitation framing',
 };
 
+const impactSummary = [
+  'Turned structural inequality into something playable and discussable',
+  'Made privilege, access, and compounding advantage legible through systems',
+  'Created a facilitation artifact for reflection, dialogue, and teaching',
+];
+
 function SectionHeader({ eyebrow, title, description }: { eyebrow?: string; title: string; description?: string }) {
   return (
     <header className="space-y-4">
@@ -326,6 +332,15 @@ export default function PerspectivesPage() {
                     <p className="perspectives-eyebrow mb-2">Scope</p>
                     <p className="text-base leading-relaxed text-[#444]">{roleSummary.scope}</p>
                   </div>
+                </div>
+
+                <div className="grid gap-4 md:grid-cols-3">
+                  {impactSummary.map((item) => (
+                    <div key={item} className="rounded-[8px] border-2 border-black bg-white p-4">
+                      <p className="perspectives-eyebrow mb-2">Impact</p>
+                      <p className="text-base font-semibold leading-relaxed tracking-[-0.02em] text-[#111]">{item}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
 

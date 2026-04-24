@@ -7,17 +7,17 @@ import artImage from '../../assets/hero-personas/art.png';
 import designImage from '../../assets/hero-personas/design.png';
 
 const roleAreas = [
-  'Design engineering',
-  'Product strategy',
-  'Backend systems',
-  'Growth & communication',
+  'Design Engineering',
+  'Product Strategy',
+  'Backend Systems',
+  'Growth & Communication',
 ];
 
 const impactProof = [
-  '150K monthly organic traffic at AlgoTest',
-  '3x revenue impact through docs-led growth',
-  '100K+ community built through Cynyassy',
-  'Backend-first product build through Coffee Tools',
+  'Scaled AlgoTest to 150K monthly organic traffic',
+  'Helped drive 3x revenue through documentation-led growth',
+  'Built backend-first product systems through Coffee Tools',
+  'Built a 100K+ storytelling community through Cynyassy',
 ];
 
 const personas = [
@@ -135,7 +135,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.34, duration: 0.5 }}
             >
-              Design engineer / hybrid product builder
+              Design Engineer / Hybrid Product Builder
             </motion.p>
 
             {/* Main title */}
@@ -145,20 +145,10 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-                <span className="block text-5xl md:text-5xl lg:text-[4.0rem] tracking-[-0.04em] leading-[1.1] mb-4 relative">
-                  <span className="inline-block transform hover:scale-105 transition-transform cursor-default">
-                    Design Engineer
-                  </span>
-                  <span className="text-[#FF4400] mx-3">•</span><br></br>
-                  <span className="inline-block transform hover:scale-105 transition-transform cursor-default">
-                    Product Builder
-                  </span>
-                  <span className="text-[#FF4400] mx-3">•</span><br></br>
-                  <span className="block mt-2">
-                    <span className="inline-block transform hover:scale-105 transition-transform cursor-default">
-                      Complex Systems
-                    </span>
-                  </span>
+                <span className="block text-5xl md:text-5xl lg:text-[4.0rem] tracking-[-0.04em] leading-[1.05] mb-4 relative">
+                  I build product systems
+                  <br />
+                  that drive growth
                 </span>
               </motion.h1>
 
@@ -169,7 +159,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              Design engineer for complex products, combining design, growth, and technical execution.
+              Across design, content, and engineering.
             </motion.p>
 
             <motion.p
@@ -178,7 +168,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
             >
-              Currently focused on product, design engineering, and hybrid product roles in complex or technical products.
+              From scaling AlgoTest to 150K monthly organic traffic to building backend tools, simulations, and storytelling systems, I work across the full product stack.
             </motion.p>
 
             <motion.div
@@ -206,6 +196,11 @@ export function HeroSection() {
                   </li>
                 ))}
               </ul>
+
+              <p className="text-sm md:text-base leading-relaxed text-[#444]">
+                I believe the strongest product systems come from solving real user problems once, then letting that
+                solution scale.
+              </p>
             </motion.div>
 
             {/* CTA */}

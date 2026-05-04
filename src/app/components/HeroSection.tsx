@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Instagram, Linkedin, Mail } from 'lucide-react';
 import { HeroProofCarousel } from './HeroProofCarousel';
 import { WireframeButton } from './wireframe/WireframeButton';
 import productDevelopmentImage from '../../assets/hero-personas/product-development.png';
@@ -18,6 +19,24 @@ const impactProof = [
   'Helped drive 3x revenue through documentation-led growth',
   'Built backend-first product systems through Coffee Tools',
   'Built a 100K+ storytelling community through Cynyassy',
+];
+
+const heroLinks = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/shashank-sharma-6a18437a/',
+    icon: Linkedin,
+  },
+  {
+    label: 'Instagram',
+    href: 'https://instagram.com/cynyassy',
+    icon: Instagram,
+  },
+  {
+    label: 'Email',
+    href: 'mailto:cynyassy@gmail.com',
+    icon: Mail,
+  },
 ];
 
 const personas = [
@@ -62,6 +81,31 @@ export function HeroSection() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white">
+      <motion.nav
+        className="absolute right-6 top-24 z-20 hidden items-center gap-2 lg:flex"
+        aria-label="Important profile links"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.35, duration: 0.45 }}
+      >
+        {heroLinks.map((link) => {
+          const Icon = link.icon;
+          return (
+          <a
+            key={link.label}
+            href={link.href}
+            target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+            rel={link.href.startsWith('mailto:') ? undefined : 'noreferrer'}
+            className="flex h-11 w-11 items-center justify-center rounded-[4px] border-2 border-black bg-white text-[#111] transition-colors hover:bg-[#FF4400] hover:text-white"
+            aria-label={link.label}
+            title={link.label}
+          >
+            <Icon size={20} strokeWidth={2.4} aria-hidden="true" />
+          </a>
+          );
+        })}
+      </motion.nav>
+
       {/* Background comic elements */}
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" viewBox="0 0 1200 800">
@@ -214,6 +258,31 @@ export function HeroSection() {
               <WireframeButton onClick={scrollToWork} variant="primary" className="w-auto">
                 Explore My Work
               </WireframeButton>
+            </motion.div>
+
+            <motion.div
+              className="mt-6 flex flex-wrap justify-center gap-2 lg:hidden"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.88, duration: 0.45 }}
+              aria-label="Important profile links"
+            >
+              {heroLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+                  rel={link.href.startsWith('mailto:') ? undefined : 'noreferrer'}
+                  className="flex h-11 w-11 items-center justify-center rounded-[4px] border-2 border-black bg-white text-[#111] transition-colors hover:bg-[#FF4400] hover:text-white"
+                  aria-label={link.label}
+                  title={link.label}
+                >
+                  <Icon size={20} strokeWidth={2.4} aria-hidden="true" />
+                </a>
+                );
+              })}
             </motion.div>
           </motion.div>
 

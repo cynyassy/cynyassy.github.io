@@ -70,14 +70,14 @@ export function ContactSection() {
           </motion.div>
 
           <h2 className="text-5xl md:text-7xl font-semibold tracking-[-0.06em] mb-8">
-            Let's Build Something
+            Ready for Product Work
             <br />
-            <span className="text-[#FF4400]">Interesting</span>
+            <span className="text-[#FF4400]">That Makes Complexity Clear</span>
           </h2>
 
           <p className="text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto opacity-80">
-            Whether you're tackling a complex problem, building a new product, 
-            or just want to chat about systems and design—I'd love to hear from you.
+            I&apos;m looking for product, design engineering, and hybrid roles where complex ideas need to become clear,
+            useful, and actionable for real users.
           </p>
         </motion.div>
 
@@ -130,17 +130,17 @@ export function ContactSection() {
               <div className="relative bg-white rounded-[4px] p-4 hover:bg-[#FF4400] transition-colors group">
                 <div aria-hidden="true" className="absolute border-2 border-[#333] border-solid inset-0 pointer-events-none rounded-[4px]" />
                 <p className="font-medium mb-2 text-[#333] group-hover:text-white">Product Roles</p>
-                <p className="opacity-70 text-[#333] group-hover:text-white">Design • Strategy • Systems</p>
+                <p className="opacity-70 text-[#333] group-hover:text-white">Strategy • Design Engineering • Growth</p>
               </div>
               <div className="relative bg-white rounded-[4px] p-4 hover:bg-[#FF4400] transition-colors group">
                 <div aria-hidden="true" className="absolute border-2 border-[#333] border-solid inset-0 pointer-events-none rounded-[4px]" />
-                <p className="font-medium mb-2 text-[#333] group-hover:text-white">Collaborations</p>
-                <p className="opacity-70 text-[#333] group-hover:text-white">Creative • Technical • Strategic</p>
+                <p className="font-medium mb-2 text-[#333] group-hover:text-white">Best-Fit Domains</p>
+                <p className="opacity-70 text-[#333] group-hover:text-white">Education • Technical Products • Behavior Change</p>
               </div>
               <div className="relative bg-white rounded-[4px] p-4 hover:bg-[#FF4400] transition-colors group">
                 <div aria-hidden="true" className="absolute border-2 border-[#333] border-solid inset-0 pointer-events-none rounded-[4px]" />
-                <p className="font-medium mb-2 text-[#333] group-hover:text-white">Projects</p>
-                <p className="opacity-70 text-[#333] group-hover:text-white">Challenging • Meaningful • Impactful</p>
+                <p className="font-medium mb-2 text-[#333] group-hover:text-white">Where I Help</p>
+                <p className="opacity-70 text-[#333] group-hover:text-white">Onboarding • Product Education • Prototypes</p>
               </div>
             </div>
           </WireframeCard>

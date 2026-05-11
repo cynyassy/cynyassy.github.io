@@ -48,6 +48,24 @@ const impactHighlights = [
   'Documentation-led acquisition engine',
 ];
 
+const clarityPoints = [
+  {
+    title: 'Setup became navigable',
+    description:
+      'Broker connections, signup steps, pricing, and product prerequisites were rewritten as clear paths instead of scattered support answers.',
+  },
+  {
+    title: 'Workflows became teachable',
+    description:
+      'Backtesting, live deployment, signals, and strategy logic were broken into reusable explanations that support and marketing could point to directly.',
+  },
+  {
+    title: 'Search became useful demand',
+    description:
+      'High-intent queries started landing on pages that solved real product problems, turning user confusion into qualified discovery.',
+  },
+];
+
 const problemPoints = [
   'Customer support was overloaded with repetitive setup and onboarding questions.',
   'Onboarding friction was limiting activation and conversions.',
@@ -221,10 +239,10 @@ export default function AlgoTestPage() {
                 </div>
               </div>
               <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] md:text-5xl">
-                Documentation led growth helped drive 3x revenue at AlgoTest
+                Made complex trading workflows searchable, teachable, and reusable
               </h1>
               <p className="text-2xl font-medium leading-tight text-[#1f1f1f] md:text-2xl">
-                Product education became the acquisition, onboarding, and support system.
+                Documentation-led growth helped drive 3x revenue at AlgoTest.
               </p>
               <p className="max-w-3xl text-lg leading-relaxed text-[#55524d] md:text-xl">
                 I built a documentation-led growth system that improved acquisition, onboarding, and support efficiency
@@ -244,6 +262,21 @@ export default function AlgoTestPage() {
                   <p className="text-base font-semibold leading-relaxed tracking-[-0.02em] text-[#111]">{item}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                <p className="algotest-eyebrow mb-2">Complexity</p>
+                <p className="text-base leading-relaxed text-[#444]">Trading workflows, broker setup, backtesting, strategy logic, and product onboarding.</p>
+              </div>
+              <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                <p className="algotest-eyebrow mb-2">Users</p>
+                <p className="text-base leading-relaxed text-[#444]">Traders trying to trust and use a technical fintech product without getting stuck in setup.</p>
+              </div>
+              <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                <p className="algotest-eyebrow mb-2">What changed</p>
+                <p className="text-base leading-relaxed text-[#444]">Recurring confusion became reusable product education, support leverage, and search demand.</p>
+              </div>
             </div>
 
             <div className="algotest-role-strip" aria-label="My role">
@@ -272,6 +305,13 @@ export default function AlgoTestPage() {
               This case study is strongest as <strong>documentation-led growth infrastructure</strong>: one system
               improving <strong>support efficiency</strong>, <strong>onboarding clarity</strong>, and
               <strong> qualified demand</strong> at the same time.
+            </p>
+            <p className="max-w-3xl rounded-[8px] border-2 border-black bg-white p-4 text-base font-semibold leading-relaxed text-[#111]">
+              In one line: I turned recurring support pain into a documentation-led growth engine.
+            </p>
+            <p className="max-w-3xl text-base md:text-lg leading-relaxed text-[#55524d]">
+              The product decision was simple: treat repeated confusion as a design signal. If the same question kept
+              appearing in support, it became a candidate for clearer explanation, better structure, and search visibility.
             </p>
           </div>
 
@@ -332,6 +372,23 @@ export default function AlgoTestPage() {
             title="The growth problem was actually a product education problem"
             description="If users cannot understand how to set up the product, connect brokers, or interpret workflows, growth stalls at multiple levels: acquisition, activation, and retention. Documentation was not just a support artifact. It became the missing product layer."
           />
+        </section>
+
+        <section className="space-y-10">
+          <SectionHeader
+            eyebrow="What Became Clear"
+            title="The work turned recurring confusion into a product surface"
+            description="The documentation mattered because it made the product easier to understand before, during, and after activation."
+          />
+
+          <div className="algotest-pillar-grid">
+            {clarityPoints.map((point) => (
+              <article key={point.title} className="algotest-pillar-card">
+                <h3>{point.title}</h3>
+                <p>{point.description}</p>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className="space-y-10">

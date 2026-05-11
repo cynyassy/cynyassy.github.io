@@ -4,21 +4,19 @@ import { HeroProofCarousel } from './HeroProofCarousel';
 import { WireframeButton } from './wireframe/WireframeButton';
 import productDevelopmentImage from '../../assets/hero-personas/product-development.png';
 import techstackBuilderImage from '../../assets/hero-personas/techstack_builder.png';
-import artImage from '../../assets/hero-personas/art.png';
 import designImage from '../../assets/hero-personas/design.png';
 
 const roleAreas = [
-  'Design Engineering',
   'Product Strategy',
-  'Backend Systems',
-  'Growth & Communication',
+  'Systems & Simulation Design',
+  'Building & Prototyping',
 ];
 
 const impactProof = [
-  'Scaled AlgoTest to 150K monthly organic traffic',
-  'Helped drive 3x revenue through documentation-led growth',
-  'Built backend-first product systems through Coffee Tools',
-  'Built a 100K+ storytelling community through Cynyassy',
+  '25K -> 150K monthly organic traffic at AlgoTest',
+  '₹15-18L -> ₹50L+ monthly revenue influenced by documentation-led growth',
+  'Made structural inequality playable through a board game simulation',
+  'Built a 100K+ community by making emotional learning accessible',
 ];
 
 const heroLinks = [
@@ -39,34 +37,27 @@ const heroLinks = [
   },
 ];
 
-const personas = [
+const capabilities = [
   {
-    title: 'Systems Thinker',
-    description: 'Designing simulations, feedback loops, and behavioral systems that reveal how outcomes emerge over time.',
+    title: 'Product Strategist',
+    description: 'Turning user confusion into clearer onboarding, stronger growth loops, and product decisions that move business outcomes.',
+    image: productDevelopmentImage,
+    targetId: 'algotest-growth-strategy',
+    className: 'md:-translate-y-4',
+  },
+  {
+    title: 'Systems & Simulation Designer',
+    description: 'Mapping connected parts, feedback loops, and cause-effect chains so complex behavior becomes easier to see and discuss.',
     image: designImage,
     targetId: 'perspectives',
-    className: 'md:-translate-y-2',
+    className: 'md:translate-y-8',
   },
   {
     title: 'Builder',
-    description: 'Building real systems end-to-end with backend logic, APIs, databases, and working prototypes.',
+    description: 'Building working tools, prototypes, APIs, and interfaces that turn ideas into something people can actually use.',
     image: techstackBuilderImage,
     targetId: 'coffee-tools',
-    className: 'md:translate-y-12',
-  },
-  {
-    title: 'Product Strategist',
-    description: 'Improving onboarding, growth, and product outcomes by connecting user behavior to business impact.',
-    image: productDevelopmentImage,
-    targetId: 'algotest-growth-strategy',
-    className: 'md:-translate-y-6',
-  },
-  {
-    title: 'Storyteller',
-    description: 'Communicating ideas through narrative, comics, and simple stories that make complex ideas accessible.',
-    image: artImage,
-    targetId: 'cynyassy-platform',
-    className: 'md:translate-y-10',
+    className: 'md:-translate-y-2',
   },
 ];
 
@@ -190,9 +181,9 @@ export function HeroSection() {
               transition={{ delay: 0.4 }}
             >
                 <span className="block text-5xl md:text-5xl lg:text-[4.0rem] tracking-[-0.04em] leading-[1.05] mb-4 relative">
-                  I build product systems
+                  I make complex products
                   <br />
-                  that drive growth
+                  easier to understand
                 </span>
               </motion.h1>
 
@@ -203,7 +194,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              Across design, content, and engineering.
+              Across product strategy, systems design, and technical execution.
             </motion.p>
 
             <motion.p
@@ -212,7 +203,8 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
             >
-              From scaling AlgoTest to 150K monthly organic traffic to building backend tools, simulations, and storytelling systems, I work across the full product stack.
+              From turning AlgoTest&apos;s trading workflows into a documentation-led growth engine to building
+              simulations, backend tools, and visual stories, I help people understand and act inside complex domains.
             </motion.p>
 
             <motion.div
@@ -242,8 +234,8 @@ export function HeroSection() {
               </ul>
 
               <p className="text-sm md:text-base leading-relaxed text-[#444]">
-                I believe the strongest product systems come from solving real user problems once, then letting that
-                solution scale.
+                My throughline is making complex technical and behavioral ideas clear enough that non-expert users
+                can decide, learn, and move forward.
               </p>
             </motion.div>
 
@@ -294,12 +286,12 @@ export function HeroSection() {
           >
             <div className="absolute inset-0 rounded-[28px] bg-[radial-gradient(circle_at_top,_rgba(255,68,0,0.08),_transparent_55%)]" />
             <div className="relative grid gap-5 sm:grid-cols-2">
-              {personas.map((persona, index) => (
+              {capabilities.map((capability, index) => (
                 <motion.button
-                  key={persona.title}
+                  key={capability.title}
                   type="button"
-                  onClick={() => scrollToProject(persona.targetId)}
-                  className={`relative bg-white p-5 rounded-[18px] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-4 border-black min-h-[23rem] text-left ${persona.className}`}
+                  onClick={() => scrollToProject(capability.targetId)}
+                  className={`relative bg-white p-5 rounded-[18px] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-4 border-black min-h-[21rem] text-left ${capability.className}`}
                   initial={{ opacity: 0, y: 24, rotate: index === 1 ? 2 : -2 }}
                   animate={{ opacity: 1, y: 0, rotate: index === 1 ? 2 : -2 }}
                   transition={{ delay: 0.75 + index * 0.12, duration: 0.55 }}
@@ -307,21 +299,21 @@ export function HeroSection() {
                   whileTap={{ scale: 0.985 }}
                 >
                   <div className="absolute -top-3 left-4 inline-flex items-center rounded-full border-2 border-black bg-[#FF4400] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white">
-                    Persona {index + 1}
+                    Capability {index + 1}
                   </div>
                   <div className="aspect-[5/4] overflow-hidden rounded-[12px] border-2 border-black bg-[#f7f7f7]">
                     <img
-                      src={persona.image}
-                      alt={`${persona.title} persona illustration`}
+                      src={capability.image}
+                      alt={`${capability.title} capability illustration`}
                       className="h-full w-full object-contain"
                     />
                   </div>
                   <div className="pt-4">
                     <p className="text-xl md:text-2xl font-semibold text-black tracking-[-0.03em]">
-                      {persona.title}
+                      {capability.title}
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-[#555]">
-                      {persona.description}
+                      {capability.description}
                     </p>
                     <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#FF4400]">
                       <span>Jump to related project</span>

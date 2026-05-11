@@ -9,28 +9,22 @@ type SkillCard = {
 
 const skillCards: SkillCard[] = [
   {
-    id: 'systems-thinker',
-    title: 'Systems Thinking',
+    id: 'product-strategy',
+    title: 'Product Strategy & Growth',
+    description: 'Turning user pain into clearer onboarding, acquisition loops, measurable outcomes, and sharper product decisions.',
+    skills: ['Growth Strategy', 'Onboarding', 'SEO', 'Analytics', 'Product Education'],
+  },
+  {
+    id: 'systems-design',
+    title: 'Systems & Simulation Design',
     description: 'Understanding how structure, rules, incentives, and feedback loops shape behavior over time.',
     skills: ['Game Design', 'Simulations', 'Service Design', 'Systems Mapping', 'Design Research'],
   },
   {
     id: 'builder',
     title: 'Building & Technical Execution',
-    description: 'Turning ideas into functional systems across backend logic, APIs, data models, and prototypes.',
+    description: 'Turning ideas into working tools across backend logic, APIs, data models, prototypes, and visual communication.',
     skills: ['Backend Systems', 'TypeScript', 'APIs', 'Databases', 'Prototyping'],
-  },
-  {
-    id: 'product-strategy',
-    title: 'Product Strategy & Growth',
-    description: 'Solving user problems while improving acquisition, onboarding, experimentation, and measurable outcomes.',
-    skills: ['Growth Strategy', 'Onboarding', 'SEO', 'Analytics', 'Experimentation'],
-  },
-  {
-    id: 'storytelling',
-    title: 'Storytelling & Communication',
-    description: 'Making complex ideas simpler and more memorable through narrative, content systems, and visual communication.',
-    skills: ['Narrative Design', 'Comics', 'Content Systems', 'Audience Learning', 'Brand Voice'],
   },
 ];
 
@@ -49,7 +43,7 @@ export function SkillsNetwork() {
         </h2>
       </motion.div>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+      <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-3">
         {skillCards.map((card, index) => (
           <motion.article
             key={card.id}

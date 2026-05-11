@@ -32,11 +32,12 @@ export function AboutSection() {
             What I&apos;m looking for
           </h2>
           <p className="max-w-3xl mx-auto text-lg leading-relaxed text-white/80">
-            I&apos;m looking for hybrid product roles in complex or technical products, where understanding users,
-            shaping systems, and executing across design, content, and engineering all matter.
+            I&apos;m looking for product, design engineering, or hybrid product roles where complex ideas need to
+            become clear enough for non-expert users to trust, learn, and act.
           </p>
           <p className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed text-white/65">
-            My edge is that I can bridge these areas instead of operating in only one lane.
+            My edge is bridging strategy, design, communication, and technical execution instead of operating in only
+            one lane.
           </p>
         </motion.div>
 
@@ -53,24 +54,30 @@ export function AboutSection() {
                   Product roles where complexity needs translation
                 </h3>
                 <p className="text-base md:text-lg leading-relaxed text-[#444]">
-                  I&apos;m strongest in environments where the product is non-trivial: technical systems, education-heavy
-                  products, behavior-driven workflows, or early-stage teams where someone needs to connect user
-                  understanding, execution, and communication.
+                  I&apos;m strongest in environments where the product is non-trivial: technical workflows, education-heavy
+                  experiences, behavior-driven products, or early-stage teams where someone needs to connect user
+                  understanding with execution.
                 </p>
                 <ul className="space-y-3 text-[#222]">
                   <li className="flex items-start gap-3">
                     <span className="mt-2 h-2 w-2 shrink-0 bg-[#FF4400]" />
-                    <span>Complex or technical products where user understanding is non-trivial</span>
+                    <span>Complex or technical products where onboarding is hard</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-2 h-2 w-2 shrink-0 bg-[#FF4400]" />
-                    <span>Education-heavy or behavior-driven systems</span>
+                    <span>Education-heavy products that need clearer explanation and trust</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-2 h-2 w-2 shrink-0 bg-[#FF4400]" />
-                    <span>Early-stage or evolving teams where systems still need to be shaped</span>
+                    <span>Behavior-driven products where understanding changes what people do</span>
                   </li>
                 </ul>
+                <div className="rounded-[6px] border-2 border-black bg-[#FF4400] p-4 text-white">
+                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white/80">Best fit</p>
+                  <p className="mt-2 text-base font-semibold leading-relaxed">
+                    Complex products, education-heavy tools, technical onboarding, and behavior-change products.
+                  </p>
+                </div>
               </div>
             </WireframeCard>
           </motion.div>
@@ -99,7 +106,7 @@ export function AboutSection() {
                 </ul>
                 <p className="text-base leading-relaxed text-[#555]">
                   This loop shaped how I worked at AlgoTest and how I now build independently across product strategy,
-                  systems design, backend learning, and storytelling.
+                  systems design, backend learning, and visual communication.
                 </p>
               </div>
             </WireframeCard>

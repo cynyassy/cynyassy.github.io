@@ -170,8 +170,27 @@ const roleSummary = {
 
 const impactSummary = [
   'Turned structural inequality into something playable and discussable',
-  'Made privilege, access, and compounding advantage legible through systems',
+  'Made privilege, access, and compounding advantage visible through play',
   'Created a facilitation artifact for reflection, dialogue, and teaching',
+];
+
+const visibilityChain = [
+  {
+    title: 'Starting position',
+    description: 'Where a player begins on the board changes what resources they can reach first.',
+  },
+  {
+    title: 'Opportunity',
+    description: 'Early access changes what players can extract, build, trade, or protect.',
+  },
+  {
+    title: 'Institutions',
+    description: 'Buildings turn temporary advantage into durable protection and compounding resilience.',
+  },
+  {
+    title: 'Crisis response',
+    description: 'Scenario cards reveal who can absorb shocks and who collapses when the system is stressed.',
+  },
 ];
 
 function SectionHeader({ eyebrow, title, description }: { eyebrow?: string; title: string; description?: string }) {
@@ -297,7 +316,7 @@ export default function PerspectivesPage() {
                   <p className="perspectives-eyebrow">Case Study</p>
                   <div className="space-y-4">
                     <h1 className="text-6xl md:text-8xl lg:text-[4.5rem] font-semibold leading-[0.98] tracking-[-0.07em] inline-block relative text-[#171717]">
-                      A board game about how systems create inequality
+                      Making structural inequality playable
                       <span aria-hidden="true" className="absolute left-0 bottom-2 h-3 md:h-4 w-full bg-[#ffdf00] -z-10" />
                     </h1>
                     <p className="max-w-3xl text-xl md:text-1xl leading-relaxed text-[#3d3d3d]">
@@ -342,6 +361,25 @@ export default function PerspectivesPage() {
                     </div>
                   ))}
                 </div>
+
+                <p className="rounded-[8px] border-2 border-black bg-white p-4 text-base font-semibold leading-relaxed text-[#111]">
+                  In one line: I turned abstract inequality into a playable model of cause, consequence, and compounding advantage.
+                </p>
+
+                <div className="grid gap-4 md:grid-cols-3">
+                  <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                    <p className="perspectives-eyebrow mb-2">Complexity</p>
+                    <p className="text-base leading-relaxed text-[#444]">Privilege, geography, institutions, crisis, and compounding advantage.</p>
+                  </div>
+                  <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                    <p className="perspectives-eyebrow mb-2">Users</p>
+                    <p className="text-base leading-relaxed text-[#444]">Players, facilitators, educators, and groups trying to discuss inequity without flattening it.</p>
+                  </div>
+                  <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                    <p className="perspectives-eyebrow mb-2">What changed</p>
+                    <p className="text-base leading-relaxed text-[#444]">Abstract structural forces became visible through choices, turns, shocks, and consequences.</p>
+                  </div>
+                </div>
               </div>
 
               <div className="space-y-4">
@@ -370,6 +408,29 @@ export default function PerspectivesPage() {
               description="This is the first playable digital proof, not the full simulation. It captures the core thesis in a lightweight canvas model, while the deeper design process and supporting artifacts continue below."
             />
             <PerspectivesPlayableProof />
+          </div>
+        </section>
+
+        <section className="px-6 py-20 border-b border-black bg-white" id="what-became-visible">
+          <div className="max-w-6xl mx-auto space-y-10">
+            <SectionHeader
+              eyebrow="What Became Visible"
+              title="The game makes cause and effect visible across turns"
+              description="Instead of asking players to accept an abstract argument, Perspectives lets them watch one condition influence the next."
+            />
+
+            <div className="grid gap-5 md:grid-cols-4">
+              {visibilityChain.map((item, index) => (
+                <article key={item.title} className="relative rounded-[8px] border-2 border-black bg-white p-5">
+                  <p className="perspectives-eyebrow mb-3">0{index + 1}</p>
+                  <h3 className="mb-3 text-2xl font-semibold tracking-[-0.03em] text-[#222]">{item.title}</h3>
+                  <p className="text-base leading-relaxed text-[#4d4d4d]">{item.description}</p>
+                  {index < visibilityChain.length - 1 ? (
+                    <span className="absolute -right-4 top-1/2 z-10 hidden -translate-y-1/2 bg-white px-1 text-xl font-semibold md:block">→</span>
+                  ) : null}
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 

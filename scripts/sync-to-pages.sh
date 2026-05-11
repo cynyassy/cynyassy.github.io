@@ -14,6 +14,7 @@ fi
 rsync -av \
   --delete \
   --exclude ".git" \
+  --exclude ".portfolio-memory" \
   --exclude "node_modules" \
   --exclude "dist" \
   --exclude ".DS_Store" \

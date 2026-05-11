@@ -17,7 +17,8 @@ type CaseStudyLink = {
 interface Project {
   title: string;
   headline: string;
-  persona: string;
+  oneLine: string;
+  role: string;
   category: string;
   problem: string;
   approach: string;
@@ -117,17 +118,18 @@ const projects: Project[] = [
   {
     id: 'algotest-growth-strategy',
     title: 'AlgoTest',
-    headline: 'How documentation-led growth helped drive 3x revenue',
-    persona: 'Product & Growth',
+    headline: 'Made complex trading workflows searchable, teachable, and reusable',
+    oneLine: 'In one line: I turned recurring support pain into a documentation-led growth engine.',
+    role: 'Product Strategy / Growth Systems',
     category: 'Growth Strategy',
     problem:
-      'AlgoTest needed stronger acquisition and activation: better SEO visibility, better onboarding, and a more coherent path from first visit to product value.',
+      'AlgoTest was a powerful technical trading platform, but growth was constrained by comprehension: users needed help understanding setup, broker connections, product workflows, and trading logic before they could reach product value.',
     approach:
-      'I treated growth as a product problem by improving onboarding, tightening the user journey, strengthening SEO strategy, and using analytics to connect changes to real business outcomes.',
+      'I treated recurring user confusion as product infrastructure: answer once in documentation, reuse it in support, rank it in search, and turn education into a durable acquisition and onboarding layer.',
     outcome:
-      'This case study shows product strategy in action: clearer activation, better discovery, and measurable business impact across traffic, engagement, and revenue.',
-    highlights: ['SEO growth', 'Onboarding improvements', 'Analytics-backed product decisions'],
-    metrics: ['Organic traffic: 25K -> 150K/month', 'Revenue impact: 3x growth', 'Improved onboarding and engagement'],
+      'Monthly organic traffic grew from 25K to 150K and monthly revenue moved from ₹15-18L to ₹50L+, showing how useful product education can compound into qualified demand and business impact.',
+    highlights: ['Documentation-led acquisition', 'Support-informed onboarding', 'Analytics-backed product decisions'],
+    metrics: ['Organic traffic: 25K -> 150K/month', 'Revenue: ₹15-18L -> ₹50L+/month', 'Domain Rating: 23 -> 37'],
     links: [
       { label: 'Open case study', href: 'projects/algotest.html' },
     ],
@@ -138,15 +140,16 @@ const projects: Project[] = [
   {
     id: 'perspectives',
     title: 'Perspectives',
-    headline: 'A board game about how systems create inequality',
-    persona: 'Systems Design / Simulation Thinking',
+    headline: 'Making structural inequality playable',
+    oneLine: 'In one line: I turned abstract inequality into a playable model of cause, consequence, and compounding advantage.',
+    role: 'Systems & Simulation Design',
     category: 'Thesis / Board Game',
     problem:
       'How do you help people understand privilege, institutional power, and unequal starting conditions without turning the learning experience into a lecture?',
     approach:
-      'I translated systems thinking into a playable board game with geography, compounding advantage, protection mechanics, and crisis events so players could experience structural inequality through rules and consequences.',
+      'I translated connected causes into play: geography shapes access, access shapes resources, resources shape institutions, and institutions shape survival when crisis hits.',
     outcome:
-      'The project became a case study in behavior design and systems translation, showing how mechanics, progression, and world rules can make invisible systems legible.',
+      'The project became a case study in making invisible relationships visible, showing how mechanics, progression, and world rules can help people discuss structural inequality without turning the experience into a lecture.',
     highlights: ['System design thinking', 'Mechanics and behavior design', 'Board and game visual framing'],
     links: [
       { label: 'Open case study', href: 'projects/perspectives.html' },
@@ -158,8 +161,9 @@ const projects: Project[] = [
   {
     id: 'coffee-tools',
     title: 'Coffee Tools',
-    headline: 'Designing a bag-centered brew tracker for repeatability',
-    persona: 'Design Engineer / Product Builder',
+    headline: 'Turning coffee experimentation into a trackable product model',
+    oneLine: 'In one line: I translated a messy enthusiast workflow into a structured backend-first product model.',
+    role: 'Product Builder / Backend-First Tooling',
     category: 'Backend / Product System',
     problem:
       'As someone buying multiple bags at once and switching between a J-Ultra, ZP6, Baratza Encore ESP, and Timemore C2, I found most coffee logging tools too laborious for the one thing that matters most: consistency.',
@@ -179,15 +183,16 @@ const projects: Project[] = [
   {
     id: 'cynyassy-platform',
     title: 'Cynyassy / ChaddiMan',
-    headline: 'Building a 100K community through emotional storytelling',
-    persona: 'Storytelling Systems / User Insight',
+    headline: 'Making emotional learning simple enough to share with 100K+ people',
+    oneLine: 'In one line: I made difficult emotional ideas simple, visual, and shareable enough to build community.',
+    role: 'Visual Communication / Audience Insight',
     category: 'Platform / Content System',
     problem:
-      'How do you make ideas around emotion, mental health, and inner life feel approachable enough that people actually engage with them instead of scrolling past them?',
+      'How do you make ideas around emotion, mental health, and inner life approachable enough that people feel seen, share them, and return to them?',
     approach:
-      'I treated Cynyassy as a platform, not just an art feed: ideation, comic-based storytelling, content creation, iteration, and audience learning all work together to make mental health more accessible through narrative.',
+      'I treated Cynyassy as community education and care: simple comics, repeated publishing, audience feedback, and visual storytelling worked together to make emotional learning easier to enter.',
     outcome:
-      'The platform shows what resonates when storytelling is simple, specific, and repeatable. It became both a creative system and a way to learn what audiences respond to over time.',
+      'The platform grew to 100K+ followers and thousands of messages of appreciation, showing how simple visual stories can build trust around difficult emotional topics.',
     highlights: [
       'Content philosophy: "A story worth telling is worth telling simply"',
       'Mental health made accessible through storytelling',
@@ -214,7 +219,7 @@ export function FeaturedWork() {
           viewport={{ once: true }}
         >
           <h2 className="text-5xl md:text-6xl font-semibold tracking-[-0.05em] mb-4">Case Studies</h2>
-          <p className="text-lg opacity-60">Four personas • Four projects • Problem → Approach → Outcome</p>
+          <p className="text-lg opacity-60">Four proofs of one throughline: making complexity usable</p>
         </motion.div>
 
         <div className="space-y-16">
@@ -253,8 +258,14 @@ export function FeaturedWork() {
 
                   <div className="order-1 md:order-2">
                     <div className="flex flex-wrap items-center gap-3 mb-4">
+                      {index === 0 ? (
+                        <div className="relative inline-block bg-black px-4 py-1 text-sm rounded-[4px]">
+                          <span className="text-sm font-medium text-white">Featured Case Study</span>
+                          <div aria-hidden="true" className="absolute border-2 border-black border-solid inset-0 pointer-events-none rounded-[4px]" />
+                        </div>
+                      ) : null}
                       <div className="relative inline-block bg-white px-4 py-1 text-sm rounded-[4px]">
-                        <span className="text-sm font-medium text-[#333]">{project.persona}</span>
+                        <span className="text-sm font-medium text-[#333]">{project.role}</span>
                         <div aria-hidden="true" className="absolute border-2 border-black border-solid inset-0 pointer-events-none rounded-[4px]" />
                       </div>
                       <div className="relative inline-block bg-[#FF4400] px-4 py-1 text-sm rounded-[4px]">
@@ -280,6 +291,10 @@ export function FeaturedWork() {
                     <h3 className="mb-6 text-3xl md:text-4xl font-semibold tracking-[-0.04em] text-[#111]">
                       {project.headline}
                     </h3>
+
+                    <p className="mb-6 rounded-[8px] border-2 border-black bg-white p-4 text-base font-semibold leading-relaxed text-[#222]">
+                      {project.oneLine}
+                    </p>
 
                     <div className="space-y-6">
                       <div>
@@ -374,7 +389,7 @@ export function FeaturedWork() {
           viewport={{ once: true }}
         >
           <WireframeButton variant="secondary" className="inline-block">
-            Four personas. Four case studies. One practice.
+            Strategy. Systems design. Building. One practice.
           </WireframeButton>
         </motion.div>
       </div>

@@ -2,19 +2,19 @@ import { motion } from 'motion/react';
 
 const aiLanes = [
   {
-    title: 'Design exploration',
+    title: 'Research and synthesis',
     description:
-      'I use AI to get to a strong first draft faster: testing flows, structuring interfaces, and exploring directions before I refine them with judgment.',
+      'I use AI to summarize messy inputs, compare feedback, extract patterns, and turn raw notes into sharper product questions.',
   },
   {
-    title: 'Engineering acceleration',
+    title: 'Design and prototyping',
     description:
-      'I use AI to scaffold implementation, debug faster, and reduce the time between an idea, a prototype, and something that actually works.',
+      'I use AI to explore flows, draft interface states, pressure-test copy, and move from concept to prototype faster.',
   },
   {
-    title: 'System thinking',
+    title: 'Engineering and QA',
     description:
-      'I use AI to pressure-test concepts, map complexity, and turn vague product ideas into decisions I can actually design or build from.',
+      'I use AI to scaffold implementation, debug issues, review edge cases, and shorten the loop between idea and working code.',
   },
 ];
 
@@ -30,12 +30,11 @@ export function AIWorkflowSection() {
         >
           <p className="mb-3 text-[0.78rem] uppercase tracking-[0.22em] text-[#666]">AI Workflow</p>
           <h2 className="text-4xl font-semibold tracking-[-0.05em] text-[#111] md:text-5xl">
-            How I Use AI
+            How I use AI to speed up design and engineering loops
           </h2>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#4e4e4e]">
-            I use AI as part of how I think, prototype, design, and build. It helps me move faster from
-            a rough idea to something testable, whether that means shaping a product flow, exploring an
-            interface, or accelerating implementation.
+            I use AI as a collaborator for faster iteration, not as a replacement for judgment. It helps me move from
+            messy inputs to clearer decisions, then from decisions to prototypes, implementation, and QA.
           </p>
         </motion.div>
 
@@ -62,8 +61,8 @@ export function AIWorkflowSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Used across product exploration, case-study writing, interface iteration, and implementation
-          workflows for Coffee Tools, Perspectives, AlgoTest, and this portfolio itself.
+          Used across product exploration, case-study writing, interface iteration, implementation, and review workflows
+          for Coffee Tools, Perspectives, AlgoTest, and this portfolio itself.
         </motion.p>
       </div>
     </section>

@@ -118,6 +118,25 @@ const impactSummary = [
   'Created community care, resonance, and long-term audience trust',
 ];
 
+const clarityPoints = [
+  {
+    title: 'Inner states',
+    description: 'Anxiety, shame, loneliness, suffering, and self-doubt became easier to name without clinical language.',
+  },
+  {
+    title: 'Emotional regulation',
+    description: 'Heavy ideas were softened through humor, pacing, simple characters, and gentle reframing.',
+  },
+  {
+    title: 'Community signals',
+    description: 'Shares, saves, comments, and messages revealed what people felt seen by and returned to.',
+  },
+  {
+    title: 'Care as format',
+    description: 'The work became a repeatable way to offer language, comfort, and perspective at small scale and large scale.',
+  },
+];
+
 const formatExperiments = [
   {
     label: 'Comic system',
@@ -241,10 +260,10 @@ export default function CynyassyPage() {
             <div className="space-y-5">
               <p className="cynyassy-eyebrow">Storytelling System / Audience Understanding</p>
               <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] md:text-5xl">
-                Building a <span className="text-[#FF4400]">100K+</span> community through emotional storytelling
+                Making emotional learning simple enough to share with <span className="text-[#FF4400]">100K+</span> people
               </h1>
               <p className="text-2xl font-medium leading-tight text-[#1f1f1f] md:text-3xl">
-                A storytelling system for mental health education, community care, and audience understanding.
+                A community built through mental health education, care, and audience understanding.
               </p>
               <p className="max-w-3xl text-lg leading-relaxed text-[#55524d] md:text-xl">
                 Cynyassy started after a difficult stretch in my twenties, when I spent years trying to understand my
@@ -272,6 +291,25 @@ export default function CynyassyPage() {
                   <p className="text-base font-semibold leading-relaxed tracking-[-0.02em] text-[#111]">{item}</p>
                 </div>
               ))}
+            </div>
+
+            <p className="rounded-[8px] border-2 border-black bg-white p-4 text-base font-semibold leading-relaxed text-[#111]">
+              In one line: I made difficult emotional ideas simple, visual, and shareable enough to build community.
+            </p>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                <p className="cynyassy-eyebrow mb-2">Complexity</p>
+                <p className="text-base leading-relaxed text-[#444]">Mental health, emotional regulation, shame, self-worth, and everyday inner conflict.</p>
+              </div>
+              <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                <p className="cynyassy-eyebrow mb-2">Community</p>
+                <p className="text-base leading-relaxed text-[#444]">People looking for language, comfort, humor, and a softer way into difficult emotional material.</p>
+              </div>
+              <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                <p className="cynyassy-eyebrow mb-2">What changed</p>
+                <p className="text-base leading-relaxed text-[#444]">Private emotional experiences became simple visual stories people could share and return to.</p>
+              </div>
             </div>
 
             <ul className="cynyassy-highlight-list" aria-label="Key outcomes">
@@ -336,6 +374,23 @@ export default function CynyassyPage() {
                 <h3>{layer.title}</h3>
                 <p>{layer.description}</p>
                 <div className="cynyassy-layer-card__insight">{layer.insight}</div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="space-y-10">
+          <SectionHeader
+            eyebrow="What Became Easier To Hold"
+            title="The comics made difficult inner experiences easier to hold"
+            description="The point was not just audience growth. It was community education and care: making emotional ideas simple enough that people could recognize themselves without feeling overwhelmed."
+          />
+
+          <div className="cynyassy-layer-grid">
+            {clarityPoints.map((point) => (
+              <article key={point.title} className="cynyassy-layer-card">
+                <h3>{point.title}</h3>
+                <p>{point.description}</p>
               </article>
             ))}
           </div>

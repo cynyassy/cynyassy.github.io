@@ -86,6 +86,25 @@ const impactSummary = [
   'Connected product structure to backend thinking and data design',
 ];
 
+const clarityPoints = [
+  {
+    title: 'The bag lifecycle',
+    description: 'Which coffees are active, aging, peaking, archived, or worth returning to.',
+  },
+  {
+    title: 'The brew history',
+    description: 'How method, grinder, dose, water, rating, and notes connect back to one specific bag.',
+  },
+  {
+    title: 'The best result',
+    description: 'Which recipe worked best so repeatability becomes visible instead of dependent on memory.',
+  },
+  {
+    title: 'The backend model',
+    description: 'How authentication, API logic, database records, and analytics support the product flow.',
+  },
+];
+
 function ScreenCarousel({
   items,
   label,
@@ -243,10 +262,10 @@ export default function CoffeeToolsPage() {
             <div className="space-y-5">
               <p className="coffee-tools-eyebrow">Coffee Tools</p>
               <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] md:text-5xl">
-                Designing a bag-centered brew tracker for repeatability
+                Turning coffee experimentation into a trackable product model
               </h1>
               <p className="text-2xl font-medium leading-tight text-[#1f1f1f] md:text-3xl">
-                A product and backend system built around how serious home brewers actually work
+                A backend-first prototype built around how serious home brewers actually work
               </p>
               <p className="max-w-3xl text-lg leading-relaxed text-[#4f4f4f] md:text-xl">
                 I buy multiple bags of coffee at the same time and switch between a J-Ultra, ZP6, Baratza Encore ESP,
@@ -273,6 +292,25 @@ export default function CoffeeToolsPage() {
                   <p className="text-base font-semibold leading-relaxed tracking-[-0.02em] text-[#111]">{item}</p>
                 </div>
               ))}
+            </div>
+
+            <p className="rounded-[8px] border-2 border-black bg-white p-4 text-base font-semibold leading-relaxed text-[#111]">
+              In one line: I translated a messy enthusiast workflow into a structured backend-first product model.
+            </p>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                <p className="coffee-tools-eyebrow mb-2">Complexity</p>
+                <p className="text-base leading-relaxed text-[#444]">Multi-bag rotation, grinder changes, roast age, brew notes, ratings, and repeat attempts.</p>
+              </div>
+              <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                <p className="coffee-tools-eyebrow mb-2">Users</p>
+                <p className="text-base leading-relaxed text-[#444]">Serious home brewers who want consistency without turning coffee into admin work.</p>
+              </div>
+              <div className="rounded-[8px] border-2 border-black bg-white p-4">
+                <p className="coffee-tools-eyebrow mb-2">What changed</p>
+                <p className="text-base leading-relaxed text-[#444]">A messy enthusiast workflow became a structured product and backend model.</p>
+              </div>
             </div>
 
             <dl className="coffee-tools-hero-meta">
@@ -348,6 +386,23 @@ export default function CoffeeToolsPage() {
               <article key={pillar.title} className="coffee-tools-pillar-card">
                 <h3>{pillar.title}</h3>
                 <p>{pillar.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="space-y-10">
+          <SectionHeader
+            eyebrow="What Became Visible"
+            title="The product makes repeatability easier to see"
+            description="The core value is not logging for its own sake. It is making relationships between coffee, grinder, recipe, and outcome visible enough to improve the next brew."
+          />
+
+          <div className="coffee-tools-pillars">
+            {clarityPoints.map((point) => (
+              <article key={point.title} className="coffee-tools-pillar-card">
+                <h3>{point.title}</h3>
+                <p>{point.description}</p>
               </article>
             ))}
           </div>

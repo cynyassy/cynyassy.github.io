@@ -8,20 +8,20 @@ type HeroLine = {
 /* Change the lines here. Keep the `hl` span around the proof you want accented. */
 const heroLines: HeroLine[] = [
   {
-    plain: 'Scaled organic traffic from 25K to 150K/month and helped drive 3x revenue through SEO.',
-    html: 'Scaled organic traffic from <span class="hl">25K to 150K/month</span> and helped drive <span class="hl">3x revenue</span> through SEO.',
+    plain: 'Scaled organic traffic from 25K to 150K/month and helped drive 3x revenue through documentation-led growth.',
+    html: 'Scaled organic traffic from <span class="hl">25K to 150K/month</span> and helped drive <span class="hl">3x revenue</span> through documentation-led growth.',
   },
   {
     plain: 'Built a 100K+ audience storytelling brand by understanding what people actually respond to.',
     html: 'Built a <span class="hl">100K+ audience</span> storytelling brand by understanding what people actually respond to.',
   },
   {
-    plain: 'Turned product complexity into clear systems that improved onboarding, retention, and feature adoption.',
-    html: 'Turned product complexity into <span class="hl">clear systems</span> that improved onboarding, retention, and feature adoption.',
+    plain: 'Turned product complexity into clearer onboarding, education, and feature adoption.',
+    html: 'Turned product complexity into <span class="hl">clearer onboarding</span>, education, and feature adoption.',
   },
   {
-    plain: 'Built backend product systems end-to-end, from authentication and APIs to databases and deployment.',
-    html: 'Built backend product systems <span class="hl">end-to-end</span>, from authentication and APIs to databases and deployment.',
+    plain: 'Built backend tools end-to-end, from authentication and APIs to databases and deployment.',
+    html: 'Built backend tools <span class="hl">end-to-end</span>, from authentication and APIs to databases and deployment.',
   },
 ];
 

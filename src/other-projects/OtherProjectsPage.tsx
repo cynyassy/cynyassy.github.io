@@ -1,48 +1,7 @@
-import { ArrowRight, Blocks, Gamepad2, Layers3 } from 'lucide-react';
+import { ArrowRight, BookOpen, ExternalLink } from 'lucide-react';
 import { CustomCursor } from '../app/components/CustomCursor';
+import emotionIdentifierCover from '../assets/other-projects/emotion-identifier-cover.png';
 import '../styles/other-projects.css';
-
-const projectBuckets = [
-  {
-    title: 'Board & Card Game Systems',
-    status: 'Planned',
-    description:
-      'A place for tabletop concepts, rule experiments, and card-game systems that explore behavior, institutions, decisions, and tradeoffs through play.',
-    examples: ['Future card games', 'Board game prototypes', 'Rulebooks and balancing experiments'],
-  },
-  {
-    title: 'Interactive Learning Games',
-    status: 'In progress',
-    description:
-      'Smaller browser-based interactives that make systems, psychology, and ideas easier to test and understand through direct participation.',
-    examples: ['Mini simulations', 'Educational explainers', 'Playable system demos'],
-  },
-  {
-    title: 'Creative Tools & Miscellaneous Builds',
-    status: 'Open shelf',
-    description:
-      'Projects that do not belong inside the four core case studies yet, but still show how I explore, prototype, and build across formats.',
-    examples: ['Narrative tools', 'Experimental interfaces', 'Small publishing or design builds'],
-  },
-];
-
-const nextUp = [
-  {
-    icon: <Blocks size={28} />,
-    title: 'Card game concepts',
-    note: 'Systems, tradeoffs, and player behavior through simple analog mechanics.',
-  },
-  {
-    icon: <Gamepad2 size={28} />,
-    title: 'Interactable web games',
-    note: 'Compact browser-based ideas that teach by letting people test the system themselves.',
-  },
-  {
-    icon: <Layers3 size={28} />,
-    title: 'Creative experiments',
-    note: 'A flexible shelf for side builds that may later grow into full case studies.',
-  },
-];
 
 export default function OtherProjectsPage() {
   return (
@@ -59,69 +18,111 @@ export default function OtherProjectsPage() {
 
       <main className="mx-auto flex max-w-6xl flex-col gap-20 px-6 py-12 md:px-10 md:py-16">
         <section className="space-y-8">
-          <div className="space-y-4 max-w-4xl">
+          <div className="max-w-4xl space-y-4">
             <p className="other-projects-eyebrow">Other Projects</p>
-            <h1 className="text-5xl md:text-7xl font-semibold tracking-[-0.06em] leading-[0.98]">
-              The shelf for future builds, games, and experiments
+            <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.06em] md:text-7xl">
+              Useful experiments that deserve their own shelf
             </h1>
             <p className="text-xl leading-relaxed text-[#555]">
-              Not every project needs to be one of the four core case studies. This page is where smaller builds,
-              planned games, and future experiments can keep accumulating without losing clarity on the homepage.
+              Smaller shipped tools, learning experiences, games, and publishing projects. Some stay compact; others
+              may grow into full case studies as the work develops.
             </p>
           </div>
 
           <div className="other-projects-highlight">
-            <strong>What belongs here:</strong>
+            <strong>The thread:</strong>
             <p>
-              future card games, interactable web experiments, small educational games, and creative tools that may
-              later grow into fuller case studies.
+              Each project turns something abstract or difficult into an experience people can enter, understand, and
+              use.
             </p>
           </div>
         </section>
 
         <section className="space-y-8">
           <div className="space-y-3">
-            <p className="other-projects-eyebrow">Buckets</p>
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.05em]">How I’m organizing the shelf</h2>
+            <p className="other-projects-eyebrow">Shipped</p>
+            <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-5xl">Emotion Identifier</h2>
           </div>
 
-          <div className="other-projects-grid">
-            {projectBuckets.map((bucket) => (
-              <article key={bucket.title} className="other-projects-card">
-                <div className="other-projects-status">{bucket.status}</div>
-                <h3>{bucket.title}</h3>
-                <p>{bucket.description}</p>
-                <ul>
-                  {bucket.examples.map((example) => (
-                    <li key={example}>{example}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
+          <article className="other-projects-feature">
+            <a
+              className="other-projects-feature-image"
+              href="https://cynyassy.github.io/emotions/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open the live Emotion Identifier Tool"
+            >
+              <img
+                src={emotionIdentifierCover}
+                alt="Emotion Identifier Tool interface asking the user to name what they feel"
+              />
+            </a>
+
+            <div className="other-projects-feature-copy">
+              <div className="other-projects-status">Live interactive tool</div>
+              <h3>Helping people find more precise words for what they feel</h3>
+              <p>
+                Many people can tell that they feel “good,” “bad,” “off,” or “fine,” but do not have the vocabulary to
+                describe what is happening underneath. This NVC-inspired tool turns that gap into a guided learning
+                journey.
+              </p>
+
+              <div className="other-projects-summary-grid">
+                <div>
+                  <span>Problem</span>
+                  <p>Unnamed emotions can feel shapeless, overwhelming, and difficult to communicate.</p>
+                </div>
+                <div>
+                  <span>Experience</span>
+                  <p>Seven guided steps connect broad feelings to precise emotions and underlying needs.</p>
+                </div>
+                <div>
+                  <span>Output</span>
+                  <p>A reflection summary that can be copied, downloaded, or shared with someone else.</p>
+                </div>
+                <div>
+                  <span>Built with</span>
+                  <p>React, TypeScript, Vite, responsive interaction design, and original Cynyassy art.</p>
+                </div>
+              </div>
+
+              <a
+                href="https://cynyassy.github.io/emotions/"
+                target="_blank"
+                rel="noreferrer"
+                className="other-projects-primary-link"
+              >
+                Try the live tool <ExternalLink size={18} />
+              </a>
+            </div>
+          </article>
         </section>
 
         <section className="space-y-8">
           <div className="space-y-3">
-            <p className="other-projects-eyebrow">Next Up</p>
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-[-0.05em]">What I expect to add here next</h2>
+            <p className="other-projects-eyebrow">Coming Soon</p>
+            <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-5xl">The shelf keeps growing</h2>
           </div>
 
-          <div className="other-projects-next-grid">
-            {nextUp.map((item) => (
-              <article key={item.title} className="other-projects-next-card">
-                <div className="mb-4">{item.icon}</div>
-                <h3>{item.title}</h3>
-                <p>{item.note}</p>
-              </article>
-            ))}
-          </div>
+          <article className="other-projects-upcoming">
+            <div>
+              <BookOpen size={30} aria-hidden="true" />
+              <div className="other-projects-status other-projects-status-dark">Upcoming publication</div>
+            </div>
+            <div>
+              <h3>It’s Not That Urgent</h3>
+              <p>
+                An upcoming illustrated book. Its project story, launch details, and purchase links will be added here
+                when the book is ready rather than presenting unfinished work as a shipped outcome.
+              </p>
+            </div>
+          </article>
         </section>
 
         <section className="other-projects-footer">
           <p>
-            This page is intentionally open-ended. It is the part of the portfolio that can keep growing as new game,
-            interaction, and storytelling experiments take shape.
+            Future card games, browser experiments, and creative tools will join this page as they become tangible
+            enough to explore.
           </p>
           <a href="../index.html#featured-work" className="other-projects-inline-link">
             Return to core case studies <ArrowRight size={18} />

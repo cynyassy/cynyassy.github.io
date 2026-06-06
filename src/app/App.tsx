@@ -2,6 +2,7 @@ import { LoadingScreen } from './components/LoadingScreen';
 import { Navigation } from './components/Navigation';
 import { ScrollToTop } from './components/ScrollToTop';
 import { HeroSection } from './components/HeroSection';
+import { QuickFacts } from './components/QuickFacts';
 import { SystemsDefinition } from './components/SystemsDefinition';
 import { AboutSection } from './components/AboutSection';
 import { WhyMeSection } from './components/WhyMeSection';
@@ -29,6 +30,7 @@ export default function App() {
         
         {/* Main content */}
         <HeroSection />
+        <QuickFacts />
         <SystemsDefinition />
         <AboutSection />
         <WhyMeSection />

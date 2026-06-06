@@ -30,6 +30,7 @@ interface Project {
   imageHref?: string;
   titleLogo?: string;
   id: string;
+  status: string;
 }
 
 function CoffeeToolsShowcase() {
@@ -118,6 +119,7 @@ const projects: Project[] = [
   {
     id: 'algotest-growth-strategy',
     title: 'AlgoTest',
+    status: 'Shipped & scaled',
     headline: 'Made complex trading workflows searchable, teachable, and reusable',
     oneLine: 'In one line: I turned recurring support pain into a documentation-led growth engine.',
     role: 'Product Strategy / Growth Systems',
@@ -140,6 +142,7 @@ const projects: Project[] = [
   {
     id: 'perspectives',
     title: 'Perspectives',
+    status: 'Playable thesis',
     headline: 'Making structural inequality playable',
     oneLine: 'In one line: I turned abstract inequality into a playable model of cause, consequence, and compounding advantage.',
     role: 'Systems & Simulation Design',
@@ -151,6 +154,7 @@ const projects: Project[] = [
     outcome:
       'The project became a case study in making invisible relationships visible, showing how mechanics, progression, and world rules can help people discuss structural inequality without turning the experience into a lecture.',
     highlights: ['System design thinking', 'Mechanics and behavior design', 'Board and game visual framing'],
+    metrics: ['Playable canvas proof', 'Three autonomous NPC societies', 'Periodic crisis and resilience model'],
     links: [
       { label: 'Open case study', href: 'projects/perspectives.html' },
       { label: 'Full simulation on GitHub', href: 'https://github.com/cynyassy/simulation_civilisation_perspective', external: true },
@@ -161,6 +165,7 @@ const projects: Project[] = [
   {
     id: 'coffee-tools',
     title: 'Coffee Tools',
+    status: 'Working prototype',
     headline: 'Turning coffee experimentation into a trackable product model',
     oneLine: 'In one line: I translated a messy enthusiast workflow into a structured backend-first product model.',
     role: 'Product Builder / Backend-First Tooling',
@@ -172,7 +177,7 @@ const projects: Project[] = [
     outcome:
       'The project shows how I move from personal frustration to product structure: define the workflow clearly, model the data carefully, and build a system that makes repeatability easier instead of adding more tracking overhead.',
     highlights: ['Bag-centered product design', 'Node + TypeScript + database-backed architecture', 'Brew logging, grinder tracking, and analytics flow'],
-    metrics: ['Supabase authentication', 'Multi-bag and multi-grinder workflow', 'Designed for repeatability, not just note-taking'],
+    metrics: ['Supabase authentication', 'Express + TypeScript + PostgreSQL architecture', 'Multi-bag and multi-grinder workflow'],
     links: [
       { label: 'Open case study', href: 'projects/coffee-tools.html' },
       { label: 'View GitHub repo', href: 'https://github.com/cynyassy/coffee-tool', external: true },
@@ -183,6 +188,7 @@ const projects: Project[] = [
   {
     id: 'cynyassy-platform',
     title: 'Cynyassy / ChaddiMan',
+    status: 'Live community platform',
     headline: 'Making emotional learning simple enough to share with 100K+ people',
     oneLine: 'In one line: I made difficult emotional ideas simple, visual, and shareable enough to build community.',
     role: 'Visual Communication / Audience Insight',
@@ -192,13 +198,13 @@ const projects: Project[] = [
     approach:
       'I treated Cynyassy as community education and care: simple comics, repeated publishing, audience feedback, and visual storytelling worked together to make emotional learning easier to enter.',
     outcome:
-      'The platform grew to 100K+ followers and thousands of messages of appreciation, showing how simple visual stories can build trust around difficult emotional topics.',
+      'The platform grew to 100K+ followers, reached 1.2M people in a peak month in 2021, and inspired thousands of messages of appreciation.',
     highlights: [
       'Content philosophy: "A story worth telling is worth telling simply"',
       'Mental health made accessible through storytelling',
       'Audience behavior and resonance as part of the process',
     ],
-    metrics: ['100K+ audience reach', 'Growing follower base', 'Repeatable content creation and iteration loop'],
+    metrics: ['100K+ community', '1.2M monthly reach at peak in 2021', '600+ multi-panel comics'],
     links: [
       { label: 'Open case study', href: 'projects/cynyassy.html' },
       { label: 'View platform presence', href: 'https://instagram.com/cynyassy', external: true },
@@ -264,6 +270,10 @@ export function FeaturedWork() {
                           <div aria-hidden="true" className="absolute border-2 border-black border-solid inset-0 pointer-events-none rounded-[4px]" />
                         </div>
                       ) : null}
+                      <div className="relative inline-block bg-white px-4 py-1 text-sm rounded-[4px]">
+                        <span className="text-sm font-medium text-[#333]">{project.status}</span>
+                        <div aria-hidden="true" className="absolute border-2 border-black border-solid inset-0 pointer-events-none rounded-[4px]" />
+                      </div>
                       <div className="relative inline-block bg-white px-4 py-1 text-sm rounded-[4px]">
                         <span className="text-sm font-medium text-[#333]">{project.role}</span>
                         <div aria-hidden="true" className="absolute border-2 border-black border-solid inset-0 pointer-events-none rounded-[4px]" />

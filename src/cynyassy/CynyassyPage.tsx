@@ -14,6 +14,7 @@ import storyFormatImage from '../assets/cynyassy-formats/story-week.png';
 
 const heroMetrics = [
   '0 → 100K+ followers',
+  '1.2M monthly reach at peak in 2021',
   '600+ multi-panel comics',
   '~2 years of daily publishing',
   'Thousands of messages from people who felt seen by the work',
@@ -94,6 +95,7 @@ const craftEvolution = [
 
 const results = [
   'Built a 100K+ audience from zero',
+  'Reached 1.2M people in a peak month in 2021',
   'Published 600+ comics',
   'Maintained a daily creative rhythm for roughly two years',
   'Created a recognizable brand voice across Cynyassy / Chaddiman',
@@ -114,8 +116,8 @@ const roleSummary = {
 
 const impactSummary = [
   'Built a 100K+ community through daily storytelling',
+  'Reached 1.2M people in a peak month in 2021',
   'Turned emotional education into a repeatable content system',
-  'Created community care, resonance, and long-term audience trust',
 ];
 
 const clarityPoints = [

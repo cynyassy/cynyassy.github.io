@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { Instagram, Linkedin, Mail } from 'lucide-react';
-import { HeroProofCarousel } from './HeroProofCarousel';
 import { WireframeButton } from './wireframe/WireframeButton';
 import productDevelopmentImage from '../../assets/hero-personas/product-development.png';
 import techstackBuilderImage from '../../assets/hero-personas/techstack_builder.png';
@@ -10,13 +9,6 @@ const roleAreas = [
   'Product Strategy',
   'Systems & Simulation Design',
   'Building & Prototyping',
-];
-
-const impactProof = [
-  '25K -> 150K monthly organic traffic at AlgoTest',
-  '₹15-18L -> ₹50L+ monthly revenue influenced by documentation-led growth',
-  'Made structural inequality playable through a board game simulation',
-  'Built a 100K+ community by making emotional learning accessible',
 ];
 
 const heroLinks = [
@@ -156,14 +148,6 @@ export function HeroSection() {
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.28, duration: 0.55 }}
-            >
-              <HeroProofCarousel />
-            </motion.div>
-
             <motion.p
               className="mb-4 text-[0.85rem] font-semibold uppercase tracking-[0.2em] text-[#666] mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 14 }}
@@ -208,7 +192,7 @@ export function HeroSection() {
             </motion.p>
 
             <motion.div
-              className="mb-8 space-y-4 max-w-3xl mx-auto lg:mx-0"
+              className="mb-8 space-y-5 max-w-3xl mx-auto lg:mx-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.74 }}
@@ -224,16 +208,7 @@ export function HeroSection() {
                 ))}
               </div>
 
-              <ul className="space-y-2 text-sm md:text-base text-[#444]">
-                {impactProof.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-2 h-2 w-2 shrink-0 bg-[#FF4400]" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <p className="text-sm md:text-base leading-relaxed text-[#444]">
+              <p className="border-l-4 border-[#FF4400] pl-4 text-sm leading-relaxed text-[#444] md:text-base">
                 My throughline is making complex technical and behavioral ideas clear enough that non-expert users
                 can decide, learn, and move forward.
               </p>
@@ -285,6 +260,12 @@ export function HeroSection() {
             transition={{ delay: 0.5, duration: 0.7 }}
           >
             <div className="absolute inset-0 rounded-[28px] bg-[radial-gradient(circle_at_top,_rgba(255,68,0,0.08),_transparent_55%)]" />
+            <div className="relative mb-6 max-w-xl">
+              <p className="text-[0.78rem] font-semibold uppercase tracking-[0.22em] text-[#666]">What I do</p>
+              <h2 className="mt-2 text-3xl font-semibold tracking-[-0.04em] text-[#111]">
+                Three ways I help complex products move forward
+              </h2>
+            </div>
             <div className="relative grid gap-5 sm:grid-cols-2">
               {capabilities.map((capability, index) => (
                 <motion.button

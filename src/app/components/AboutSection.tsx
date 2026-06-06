@@ -8,6 +8,13 @@ const workLoops = [
   'Iterate and scale what works',
 ];
 
+const targetRoles = [
+  'Product Strategy & Management',
+  'Product Design / Design Engineering',
+  'Growth & Product Education',
+  'Service & Learning Experience Design',
+];
+
 export function AboutSection() {
   return (
     <section className="py-24 px-6 bg-black text-white relative overflow-hidden">
@@ -39,6 +46,16 @@ export function AboutSection() {
             My edge is bridging strategy, design, communication, and technical execution instead of operating in only
             one lane.
           </p>
+          <div className="mx-auto flex max-w-4xl flex-wrap justify-center gap-3 pt-3" aria-label="Roles I am interested in">
+            {targetRoles.map((role) => (
+              <span
+                key={role}
+                className="rounded-[4px] border border-white/45 bg-white px-3 py-2 text-sm font-semibold text-black"
+              >
+                {role}
+              </span>
+            ))}
+          </div>
         </motion.div>
 
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">

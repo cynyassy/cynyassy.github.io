@@ -1,71 +1,72 @@
 import { motion } from 'motion/react';
 
-type SkillCard = {
+type PracticeCard = {
   id: string;
   title: string;
   description: string;
   skills: string[];
 };
 
-const skillCards: SkillCard[] = [
+const practiceCards: PracticeCard[] = [
   {
-    id: 'product-strategy',
-    title: 'Product Strategy & Growth',
-    description: 'Turning user pain into clearer onboarding, acquisition loops, measurable outcomes, and sharper product decisions.',
-    skills: ['Growth Strategy', 'Onboarding', 'SEO', 'Analytics', 'Product Education'],
+    id: 'explain',
+    title: 'Explain',
+    description: 'Choose language and stories that make difficult ideas approachable without making them shallow.',
+    skills: ['Writing', 'Illustration', 'Comics', 'Video', 'Documentation'],
   },
   {
-    id: 'systems-design',
-    title: 'Systems & Simulation Design',
-    description: 'Understanding how structure, rules, incentives, and feedback loops shape behavior over time.',
-    skills: ['Game Design', 'Simulations', 'Service Design', 'Systems Mapping', 'Design Research'],
+    id: 'structure',
+    title: 'Structure',
+    description: 'Understand people, relationships, constraints, and consequences before deciding what should be made.',
+    skills: ['Research', 'Systems Mapping', 'Service Design', 'Product Strategy', 'Facilitation'],
   },
   {
-    id: 'builder',
-    title: 'Building & Technical Execution',
-    description: 'Turning ideas into working tools across backend logic, APIs, data models, prototypes, and visual communication.',
-    skills: ['Backend Systems', 'TypeScript', 'APIs', 'Databases', 'Prototyping'],
+    id: 'build',
+    title: 'Build',
+    description: 'Turn an explanation into a usable thing when words alone are not enough.',
+    skills: ['React', 'TypeScript', 'APIs', 'Databases', 'Prototypes'],
+  },
+  {
+    id: 'learn',
+    title: 'Learn and iterate',
+    description: 'Treat response as evidence, then improve the story, product, or experience around what people actually need.',
+    skills: ['Analytics', 'Audience Feedback', 'Experiments', 'AI Workflows', 'Iteration'],
   },
 ];
 
 export function SkillsNetwork() {
   return (
-    <section id="skills" className="py-24 px-6 bg-white relative overflow-hidden">
+    <section id="skills" className="relative overflow-hidden bg-white px-6 py-24">
       <motion.div
-        className="max-w-5xl mx-auto mb-16 text-center"
+        className="mx-auto mb-16 max-w-5xl text-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <p className="mb-3 text-[0.78rem] uppercase tracking-[0.22em] text-[#666]">Skills</p>
-        <h2 className="text-5xl md:text-6xl font-semibold tracking-[-0.05em] text-[#111] mb-4">
-          The capabilities underneath the case studies
+        <p className="mb-3 text-[0.78rem] uppercase tracking-[0.22em] text-[#666]">Capabilities</p>
+        <h2 className="mb-4 text-5xl font-semibold tracking-[-0.05em] text-[#111] md:text-6xl">
+          The medium follows the problem.
         </h2>
+        <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[#555]">
+          I use different disciplines at different stages of the work, from understanding the problem to shaping,
+          building, and improving the outcome.
+        </p>
       </motion.div>
 
-      <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-3">
-        {skillCards.map((card, index) => (
+      <div className="mx-auto grid max-w-6xl border-y-2 border-black md:grid-cols-2">
+        {practiceCards.map((card, index) => (
           <motion.article
             key={card.id}
-            className="border-2 border-black bg-white p-8 rounded-[8px] hover:shadow-[8px_8px_0px_rgba(0,0,0,1)] transition-all duration-300"
+            className="border-b-2 border-black py-8 md:min-h-[18rem] md:px-8 md:[&:nth-child(odd)]:border-r-2 md:[&:nth-last-child(-n+2)]:border-b-0 md:first:pl-0 md:[&:nth-child(2)]:pr-0 md:[&:nth-child(3)]:pl-0 md:last:pr-0"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.08 }}
           >
-            <h3 className="text-3xl font-semibold tracking-[-0.04em] text-[#111] mb-3">{card.title}</h3>
-            <p className="text-[#555] leading-relaxed mb-6">{card.description}</p>
-
-            <ul className="flex flex-wrap gap-3">
-              {card.skills.map((skill) => (
-                <li
-                  key={skill}
-                  className="px-4 py-2 border border-black bg-white text-sm font-medium text-[#111] rounded-[4px]"
-                >
-                  {skill}
-                </li>
-              ))}
-            </ul>
+            <span className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[#FF4400]">0{index + 1}</span>
+            <h3 className="mb-3 text-3xl font-semibold tracking-[-0.04em] text-[#111]">{card.title}</h3>
+            <p className="mb-6 leading-relaxed text-[#555]">{card.description}</p>
+            <p className="text-sm font-semibold leading-relaxed text-[#222]">{card.skills.join(' · ')}</p>
           </motion.article>
         ))}
       </div>

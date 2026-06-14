@@ -17,7 +17,7 @@ export default function OtherProjectsPage() {
       </header>
 
       <main className="mx-auto flex max-w-6xl flex-col gap-20 px-6 py-12 md:px-10 md:py-16">
-        <section className="space-y-8">
+        <section id="emotion-identifier" className="space-y-8">
           <div className="max-w-4xl space-y-4">
             <p className="other-projects-eyebrow">Other Projects</p>
             <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.06em] md:text-7xl">
@@ -41,7 +41,9 @@ export default function OtherProjectsPage() {
         <section className="space-y-8">
           <div className="space-y-3">
             <p className="other-projects-eyebrow">Shipped</p>
-            <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-5xl">Emotion Identifier</h2>
+            <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-5xl">
+              Giving people language for feelings they struggle to name
+            </h2>
           </div>
 
           <article className="other-projects-feature">
@@ -60,7 +62,7 @@ export default function OtherProjectsPage() {
 
             <div className="other-projects-feature-copy">
               <div className="other-projects-status">Live interactive tool</div>
-              <h3>Helping people find more precise words for what they feel</h3>
+              <h3>A guided entrance into emotional clarity</h3>
               <p>
                 Many people can tell that they feel “good,” “bad,” “off,” or “fine,” but do not have the vocabulary to
                 describe what is happening underneath. This NVC-inspired tool turns that gap into a guided learning
@@ -69,15 +71,15 @@ export default function OtherProjectsPage() {
 
               <div className="other-projects-summary-grid">
                 <div>
-                  <span>Problem</span>
+                  <span>Barrier</span>
                   <p>Unnamed emotions can feel shapeless, overwhelming, and difficult to communicate.</p>
                 </div>
                 <div>
-                  <span>Experience</span>
+                  <span>Guided translation</span>
                   <p>Seven guided steps connect broad feelings to precise emotions and underlying needs.</p>
                 </div>
                 <div>
-                  <span>Output</span>
+                  <span>Agency</span>
                   <p>A reflection summary that can be copied, downloaded, or shared with someone else.</p>
                 </div>
                 <div>
@@ -107,14 +109,22 @@ export default function OtherProjectsPage() {
           <article className="other-projects-upcoming">
             <div>
               <BookOpen size={30} aria-hidden="true" />
-              <div className="other-projects-status other-projects-status-dark">Upcoming publication</div>
+              <div className="other-projects-status other-projects-status-dark">Illustrated book</div>
             </div>
             <div>
-              <h3>It’s Not That Urgent</h3>
+              <h3>Not Everything Is Urgent</h3>
               <p>
-                An upcoming illustrated book. Its project story, launch details, and purchase links will be added here
-                when the book is ready rather than presenting unfinished work as a shipped outcome.
+                A two-part illustrated book about attention, pressure, and remembering that not everything deserves the
+                same urgency.
               </p>
+              <a
+                href="https://itsnotthaturgent.co"
+                target="_blank"
+                rel="noreferrer"
+                className="other-projects-inline-link"
+              >
+                Visit the book website <ExternalLink size={18} />
+              </a>
             </div>
           </article>
         </section>

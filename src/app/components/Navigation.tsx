@@ -5,9 +5,9 @@ import chaddimanPortraitLogo from '../../assets/chaddiman-portrait-logo.png';
 
 const navItems = [
   { label: 'Home', id: 'hero' },
-  { label: 'Skills', id: 'skills' },
-  { label: 'Qualifications', id: 'qualifications' },
   { label: 'Work', id: 'work' },
+  { label: 'How I Work', id: 'skills' },
+  { label: 'Learning', id: 'qualifications' },
   { label: 'Contact', id: 'contact' }
 ];
 
@@ -87,6 +87,8 @@ export function Navigation() {
             <motion.button
               className="md:hidden relative rounded-[4px] border-2 border-black p-2 hover:bg-black hover:text-white transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? 'Close navigation' : 'Open navigation'}
+              aria-expanded={isMobileMenuOpen}
               whileTap={{ scale: 0.9 }}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

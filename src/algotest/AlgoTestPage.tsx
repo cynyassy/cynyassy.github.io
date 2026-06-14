@@ -1,579 +1,311 @@
 import algotestLogoImg from '../assets/algotest-case-study/algotest-logo.png';
 import algotestDocsScreenshot from '../assets/algotest_documentation.png';
-import google_search_console1 from '../assets/algotest-case-study/google_search_console1.png';
-import google_search_console2 from '../assets/algotest-case-study/google_search_console2.png';
-import tradersPathFrame1 from '../assets/algotest-bet-sizer/BS - Trader\'s Path 1.png';
-import tradersPathFrame3 from '../assets/algotest-bet-sizer/BS - Trader\'s Path 3.png';
-import tradersPathFrame4 from '../assets/algotest-bet-sizer/BS - Trader\'s Path 4.png';
-import tradersPathFrame7 from '../assets/algotest-bet-sizer/BS - Trader\'s Path 7.png';
-import tradersPathFrame8 from '../assets/algotest-bet-sizer/BS - Trader\'s Path 8.png';
-import tradersPathFrame13 from '../assets/algotest-bet-sizer/BS - Trader\'s Path 13.png';
+import googleSearchConsoleClicks from '../assets/algotest-case-study/google_search_console1.png';
+import googleSearchConsoleImpressions from '../assets/algotest-case-study/google_search_console2.png';
+import tradersPathStart from '../assets/algotest-bet-sizer/BS - Trader\'s Path 1.png';
+import tradersPathExperiment from '../assets/algotest-bet-sizer/BS - Trader\'s Path 7.png';
+import tradersPathOutcome from '../assets/algotest-bet-sizer/BS - Trader\'s Path 13.png';
 
-const heroMetrics = [
-  {
-    label: 'Monthly organic clicks',
-    value: '25K → 150K',
-    detail: 'through documentation-led search growth',
-  },
-  {
-    label: 'Monthly revenue',
-    value: '₹15–18L → ₹50L+',
-    detail: 'as education and demand capture improved',
-  },
-  {
-    label: 'Domain Rating',
-    value: '23 → 37',
-    detail: 'in roughly 12 months',
-  },
-  {
-    label: 'Lead-generation mix',
-    value: 'SEO became primary',
-    detail: 'instead of acting as a side channel',
-  },
+const impactMetrics = [
+  ['25K → 150K', 'Monthly organic clicks', '6× growth through documentation-led search'],
+  ['₹15–18L → ₹50L+', 'Monthly revenue', 'as education and qualified demand improved'],
+  ['23 → 37', 'Domain Rating', 'in roughly 12 months'],
+  ['Primary', 'Lead-generation channel', 'SEO moved from a side channel to the main source'],
 ];
 
-const roleAreas = [
-  'Growth strategy',
-  'Documentation system design',
-  'SEO execution',
-  'Cross-functional delivery',
+const frictionPoints = [
+  [
+    'Repetitive support',
+    'Customers repeatedly needed help with signup, broker connections, setup, pricing, and product workflows.',
+  ],
+  [
+    'Onboarding friction',
+    'A technically capable product still felt difficult to trust and use because essential knowledge lived inside the company.',
+  ],
+  [
+    'Uncaptured demand',
+    'High-intent searches existed, but the website did not yet answer those questions deeply enough to earn discovery.',
+  ],
 ];
 
-const roleScope =
-  'Scope: strategy, documentation systems, acquisition, onboarding clarity, and product education.';
-
-const impactHighlights = [
-  '25K → 150K monthly organic traffic',
-  '₹15L → ₹50L+ monthly revenue',
-  'Documentation-led acquisition engine',
+const systemPillars = [
+  [
+    'Documentation',
+    'Built docs.algotest.in from scratch, covering onboarding, pricing, broker setup, feature workflows, signals, and troubleshooting.',
+  ],
+  [
+    'Search',
+    'Mapped content to real user intent using support conversations, Ahrefs, Search Console, Analytics, and category research.',
+  ],
+  [
+    'Distribution',
+    'Connected support, product education, search, marketing, and video so a useful explanation could work across channels.',
+  ],
 ];
 
-const clarityPoints = [
-  {
-    title: 'Setup became navigable',
-    description:
-      'Broker connections, signup steps, pricing, and product prerequisites were rewritten as clear paths instead of scattered support answers.',
-  },
-  {
-    title: 'Workflows became teachable',
-    description:
-      'Backtesting, live deployment, signals, and strategy logic were broken into reusable explanations that support and marketing could point to directly.',
-  },
-  {
-    title: 'Search became useful demand',
-    description:
-      'High-intent queries started landing on pages that solved real product problems, turning user confusion into qualified discovery.',
-  },
+const executionSteps = [
+  'Collected recurring questions directly from support conversations.',
+  'Prioritized pages with the highest onboarding and support value.',
+  'Worked with frontend, backend, design, and subject-matter experts.',
+  'Wrote and versioned documentation in Markdown through GitHub.',
+  'Measured search performance, usage, and customer response continuously.',
 ];
 
-const problemPoints = [
-  'Customer support was overloaded with repetitive setup and onboarding questions.',
-  'Onboarding friction was limiting activation and conversions.',
-  'The website was not fully capturing high-intent search demand.',
+const searchMetrics = [
+  ['1.29M', 'Clicks over 16 months'],
+  ['11.3M', 'Search impressions'],
+  ['11.4%', 'Average CTR'],
+  ['12.7', 'Average position'],
 ];
 
-const buildPillars = [
-  {
-    title: 'Documentation system',
-    description:
-      'I built docs.algotest.in from scratch and created onboarding, broker setup, workflow, and troubleshooting content in Markdown, versioned through GitHub and shipped at effectively zero hosting cost.',
-  },
-  {
-    title: 'SEO engine',
-    description:
-      'Content decisions were driven by user intent rather than generic keywords. I used Ahrefs, Google Search Console, Google Analytics, and support feedback to identify durable search opportunities.',
-  },
-  {
-    title: 'Education layer',
-    description:
-      'I extended the system beyond docs into YouTube education, clearer product messaging, and interactive learning tools for concepts that were easier to understand visually than through text alone.',
-  },
+const proofPoints = [
+  'Support teams actively reused the pages, validating that they solved real product problems.',
+  'Some pages outranked brokers’ official documentation for high-intent setup queries.',
+  'Brokers contacted AlgoTest after losing search traffic to its documentation.',
 ];
 
-const leveragePoints = [
-  'Reduced repetitive support load',
-  'Improved onboarding and activation',
-  'Created reusable assets for support and marketing',
-  'Compounded as SEO traffic over time',
-];
-
-const executionPoints = [
-  'Identified recurring user pain directly from support conversations',
-  'Prioritized pages with the highest support and onboarding value',
-  'Collaborated with frontend, backend, and design teams',
-  'Wrote, versioned, and updated documentation continuously through GitHub',
-  'Measured results through Ahrefs, GSC, GA, and user feedback',
-  'Noticed that pages support actively shared tended to rank faster and stronger',
-];
-
-const proofStats = [
-  { label: 'Search clicks', value: '1.29M', detail: 'qualified visits generated over 16 months' },
-  { label: 'Impressions', value: '11.3M', detail: 'category-level demand captured through docs' },
-  { label: 'CTR', value: '11.4%', detail: 'signal that searchers found the result relevant' },
-  { label: 'Avg position', value: '12.7', detail: 'sustained visibility across high-intent topics' },
-];
-
-const proofCallouts = [
-  'Documentation increased qualified discovery because the pages solved setup and workflow pain directly.',
-  'Some documentation pages outranked brokers’ own official documentation, which made the docs a competitive acquisition surface.',
-  'Brokers reached out after losing traffic to AlgoTest pages, which signaled real category displacement rather than vanity growth.',
-  'The compounding advantage came from utility and trust, which later supported activation, support efficiency, and revenue growth.',
-];
-
-const beyondDocs = [
-  {
-    title: 'YouTube education system',
-    description:
-      'Documentation created the base layer, but some concepts needed a more guided format. Video helped extend educational reach and improve comprehension outside the product.',
-  },
-  {
-    title: 'Message consistency',
-    description:
-      'The documentation system also strengthened marketing language by making product explanations clearer, more structured, and easier to reuse across channels.',
-  },
-  {
-    title: 'Interactive learning tools',
-    description:
-      'Some ideas are easier to understand interactively than through text alone. I designed learning tools like Trader’s Path to make abstract trading concepts around risk, probability, and position sizing more intuitive.',
-  },
-];
-
-const docsCoverage = [
-  'Getting-started and signup flows',
-  'Pricing and plan explanation pages',
-  '20+ broker setup guides',
-  'Feature and workflow explainers',
-  'Signals automation documentation',
-];
-
-const betSizerFrames = [
-  {
-    title: 'Start with an intuitive setup',
-    description:
-      'The tool introduces Harish, his capital, and the first high-risk decision so users immediately understand the scenario without needing to read a long explainer first.',
-    image: tradersPathFrame1,
-  },
-  {
-    title: 'Show why the first loss matters',
-    description:
-      'Instead of abstract percentages, the next steps make the capital damage visible so users feel the consequence of overbetting before the theory arrives.',
-    image: tradersPathFrame8,
-  },
-  {
-    title: 'Let users experiment with bet size',
-    description:
-      'Interactive controls turn the lesson into exploration. Users can change inputs and watch how return curves shift rather than passively reading an answer.',
-    image: tradersPathFrame7,
-  },
-  {
-    title: 'Connect the graph to the concept',
-    description:
-      'The tool introduces the Kelly Criterion after users have seen the problem play out, which makes the “optimal bet size” idea feel earned instead of academic.',
-    image: tradersPathFrame4,
-  },
-  {
-    title: 'Land the idea with a visual payoff',
-    description:
-      'The end state ties the recommendation back to outcome: final capital, return, and the optimal point all reinforce why risk sizing matters.',
-    image: tradersPathFrame13,
-  },
-  {
-    title: 'Use explanation screens to bridge theory',
-    description:
-      'Text-heavy screens still play a role, but only after the user has built intuition. They support the interaction instead of trying to replace it.',
-    image: tradersPathFrame3,
-  },
+const tradersPathFrames = [
+  [
+    tradersPathStart,
+    'Begin with a recognizable decision',
+    'A character, a capital amount, and a risky choice create intuition before theory appears.',
+  ],
+  [
+    tradersPathExperiment,
+    'Let the learner change the inputs',
+    'Users can adjust bet size and watch the return curve respond instead of passively reading an answer.',
+  ],
+  [
+    tradersPathOutcome,
+    'Connect the model to an outcome',
+    'The final state makes the optimal point, capital, and return visible in one place.',
+  ],
 ];
 
 const reflections = [
-  'Documentation can be a growth system, not just a support resource.',
-  'In complex products, product education often reduces more friction than feature expansion.',
-  'Quality and problem-solution fit compound faster than content volume.',
+  'In complex products, recurring confusion is product data.',
+  'Documentation can improve support, onboarding, discovery, and trust at the same time.',
+  'Utility compounds more reliably than content volume.',
 ];
 
-function SectionHeader({ eyebrow, title, description }: { eyebrow?: string; title: string; description?: string }) {
+function SectionIntro({
+  label,
+  title,
+  children,
+}: {
+  label: string;
+  title: string;
+  children?: React.ReactNode;
+}) {
   return (
-    <header className="space-y-3">
-      {eyebrow ? <p className="algotest-eyebrow">{eyebrow}</p> : null}
-      <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-5xl text-[#111111]">{title}</h2>
-      {description ? <p className="max-w-3xl text-base md:text-lg leading-relaxed text-[#5a5752]">{description}</p> : null}
+    <header className="section-head">
+      <p className="label">{label}</p>
+      <div>
+        <h2>{title}</h2>
+        {children}
+      </div>
     </header>
+  );
+}
+
+function NumberedList({ items }: { items: string[][] }) {
+  return (
+    <div className="numbered-list">
+      {items.map(([title, description], index) => (
+        <article key={title}>
+          <span className="number">{String(index + 1).padStart(2, '0')}</span>
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function Figure({ src, alt, caption }: { src: string; alt: string; caption: string }) {
+  return (
+    <figure>
+      <img src={src} alt={alt} />
+      <figcaption>{caption}</figcaption>
+    </figure>
   );
 }
 
 export default function AlgoTestPage() {
   return (
-    <div className="algotest-page min-h-screen bg-[#ffffff] text-[#111111]">
-      <a href="#algotest-main" className="algotest-skip-link">
+    <div className="algotest-page">
+      <a href="#main" className="skip-link">
         Skip to content
       </a>
 
-      <header className="algotest-topbar">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 md:px-10">
-          <a href="../index.html#featured-work" className="algotest-back-link">
-            Back To Portfolio
-          </a>
-          <nav className="hidden items-center gap-6 md:flex">
-            <a href="#overview" className="algotest-nav-link">
-              Overview
-            </a>
-            <a href="#system" className="algotest-nav-link">
-              System
-            </a>
-            <a href="#proof" className="algotest-nav-link">
-              Proof
-            </a>
+      <header className="topbar">
+        <div>
+          <a href="../index.html#featured-work">Back to portfolio</a>
+          <nav aria-label="Case study sections">
+            <a href="#overview">Overview</a>
+            <a href="#intervention">Intervention</a>
+            <a href="#proof">Proof</a>
           </nav>
         </div>
       </header>
 
-      <main id="algotest-main" className="mx-auto flex max-w-6xl flex-col gap-24 px-6 py-12 md:px-10 md:py-16">
-        <section id="overview" className="algotest-hero-grid">
-          <div className="space-y-8">
-            <div className="space-y-5">
-              <div className="algotest-brand-lockup">
-                <img src={algotestLogoImg} alt="AlgoTest logo" className="algotest-brand-lockup__logo" />
-                <div>
-                  <p className="algotest-eyebrow">Product & Growth Strategy</p>
-                  <p className="algotest-brand-lockup__name">AlgoTest</p>
-                </div>
+      <main id="main">
+        <section id="overview" className="hero">
+          <div className="hero-copy">
+            <div className="brand">
+              <img src={algotestLogoImg} alt="AlgoTest logo" />
+              <div>
+                <p className="label">Product education & growth</p>
+                <strong>AlgoTest</strong>
               </div>
-              <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] md:text-5xl">
-                Made complex trading workflows searchable, teachable, and reusable
-              </h1>
-              <p className="text-2xl font-medium leading-tight text-[#1f1f1f] md:text-2xl">
-                Documentation-led growth helped drive 3x revenue at AlgoTest.
+            </div>
+
+            <h1>How documentation helped grow organic traffic 6×</h1>
+            <p className="dek">
+              I built a documentation-led growth engine that improved acquisition, onboarding, and support for a
+              complex fintech product.
+            </p>
+            <p className="muted">
+              Recurring customer questions revealed the leverage point: essential product knowledge existed, but it
+              was difficult to find and use. I turned that internal understanding into structured education that could
+              serve customers and compound through search.
+            </p>
+            <p className="role">
+              <span className="label">Role</span>
+              Strategy · Documentation design · SEO execution · Cross-functional delivery
+            </p>
+          </div>
+
+          <aside className="impact" aria-label="Key business impact">
+            <p className="label">Impact</p>
+            {impactMetrics.map(([value, label, detail]) => (
+              <p className="impact-item" key={label}>
+                <strong>{value}</strong>
+                <b>{label}</b>
+                <small>{detail}</small>
               </p>
-              <p className="max-w-3xl text-lg leading-relaxed text-[#55524d] md:text-xl">
-                I built a documentation-led growth system that improved acquisition, onboarding, and support efficiency
-                for a complex fintech product. AlgoTest had a powerful product, but growth was constrained not just by
-                traffic. It was constrained by comprehension, trust, and onboarding friction.
-              </p>
-              <p className="max-w-3xl text-base md:text-lg leading-relaxed text-[#5a5752]">
-                I identified the leverage point, designed the system, and executed it across documentation, product
-                education, search, and measurement rather than treating those as separate workstreams.
-              </p>
-            </div>
+            ))}
+          </aside>
+        </section>
 
-            <div className="grid gap-4 md:grid-cols-3">
-              {impactHighlights.map((item) => (
-                <div key={item} className="rounded-[8px] border-2 border-black bg-white p-4">
-                  <p className="algotest-eyebrow mb-2">Impact</p>
-                  <p className="text-base font-semibold leading-relaxed tracking-[-0.02em] text-[#111]">{item}</p>
-                </div>
-              ))}
-            </div>
+        <section className="section">
+          <SectionIntro label="The challenge" title="The growth problem was also a comprehension problem">
+            <p>
+              AlgoTest was a powerful trading and backtesting platform. Growth stalled at several points because
+              customers could not easily access the knowledge required to reach value.
+            </p>
+          </SectionIntro>
 
-            <div className="grid gap-4 md:grid-cols-3">
-              <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                <p className="algotest-eyebrow mb-2">Complexity</p>
-                <p className="text-base leading-relaxed text-[#444]">Trading workflows, broker setup, backtesting, strategy logic, and product onboarding.</p>
-              </div>
-              <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                <p className="algotest-eyebrow mb-2">Users</p>
-                <p className="text-base leading-relaxed text-[#444]">Traders trying to trust and use a technical fintech product without getting stuck in setup.</p>
-              </div>
-              <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                <p className="algotest-eyebrow mb-2">What changed</p>
-                <p className="text-base leading-relaxed text-[#444]">Recurring confusion became reusable product education, support leverage, and search demand.</p>
-              </div>
-            </div>
+          <NumberedList items={frictionPoints} />
 
-            <div className="algotest-role-strip" aria-label="My role">
-              <span className="algotest-role-strip__label">Role</span>
-              <div className="algotest-role-strip__items">
-                {roleAreas.map((role) => (
-                  <span key={role}>{role}</span>
-                ))}
-              </div>
-            </div>
-            <p className="text-sm md:text-base leading-relaxed text-[#55524d]"><strong>Scope:</strong> {roleScope.replace('Scope: ', '')}</p>
+          <blockquote className="callout">
+            The same explanation could reduce support load, improve onboarding, earn search visibility, and build
+            trust. Documentation was not a support artifact; it was a product and growth layer.
+          </blockquote>
+        </section>
 
-            <ul className="algotest-highlight-list" aria-label="Key outcomes">
-              {heroMetrics.map((metric) => (
-                <li key={metric.label} className="algotest-highlight-item">
-                  <span className="algotest-highlight-item__label">{metric.label}</span>
-                  <p className="algotest-highlight-item__text">
-                    <strong>{metric.value}</strong>
-                    <span>{metric.detail}</span>
-                  </p>
+        <section id="intervention" className="section">
+          <SectionIntro label="The intervention" title="One education engine, working across the customer journey">
+            <p>
+              I treated repeated confusion as a design signal. The work began with what customers were actually asking,
+              then connected documentation, search, support, and product education.
+            </p>
+          </SectionIntro>
+
+          <div className="split">
+            <NumberedList items={systemPillars} />
+            <Figure
+              src={algotestDocsScreenshot}
+              alt="Published AlgoTest documentation homepage with navigation and educational resources"
+              caption="The documentation became a real product surface, spanning onboarding, broker setup, workflows, automation, troubleshooting, and ongoing education."
+            />
+          </div>
+
+          <div className="process">
+            <p className="label">How it operated</p>
+            <ol>
+              {executionSteps.map((step, index) => (
+                <li key={step}>
+                  <span className="number">{String(index + 1).padStart(2, '0')}</span>
+                  {step}
                 </li>
               ))}
-            </ul>
+            </ol>
+          </div>
+        </section>
 
-            <p className="algotest-recruiter-summary">
-              This case study is strongest as <strong>documentation-led growth infrastructure</strong>: one system
-              improving <strong>support efficiency</strong>, <strong>onboarding clarity</strong>, and
-              <strong> qualified demand</strong> at the same time.
+        <section id="proof" className="section">
+          <SectionIntro label="Proof" title="Search visibility grew because the pages were useful">
+            <p>
+              The strongest evidence was not traffic alone. The documentation captured qualified demand, was reused by
+              support, displaced category incumbents in search, and influenced business growth.
             </p>
-            <p className="max-w-3xl rounded-[8px] border-2 border-black bg-white p-4 text-base font-semibold leading-relaxed text-[#111]">
-              In one line: I turned recurring support pain into a documentation-led growth engine.
-            </p>
-            <p className="max-w-3xl text-base md:text-lg leading-relaxed text-[#55524d]">
-              The product decision was simple: treat repeated confusion as a design signal. If the same question kept
-              appearing in support, it became a candidate for clearer explanation, better structure, and search visibility.
-            </p>
-          </div>
+          </SectionIntro>
 
-          <div className="algotest-hero-visual">
-            <div className="algotest-growth-panel">
-              <p className="algotest-growth-panel__eyebrow">Growth system</p>
-              <div className="algotest-growth-track">
-                <span>Support pain</span>
-                <span>→</span>
-                <span>Docs system</span>
-                <span>→</span>
-                <span>SEO visibility</span>
-                <span>→</span>
-                <span>Qualified demand</span>
-              </div>
-              <div className="algotest-growth-bars">
-                <div className="algotest-growth-bars__label">Organic clicks</div>
-                <div className="algotest-growth-bars__row">
-                  <span>25K</span>
-                  <div className="algotest-growth-bars__bar algotest-growth-bars__bar--short" />
-                </div>
-                <div className="algotest-growth-bars__row">
-                  <span>150K</span>
-                  <div className="algotest-growth-bars__bar algotest-growth-bars__bar--long" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Context"
-            title="A technical product where growth was constrained by comprehension"
-            description="AlgoTest is a technical trading and backtesting platform. The product was powerful, but conceptually difficult for new users. Customers struggled not just with setup, but with understanding broker connections, workflows, and the logic behind the platform itself."
-          />
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Problem"
-            title="The growth bottleneck was not just traffic"
-            description="We were dealing with a product that generated recurring friction at acquisition, onboarding, and support at the same time."
-          />
-
-          <div className="algotest-problem-grid">
-            {problemPoints.map((point) => (
-              <article key={point} className="algotest-problem-card">
-                <p>{point}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="space-y-10" id="system">
-          <SectionHeader
-            eyebrow="Core Insight"
-            title="The growth problem was actually a product education problem"
-            description="If users cannot understand how to set up the product, connect brokers, or interpret workflows, growth stalls at multiple levels: acquisition, activation, and retention. Documentation was not just a support artifact. It became the missing product layer."
-          />
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="What Became Clear"
-            title="The work turned recurring confusion into a product surface"
-            description="The documentation mattered because it made the product easier to understand before, during, and after activation."
-          />
-
-          <div className="algotest-pillar-grid">
-            {clarityPoints.map((point) => (
-              <article key={point.title} className="algotest-pillar-card">
-                <h3>{point.title}</h3>
-                <p>{point.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="What I Built"
-            title="One system across documentation, search, and education"
-            description="The work was not ‘content marketing’ in the abstract. It was an operating system for reducing recurring user friction in a form that could scale."
-          />
-
-          <div className="algotest-pillar-grid">
-            {buildPillars.map((pillar) => (
-              <article key={pillar.title} className="algotest-pillar-card">
-                <h3>{pillar.title}</h3>
-                <p>{pillar.description}</p>
-              </article>
-            ))}
-          </div>
-
-          <div className="algotest-coverage-block">
-            <div className="algotest-coverage-block__intro">
-              <p className="algotest-eyebrow">What the docs system actually covered</p>
-              <p>
-                AlgoTest's Documentation Project was not a handful of articles. It was a structured
-                education layer spanning onboarding, pricing, broker setup, feature workflows, and signals automation.
+          <div className="stats">
+            {searchMetrics.map(([value, label]) => (
+              <p key={label}>
+                <strong>{value}</strong>
+                <span>{label}</span>
               </p>
-            </div>
-            <ul className="algotest-coverage-list">
-              {docsCoverage.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <figure className="algotest-coverage-figure">
-              <img src={algotestDocsScreenshot} alt="Published AlgoTest documentation homepage with navigation and educational resources" />
-              <figcaption>
-                The published docs became a real product surface: navigable, structured, and broad enough to support
-                onboarding, education, and ongoing support at scale.
-              </figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Leverage"
-            title="Why documentation was such a high-leverage bet"
-            description="We were not writing content for content’s sake. We were solving the same customer problem once, in a form that could scale."
-          />
-
-          <div className="algotest-leverage-grid">
-            {leveragePoints.map((point) => (
-              <div key={point} className="algotest-leverage-item">
-                {point}
-              </div>
             ))}
           </div>
-        </section>
 
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Execution"
-            title="Support pain determined what got built first"
-            description="Pages that support actively shared with users tended to rank faster and stronger, which reinforced the idea that content solving real problems tends to perform well in search too."
-          />
+          <div className="gallery gallery-two">
+            <Figure
+              src={googleSearchConsoleClicks}
+              alt="Google Search Console clicks graph for AlgoTest"
+              caption="1.29M clicks over 16 months."
+            />
+            <Figure
+              src={googleSearchConsoleImpressions}
+              alt="Google Search Console impressions graph for AlgoTest"
+              caption="11.3M impressions as documentation depth expanded."
+            />
+          </div>
 
-          <ol className="algotest-execution-list">
-            {executionPoints.map((point) => (
+          <ul className="proof-list">
+            {proofPoints.map((point) => (
               <li key={point}>{point}</li>
             ))}
-          </ol>
+          </ul>
         </section>
 
-        <section className="space-y-10" id="proof">
-          <SectionHeader
-            eyebrow="Proof"
-            title="Search visibility grew because utility grew"
-            description="The strongest evidence was not just more traffic, but stronger demand capture, clearer business influence, and a documentation system that became a competitive advantage in the category."
-          />
+        <section className="section">
+          <SectionIntro label="Extending the model" title="Some concepts needed interaction, not another article">
+            <p>
+              Trader’s Path applied the same education strategy to position sizing and the Kelly Criterion. Instead of
+              explaining the formula first, the experience let users see consequences, change inputs, and build
+              intuition.
+            </p>
+          </SectionIntro>
 
-          <div className="algotest-proof-grid">
-            <div className="algotest-proof-board">
-              <p className="algotest-proof-board__eyebrow">Search performance snapshot</p>
-              <div className="algotest-proof-stats">
-                {proofStats.map((stat) => (
-                  <div key={stat.label} className="algotest-proof-stat">
-                    <span>{stat.label}</span>
-                    <strong>{stat.value}</strong>
-                    <small>{stat.detail}</small>
-                  </div>
-                ))}
-              </div>
-              <div className="algotest-proof-images">
-                <figure className="algotest-proof-image-card">
-                  <img src={google_search_console1} alt="Google Search Console clicks graph for AlgoTest" />
-                  <figcaption>
-                    <strong>Clicks:</strong> 1.29M visits over 16 months, showing that documentation translated
-                    educational intent into qualified traffic.
-                  </figcaption>
-                </figure>
-                <figure className="algotest-proof-image-card">
-                  <img src={google_search_console2} alt="Google Search Console impressions graph for AlgoTest" />
-                  <figcaption>
-                    <strong>Impressions:</strong> 11.3M impressions as documentation depth expanded across high-intent
-                    product and broker queries.
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-
-            <div className="algotest-proof-notes">
-              {proofCallouts.map((note) => (
-                <div key={note} className="algotest-proof-note">
-                  {note}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Beyond Documentation"
-            title="Once the foundation was trusted, the system could expand"
-            description="Documentation came first because it solved the sharpest friction. Once that layer was solid, I extended the system into broader education and messaging."
-          />
-
-          <div className="algotest-beyond-grid">
-            {beyondDocs.map((item) => (
-              <article key={item.title} className="algotest-beyond-card">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Interactive Education"
-            title="Trader’s Path turned bet sizing into something users could feel"
-            description="Bet sizing and risk management are hard to teach through static copy alone. Trader’s Path was an educational tool I worked on to make position sizing, compounding loss, and the Kelly Criterion more intuitive through guided interaction."
-          />
-
-          <div className="algotest-betsizer-summary">
-            <div className="algotest-betsizer-summary__copy">
-              <h3>Why it mattered</h3>
-              <p>
-                This was not a side project for novelty. It extended the same product education logic behind the docs:
-                when a concept is difficult, teach it in the format users can actually understand.
-              </p>
-            </div>
-            <ul className="algotest-betsizer-points">
-              <li>Made abstract risk concepts more intuitive.</li>
-              <li>Used story and interaction instead of jargon-heavy explanation.</li>
-              <li>Connected theory to outcomes users could visualize immediately.</li>
-              <li>Showed how education could support trust and product adoption.</li>
-            </ul>
-          </div>
-
-          <div className="algotest-betsizer-grid">
-            {betSizerFrames.map((frame) => (
-              <figure key={frame.title} className="algotest-betsizer-card">
-                <img src={frame.image} alt={frame.title} />
-                <figcaption>
-                  <strong>{frame.title}</strong>
-                  <span>{frame.description}</span>
+          <div className="gallery gallery-three">
+            {tradersPathFrames.map(([image, title, description], index) => (
+              <figure key={title}>
+                <img src={image} alt={title} />
+                <figcaption className="caption-detail">
+                  <span className="number">{String(index + 1).padStart(2, '0')}</span>
+                  <span>
+                    <strong>{title}</strong>
+                    <span>{description}</span>
+                  </span>
                 </figcaption>
               </figure>
             ))}
           </div>
         </section>
 
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Reflection"
-            title="What this taught me about growth in complex products"
-            description="This work reinforced a pattern I still believe in strongly: the highest-leverage growth systems often look like education systems first."
-          />
-
-          <div className="algotest-reflection-list">
-            {reflections.map((reflection) => (
-              <div key={reflection} className="algotest-reflection-item">
+        <section className="section reflection">
+          <SectionIntro label="What I learned" title="Growth in complex products often starts with education" />
+          <ol>
+            {reflections.map((reflection, index) => (
+              <li key={reflection}>
+                <span className="number">{String(index + 1).padStart(2, '0')}</span>
                 {reflection}
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </section>
       </main>
     </div>

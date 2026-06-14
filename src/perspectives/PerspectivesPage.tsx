@@ -9,29 +9,22 @@ import kingImg from '../assets/perspectives/fd62593ed3a99dc48c1587c439fc5a0ee82e
 
 type CardTab = 'scenario' | 'media' | 'perk';
 
-const projectTags = ['Systems Design', 'Game Design', 'Research'];
-
-const heroMeta = [
-  { label: 'Format', value: 'Speculative board game' },
-  { label: 'Focus', value: 'Privilege, power, inequity' },
-  { label: 'Built Through', value: 'Research, prototyping, playtesting' },
-];
-
-const approachPillars = [
+const visibilityChain = [
   {
-    title: 'Systems as mechanics',
-    description:
-      'I translated abstract social theory into rules, constraints, and progression loops so power becomes visible through play.',
+    title: 'Starting position',
+    description: 'Geography changes which resources a player can reach first.',
   },
   {
-    title: 'Safe exploration',
-    description:
-      'The game creates enough distance for players to examine inequity without feeling immediately accused or cornered.',
+    title: 'Early opportunity',
+    description: 'Access changes what a player can extract, trade, and build.',
   },
   {
-    title: 'Iterative design',
-    description:
-      'Playtesting helped me tune emotional friction, pacing, and clarity so the lesson stayed legible without collapsing the game.',
+    title: 'Institutions',
+    description: 'Buildings turn temporary advantage into protection and resilience.',
+  },
+  {
+    title: 'Compounding outcomes',
+    description: 'Crises reveal who can absorb shocks and who loses ground.',
   },
 ];
 
@@ -39,47 +32,47 @@ const tutorialSteps = [
   {
     title: "You're probably wondering...",
     content:
-      'How do you play this? What does it all mean? This walkthrough makes the system legible before the actual gameplay begins.',
+      'How do you play this? What does it all mean? The walkthrough makes the model understandable before the game begins.',
     image: farmerImg,
   },
   {
-    title: 'Step 1: Set up the board',
+    title: 'Set up the board',
     content:
-      'Players begin with the base tile layout, while advanced players can rearrange the terrain to create different strategic conditions.',
+      'Players begin with a shared terrain layout. Rearranging the board creates new strategic and social conditions.',
   },
   {
-    title: 'Step 2: Who goes first?',
+    title: 'Decide who goes first',
     content:
-      'The game immediately introduces asymmetry and discomfort, framing order-of-play as part of the larger critique of systemic inequality.',
+      'Order immediately introduces asymmetry. The discomfort is intentional: sequence is part of the model, not neutral administration.',
     image: womanImg,
     highlight: true,
   },
   {
-    title: 'Step 3: Choose your representative',
+    title: 'Choose a representative',
     content:
-      'Players select a representative and place them near the resources that will define their early opportunities.',
+      'Players place a representative near the resources that will shape their earliest opportunities.',
     image: gentlemanImg,
   },
   {
-    title: 'Step 4: Define your culture',
+    title: 'Define a culture',
     content:
-      'Before expanding, players articulate identity, language, rituals, and origin. The game makes culture part of what is at stake when power consolidates.',
+      'Players articulate identity, language, rituals, and origin before expansion begins, making culture part of what is at stake.',
     image: kingImg,
   },
   {
-    title: 'Resource acquisition',
+    title: 'Gather resources',
     content:
-      'Players gather resources from surrounding tiles, but each turn limits what they can take. Scarcity shapes strategy from the beginning.',
+      'Each turn limits extraction. Scarcity and geography shape what choices remain available.',
   },
   {
-    title: 'Movement rules',
+    title: 'Move and expand',
     content:
-      'Positioning matters. Citizens move across intersections and spacing rules determine who can expand, block, or access future opportunities.',
+      'Positioning determines who can reach new territory, block an opponent, or access future opportunities.',
   },
   {
-    title: 'Capturing tiles',
+    title: 'Build institutions',
     content:
-      'Structures convert territory into long-term advantage. Once claimed, tiles become engines for compounding growth.',
+      'Structures convert territory and resources into durable protection, making early advantages harder to reverse.',
   },
 ];
 
@@ -103,176 +96,39 @@ const mediaCards = [
 
 const perkCards = [
   { name: 'City Planner', effect: 'Build two structures during your turn' },
-  { name: 'Emergency Services', effect: 'Immune to one scenario card' },
+  { name: 'Emergency Services', effect: 'Become immune to one scenario card' },
   { name: 'Lucky Break', effect: 'Draw an additional resource card during your turn' },
   { name: 'Master Trader', effect: 'Initiate a trade with any player at any time' },
   { name: 'Resourceful', effect: 'Extract two additional resources during your turn' },
   { name: 'Wild Card', effect: 'Draw a scenario, media, or perk card of your choice' },
 ];
 
-const impactPoints = [
-  {
-    title: 'Made systems visible',
-    description:
-      'The game gave players a concrete way to see how privilege compounds across turns, territories, and generations.',
-  },
-  {
-    title: 'Sparked dialogue',
-    description:
-      'The format opened up harder conversations by moving the discussion from accusation to shared observation.',
-  },
-  {
-    title: 'Demonstrated complexity',
-    description:
-      'The board, cards, and progression loops showed how “fair” systems can still produce uneven outcomes when starting conditions are unequal.',
-  },
-  {
-    title: 'Informed practice',
-    description:
-      'It became a useful facilitation artifact for educators and intervention designers thinking about power, access, and structural bias.',
-  },
-];
-
 const reflectionQuestions = [
-  'What story unfolded in front of you as the game progressed?',
-  'Who won, and who ended up controlling the centers of power?',
-  'What culture advanced most visibly, and why?',
-  'Does that mean one culture is better than another?',
-  'Who held the most power in the game, and who held the least?',
-  'How did privilege shape the outcome?',
-  'How did structures and systems reinforce inequity?',
-  'How did stereotypes and bias influence the game state?',
+  'Who gained access to resources first?',
+  'Which early advantages became difficult to reverse?',
+  'Who could afford institutions before the first crisis?',
+  'Which players recovered from shocks, and which lost ground?',
+  'When did an apparently fair rule produce an unequal outcome?',
+  'What would need to change for the outcome to be different?',
 ];
 
-const whatThisShows = [
-  {
-    title: 'Systems thinking',
-    description: 'Mapping complex social structures and turning them into interactive models that reveal hidden dynamics.',
-  },
-  {
-    title: 'Translation of complexity',
-    description: 'Converting abstract ideas of privilege and power into mechanics that can be experienced directly.',
-  },
-  {
-    title: 'Iterative design',
-    description: 'Balancing educational depth with engagement through testing, critique, and refinement.',
-  },
-  {
-    title: 'Cross-disciplinary execution',
-    description: 'Bringing together sociology, game design, systems practice, and facilitation into one coherent artifact.',
-  },
-];
-
-const roleSummary = {
-  role: 'Systems Designer & Builder',
-  scope: 'Research, game design, simulation thinking, and facilitation framing',
-};
-
-const impactSummary = [
-  'Turned structural inequality into something playable and discussable',
-  'Made privilege, access, and compounding advantage visible through play',
-  'Created a facilitation artifact for reflection, dialogue, and teaching',
-];
-
-const visibilityChain = [
-  {
-    title: 'Starting position',
-    description: 'Where a player begins on the board changes what resources they can reach first.',
-  },
-  {
-    title: 'Opportunity',
-    description: 'Early access changes what players can extract, build, trade, or protect.',
-  },
-  {
-    title: 'Institutions',
-    description: 'Buildings turn temporary advantage into durable protection and compounding resilience.',
-  },
-  {
-    title: 'Crisis response',
-    description: 'Scenario cards reveal who can absorb shocks and who collapses when the system is stressed.',
-  },
-];
-
-function SectionHeader({ eyebrow, title, description }: { eyebrow?: string; title: string; description?: string }) {
+function SectionIntro({
+  label,
+  title,
+  children,
+}: {
+  label: string;
+  title: string;
+  children?: React.ReactNode;
+}) {
   return (
-    <header className="space-y-4">
-      {eyebrow ? <p className="perspectives-eyebrow">{eyebrow}</p> : null}
-      <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.05em] text-[#222]">{title}</h2>
-      {description ? <p className="max-w-3xl text-lg leading-relaxed text-[#545454]">{description}</p> : null}
+    <header className="perspectives-section-head">
+      <p className="perspectives-eyebrow">{label}</p>
+      <div>
+        <h2>{title}</h2>
+        {children}
+      </div>
     </header>
-  );
-}
-
-function ProblemPanel() {
-  return (
-    <div className="perspectives-problem-panel" aria-label="Static framing panel about unequal systems">
-      <div className="perspectives-problem-panel__header">
-        <span>Starting conditions</span>
-        <span>Invisible systems</span>
-        <span>Outcomes</span>
-      </div>
-      <div className="perspectives-problem-panel__body">
-        <div className="perspectives-problem-node">
-          <p className="perspectives-problem-node__title">Access</p>
-          <p>Land, health, education, trade</p>
-        </div>
-        <div className="perspectives-problem-flow">
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className="perspectives-problem-node perspectives-problem-node--accent">
-          <p className="perspectives-problem-node__title">Institutions</p>
-          <p>Laws, myths, protections, gatekeeping</p>
-        </div>
-        <div className="perspectives-problem-flow">
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className="perspectives-problem-node">
-          <p className="perspectives-problem-node__title">Advantage</p>
-          <p>Compounding wealth, safety, power</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function SystemsMapPanel() {
-  return (
-    <div className="perspectives-map-panel" aria-label="Static systems map placeholder">
-      <div className="perspectives-map-row">
-        <div className="perspectives-map-box">Resources</div>
-        <div className="perspectives-map-box">Buildings</div>
-        <div className="perspectives-map-box">Protection</div>
-      </div>
-      <div className="perspectives-map-links">
-        <span />
-        <span />
-      </div>
-      <div className="perspectives-map-row perspectives-map-row--single">
-        <div className="perspectives-map-box perspectives-map-box--accent">Intergenerational advantage</div>
-      </div>
-    </div>
-  );
-}
-
-function MechanicsPanel() {
-  return (
-    <div className="perspectives-mechanics-panel" aria-label="Static mechanics breakdown panel">
-      <div className="perspectives-mechanics-track">
-        <div>Move</div>
-        <div>Extract</div>
-        <div>Build</div>
-        <div>Protect</div>
-      </div>
-      <div className="perspectives-mechanics-notes">
-        <p>Scarcity limits options early.</p>
-        <p>Structures convert luck into durable advantage.</p>
-        <p>Protection changes who can absorb shocks.</p>
-      </div>
-    </div>
   );
 }
 
@@ -284,373 +140,226 @@ export default function PerspectivesPage() {
     activeTab === 'scenario' ? scenarioCards : activeTab === 'media' ? mediaCards : perkCards;
 
   return (
-    <div className="min-h-screen bg-white text-black perspectives-page">
+    <div className="perspectives-page">
       <a href="#main-content" className="perspectives-skip-link">
         Skip to content
       </a>
 
       <header className="perspectives-topbar">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
-          <a href="../#featured-work" className="text-xl font-semibold tracking-[-0.03em] hover:text-[#FF4400] transition-colors">
-            Cynyassy
-          </a>
-          <nav aria-label="Perspectives sections" className="hidden lg:flex items-center gap-6 text-sm uppercase tracking-[0.18em]">
-            <a href="#playable-proof" className="perspectives-nav-link">Playable Proof</a>
-            <a href="#context" className="perspectives-nav-link">Context</a>
-            <a href="#system-design" className="perspectives-nav-link">System</a>
-            <a href="#gameplay" className="perspectives-nav-link">Gameplay</a>
-            <a href="#impact" className="perspectives-nav-link">Impact</a>
+        <div>
+          <a href="../#featured-work">Back to portfolio</a>
+          <nav aria-label="Perspectives sections">
+            <a href="#playable-proof">Playable proof</a>
+            <a href="#model">The model</a>
+            <a href="#gameplay">Gameplay</a>
+            <a href="#reflection">Reflection</a>
           </nav>
-          <a href="../#featured-work" className="perspectives-back-link">
-            Back to Projects
-          </a>
         </div>
       </header>
 
-      <main id="main-content" className="pt-24">
-        <section className="px-6 py-14 md:py-20 border-b border-black" id="hero">
-          <div className="max-w-7xl mx-auto space-y-12">
-            <div className="perspectives-hero-grid">
-              <div className="space-y-8">
-                <div className="space-y-6">
-                  <p className="perspectives-eyebrow">Case Study</p>
-                  <div className="space-y-4">
-                    <h1 className="text-6xl md:text-8xl lg:text-[4.5rem] font-semibold leading-[0.98] tracking-[-0.07em] inline-block relative text-[#171717]">
-                      Making structural inequality playable
-                      <span aria-hidden="true" className="absolute left-0 bottom-2 h-3 md:h-4 w-full bg-[#ffdf00] -z-10" />
-                    </h1>
-                    <p className="max-w-3xl text-xl md:text-1xl leading-relaxed text-[#3d3d3d]">
-                      Perspectives is a thesis project that turns privilege, access, and institutional power into something players can experience through rules, geography, and compounding outcomes.
-                    </p>
-                  </div>
+      <main id="main-content">
+        <section className="perspectives-hero">
+          <div className="perspectives-hero-copy">
+            <p className="perspectives-eyebrow">MFA thesis / speculative game</p>
+            <h1>Perspectives</h1>
+            <p className="perspectives-dek">
+              A board game that makes compounding advantage visible through play.
+            </p>
+            <p className="perspectives-muted">
+              Players begin in different geographies, gather unequal resources, build institutions, and face the same
+              crises with very different levels of protection. The rules may be shared; the outcomes are not.
+            </p>
+            <p className="perspectives-role">
+              <span className="perspectives-eyebrow">My work</span>
+              Research · causal modelling · game mechanics · prototyping · playtesting · facilitation
+            </p>
+          </div>
+
+          <figure className="perspectives-cover-shell">
+            <PerspectivesCoverArt className="perspectives-cover-art" />
+            <figcaption className="sr-only">
+              Perspectives thesis cover featuring illustrated player characters.
+            </figcaption>
+          </figure>
+        </section>
+
+        <section id="playable-proof" className="perspectives-section perspectives-playable-section">
+          <SectionIntro
+            label="Playable proof"
+            title="Try the thesis in miniature"
+          >
+            <p>
+              Pick a starting tile, let four societies expand, and watch early access become durable advantage. This is
+              a compact digital proof of the thesis, not the full board-game simulation.
+            </p>
+          </SectionIntro>
+          <PerspectivesPlayableProof />
+        </section>
+
+        <section id="model" className="perspectives-section">
+          <SectionIntro label="The model" title="One condition changes the next">
+            <p>
+              Perspectives does not ask players to accept an argument before playing. It lets them observe a chain of
+              causes unfolding across turns.
+            </p>
+          </SectionIntro>
+
+          <ol className="perspectives-chain">
+            {visibilityChain.map((item, index) => (
+              <li key={item.title}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </li>
+            ))}
+          </ol>
+
+          <div className="perspectives-context">
+            <div>
+              <p className="perspectives-eyebrow">Why a game?</p>
+              <h2>Play creates distance without removing consequence</h2>
+            </div>
+            <div className="perspectives-context-copy">
+              <p>
+                Conversations about inequality can quickly become abstract, defensive, or morally predetermined. A
+                game gives people a shared event to examine instead.
+              </p>
+              <p>
+                Players can point to a turn, a building, a resource, or a crisis and ask what changed. The discussion
+                begins with something everyone witnessed, then moves toward the larger forces it represents.
+              </p>
+              <blockquote>
+                The design challenge was not to explain inequity more forcefully. It was to make cause and effect
+                easier to notice.
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <section className="perspectives-section perspectives-system-section">
+          <SectionIntro label="From theory to mechanics" title="Temporary access becomes durable power">
+            <p>
+              The game turns resources, buildings, protection, and crisis response into one progression model. Each
+              mechanic matters because it changes what remains possible later.
+            </p>
+          </SectionIntro>
+
+          <div className="perspectives-upgrade-sheet">
+            <div className="min-w-[595px] bg-white">
+              <UpgradeAndCostSheetV />
+            </div>
+          </div>
+
+          <div className="perspectives-loop">
+            {['Move', 'Extract', 'Build', 'Protect'].map((step, index) => (
+              <div key={step}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <strong>{step}</strong>
+              </div>
+            ))}
+          </div>
+
+          <div className="perspectives-design-notes">
+            <p>Scarcity narrows choices early.</p>
+            <p>Structures convert resources into resilience.</p>
+            <p>Protection determines who can absorb the same shock.</p>
+          </div>
+        </section>
+
+        <section id="gameplay" className="perspectives-section">
+          <SectionIntro label="Gameplay" title="The lesson lives inside the rules">
+            <p>
+              Onboarding, turn order, movement, and cards are not supporting material. They are how the model becomes
+              understandable through action.
+            </p>
+          </SectionIntro>
+
+          <div className="perspectives-tutorial-shell">
+            <article
+              className={`perspectives-tutorial-card ${
+                tutorialSteps[currentStep].highlight ? 'is-highlighted' : ''
+              }`}
+            >
+              <div className="perspectives-tutorial-content">
+                <div>
+                  <p className="perspectives-eyebrow">Step {currentStep + 1}</p>
+                  <h3>{tutorialSteps[currentStep].title}</h3>
+                  <p>{tutorialSteps[currentStep].content}</p>
                 </div>
+                {tutorialSteps[currentStep].image ? (
+                  <img src={tutorialSteps[currentStep].image} alt="Illustrated gameplay character" />
+                ) : null}
+              </div>
 
-                <div className="flex flex-wrap gap-3">
-                  {projectTags.map((tag) => (
-                    <span key={tag} className="perspectives-tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <dl className="perspectives-hero-meta">
-                  {heroMeta.map((item) => (
-                    <div key={item.label} className="perspectives-hero-meta__item">
-                      <dt>{item.label}</dt>
-                      <dd>{item.value}</dd>
-                    </div>
-                  ))}
-                </dl>
-
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                    <p className="perspectives-eyebrow mb-2">Role</p>
-                    <p className="text-lg font-semibold tracking-[-0.03em] text-[#111]">{roleSummary.role}</p>
-                  </div>
-                  <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                    <p className="perspectives-eyebrow mb-2">Scope</p>
-                    <p className="text-base leading-relaxed text-[#444]">{roleSummary.scope}</p>
-                  </div>
-                </div>
-
-                <div className="grid gap-4 md:grid-cols-3">
-                  {impactSummary.map((item) => (
-                    <div key={item} className="rounded-[8px] border-2 border-black bg-white p-4">
-                      <p className="perspectives-eyebrow mb-2">Impact</p>
-                      <p className="text-base font-semibold leading-relaxed tracking-[-0.02em] text-[#111]">{item}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <p className="rounded-[8px] border-2 border-black bg-white p-4 text-base font-semibold leading-relaxed text-[#111]">
-                  In one line: I turned abstract inequality into a playable model of cause, consequence, and compounding advantage.
+              <div className="perspectives-tutorial-controls">
+                <button
+                  type="button"
+                  onClick={() => setCurrentStep((value) => Math.max(0, value - 1))}
+                  disabled={currentStep === 0}
+                  className="perspectives-control-button"
+                >
+                  Previous
+                </button>
+                <p>
+                  {currentStep + 1} / {tutorialSteps.length}
                 </p>
-
-                <div className="grid gap-4 md:grid-cols-3">
-                  <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                    <p className="perspectives-eyebrow mb-2">Complexity</p>
-                    <p className="text-base leading-relaxed text-[#444]">Privilege, geography, institutions, crisis, and compounding advantage.</p>
-                  </div>
-                  <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                    <p className="perspectives-eyebrow mb-2">Users</p>
-                    <p className="text-base leading-relaxed text-[#444]">Players, facilitators, educators, and groups trying to discuss inequity without flattening it.</p>
-                  </div>
-                  <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                    <p className="perspectives-eyebrow mb-2">What changed</p>
-                    <p className="text-base leading-relaxed text-[#444]">Abstract structural forces became visible through choices, turns, shocks, and consequences.</p>
-                  </div>
-                </div>
+                <button
+                  type="button"
+                  onClick={() => setCurrentStep((value) => Math.min(tutorialSteps.length - 1, value + 1))}
+                  disabled={currentStep === tutorialSteps.length - 1}
+                  className="perspectives-control-button"
+                >
+                  Next
+                </button>
               </div>
+            </article>
 
-              <div className="space-y-4">
-                <figure className="perspectives-cover-shell">
-                  <div className="perspectives-cover-stage">
-                    <PerspectivesCoverArt className="h-full shadow-none border-0" />
-                  </div>
-                  <figcaption className="sr-only">
-                    Poster-style cover composition for Perspectives with the project title and illustrated characters.
-                  </figcaption>
-                </figure>
-
-                <div className="perspectives-hero-caption">
-                  <p>Hero artwork adapted from the original Figma Make export and re-framed as a cleaner editorial cover for the case study.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="px-6 py-20 border-b border-black bg-[#fbfbfb]" id="playable-proof">
-          <div className="max-w-7xl mx-auto space-y-10">
-            <SectionHeader
-              eyebrow="Playable Proof"
-              title="A compact explorable sits at the top of the case study"
-              description="This is the first playable digital proof, not the full simulation. It captures the core thesis in a lightweight canvas model, while the deeper design process and supporting artifacts continue below."
-            />
-            <PerspectivesPlayableProof />
-          </div>
-        </section>
-
-        <section className="px-6 py-20 border-b border-black bg-white" id="what-became-visible">
-          <div className="max-w-6xl mx-auto space-y-10">
-            <SectionHeader
-              eyebrow="What Became Visible"
-              title="The game makes cause and effect visible across turns"
-              description="Instead of asking players to accept an abstract argument, Perspectives lets them watch one condition influence the next."
-            />
-
-            <div className="grid gap-5 md:grid-cols-4">
-              {visibilityChain.map((item, index) => (
-                <article key={item.title} className="relative rounded-[8px] border-2 border-black bg-white p-5">
-                  <p className="perspectives-eyebrow mb-3">0{index + 1}</p>
-                  <h3 className="mb-3 text-2xl font-semibold tracking-[-0.03em] text-[#222]">{item.title}</h3>
-                  <p className="text-base leading-relaxed text-[#4d4d4d]">{item.description}</p>
-                  {index < visibilityChain.length - 1 ? (
-                    <span className="absolute -right-4 top-1/2 z-10 hidden -translate-y-1/2 bg-white px-1 text-xl font-semibold md:block">→</span>
-                  ) : null}
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="px-6 py-20 border-b border-black bg-white" id="thesis-presentation">
-          <div className="max-w-6xl mx-auto space-y-6">
-            <SectionHeader
-              eyebrow="Thesis Presentation"
-              title="Thesis Presentation at DSI, SVA"
-              description="This video captures how I framed the game academically: a board game that functions as a systems artifact for starting conversations around exploring privilege, access, and structural inequity."
-            />
-
-            <div className="perspectives-video-shell">
-              <div className="perspectives-video-frame">
-                <iframe
-                  src="https://www.youtube.com/embed/G3VoClPmiKM"
-                  title="Perspectives thesis presentation"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
+            <div className="perspectives-progress" aria-label="Tutorial progress">
+              {tutorialSteps.map((step, index) => (
+                <button
+                  key={step.title}
+                  type="button"
+                  onClick={() => setCurrentStep(index)}
+                  className={`perspectives-progress-dot ${index === currentStep ? 'is-active' : ''}`}
+                  aria-label={`Go to ${step.title}`}
+                  aria-pressed={index === currentStep}
                 />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="px-6 py-20 border-b border-black" id="context">
-          <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-[1.3fr_0.7fr] items-start">
-            <div className="space-y-6">
-              <SectionHeader
-                eyebrow="Context"
-                title="Making invisible systems visible"
-                description="Systems shape who gets ahead and who gets left behind. This project turns those structures into something players can experience, question, and discuss together."
-              />
-              <div className="space-y-5 text-lg leading-relaxed text-[#333] max-w-3xl">
-                <p>
-                  Perspectives began as a thesis project about how inequality becomes normalized through institutions, geography, and accumulated advantage.
-                </p>
-                <p>
-                  Rather than explaining those dynamics only through writing, I built a game that lets players feel how access, scarcity, and protection stack over time.
-                </p>
-                <p>
-                  The result is a case study in translating systems thinking into an artifact that is teachable, discussable, and emotionally legible.
-                </p>
-              </div>
-            </div>
-
-            <aside className="perspectives-side-panel">
-              <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#222]">Project framing</h3>
-              <ul className="space-y-4 text-base leading-relaxed text-[#454545]">
-                <li><strong>Format:</strong> Board game prototype</li>
-                <li><strong>Focus:</strong> Privilege, power, and systems</li>
-                <li><strong>Role:</strong> Research, game design, interaction framing</li>
-              </ul>
-            </aside>
-          </div>
-        </section>
-
-        <section className="px-6 py-20 border-b border-black" id="problem">
-          <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-[1fr_0.85fr] items-start">
-            <div className="space-y-8">
-              <SectionHeader eyebrow="Problem" title="How do you create reflection without shutting people down?" />
-              <div className="space-y-5 max-w-3xl text-lg leading-relaxed text-[#333]">
-                <p>
-                  Inequity persists across education, healthcare, and wealth distribution, but conversations about those systems often become abstract, defensive, or emotionally stuck.
-                </p>
-                <p>
-                  I wanted to build a format that could hold complexity while still inviting participation. The challenge was to make structural advantage understandable without flattening it into a lecture.
-                </p>
-                <p>
-                  Perspectives answers that by moving the conversation into a playable system, where compounding advantage is experienced rather than simply asserted.
-                </p>
-              </div>
-            </div>
-
-            <aside className="perspectives-diagram-placeholder">
-              <h3 className="perspectives-placeholder-title">Problem framing panel</h3>
-              <p>This static panel sketches the design logic behind the game: unequal access feeds institutions, and institutions shape outcomes.</p>
-              <ProblemPanel />
-            </aside>
-          </div>
-        </section>
-
-        <section className="px-6 py-20 border-b border-black bg-[#fbfbfb]" id="approach">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <SectionHeader eyebrow="How I approached this" title="From abstract theory to playable systems" />
-            <div className="grid gap-6 md:grid-cols-3">
-              {approachPillars.map((pillar) => (
-                <article key={pillar.title} className="perspectives-pillar-card">
-                  <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#222]">{pillar.title}</h3>
-                  <p className="text-base leading-relaxed text-[#4d4d4d]">{pillar.description}</p>
-                </article>
               ))}
             </div>
           </div>
-        </section>
 
-        <section className="px-6 py-20 border-b border-black" id="system-design">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <SectionHeader
-              eyebrow="System Design"
-              title="Progression, protection, and compounding power"
-                description="The game simulates intergenerational privilege through progression tiers, building unlocks, and asymmetric resilience. Education, healthcare, and industry become mechanics that shape long-term outcomes."
-            />
-
-            <div className="perspectives-upgrade-sheet">
-              <div className="min-w-[595px] bg-white">
-                <UpgradeAndCostSheetV />
-              </div>
+          <div className="perspectives-cards-section">
+            <div>
+              <p className="perspectives-eyebrow">Cards and shocks</p>
+              <h2>Equal events do not create equal consequences</h2>
+              <p>
+                Scenario and media cards introduce volatility. Institutions, luck, and prior advantage determine how
+                much damage each player absorbs.
+              </p>
             </div>
-
-            <div className="grid gap-6 md:grid-cols-2">
-              <article className="perspectives-diagram-placeholder">
-                <h3 className="perspectives-placeholder-title">Flow diagram</h3>
-                <p>A static systems map showing how resource access leads to buildings, buildings create protection, and protection compounds over time.</p>
-                <SystemsMapPanel />
-              </article>
-              <article className="perspectives-diagram-placeholder">
-                <h3 className="perspectives-placeholder-title">Mechanics breakdown</h3>
-                <p>A static editorial panel summarizing the loop players feel: move, extract, build, protect, repeat.</p>
-                <MechanicsPanel />
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section className="px-6 py-20 border-b border-black bg-white" id="gameplay">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <SectionHeader
-              eyebrow="How to Play / Gameplay"
-              title="A turn-by-turn explanation area"
-              description="This walkthrough remains intentionally present in the case study because the onboarding itself is part of the design."
-            />
-
-            <div className="perspectives-tutorial-shell">
-              <article className={`perspectives-tutorial-card ${tutorialSteps[currentStep].highlight ? 'is-highlighted' : ''}`}>
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
-                  <div className="space-y-4 flex-1">
-                    <p className="perspectives-eyebrow">Step {currentStep + 1}</p>
-                    <h3 className="text-3xl md:text-4xl font-semibold tracking-[-0.04em] text-[#222]">{tutorialSteps[currentStep].title}</h3>
-                    <p className="text-lg leading-relaxed text-[#333]">{tutorialSteps[currentStep].content}</p>
-                  </div>
-                  {tutorialSteps[currentStep].image ? (
-                    <img
-                      src={tutorialSteps[currentStep].image}
-                      alt="Illustrated gameplay character"
-                      className="w-28 h-28 md:w-32 md:h-32 object-contain shrink-0"
-                    />
-                  ) : null}
-                </div>
-
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-6 border-t-2 border-black">
-                  <button
-                    type="button"
-                    onClick={() => setCurrentStep((value) => Math.max(0, value - 1))}
-                    disabled={currentStep === 0}
-                    className="perspectives-control-button"
-                  >
-                    Previous
-                  </button>
-                  <p className="text-sm font-semibold tracking-[0.18em] uppercase text-[#5b5b5b]">
-                    {currentStep + 1} / {tutorialSteps.length}
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => setCurrentStep((value) => Math.min(tutorialSteps.length - 1, value + 1))}
-                    disabled={currentStep === tutorialSteps.length - 1}
-                    className="perspectives-control-button"
-                  >
-                    Next
-                  </button>
-                </div>
-              </article>
-
-              <div className="flex gap-2" aria-label="Tutorial progress">
-                {tutorialSteps.map((step, index) => (
-                  <button
-                    key={step.title}
-                    type="button"
-                    onClick={() => setCurrentStep(index)}
-                    className={`perspectives-progress-dot ${index === currentStep ? 'is-active' : ''}`}
-                    aria-label={`Go to ${step.title}`}
-                    aria-pressed={index === currentStep}
-                  />
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <section className="px-6 py-20 border-b border-black bg-[#fbfbfb]" id="rules-components">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <SectionHeader
-              eyebrow="Rules / Cards / Components"
-              title="Where the critique lives in the rules"
-              description="Cards introduce volatility and expose how protection, education, and luck interact with structural advantage."
-            />
 
             <div className="perspectives-tab-shell">
               <div className="perspectives-tab-list" role="tablist" aria-label="Card types">
-                <button type="button" role="tab" aria-selected={activeTab === 'scenario'} className={`perspectives-tab ${activeTab === 'scenario' ? 'is-active' : ''}`} onClick={() => setActiveTab('scenario')}>
-                  Scenario
-                </button>
-                <button type="button" role="tab" aria-selected={activeTab === 'media'} className={`perspectives-tab ${activeTab === 'media' ? 'is-active' : ''}`} onClick={() => setActiveTab('media')}>
-                  Media
-                </button>
-                <button type="button" role="tab" aria-selected={activeTab === 'perk'} className={`perspectives-tab ${activeTab === 'perk' ? 'is-active' : ''}`} onClick={() => setActiveTab('perk')}>
-                  Perk
-                </button>
+                {(['scenario', 'media', 'perk'] as CardTab[]).map((tab) => (
+                  <button
+                    key={tab}
+                    type="button"
+                    role="tab"
+                    aria-selected={activeTab === tab}
+                    className={`perspectives-tab ${activeTab === tab ? 'is-active' : ''}`}
+                    onClick={() => setActiveTab(tab)}
+                  >
+                    {tab}
+                  </button>
+                ))}
               </div>
 
-              <div className="grid gap-4 md:grid-cols-2">
+              <div className="perspectives-card-list">
                 {activeCardSet.map((card) => (
-                  <article key={card.name} className="perspectives-card-entry">
-                    <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#222]">{card.name}</h3>
-                    <p className="text-base leading-relaxed text-[#444]">{card.effect}</p>
-                    {'defense' in card ? (
-                      <p className="text-sm uppercase tracking-[0.12em] text-[#666]">Defense: {card.defense}</p>
-                    ) : null}
+                  <article key={card.name}>
+                    <h3>{card.name}</h3>
+                    <p>{card.effect}</p>
+                    {'defense' in card ? <span>Defense: {card.defense}</span> : null}
                   </article>
                 ))}
               </div>
@@ -658,72 +367,53 @@ export default function PerspectivesPage() {
           </div>
         </section>
 
-        <section className="px-6 py-20 border-b border-black bg-[#fbfbfb]" id="impact">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <SectionHeader
-              eyebrow="Impact"
-              title="What the project made possible"
-              description="The strongest effect of the work was not a single metric, but the kind of reflection and dialogue it made possible."
+        <section className="perspectives-section perspectives-video-section">
+          <SectionIntro label="Thesis presentation" title="The full academic framing">
+            <p>
+              The presentation explains the research, design intent, and evolution of the physical board game at
+              Design for Social Innovation, SVA.
+            </p>
+          </SectionIntro>
+          <div className="perspectives-video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/G3VoClPmiKM"
+              title="Perspectives thesis presentation"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             />
-
-            <div className="grid gap-6 md:grid-cols-2">
-              {impactPoints.map((point) => (
-                <article key={point.title} className="perspectives-impact-item">
-                  <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#222]">{point.title}</h3>
-                  <p className="text-base leading-relaxed text-[#444]">{point.description}</p>
-                </article>
-              ))}
-            </div>
-
-            <div className="perspectives-reflection-block">
-              <h3 className="text-3xl md:text-4xl font-semibold tracking-[-0.04em] text-[#222]">Post-game reflection prompts</h3>
-              <p className="text-lg leading-relaxed text-[#3e3e3e]">
-                These facilitator prompts help players connect their experience back to power, identity, and real-world systems.
-              </p>
-              <div className="grid gap-4 md:grid-cols-2">
-                {reflectionQuestions.map((question, index) => (
-                  <article key={question} className="perspectives-question-card">
-                    <span className="perspectives-question-index">{index + 1}</span>
-                    <p className="text-base leading-relaxed text-[#333]">{question}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 
-        <section className="px-6 py-20 border-b border-black" id="reflection">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <SectionHeader
-              eyebrow="Reflection / What this shows"
-              title="The project demonstrates more than one artifact"
-              description="It shows how research, systems thinking, facilitation, and design can converge into a single learning experience."
-            />
-            <div className="grid gap-6 md:grid-cols-2">
-              {whatThisShows.map((item) => (
-                <article key={item.title} className="perspectives-what-card">
-                  <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#222]">{item.title}</h3>
-                  <p className="text-base leading-relaxed text-[#444]">{item.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
+        <section id="reflection" className="perspectives-section perspectives-reflection">
+          <SectionIntro label="After play" title="The board becomes evidence for a conversation">
+            <p>
+              Reflection connects the game state back to the choices, structures, and assumptions that produced it.
+            </p>
+          </SectionIntro>
+
+          <ol>
+            {reflectionQuestions.map((question, index) => (
+              <li key={question}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <p>{question}</p>
+              </li>
+            ))}
+          </ol>
+
+          <p className="perspectives-closing">
+            Perspectives is ultimately a translation project: an attempt to turn an invisible web of relationships
+            into a world people can enter, alter, and question together.
+          </p>
         </section>
       </main>
 
-      <footer className="px-6 py-16 bg-black text-white">
-        <div className="max-w-6xl mx-auto flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-          <div className="space-y-3 max-w-2xl">
-            <p className="text-3xl md:text-4xl font-semibold tracking-[-0.04em] text-[#ffdf00]">Back to the portfolio</p>
-            <p className="text-base leading-relaxed text-white/75">
-              Perspectives now includes a lightweight playable proof in-page, with the fuller simulation work linked out for deeper exploration.
-            </p>
-          </div>
-          <div className="flex flex-col items-start gap-3 md:items-end">
-            <a href="../#featured-work" className="perspectives-footer-link">Back to Projects</a>
-            <a href="../#contact" className="perspectives-footer-link">Get in touch</a>
-            <p className="text-sm text-white/50">© 2026 Shashank Sharma / Cynyassy</p>
-          </div>
+      <footer className="perspectives-footer">
+        <p>Perspectives / MFA Design for Social Innovation, SVA</p>
+        <div>
+          <a href="../#featured-work">Back to projects</a>
+          <a href="../#contact">Get in touch</a>
         </div>
       </footer>
     </div>

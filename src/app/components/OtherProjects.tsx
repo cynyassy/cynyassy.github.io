@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
-import { ArrowRight, BookOpen, ExternalLink } from 'lucide-react';
+import { ArrowRight, BookOpen, ExternalLink, Sparkles } from 'lucide-react';
 import emotionIdentifierCover from '../../assets/other-projects/emotion-identifier-cover.png';
+import bookCover from '../../assets/cynyassy-book/not-everything-is-urgent-first-this.png';
 
 export function OtherProjects() {
   return (
@@ -14,70 +15,99 @@ export function OtherProjects() {
         >
           <p className="mb-3 text-[0.78rem] uppercase tracking-[0.22em] text-[#666]">Other Projects</p>
           <h2 className="mb-4 text-5xl font-semibold tracking-[-0.05em] text-[#111] md:text-6xl">
-            Smaller builds, complete ideas
+            Useful ideas in other forms
           </h2>
           <p className="text-lg leading-relaxed text-[#555]">
-            Shipped tools and independent experiments that extend the same practice: making difficult ideas easier to
-            understand, use, and share.
+            Independent projects that extend the same practice beyond the main case studies: understand something
+            carefully, then give it a clear and useful form.
           </p>
         </motion.div>
 
-        <div className="grid gap-8 lg:grid-cols-[1.45fr_0.75fr]">
-          <motion.a
-            href="https://cynyassy.github.io/emotions/"
-            target="_blank"
-            rel="noreferrer"
-            className="group overflow-hidden rounded-[8px] border-2 border-black bg-white transition-transform duration-300 hover:-translate-y-1"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="aspect-[1200/630] overflow-hidden border-b-2 border-black bg-[#f5f5f5]">
-              <img
-                src={emotionIdentifierCover}
-                alt="Emotion Identifier Tool interface asking the user to name what they feel"
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.015]"
-              />
-            </div>
-            <div className="p-7 md:p-8">
-              <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-                <span className="rounded-[4px] border-2 border-black bg-[#FF4400] px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white">
-                  Live tool
-                </span>
-                <ExternalLink size={20} aria-hidden="true" />
-              </div>
-              <h3 className="mb-3 text-3xl font-semibold tracking-[-0.04em] text-[#111]">Emotion Identifier</h3>
-              <p className="mb-5 leading-relaxed text-[#555]">
-                A guided seven-step experience that helps people move beyond “good” or “bad,” name a more precise
-                emotion, and connect it to an underlying human need.
-              </p>
-              <p className="text-sm font-semibold uppercase tracking-[0.13em] text-[#222]">
-                React · TypeScript · Product design · Emotional learning
-              </p>
-            </div>
-          </motion.a>
-
+        <div className="grid gap-8 lg:grid-cols-2">
           <motion.article
-            className="flex min-h-[22rem] flex-col justify-between rounded-[8px] border-2 border-black bg-[#111] p-8 text-white"
+            className="flex h-full flex-col overflow-hidden rounded-[8px] border-2 border-black bg-white text-black"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <div>
-              <BookOpen size={30} className="mb-8 text-[#FF4400]" aria-hidden="true" />
-              <span className="mb-5 inline-block rounded-[4px] border-2 border-white px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.18em]">
-                Coming soon
-              </span>
-              <h3 className="mb-3 text-3xl font-semibold tracking-[-0.04em]">It’s Not That Urgent</h3>
-              <p className="leading-relaxed text-[#d5d5d5]">
-                An upcoming illustrated book joining this shelf when it launches. The project page and purchase links
-                will be added here once they are ready.
-              </p>
+            <a
+              href="https://cynyassy.github.io/emotions/"
+              target="_blank"
+              rel="noreferrer"
+              className="block border-b-2 border-black bg-[#f4f4f2]"
+              aria-label="Try the Emotion Identifier"
+            >
+              <img
+                src={emotionIdentifierCover}
+                alt="Emotion Identifier guided reflection tool"
+                className="aspect-[4/3] w-full object-contain"
+              />
+            </a>
+            <div className="flex flex-1 flex-col justify-between p-8">
+              <div>
+                <Sparkles size={30} className="mb-6 text-[#FF4400]" aria-hidden="true" />
+                <span className="mb-5 inline-block rounded-[4px] border-2 border-black px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.18em]">
+                  Live interactive tool
+                </span>
+                <h3 className="mb-3 text-3xl font-semibold tracking-[-0.04em]">Emotion Identifier</h3>
+                <p className="leading-relaxed text-[#555]">
+                  A seven-step guided experience that helps people move from broad feelings to more precise emotional
+                  language and underlying needs.
+                </p>
+              </div>
+              <a
+                href="https://cynyassy.github.io/emotions/"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 inline-flex w-fit items-center gap-2 text-sm font-semibold uppercase tracking-[0.13em] text-[#111] underline decoration-[#FF4400] decoration-2 underline-offset-8"
+              >
+                Try the live tool <ExternalLink size={16} />
+              </a>
             </div>
-            <p className="mt-8 text-sm font-semibold uppercase tracking-[0.13em] text-[#aaa]">
-              Illustrated publishing project
-            </p>
+          </motion.article>
+
+          <motion.article
+            className="flex h-full flex-col overflow-hidden rounded-[8px] border-2 border-black bg-[#111] text-white"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.16 }}
+          >
+            <a
+              href="https://itsnotthaturgent.co"
+              target="_blank"
+              rel="noreferrer"
+              className="block border-b-2 border-white/40 bg-[#d8bdca]"
+              aria-label="Visit the Not Everything Is Urgent book website"
+            >
+              <img
+                src={bookCover}
+                alt="Not Everything Is Urgent book cover"
+                className="aspect-[4/3] w-full object-contain object-center"
+              />
+            </a>
+            <div className="flex flex-1 flex-col justify-between p-8">
+              <div>
+                <BookOpen size={30} className="mb-6 text-[#FF4400]" aria-hidden="true" />
+                <span className="mb-5 inline-block rounded-[4px] border-2 border-white px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.18em]">
+                  Illustrated book
+                </span>
+                <h3 className="mb-3 text-3xl font-semibold tracking-[-0.04em]">Not Everything Is Urgent</h3>
+                <p className="leading-relaxed text-[#d5d5d5]">
+                  A two-part illustrated book about attention, pressure, and remembering that not everything deserves
+                  the same urgency.
+                </p>
+              </div>
+              <a
+                href="https://itsnotthaturgent.co"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 inline-flex w-fit items-center gap-2 text-sm font-semibold uppercase tracking-[0.13em] text-white underline decoration-[#FF4400] decoration-2 underline-offset-8"
+              >
+                Visit the book website <ExternalLink size={16} />
+              </a>
+            </div>
           </motion.article>
         </div>
 

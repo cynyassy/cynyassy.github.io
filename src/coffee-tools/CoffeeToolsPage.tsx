@@ -1,593 +1,325 @@
 import { useState } from 'react';
-import authScreenImg from '../assets/coffee-tools-case-study/authentication-screen.png';
-import myBagsImg from '../assets/coffee-tools-case-study/my-bags-view.png';
 import myBagsViewImageImg from '../assets/coffee-tools-case-study/my-bags-view-image.png';
 import appShellImg from '../assets/coffee-tools-case-study/app-shell.png';
 import coverImageImg from '../assets/coffee-tools-case-study/cover-image.png';
-import bagPageImg from '../assets/coffee-tools-case-study/bag-page.png';
 import bagPageOneImg from '../assets/coffee-tools-case-study/bag-page-1.png';
 import bagPageTwoImg from '../assets/coffee-tools-case-study/bag-page-2.png';
-import logBrewImg from '../assets/coffee-tools-case-study/log-brew-page.png';
-import analyticsImg from '../assets/coffee-tools-case-study/bag-analytics-page.png';
 import analyticsOneImg from '../assets/coffee-tools-case-study/bag-analytics-page-1.png';
 import analyticsTwoImg from '../assets/coffee-tools-case-study/bag-analytics-page-2.png';
 import analyticsThreeImg from '../assets/coffee-tools-case-study/bag-analytics-page-3.png';
 import profileImg from '../assets/coffee-tools-case-study/profile-page.png';
-import editBagImg from '../assets/coffee-tools-case-study/edit-bag-page.png';
-
-const projectTags = ['Builder', 'Backend System', 'Product Thinking'];
-
-const heroMeta = [
-  { label: 'Format', value: 'Product + backend case study' },
-  { label: 'Core Model', value: 'Bag-centered workflow' },
-  { label: 'Stack', value: 'Node, TypeScript, Supabase, Postgres' },
-];
-
-const systemPillars = [
-  {
-    title: 'Start from real behavior',
-    description:
-      'The product starts from an actual enthusiast workflow: multiple bags open at once, multiple grinders in rotation, and a need to compare results without turning brewing into admin work.',
-  },
-  {
-    title: 'Model the bag, not just the brew',
-    description:
-      'Instead of treating each brew like an isolated note, Coffee Tools organizes the experience around the lifecycle of a coffee bag, then nests brew logging and analytics inside that system.',
-  },
-  {
-    title: 'Make repeatability visible',
-    description:
-      'Status, roast age, best brew, history, and analytics all work together to help the user see patterns over time and get more consistent results from each coffee.',
-  },
-];
 
 const workflowSteps = [
   {
     title: 'Enter with low friction',
     description:
-      'Splash and magic-link login keep the entry experience light while still framing the product as a serious brewing tool.',
+      'A short introduction and magic-link login make the product easy to enter without making it feel disposable.',
     image: coverImageImg,
   },
   {
-    title: 'Manage active rotation',
+    title: 'See the active rotation',
     description:
-      'The home screen is built around active bags in rotation, because serious brewers are usually comparing several coffees at once.',
+      'The home screen starts with the bags currently in use, because serious brewers are often comparing several coffees at once.',
     image: [appShellImg, myBagsViewImageImg],
   },
   {
-    title: 'Operate from one bag hub',
+    title: 'Work from one bag hub',
     description:
-      'Bag detail becomes the operational center: identity, roast age, notes, best brew, and history all live in one place.',
+      'Identity, roast age, notes, best brew, and history stay attached to the coffee they describe.',
     image: [bagPageOneImg, bagPageTwoImg],
   },
   {
-    title: 'Log, compare, improve',
+    title: 'Compare and improve',
     description:
-      'Structured brew logging and analytics turn taste memory into something more durable, searchable, and useful.',
+      'Structured brew records turn taste memory into patterns that can guide the next attempt.',
     image: [analyticsOneImg, analyticsTwoImg, analyticsThreeImg],
   },
 ];
 
-const proofPoints = [
-  'Translated a personal enthusiast problem into a clear product model.',
-  'Built around Node, TypeScript, database-backed workflows, and Supabase authentication.',
-  'Used bag lifecycle, brewing inputs, and analytics as part of one coherent system.',
-  'Balanced practical utility with a product direction that feels specific to coffee culture.',
-];
-
-const roleSummary = {
-  role: 'Product Builder',
-  scope: 'Backend-first workflow design, API thinking, data modeling, and UX structure',
-};
-
-const impactSummary = [
-  'Mapped a real enthusiast workflow into a usable product model',
-  'Built around a bag-centered system instead of isolated brew notes',
-  'Connected product structure to backend thinking and data design',
-];
-
-const clarityPoints = [
+const backendSteps = [
   {
-    title: 'The bag lifecycle',
-    description: 'Which coffees are active, aging, peaking, archived, or worth returning to.',
+    label: '01',
+    title: 'Capture',
+    description: 'The frontend collects method, grinder, dose, water, settings, rating, and tasting notes.',
   },
   {
-    title: 'The brew history',
-    description: 'How method, grinder, dose, water, rating, and notes connect back to one specific bag.',
+    label: '02',
+    title: 'Authenticate',
+    description: 'Supabase verifies the session before middleware attaches the user to the request.',
   },
   {
-    title: 'The best result',
-    description: 'Which recipe worked best so repeatability becomes visible instead of dependent on memory.',
+    label: '03',
+    title: 'Validate',
+    description: 'Express hands the request to typed business logic that checks inputs and connects the brew to its bag.',
   },
   {
-    title: 'The backend model',
-    description: 'How authentication, API logic, database records, and analytics support the product flow.',
+    label: '04',
+    title: 'Store',
+    description: 'Drizzle writes the clean record to PostgreSQL and keeps the data model explicit.',
+  },
+  {
+    label: '05',
+    title: 'Learn',
+    description: 'The response updates the product and gives future analytics a reliable history to work with.',
   },
 ];
 
-function ScreenCarousel({
-  items,
-  label,
-  variant = 'gallery',
-}: {
-  items: { title: string; description: string; image: string | string[] }[];
-  label: string;
-  variant?: 'gallery' | 'workflow';
-}) {
+const nextSteps = [
+  {
+    title: 'Faster brew logging',
+    description: 'Reduce the interaction cost of capturing a brew while the user is already busy making it.',
+  },
+  {
+    title: 'Sharper comparisons',
+    description: 'Make grinder, recipe, roast age, and rating differences easier to read together.',
+  },
+  {
+    title: 'Useful recommendations',
+    description: 'Use brew history to suggest repeatable starting points rather than simply reporting old data.',
+  },
+];
+
+function ScreenCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeItem = items[activeIndex];
+  const activeItem = workflowSteps[activeIndex];
 
-  const goPrev = () => setActiveIndex((current) => (current === 0 ? items.length - 1 : current - 1));
-  const goNext = () => setActiveIndex((current) => (current === items.length - 1 ? 0 : current + 1));
+  const goPrev = () =>
+    setActiveIndex((current) => (current === 0 ? workflowSteps.length - 1 : current - 1));
+  const goNext = () =>
+    setActiveIndex((current) => (current === workflowSteps.length - 1 ? 0 : current + 1));
 
   return (
-    <div className={`coffee-tools-carousel${variant === 'workflow' ? ' coffee-tools-carousel--workflow' : ''}`} aria-label={label}>
-      {variant === 'workflow' ? (
-        <div className="coffee-tools-workflow-card">
-          <div className="coffee-tools-workflow-card__copy">
-            <p className="coffee-tools-step-index">
-              {String(activeIndex + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
-            </p>
-            <h3>{activeItem.title}</h3>
-            <p>{activeItem.description}</p>
-          </div>
-          <div className="coffee-tools-workflow-card__image-wrap">
-            <div className="coffee-tools-workflow-card__image-frame">
-              {Array.isArray(activeItem.image) ? (
-                <div
-                  className={`coffee-tools-workflow-card__image-pair${
-                    activeItem.image.length === 3 ? ' coffee-tools-workflow-card__image-pair--triple' : ''
-                  }`}
-                >
-                  {activeItem.image.map((imageSrc, index) => (
-                    <img key={imageSrc} src={imageSrc} alt={`${activeItem.title} screen ${index + 1}`} />
-                  ))}
-                </div>
-              ) : (
-                <img src={activeItem.image} alt={activeItem.title} />
-              )}
-            </div>
-          </div>
-          <div className="coffee-tools-workflow-card__nav">
-            <button type="button" className="coffee-tools-carousel__arrow" onClick={goPrev} aria-label={`Previous ${label}`}>
-              Prev
-            </button>
-            <div className="coffee-tools-carousel__dots" aria-label={`${label} navigation`}>
-              {items.map((item, index) => (
-                <button
-                  key={item.title}
-                  type="button"
-                  className={`coffee-tools-carousel__dot${index === activeIndex ? ' is-active' : ''}`}
-                  aria-label={`Go to ${item.title}`}
-                  aria-pressed={index === activeIndex}
-                  onClick={() => setActiveIndex(index)}
-                />
-              ))}
-            </div>
-            <button type="button" className="coffee-tools-carousel__arrow" onClick={goNext} aria-label={`Next ${label}`}>
-              Next
-            </button>
-          </div>
-        </div>
-      ) : (
-        <>
-          <div className="coffee-tools-carousel__meta">
-            <div className="coffee-tools-carousel__copy">
-              <p className="coffee-tools-step-index">
-                {String(activeIndex + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
-              </p>
-              <h3>{activeItem.title}</h3>
-              <p>{activeItem.description}</p>
-            </div>
-          </div>
+    <div className="coffee-workflow" aria-label="Coffee Tools product workflow">
+      <div className="coffee-workflow__copy">
+        <p className="coffee-index">
+          {String(activeIndex + 1).padStart(2, '0')} / {String(workflowSteps.length).padStart(2, '0')}
+        </p>
+        <h3>{activeItem.title}</h3>
+        <p>{activeItem.description}</p>
+      </div>
 
-          <div className="coffee-tools-carousel__stage">
-            <div />
-            <div className="coffee-tools-carousel__image-column">
-              <div className="coffee-tools-carousel__image-frame">
-                <img src={activeItem.image} alt={activeItem.title} />
-              </div>
-              <div className="coffee-tools-carousel__controls">
-                <button type="button" className="coffee-tools-carousel__arrow" onClick={goPrev} aria-label={`Previous ${label}`}>
-                  Prev
-                </button>
-                <div className="coffee-tools-carousel__dots" aria-label={`${label} navigation`}>
-                  {items.map((item, index) => (
-                    <button
-                      key={item.title}
-                      type="button"
-                      className={`coffee-tools-carousel__dot${index === activeIndex ? ' is-active' : ''}`}
-                      aria-label={`Go to ${item.title}`}
-                      aria-pressed={index === activeIndex}
-                      onClick={() => setActiveIndex(index)}
-                    />
-                  ))}
-                </div>
-                <button type="button" className="coffee-tools-carousel__arrow" onClick={goNext} aria-label={`Next ${label}`}>
-                  Next
-                </button>
-              </div>
-            </div>
-          </div>
-        </>
-      )}
+      <div className="coffee-workflow__visual">
+        <div
+          className={`coffee-workflow__screens${
+            Array.isArray(activeItem.image) && activeItem.image.length === 3
+              ? ' coffee-workflow__screens--triple'
+              : ''
+          }`}
+        >
+          {(Array.isArray(activeItem.image) ? activeItem.image : [activeItem.image]).map((image, index) => (
+            <img key={image} src={image} alt={`${activeItem.title} screen ${index + 1}`} />
+          ))}
+        </div>
+      </div>
+
+      <div className="coffee-workflow__controls">
+        <button type="button" onClick={goPrev} aria-label="Previous workflow step">
+          Prev
+        </button>
+        <div className="coffee-workflow__dots" aria-label="Workflow navigation">
+          {workflowSteps.map((step, index) => (
+            <button
+              key={step.title}
+              type="button"
+              className={index === activeIndex ? 'is-active' : ''}
+              aria-label={`Go to ${step.title}`}
+              aria-pressed={index === activeIndex}
+              onClick={() => setActiveIndex(index)}
+            />
+          ))}
+        </div>
+        <button type="button" onClick={goNext} aria-label="Next workflow step">
+          Next
+        </button>
+      </div>
     </div>
   );
 }
 
-function SectionHeader({ eyebrow, title, description }: { eyebrow?: string; title: string; description?: string }) {
+function SectionIntro({
+  label,
+  title,
+  children,
+}: {
+  label: string;
+  title: string;
+  children?: React.ReactNode;
+}) {
   return (
-    <header className="space-y-3">
-      {eyebrow ? <p className="coffee-tools-eyebrow">{eyebrow}</p> : null}
-      <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-5xl text-[#111111]">{title}</h2>
-      {description ? <p className="max-w-3xl text-base md:text-lg leading-relaxed text-[#4f4f4f]">{description}</p> : null}
+    <header className="coffee-section-intro">
+      <p className="coffee-eyebrow">{label}</p>
+      <div>
+        <h2>{title}</h2>
+        {children}
+      </div>
     </header>
   );
 }
 
 export default function CoffeeToolsPage() {
   return (
-    <div className="coffee-tools-page min-h-screen bg-[#ffffff] text-[#111111]">
-      <a href="#coffee-tools-main" className="coffee-tools-skip-link">
+    <div className="coffee-page">
+      <a href="#coffee-main" className="coffee-skip-link">
         Skip to content
       </a>
 
-      <header className="coffee-tools-topbar">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 md:px-10">
-          <a href="../index.html#featured-work" className="coffee-tools-back-link">
-            Back To Portfolio
-          </a>
-          <nav className="hidden items-center gap-6 md:flex">
-            <a href="#overview" className="coffee-tools-nav-link">
-              Overview
-            </a>
-            <a href="#workflow" className="coffee-tools-nav-link">
-              Workflow
-            </a>
-          </nav>
-        </div>
+      <header className="coffee-topbar">
+        <a href="../index.html#featured-work">Back to portfolio</a>
+        <nav aria-label="Coffee Tools sections">
+          <a href="#product">Product</a>
+          <a href="#backend">Backend</a>
+          <a href="#next">Next</a>
+        </nav>
       </header>
 
-      <main id="coffee-tools-main" className="mx-auto flex max-w-6xl flex-col gap-24 px-6 py-12 md:px-10 md:py-16">
-        <section id="overview" className="coffee-tools-hero-grid">
-          <div className="space-y-8">
-            <div className="flex flex-wrap gap-3">
-              {projectTags.map((tag) => (
-                <span key={tag} className="coffee-tools-tag">
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            <div className="space-y-5">
-              <p className="coffee-tools-eyebrow">Coffee Tools</p>
-              <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] md:text-5xl">
-                Turning coffee experimentation into a trackable product model
-              </h1>
-              <p className="text-2xl font-medium leading-tight text-[#1f1f1f] md:text-3xl">
-                A backend-first prototype built around how serious home brewers actually work
-              </p>
-              <p className="max-w-3xl text-lg leading-relaxed text-[#4f4f4f] md:text-xl">
-                I buy multiple bags of coffee at the same time and switch between a J-Ultra, ZP6, Baratza Encore ESP,
-                and Timemore C2. Most logging tools made recipe tracking feel laborious, when the real goal was
-                consistency. Coffee Tools came from that gap.
-              </p>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-2">
-              <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                <p className="coffee-tools-eyebrow mb-2">Role</p>
-                <p className="text-lg font-semibold tracking-[-0.03em] text-[#111]">{roleSummary.role}</p>
-              </div>
-              <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                <p className="coffee-tools-eyebrow mb-2">Scope</p>
-                <p className="text-base leading-relaxed text-[#444]">{roleSummary.scope}</p>
-              </div>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-3">
-              {impactSummary.map((item) => (
-                <div key={item} className="rounded-[8px] border-2 border-black bg-white p-4">
-                  <p className="coffee-tools-eyebrow mb-2">Impact</p>
-                  <p className="text-base font-semibold leading-relaxed tracking-[-0.02em] text-[#111]">{item}</p>
-                </div>
-              ))}
-            </div>
-
-            <p className="rounded-[8px] border-2 border-black bg-white p-4 text-base font-semibold leading-relaxed text-[#111]">
-              In one line: I translated a messy enthusiast workflow into a structured backend-first product model.
+      <main id="coffee-main">
+        <section className="coffee-hero">
+          <div className="coffee-hero__copy">
+            <p className="coffee-eyebrow">Product build / backend learning</p>
+            <h1>Coffee Tools</h1>
+            <p className="coffee-hero__dek">
+              A brew tracker built around the coffee bag, not the isolated note.
             </p>
-
-            <div className="grid gap-4 md:grid-cols-3">
-              <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                <p className="coffee-tools-eyebrow mb-2">Complexity</p>
-                <p className="text-base leading-relaxed text-[#444]">Multi-bag rotation, grinder changes, roast age, brew notes, ratings, and repeat attempts.</p>
-              </div>
-              <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                <p className="coffee-tools-eyebrow mb-2">Users</p>
-                <p className="text-base leading-relaxed text-[#444]">Serious home brewers who want consistency without turning coffee into admin work.</p>
-              </div>
-              <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                <p className="coffee-tools-eyebrow mb-2">What changed</p>
-                <p className="text-base leading-relaxed text-[#444]">A messy enthusiast workflow became a structured product and backend model.</p>
-              </div>
-            </div>
-
-            <dl className="coffee-tools-hero-meta">
-              {heroMeta.map((item) => (
-                <div key={item.label} className="coffee-tools-hero-meta__item">
-                  <dt>{item.label}</dt>
-                  <dd>{item.value}</dd>
-                </div>
-              ))}
-            </dl>
-
-            <div className="coffee-tools-note">
-              <p className="text-2xl font-semibold text-[#111111]">
-                The key product decision was simple:
-              </p>
-              <p className="text-base leading-relaxed text-[#4f4f4f] md:text-lg">
-                model the <strong>bag lifecycle</strong>, not just isolated brew notes. That single shift made the rest
-                of the flow make sense.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-4">
-              <a href="https://github.com/cynyassy/coffee-tool" target="_blank" rel="noreferrer" className="coffee-tools-button">
-                View GitHub Repo
+            <p className="coffee-hero__body">
+              I keep several coffees and four grinders in rotation. Remembering what worked across changing beans,
+              roast age, recipes, and equipment was harder than brewing itself. I used that familiar problem to learn
+              how product flows, authentication, APIs, and data models fit together.
+            </p>
+            <p className="coffee-role">
+              <span>My work</span>
+              Product model · UX flow · API design · authentication · data modelling
+            </p>
+            <div className="coffee-actions">
+              <a href="https://github.com/cynyassy/coffee-tool" target="_blank" rel="noreferrer">
+                View GitHub repo
               </a>
-              <a href="#screens" className="coffee-tools-button coffee-tools-button--secondary">
-                See Product Screens
+              <a href="#product" className="coffee-actions__secondary">
+                See the product
               </a>
             </div>
           </div>
 
-          <div className="coffee-tools-hero-visual">
-            <div className="coffee-tools-device coffee-tools-device--large">
-              <img src={coverImageImg} alt="Coffee Tools cover image showing splash and bags screen" />
-            </div>
-          </div>
+          <figure className="coffee-hero__visual">
+            <img src={coverImageImg} alt="Coffee Tools splash screen beside the active coffee bag list" />
+          </figure>
         </section>
 
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Problem"
-            title="Most coffee logging tools capture data, but not the workflow around the data"
-            description="The harder part is not writing down one recipe. It is managing multiple bags, multiple grinders, roast timing, repeat attempts, and small changes that compound into better cups."
-          />
-
-          <div className="coffee-tools-story-grid">
-            <article className="coffee-tools-story-panel">
-              <h3>What was frustrating</h3>
-              <p>
-                Recipes were tedious to log, comparisons were awkward, and the experience rarely reflected how serious
-                home brewers actually work. Everything felt like isolated note-taking.
-              </p>
-            </article>
-            <article className="coffee-tools-story-panel coffee-tools-story-panel--accent">
-              <h3>What needed to change</h3>
-              <p>
-                The product needed to center the unit people actually manage: the bag. Once that exists, brews,
-                analytics, notes, and grinder choices can all connect back to a meaningful object.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Approach"
-            title="I treated this as both a product problem and a system design problem"
-            description="The interface only works if the underlying model is coherent. So the case study is not just about screen polish, but about how the data, actions, and screens support one another."
-          />
-
-          <div className="coffee-tools-pillars">
-            {systemPillars.map((pillar) => (
-              <article key={pillar.title} className="coffee-tools-pillar-card">
-                <h3>{pillar.title}</h3>
-                <p>{pillar.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="What Became Visible"
-            title="The product makes repeatability easier to see"
-            description="The core value is not logging for its own sake. It is making relationships between coffee, grinder, recipe, and outcome visible enough to improve the next brew."
-          />
-
-          <div className="coffee-tools-pillars">
-            {clarityPoints.map((point) => (
-              <article key={point.title} className="coffee-tools-pillar-card">
-                <h3>{point.title}</h3>
-                <p>{point.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="workflow" className="space-y-10">
-          <SectionHeader
-            eyebrow="Workflow"
-            title="The product flow is simple on purpose"
-            description="A good brewing tool should lower friction, not create more ceremony than the brewing process already has."
-          />
-
-          <ScreenCarousel items={workflowSteps} label="workflow screens" variant="workflow" />
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Backend"
-            title="Backend Architecture & Data Flow"
-            description="This project was designed as a backend-first system. The goal was to build a reliable data pipeline for logging, storing, and analyzing coffee brews."
-          />
-
-          <div className="coffee-tools-story-panel coffee-tools-story-panel--accent">
+        <section className="coffee-section coffee-decision">
+          <SectionIntro label="The product decision" title="Track the lifecycle of a bag">
             <p>
-              Instead of focusing only on UI, I built the system end-to-end across the API layer, business logic,
-              database design, and authentication.
+              Most coffee trackers begin with a blank brew record. Coffee Tools begins with the thing the brewer is
+              actually trying to understand: a specific bag of coffee over time.
             </p>
+          </SectionIntro>
+
+          <div className="coffee-decision__comparison">
+            <article>
+              <p className="coffee-index">Before</p>
+              <h3>Disconnected notes</h3>
+              <p>Recipes, grinder settings, ratings, and tasting notes lived as separate memories or entries.</p>
+            </article>
+            <span aria-hidden="true">→</span>
+            <article>
+              <p className="coffee-index">Coffee Tools</p>
+              <h3>One bag-centered history</h3>
+              <p>Every brew stays connected to origin, roaster, roast age, equipment, and the best result so far.</p>
+            </article>
           </div>
 
-          <div className="coffee-tools-flow-wrap" aria-label="Coffee Tools backend architecture flow">
-            <p className="coffee-tools-summary-card__eyebrow">Sequence walkthrough</p>
-            <div className="coffee-tools-flow-rail">
-              <div className="coffee-tools-flow-lane">
-                <div className="coffee-tools-flow-column">User</div>
-                <div className="coffee-tools-flow-column">Frontend</div>
-                <div className="coffee-tools-flow-column">Supabase Auth</div>
-                <div className="coffee-tools-flow-column">Express API</div>
-                <div className="coffee-tools-flow-column">Business Logic</div>
-                <div className="coffee-tools-flow-column">PostgreSQL</div>
-              </div>
-
-              <div className="coffee-tools-flow-step">
-                <span className="coffee-tools-flow-step__index">1</span>
-                <p>User logs a brew from the app.</p>
-              </div>
-              <div className="coffee-tools-flow-arrow-row">
-                <span>User</span>
-                <span>→</span>
-                <span>Frontend captures brew fields</span>
-              </div>
-
-              <div className="coffee-tools-flow-step">
-                <span className="coffee-tools-flow-step__index">2</span>
-                <p>The frontend sends an authenticated request to create the brew record.</p>
-              </div>
-              <div className="coffee-tools-flow-arrow-row">
-                <span>Frontend</span>
-                <span>→</span>
-                <span>Supabase Auth verifies session</span>
-                <span>→</span>
-                <span>API middleware attaches user context</span>
-              </div>
-
-              <div className="coffee-tools-flow-step">
-                <span className="coffee-tools-flow-step__index">3</span>
-                <p>The API hands the request to business logic for validation and enrichment.</p>
-              </div>
-              <div className="coffee-tools-flow-arrow-row">
-                <span>Express API</span>
-                <span>→</span>
-                <span>Validate inputs</span>
-                <span>→</span>
-                <span>Attach coffee bag</span>
-                <span>→</span>
-                <span>Calculate derived fields</span>
-              </div>
-
-              <div className="coffee-tools-flow-step">
-                <span className="coffee-tools-flow-step__index">4</span>
-                <p>Clean data is written through Drizzle into PostgreSQL and returned to the app.</p>
-              </div>
-              <div className="coffee-tools-flow-arrow-row">
-                <span>Business Logic</span>
-                <span>→</span>
-                <span>Drizzle ORM</span>
-                <span>→</span>
-                <span>PostgreSQL stores brew</span>
-                <span>→</span>
-                <span>Response updates UI</span>
-              </div>
+          <dl className="coffee-model">
+            <div>
+              <dt>Core object</dt>
+              <dd>Coffee bag</dd>
             </div>
-          </div>
+            <div>
+              <dt>Repeated action</dt>
+              <dd>Log a brew</dd>
+            </div>
+            <div>
+              <dt>Useful outcome</dt>
+              <dd>Find what works</dd>
+            </div>
+            <div>
+              <dt>Stack</dt>
+              <dd>Node · TypeScript · Supabase · PostgreSQL</dd>
+            </div>
+          </dl>
+        </section>
 
-          <div className="coffee-tools-backend-grid">
-            <article className="coffee-tools-pillar-card">
-              <p className="coffee-tools-summary-card__eyebrow">Request Flow Example</p>
-              <ol className="coffee-tools-number-list">
-                <li>User logs a brew from the frontend.</li>
-                <li>Request is sent to the Express API.</li>
-                <li>Middleware verifies the user via Supabase Auth.</li>
-                <li>Business logic validates inputs, attaches the coffee bag, and calculates derived fields.</li>
-                <li>Data is stored in PostgreSQL through Drizzle ORM.</li>
-                <li>The response returns and the UI updates.</li>
-              </ol>
-            </article>
-
-            <article className="coffee-tools-pillar-card">
-              <p className="coffee-tools-summary-card__eyebrow">Key Design Decisions</p>
-              <ul className="coffee-tools-detail-list">
-                <li>
-                  <strong>Backend-first approach</strong>
-                  <span>Ensured data integrity before UI polish.</span>
-                </li>
-                <li>
-                  <strong>Typed database layer (Drizzle ORM)</strong>
-                  <span>Reduced runtime errors and improved schema clarity.</span>
-                </li>
-                <li>
-                  <strong>Stateless API design</strong>
-                  <span>Kept each request self-contained and scalable.</span>
-                </li>
-                <li>
-                  <strong>Auth separation (Supabase)</strong>
-                  <span>Avoided reinventing authentication while keeping the backend clean.</span>
-                </li>
-              </ul>
-            </article>
-          </div>
-
-          <div className="coffee-tools-note">
-            <p className="coffee-tools-summary-card__eyebrow">Why this matters</p>
-            <p className="mb-4">
-              This system is designed not just to log data, but to scale into future product layers without needing a
-              rewrite.
+        <section id="product" className="coffee-section">
+          <SectionIntro label="Product workflow" title="The interface follows the way coffee is used">
+            <p>
+              The flow moves from active rotation to one bag, then from individual brews to patterns. It is simple
+              because brewing already has enough ceremony.
             </p>
-            <ul className="coffee-tools-inline-list">
-              <li>analytics such as best brews and trends</li>
-              <li>recommendations</li>
-              <li>social sharing</li>
-            </ul>
+          </SectionIntro>
+          <ScreenCarousel />
+        </section>
+
+        <section id="backend" className="coffee-section coffee-backend">
+          <SectionIntro label="Backend architecture" title="What happens when a user logs a brew">
+            <p>
+              The backend turns a quick interaction into structured history. Authentication, validation, storage, and
+              response are separate responsibilities, but they serve one continuous user action.
+            </p>
+          </SectionIntro>
+
+          <ol className="coffee-backend__flow">
+            {backendSteps.map((step) => (
+              <li key={step.title}>
+                <span>{step.label}</span>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </li>
+            ))}
+          </ol>
+
+          <div className="coffee-backend__decisions">
+            <div>
+              <p className="coffee-eyebrow">Why Supabase Auth</p>
+              <p>Use a proven identity layer instead of rebuilding authentication inside the API.</p>
+            </div>
+            <div>
+              <p className="coffee-eyebrow">Why Drizzle</p>
+              <p>Keep schema and queries typed so the database model remains visible in the code.</p>
+            </div>
+            <div>
+              <p className="coffee-eyebrow">Why stateless requests</p>
+              <p>Let each request carry the context it needs, keeping the service easier to reason about and extend.</p>
+            </div>
           </div>
         </section>
 
-        <section className="space-y-10">
-          <div className="space-y-8">
-            <SectionHeader
-              eyebrow="What This Shows"
-              title="This project reflects how I like to build"
-              description="I usually work best when I can move from fuzzy real-world frustration to a cleaner system that makes behavior easier, not harder."
-            />
-
-            <ul className="coffee-tools-proof-list">
-              {proofPoints.map((point) => (
-                <li key={point}>{point}</li>
+        <section id="next" className="coffee-section coffee-next">
+          <div>
+            <p className="coffee-eyebrow">Next iteration</p>
+            <h2>Turn recorded history into better decisions</h2>
+            <p className="coffee-next__intro">
+              The prototype proves the model. The next version should make logging lighter and use the accumulated data
+              more actively.
+            </p>
+            <ul>
+              {nextSteps.map((step) => (
+                <li key={step.title}>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </li>
               ))}
             </ul>
           </div>
-
-          <div className="coffee-tools-next-block">
-            <div className="space-y-4">
-              <p className="coffee-tools-summary-card__eyebrow">Next iteration</p>
-              <h3>Where I would take it next</h3>
-              <ul className="coffee-tools-next-list">
-                <li>
-                  <strong>Deepen Bag Detail</strong>
-                  <span>Make the main operating screen feel even more like the center of the workflow.</span>
-                </li>
-                <li>
-                  <strong>Improve My Bags hierarchy</strong>
-                  <span>Make rotation, status, and best-result signals easier to scan at a glance.</span>
-                </li>
-                <li>
-                  <strong>Refine brew logging</strong>
-                  <span>Smooth out the interaction so capturing brews feels faster and less administrative.</span>
-                </li>
-                <li>
-                  <strong>Sharpen analytics</strong>
-                  <span>Turn analytics into a decision-making surface, not just a passive report view.</span>
-                </li>
-              </ul>
-            </div>
-            <img src={profileImg} alt="Coffee Tools profile screen" />
-          </div>
+          <img src={profileImg} alt="Coffee Tools profile screen with four configured grinders" />
         </section>
       </main>
+
+      <footer className="coffee-footer">
+        <p>Coffee Tools</p>
+        <div>
+          <a href="https://github.com/cynyassy/coffee-tool" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a href="../index.html#featured-work">More work</a>
+        </div>
+      </footer>
     </div>
   );
 }

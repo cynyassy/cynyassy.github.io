@@ -46,62 +46,12 @@ npm run build
 
 ## 🌐 Deployment to GitHub Pages
 
-### Option 1: Manual Deployment
+The portfolio uses a two-folder workflow:
 
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-
-2. The build output will be in the `dist/` folder
-
-3. Deploy the contents of `dist/` to GitHub Pages using your preferred method
-
-### Option 2: GitHub Actions (Recommended)
-
-Create `.github/workflows/deploy.yml`:
-
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          
-      - name: Install dependencies
-        run: npm install
-        
-      - name: Build
-        run: npm run build
-        
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-```
-
-### Configuration for GitHub Pages
-
-If deploying to a repository (not a root domain), update `vite.config.js`:
-
-```js
-export default {
-  base: '/your-repo-name/',
-  // ... other config
-}
-```
+1. Build and edit in `Interactive_Portfolio_Design`.
+2. Sync the source into the local `cynyassy.github.io` repository.
+3. Commit and push from `cynyassy.github.io`.
+4. GitHub Actions builds and publishes the live site.
 
 ## 🎯 Features
 

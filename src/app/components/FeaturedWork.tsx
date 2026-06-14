@@ -5,8 +5,6 @@ import { PerspectivesCoverArt } from '../../perspectives/PerspectivesCoverArt';
 import coffeeToolsDetailImage from '../../assets/coffee-tools-case-study/cover-image.png';
 import algotestLogoImage from '../../assets/algotest-case-study/algotest-logo.png';
 import cynyassyCoverImage from '../../assets/cynyassy-formats/chaddiman-suffering.png';
-import { WireframeCard } from './wireframe/WireframeCard';
-import { WireframeButton } from './wireframe/WireframeButton';
 
 type CaseStudyLink = {
   label: string;
@@ -48,7 +46,7 @@ function CoffeeToolsShowcase() {
 function AlgoTestShowcase() {
   return (
     <div className="flex h-full w-full items-center justify-center">
-      <div className="flex w-full max-w-[34rem] flex-col gap-5 rounded-[18px] border-2 border-black bg-white p-5">
+      <div className="flex w-full max-w-[34rem] origin-center scale-[0.48] flex-col gap-5 rounded-[18px] border-2 border-black bg-white p-5 sm:scale-[0.72] md:scale-100">
         <div className="flex items-center gap-3 border-b-2 border-black pb-4">
           <img
             src={algotestLogoImage}
@@ -120,17 +118,17 @@ const projects: Project[] = [
     id: 'algotest-growth-strategy',
     title: 'AlgoTest',
     status: 'Shipped & scaled',
-    headline: 'Made complex trading workflows searchable, teachable, and reusable',
-    oneLine: 'In one line: I turned recurring support pain into a documentation-led growth engine.',
-    role: 'Product Strategy / Growth Systems',
-    category: 'Growth Strategy',
+    headline: 'How documentation helped grow organic traffic 6×',
+    oneLine: 'I turned recurring support questions into a search, onboarding, and product-education engine.',
+    role: 'Product Education / Growth Strategy',
+    category: 'Documentation-led growth',
     problem:
-      'AlgoTest was a powerful technical trading platform, but growth was constrained by comprehension: users needed help understanding setup, broker connections, product workflows, and trading logic before they could reach product value.',
+      'AlgoTest was powerful, but much of the knowledge required to use it lived inside the company. Customers repeatedly needed help with setup, broker connections, product workflows, and trading logic before they could reach value.',
     approach:
-      'I treated recurring user confusion as product infrastructure: answer once in documentation, reuse it in support, rank it in search, and turn education into a durable acquisition and onboarding layer.',
+      'I documented what internal teams already understood, prioritized pages from real support pain, and built a loop in which one clear explanation could support onboarding, customer service, search, and marketing.',
     outcome:
-      'Monthly organic traffic grew from 25K to 150K and monthly revenue moved from ₹15-18L to ₹50L+, showing how useful product education can compound into qualified demand and business impact.',
-    highlights: ['Documentation-led acquisition', 'Support-informed onboarding', 'Analytics-backed product decisions'],
+      'Customers gained a reusable path into a difficult product. Monthly organic traffic grew from 25K to 150K and monthly revenue moved from ₹15–18L to ₹50L+, showing that useful education can compound into trust, demand, and business impact.',
+    highlights: ['Customer questions determined what got explained', 'Documentation became reusable product infrastructure', 'Utility—not content volume—drove growth'],
     metrics: ['Organic traffic: 25K -> 150K/month', 'Revenue: ₹15-18L -> ₹50L+/month', 'Domain Rating: 23 -> 37'],
     links: [
       { label: 'Open case study', href: 'projects/algotest.html' },
@@ -140,20 +138,43 @@ const projects: Project[] = [
     titleLogo: algotestLogoImage,
   },
   {
+    id: 'cynyassy-platform',
+    title: 'Cynyassy / ChaddiMan',
+    status: 'Live community platform',
+    headline: 'How simple visual stories grew a 100K community',
+    oneLine: 'I built a recognizable visual voice by publishing consistently, listening to audience response, and refining the work over time.',
+    role: 'Visual Communication / Community Education',
+    category: 'Comics / Care / Learning',
+    problem:
+      'Mental-health language can feel clinical, intimidating, or unavailable precisely when someone needs it. Many people can feel distress before they have words that make the experience understandable.',
+    approach:
+      'I used comics, recurring characters, gentle humor, and simple language to create approachable entrances into emotion, self-understanding, and care. Publishing became a feedback loop for learning what helped people feel seen.',
+    outcome:
+      'The platform grew to 100K+ followers, reached 1.2M people in a peak month in 2021, and led to thousands of messages from people who found the work useful, comforting, or worth carrying with them.',
+    highlights: ['Emotional learning without clinical distance', 'Community feedback shaped the storytelling', 'Simplicity made difficult ideas easier to share'],
+    metrics: ['100K+ community', '1.2M monthly reach at peak in 2021', '600+ multi-panel comics'],
+    links: [
+      { label: 'Open case study', href: 'projects/cynyassy.html' },
+      { label: "Cynyassy's Instagram", href: 'https://instagram.com/cynyassy', external: true },
+    ],
+    illustration: <CynyassyShowcase />,
+    imageHref: 'projects/cynyassy.html',
+  },
+  {
     id: 'perspectives',
     title: 'Perspectives',
     status: 'Playable thesis',
-    headline: 'Making structural inequality playable',
-    oneLine: 'In one line: I turned abstract inequality into a playable model of cause, consequence, and compounding advantage.',
-    role: 'Systems & Simulation Design',
+    headline: 'A playable model of how geography and institutions shape outcomes',
+    oneLine: 'I translated a complex social system into rules, choices, crises, and consequences people could experience together.',
+    role: 'Learning Experience / Simulation Design',
     category: 'Thesis / Board Game',
     problem:
-      'How do you help people understand privilege, institutional power, and unequal starting conditions without turning the learning experience into a lecture?',
+      'Privilege and institutional power are often explained as ideas, while their effects are experienced as connected forces that unfold over time. A lecture can name the parts without making the relationship between them felt.',
     approach:
-      'I translated connected causes into play: geography shapes access, access shapes resources, resources shape institutions, and institutions shape survival when crisis hits.',
+      'I translated those connections into rules: geography shapes access, access shapes resources, resources shape institutions, and institutions affect survival when crisis arrives. Players learn by acting inside the model.',
     outcome:
-      'The project became a case study in making invisible relationships visible, showing how mechanics, progression, and world rules can help people discuss structural inequality without turning the experience into a lecture.',
-    highlights: ['System design thinking', 'Mechanics and behavior design', 'Board and game visual framing'],
+      'The board game and web simulation create a shared object for discussing why outcomes diverge. Invisible relationships become observable, debatable, and easier to question without reducing them to a lecture.',
+    highlights: ['Rules communicate connected causes', 'Play turns explanation into lived consequence', 'Debrief turns experience into discussion'],
     metrics: ['Playable canvas proof', 'Three autonomous NPC societies', 'Periodic crisis and resilience model'],
     links: [
       { label: 'Open case study', href: 'projects/perspectives.html' },
@@ -165,18 +186,18 @@ const projects: Project[] = [
   {
     id: 'coffee-tools',
     title: 'Coffee Tools',
-    status: 'Working prototype',
-    headline: 'Turning coffee experimentation into a trackable product model',
-    oneLine: 'In one line: I translated a messy enthusiast workflow into a structured backend-first product model.',
-    role: 'Product Builder / Backend-First Tooling',
-    category: 'Backend / Product System',
+    status: 'Working technical prototype',
+    headline: 'Designing a bag-centred brew tracker from backend to interface',
+    oneLine: 'A working prototype built to explore product flows, authentication, APIs, and data modelling through a real coffee workflow.',
+    role: 'Backend Learner / Product Builder',
+    category: 'Technical learning build',
     problem:
-      'As someone buying multiple bags at once and switching between a J-Ultra, ZP6, Baratza Encore ESP, and Timemore C2, I found most coffee logging tools too laborious for the one thing that matters most: consistency.',
+      'As someone rotating multiple coffee bags and four grinders, I found note-taking too loose for comparison and most tracking too laborious for consistent use.',
     approach:
-      'I designed Coffee Tools as a bag-centered workflow instead of a generic notes app: Supabase auth, a structured backend, bag lifecycle tracking, brew logging, grinder-aware inputs, and analytics that help serious home brewers compare results over time.',
+      'I modeled the workflow around the coffee bag, then built the supporting structure: Supabase authentication, bag lifecycle tracking, brew logs, grinder-aware inputs, analytics, and an Express and PostgreSQL backend.',
     outcome:
-      'The project shows how I move from personal frustration to product structure: define the workflow clearly, model the data carefully, and build a system that makes repeatability easier instead of adding more tracking overhead.',
-    highlights: ['Bag-centered product design', 'Node + TypeScript + database-backed architecture', 'Brew logging, grinder tracking, and analytics flow'],
+      'Coffee Tools is proof of technical learning made tangible. It taught me to move from a familiar problem to data relationships, API boundaries, interface flows, and a working prototype rather than stopping at an idea.',
+    highlights: ['A personal workflow became a data model', 'Backend concepts were learned through a real product', 'Design and engineering decisions evolved together'],
     metrics: ['Supabase authentication', 'Express + TypeScript + PostgreSQL architecture', 'Multi-bag and multi-grinder workflow'],
     links: [
       { label: 'Open case study', href: 'projects/coffee-tools.html' },
@@ -185,223 +206,129 @@ const projects: Project[] = [
     illustration: <CoffeeToolsShowcase />,
     imageHref: 'projects/coffee-tools.html',
   },
-  {
-    id: 'cynyassy-platform',
-    title: 'Cynyassy / ChaddiMan',
-    status: 'Live community platform',
-    headline: 'Making emotional learning simple enough to share with 100K+ people',
-    oneLine: 'In one line: I made difficult emotional ideas simple, visual, and shareable enough to build community.',
-    role: 'Visual Communication / Audience Insight',
-    category: 'Platform / Content System',
-    problem:
-      'How do you make ideas around emotion, mental health, and inner life approachable enough that people feel seen, share them, and return to them?',
-    approach:
-      'I treated Cynyassy as community education and care: simple comics, repeated publishing, audience feedback, and visual storytelling worked together to make emotional learning easier to enter.',
-    outcome:
-      'The platform grew to 100K+ followers, reached 1.2M people in a peak month in 2021, and inspired thousands of messages of appreciation.',
-    highlights: [
-      'Content philosophy: "A story worth telling is worth telling simply"',
-      'Mental health made accessible through storytelling',
-      'Audience behavior and resonance as part of the process',
-    ],
-    metrics: ['100K+ community', '1.2M monthly reach at peak in 2021', '600+ multi-panel comics'],
-    links: [
-      { label: 'Open case study', href: 'projects/cynyassy.html' },
-      { label: 'View platform presence', href: 'https://instagram.com/cynyassy', external: true },
-    ],
-    illustration: <CynyassyShowcase />,
-    imageHref: 'projects/cynyassy.html',
-  },
 ];
 
 export function FeaturedWork() {
   return (
-    <section className="py-24 px-6 bg-white">
+    <section className="bg-white px-6 py-24">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          className="text-center mb-20"
+          className="mb-16 max-w-4xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl md:text-6xl font-semibold tracking-[-0.05em] mb-4">Case Studies</h2>
-          <p className="text-lg opacity-60">Four proofs of one throughline: making complexity usable</p>
+          <p className="mb-3 text-[0.78rem] uppercase tracking-[0.22em] text-[#666]">Selected work</p>
+          <h2 className="mb-4 text-5xl font-semibold tracking-[-0.05em] md:text-6xl">Four projects. Four different forms.</h2>
+          <p className="max-w-3xl text-lg leading-relaxed text-[#555]">
+            The work ranges from growth and storytelling to simulations and software. Each project shows what I
+            understood, what I made, and what changed.
+          </p>
         </motion.div>
 
-        <div className="space-y-16">
+        <div>
           {projects.map((project, index) => (
-            <motion.div
+            <motion.article
               key={project.title}
               id={project.id}
+              className="grid gap-10 border-black py-14 md:grid-cols-2 md:items-center md:gap-16 lg:py-20"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}
             >
-              <WireframeCard className="p-8 md:p-12 hover:shadow-[12px_12px_0px_rgba(0,0,0,1)] transition-all duration-300">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                  <motion.div
-                    className="order-2 md:order-1"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
+              <motion.div
+                className={index % 2 === 0 ? 'md:order-1' : 'md:order-2'}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.25 }}
+              >
+                {project.imageHref ? (
+                  <a
+                    href={project.imageHref}
+                    className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4"
+                    aria-label={`Open ${project.title} case study`}
                   >
-                    {project.imageHref ? (
-                      <a
-                        href={project.imageHref}
-                        className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4"
-                        aria-label={`Open ${project.title} case study`}
-                      >
-                        <div className="relative border-4 border-black p-8 bg-white aspect-[4/3] flex items-center justify-center rounded-[4px] transition-colors hover:bg-[#f8f8f8]">
-                          {project.illustration}
-                        </div>
-                      </a>
-                    ) : (
-                      <div className="relative border-4 border-black p-8 bg-white aspect-[4/3] flex items-center justify-center rounded-[4px]">
-                        {project.illustration}
-                      </div>
-                    )}
-                  </motion.div>
-
-                  <div className="order-1 md:order-2">
-                    <div className="flex flex-wrap items-center gap-3 mb-4">
-                      {index === 0 ? (
-                        <div className="relative inline-block bg-black px-4 py-1 text-sm rounded-[4px]">
-                          <span className="text-sm font-medium text-white">Featured Case Study</span>
-                          <div aria-hidden="true" className="absolute border-2 border-black border-solid inset-0 pointer-events-none rounded-[4px]" />
-                        </div>
-                      ) : null}
-                      <div className="relative inline-block bg-white px-4 py-1 text-sm rounded-[4px]">
-                        <span className="text-sm font-medium text-[#333]">{project.status}</span>
-                        <div aria-hidden="true" className="absolute border-2 border-black border-solid inset-0 pointer-events-none rounded-[4px]" />
-                      </div>
-                      <div className="relative inline-block bg-white px-4 py-1 text-sm rounded-[4px]">
-                        <span className="text-sm font-medium text-[#333]">{project.role}</span>
-                        <div aria-hidden="true" className="absolute border-2 border-black border-solid inset-0 pointer-events-none rounded-[4px]" />
-                      </div>
-                      <div className="relative inline-block bg-[#FF4400] px-4 py-1 text-sm rounded-[4px]">
-                        <span className="text-sm font-medium text-white">{project.category}</span>
-                        <div aria-hidden="true" className="absolute border-2 border-black border-solid inset-0 pointer-events-none rounded-[4px]" />
-                      </div>
+                    <div className="flex aspect-[4/3] items-center justify-center overflow-hidden border-1 border-black bg-[#f7f7f5] p-6 transition-colors hover:bg-white md:p-8">
+                      {project.illustration}
                     </div>
+                  </a>
+                ) : null}
+              </motion.div>
 
-                    <div className="mb-2 flex items-center gap-3">
-                      {project.titleLogo ? (
-                        <img
-                          src={project.titleLogo}
-                          alt=""
-                          aria-hidden="true"
-                          className="h-10 w-10 rounded-[10px] bg-white object-cover"
-                        />
-                      ) : null}
-                      <p className="text-lg md:text-xl font-semibold tracking-[-0.03em] text-[#333]">
-                        {project.title}
-                      </p>
-                    </div>
+              <div className={index % 2 === 0 ? 'md:order-2' : 'md:order-1'}>
+                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[#666]">
+                  0{index + 1} / {project.status} / {project.category}
+                </p>
 
-                    <h3 className="mb-6 text-3xl md:text-4xl font-semibold tracking-[-0.04em] text-[#111]">
-                      {project.headline}
-                    </h3>
-
-                    <p className="mb-6 rounded-[8px] border-2 border-black bg-white p-4 text-base font-semibold leading-relaxed text-[#222]">
-                      {project.oneLine}
-                    </p>
-
-                    <div className="space-y-6">
-                      <div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="w-2 h-2 bg-black" />
-                          <h4 className="uppercase text-sm font-semibold tracking-wider opacity-60 text-[#333]">Problem</h4>
-                        </div>
-                        <p className="leading-relaxed text-[#333]">{project.problem}</p>
-                      </div>
-
-                      <div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="w-2 h-2 bg-black" />
-                          <h4 className="uppercase text-sm font-semibold tracking-wider opacity-60 text-[#333]">Approach</h4>
-                        </div>
-                        <p className="leading-relaxed text-[#333]">{project.approach}</p>
-                      </div>
-
-                      <div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="w-2 h-2 bg-[#FF4400]" />
-                          <h4 className="uppercase text-sm font-semibold tracking-wider opacity-60 text-[#333]">Outcome</h4>
-                        </div>
-                        <p className="leading-relaxed font-medium text-[#333]">{project.outcome}</p>
-                      </div>
-
-                      <div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="w-2 h-2 bg-[#FF4400]" />
-                          <h4 className="uppercase text-sm font-semibold tracking-wider opacity-60 text-[#333]">Focus</h4>
-                        </div>
-                        <ul className="space-y-2 text-[#333]">
-                          {project.highlights.map((item) => (
-                            <li key={item}>• {item}</li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {project.metrics?.length ? (
-                        <div>
-                          <div className="flex items-center gap-2 mb-2">
-                            <div className="w-2 h-2 bg-black" />
-                            <h4 className="uppercase text-sm font-semibold tracking-wider opacity-60 text-[#333]">Signals</h4>
-                          </div>
-                          <ul className="space-y-2 text-[#333]">
-                            {project.metrics.map((item) => (
-                              <li key={item}>• {item}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      ) : null}
-                    </div>
-
-                    <div className="flex flex-wrap gap-3 mt-8">
-                      {project.links.map((link) =>
-                        link.external ? (
-                          <motion.a
-                            key={link.label}
-                            href={link.href}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-2 text-[#FF4400] hover:text-black transition-colors font-medium"
-                            whileHover={{ x: 5 }}
-                          >
-                            <span>{link.label}</span>
-                            <ExternalLink size={16} />
-                          </motion.a>
-                        ) : (
-                          <motion.a
-                            key={link.label}
-                            href={link.href}
-                            className="inline-flex items-center gap-2 text-[#FF4400] hover:text-black transition-colors font-medium"
-                            whileHover={{ x: 5 }}
-                          >
-                            <span>{link.label}</span>
-                            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                          </motion.a>
-                        ),
-                      )}
-                    </div>
-                  </div>
+                <div className="mt-5 flex items-center gap-3">
+                  {project.titleLogo ? (
+                    <img src={project.titleLogo} alt="" aria-hidden="true" className="h-9 w-9 object-contain" />
+                  ) : null}
+                  <a
+                    href={project.imageHref}
+                    className="text-lg font-semibold tracking-[-0.03em] text-[#333] transition-colors hover:text-[#FF4400] focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4"
+                  >
+                    {project.title}
+                  </a>
                 </div>
-              </WireframeCard>
-            </motion.div>
+
+                <h3 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-[#111] md:text-4xl">
+                  <a
+                    href={project.imageHref}
+                    className="transition-colors hover:text-[#FF4400] focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4"
+                  >
+                    {project.headline}
+                  </a>
+                </h3>
+
+                <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#555]">{project.oneLine}</p>
+
+                <p className="mt-7 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[#777]">
+                  Role / {project.role}
+                </p>
+
+                {project.metrics?.length ? (
+                  <ul className="mt-7 border-y border-black">
+                    {project.metrics.slice(0, 3).map((item) => (
+                      <li key={item} className="flex gap-3 border-b border-black py-3 text-sm font-medium text-[#222] last:border-b-0 md:text-base">
+                        <span className="mt-[0.45rem] h-2 w-2 shrink-0 bg-[#FF4400]" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+
+                <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+                  {project.links.map((link) =>
+                    link.external ? (
+                      <motion.a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 font-semibold text-[#FF4400] transition-colors hover:text-black"
+                        whileHover={{ x: 4 }}
+                      >
+                        <span>{link.label}</span>
+                        <ExternalLink size={16} />
+                      </motion.a>
+                    ) : (
+                      <motion.a
+                        key={link.label}
+                        href={link.href}
+                        className="inline-flex items-center gap-2 font-semibold text-[#FF4400] transition-colors hover:text-black"
+                        whileHover={{ x: 4 }}
+                      >
+                        <span>{link.label}</span>
+                        <ArrowRight size={16} />
+                      </motion.a>
+                    ),
+                  )}
+                </div>
+              </div>
+            </motion.article>
           ))}
         </div>
-
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          <WireframeButton variant="secondary" className="inline-block">
-            Strategy. Systems design. Building. One practice.
-          </WireframeButton>
-        </motion.div>
       </div>
     </section>
   );

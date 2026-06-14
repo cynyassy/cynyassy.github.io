@@ -1,597 +1,336 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import artImage from '../assets/hero-personas/art.png';
 import purposeComic from '../assets/cynyassy-comics/purpose.png';
 import feelingLostComic from '../assets/cynyassy-comics/feeling-lost.png';
 import rightTimeComic from '../assets/cynyassy-comics/right-time.png';
 import newYearComic from '../assets/cynyassy-comics/new-year.png';
 import calendarSuccessComic from '../assets/cynyassy-comics/calendar-success.png';
 import fiveWhysComic from '../assets/cynyassy-comics/five-whys.png';
-import chaddimanFormatImage from '../assets/cynyassy-formats/chaddiman-suffering.png';
-import reelsFormatImage from '../assets/cynyassy-formats/reels-making-tasks-fun.png';
-import stickerFormatImage from '../assets/cynyassy-formats/productivity-sticker.png';
-import storyFormatImage from '../assets/cynyassy-formats/story-week.png';
+import sufferingComic from '../assets/cynyassy-formats/chaddiman-suffering.png';
+import reelsImage from '../assets/cynyassy-formats/reels-making-tasks-fun.png';
+import stickerImage from '../assets/cynyassy-formats/productivity-sticker.png';
+import storyImage from '../assets/cynyassy-formats/story-week.png';
+import firstThisCover from '../assets/cynyassy-book/not-everything-is-urgent-first-this.png';
+import thenThisCover from '../assets/cynyassy-book/not-everything-is-urgent-then-this.png';
 
-const heroMetrics = [
-  '0 → 100K+ followers',
-  '1.2M monthly reach at peak in 2021',
-  '600+ multi-panel comics',
-  '~2 years of daily publishing',
-  'Thousands of messages from people who felt seen by the work',
-  'Built a recognizable voice across Cynyassy / Chaddiman',
+const proof = [
+  ['100K+', 'community built from zero'],
+  ['1.2M', 'people reached in a peak month in 2021'],
+  ['600+', 'multi-panel comics published'],
+  ['Since 2019', 'publishing Cynyassy publicly'],
 ];
 
-const problemPoints = [
-  'Most creators chase trends instead of building real audience understanding.',
-  'Growth becomes inconsistent when feedback loops are weak or ignored.',
-  'Content gets produced without a clear sense of what resonates emotionally.',
-];
-
-const approachLayers = [
-  {
-    title: 'Volume as a learning engine',
-    description:
-      'I posted almost daily for around two years and created 600+ comics in a repeatable multi-panel format. The goal was not volume for its own sake. It was to generate enough output to learn from patterns over time.',
-    insight: 'Consistency was not just discipline. It was data collection.',
-  },
-  {
-    title: 'Feedback loops',
-    description:
-      'I tracked what people shared, saved, commented on, and returned to. Audience behavior became the strongest signal for what worked, what felt true, and what deserved refinement.',
-    insight: 'Engagement was useful only when treated as feedback, not vanity.',
-  },
-  {
-    title: 'Iterative storytelling',
-    description:
-      'Over time I moved from simple observations to more layered narratives, sharper emotional hooks, stronger panel pacing, and a clearer voice. The output improved because the system improved.',
-    insight: 'Voice was developed deliberately, not discovered all at once.',
-  },
-];
-
-const contentTypes = [
-  {
-    type: 'Relatable life moments',
-    outcome: 'Drove shares',
-    description: 'People passed these on when they felt seen by a specific everyday moment.',
-  },
-  {
-    type: 'Mental health and introspection',
-    outcome: 'Drove saves',
-    description: 'These worked when they gave people language for feelings they already knew but had not named.',
-  },
-  {
-    type: 'Humor and irony',
-    outcome: 'Drove reach',
-    description: 'Humor widened the top of the funnel and brought people into the broader body of work.',
-  },
-  {
-    type: 'Observational insights',
-    outcome: 'Built loyalty',
-    description: 'Honest, specific observations made the platform feel more consistent and trustworthy over time.',
-  },
-];
-
-const audienceInsights = [
-  'People do not share what is merely “good.” They share what feels true.',
-  'Specificity drives relatability more reliably than vague inspiration.',
-  'Emotional clarity beats cleverness when attention is limited.',
-  'Consistency builds familiarity, and familiarity builds trust.',
-];
-
-const craftEvolution = [
-  {
-    label: 'Visual',
-    points: ['Cleaner compositions', 'Clearer illustration language', 'Better panel flow'],
-  },
-  {
-    label: 'Writing',
-    points: ['Tighter dialogue', 'Sharper punchlines', 'Clearer emotional beats'],
-  },
-  {
-    label: 'Structure',
-    points: ['Better setup → escalation → payoff', 'Stronger pacing across panels', 'More deliberate emotional progression'],
-  },
-];
-
-const results = [
-  'Built a 100K+ audience from zero',
-  'Reached 1.2M people in a peak month in 2021',
-  'Published 600+ comics',
-  'Maintained a daily creative rhythm for roughly two years',
-  'Created a recognizable brand voice across Cynyassy / Chaddiman',
-];
-
-const translationPoints = [
-  'Understanding user behavior through live feedback loops',
-  'Designing for attention, retention, and emotional clarity',
-  'Iterating based on signals instead of assumptions',
-  'Communicating complex inner states simply',
-  'Building systems that improve through repeated use',
-];
-
-const roleSummary = {
-  role: 'Storytelling Systems Builder',
-  scope: 'Content system design, audience learning, narrative experimentation, and community building',
-};
-
-const impactSummary = [
-  'Built a 100K+ community through daily storytelling',
-  'Reached 1.2M people in a peak month in 2021',
-  'Turned emotional education into a repeatable content system',
-];
-
-const clarityPoints = [
-  {
-    title: 'Inner states',
-    description: 'Anxiety, shame, loneliness, suffering, and self-doubt became easier to name without clinical language.',
-  },
-  {
-    title: 'Emotional regulation',
-    description: 'Heavy ideas were softened through humor, pacing, simple characters, and gentle reframing.',
-  },
-  {
-    title: 'Community signals',
-    description: 'Shares, saves, comments, and messages revealed what people felt seen by and returned to.',
-  },
-  {
-    title: 'Care as format',
-    description: 'The work became a repeatable way to offer language, comfort, and perspective at small scale and large scale.',
-  },
-];
-
-const formatExperiments = [
-  {
-    label: 'Comic system',
-    title: 'Chaddiman',
-    description:
-      'Longer comic sequences were the core format. They gave enough space for setup, emotional movement, and payoff without losing clarity.',
-    image: chaddimanFormatImage,
-  },
-  {
-    label: 'Short-form video',
-    title: 'Reels and motion stills',
-    description:
-      'Reels translated the same emotional voice into a more attention-competitive format, helping test pace, compression, and repeatability beyond static posts.',
-    image: reelsFormatImage,
-  },
-  {
-    label: 'Product expression',
-    title: 'Stickers and objects',
-    description:
-      'Stickers turned the character and tone into portable artifacts, which pushed the work from content into lightweight product thinking.',
-    image: stickerFormatImage,
-  },
-  {
-    label: 'Story format',
-    title: 'Narrative prompts and visual stories',
-    description:
-      'Story-led experiments extended the universe and tested how the same voice could work in more episodic or reflective formats.',
-    image: storyFormatImage,
-  },
-];
-
-const comicExamples = [
+const comics = [
   {
     title: 'Purpose',
-    worked: 'A single reframing line turned an abstract question into something personal and actionable.',
-    learned: 'People respond strongly when existential ideas are made smaller, clearer, and more livable.',
     image: purposeComic,
+    note: 'An existential question became personal and usable through one simple reframing.',
   },
   {
     title: 'Feeling Lost',
-    worked: 'It stayed inside confusion instead of rushing toward a clean resolution, which made it feel more honest.',
-    learned: 'Audiences trust work that can hold uncertainty without trying to sound wiser than it is.',
     image: feelingLostComic,
+    note: 'The story stayed with uncertainty instead of rushing toward an artificial resolution.',
   },
   {
     title: 'The Right Time',
-    worked: 'The premise was familiar immediately: waiting, postponing, and telling ourselves the moment is not right yet.',
-    learned: 'Everyday hesitation is highly shareable because people recognize themselves in it quickly.',
     image: rightTimeComic,
+    note: 'A familiar hesitation became recognizable within the first panel.',
   },
   {
     title: 'New Year',
-    worked: 'It used a seasonal spike in attention without abandoning the emotional tone people already expected from the page.',
-    learned: 'Topical moments work best when they extend the existing voice instead of temporarily replacing it.',
     image: newYearComic,
+    note: 'A topical moment worked because it kept the emotional voice people already trusted.',
   },
   {
     title: 'Calendar for Success',
-    worked: 'The comic translated self-improvement into a simple visual framework people could understand at a glance.',
-    learned: 'Structured, reusable ideas tend to generate saves because people want to come back to them later.',
     image: calendarSuccessComic,
+    note: 'A visual framework made a self-improvement idea easy to save and revisit.',
   },
   {
     title: 'The 5 Whys',
-    worked: 'It broke introspection into a stepwise prompt, which made heavier emotional work feel less intimidating.',
-    learned: 'People stay with difficult material longer when it is scaffolded into small, usable steps.',
     image: fiveWhysComic,
+    note: 'A difficult act of introspection became a sequence of smaller, approachable steps.',
   },
 ];
 
-function SectionHeader({ eyebrow, title, description }: { eyebrow?: string; title: string; description?: string }) {
+const practice = [
+  [
+    'Publish',
+    'Making almost every day created enough work to discover patterns rather than rely on intuition alone.',
+  ],
+  [
+    'Listen',
+    'Shares, saves, comments, and thousands of messages revealed what people recognized, needed, and carried forward.',
+  ],
+  [
+    'Refine',
+    'Writing became tighter, visual pacing became clearer, and the emotional payoff became more deliberate over time.',
+  ],
+];
+
+const formats = [
+  {
+    image: reelsImage,
+    label: 'Motion',
+    title: 'Short-form video',
+  },
+  {
+    image: stickerImage,
+    label: 'Objects',
+    title: 'Stickers and artifacts',
+  },
+  {
+    image: storyImage,
+    label: 'Narrative',
+    title: 'Stories and prompts',
+  },
+];
+
+const learnings = [
+  'People share what feels true, not merely what looks polished.',
+  'Specificity creates relatability.',
+  'Emotional clarity is more useful than cleverness.',
+  'Consistency builds familiarity; familiarity builds trust.',
+];
+
+function SectionIntro({
+  label,
+  title,
+  children,
+}: {
+  label: string;
+  title: string;
+  children?: React.ReactNode;
+}) {
   return (
-    <header className="space-y-3">
-      {eyebrow ? <p className="cynyassy-eyebrow">{eyebrow}</p> : null}
-      <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-5xl text-[#111111]">{title}</h2>
-      {description ? <p className="max-w-3xl text-base md:text-lg leading-relaxed text-[#55524d]">{description}</p> : null}
+    <header className="section-head">
+      <p className="label">{label}</p>
+      <div>
+        <h2>{title}</h2>
+        {children}
+      </div>
     </header>
   );
 }
 
 export default function CynyassyPage() {
   const [comicIndex, setComicIndex] = useState(0);
-  const currentComic = comicExamples[comicIndex];
+  const comic = comics[comicIndex];
 
-  const showPrevComic = () => {
-    setComicIndex((prev) => (prev - 1 + comicExamples.length) % comicExamples.length);
-  };
-
-  const showNextComic = () => {
-    setComicIndex((prev) => (prev + 1) % comicExamples.length);
+  const moveComic = (direction: number) => {
+    setComicIndex((comicIndex + direction + comics.length) % comics.length);
   };
 
   return (
-    <div className="cynyassy-page min-h-screen bg-white text-[#111111]">
-      <a href="#cynyassy-main" className="cynyassy-skip-link">
+    <div className="cynyassy-page">
+      <a href="#main" className="skip-link">
         Skip to content
       </a>
 
-      <header className="cynyassy-topbar">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 md:px-10">
-          <a href="../index.html#featured-work" className="cynyassy-back-link">
-            Back To Portfolio
-          </a>
-          <nav className="hidden items-center gap-6 md:flex">
-            <a href="#overview" className="cynyassy-nav-link">
-              Overview
-            </a>
-            <a href="#system" className="cynyassy-nav-link">
-              System
-            </a>
-            <a href="#results" className="cynyassy-nav-link">
-              Results
-            </a>
+      <header className="topbar">
+        <div>
+          <a href="../index.html#featured-work">Back to portfolio</a>
+          <nav aria-label="Case study sections">
+            <a href="#story">Story</a>
+            <a href="#comics">Comics</a>
+            <a href="#book">Book</a>
           </nav>
         </div>
       </header>
 
-      <main id="cynyassy-main" className="mx-auto flex max-w-6xl flex-col gap-24 px-6 py-12 md:px-10 md:py-16">
-        <section id="overview" className="cynyassy-hero-grid">
-          <div className="space-y-8">
-            <div className="space-y-5">
-              <p className="cynyassy-eyebrow">Storytelling System / Audience Understanding</p>
-              <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-[#111111] md:text-5xl">
-                Making emotional learning simple enough to share with <span className="text-[#FF4400]">100K+</span> people
-              </h1>
-              <p className="text-2xl font-medium leading-tight text-[#1f1f1f] md:text-3xl">
-                A community built through mental health education, care, and audience understanding.
-              </p>
-              <p className="max-w-3xl text-lg leading-relaxed text-[#55524d] md:text-xl">
-                Cynyassy started after a difficult stretch in my twenties, when I spent years trying to understand my
-                own emotions and learn how to regulate them. That process was hard, slow, and often isolating. I
-                wanted to make some of those ideas easier to access through comics, humor, and care. That became
-                ChaddiMan.
-              </p>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-2">
-              <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                <p className="cynyassy-eyebrow mb-2">Role</p>
-                <p className="text-lg font-semibold tracking-[-0.03em] text-[#111]">{roleSummary.role}</p>
-              </div>
-              <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                <p className="cynyassy-eyebrow mb-2">Scope</p>
-                <p className="text-base leading-relaxed text-[#444]">{roleSummary.scope}</p>
-              </div>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-3">
-              {impactSummary.map((item) => (
-                <div key={item} className="rounded-[8px] border-2 border-black bg-white p-4">
-                  <p className="cynyassy-eyebrow mb-2">Impact</p>
-                  <p className="text-base font-semibold leading-relaxed tracking-[-0.02em] text-[#111]">{item}</p>
-                </div>
-              ))}
-            </div>
-
-            <p className="rounded-[8px] border-2 border-black bg-white p-4 text-base font-semibold leading-relaxed text-[#111]">
-              In one line: I made difficult emotional ideas simple, visual, and shareable enough to build community.
+      <main id="main">
+        <section className="hero">
+          <div className="hero-copy">
+            <p className="label">Cynyassy / ChaddiMan</p>
+            <h1>Simple stories for complicated feelings</h1>
+            <p className="dek">
+              A long-running comic practice about emotions, everyday life, and helping people feel a little less alone.
             </p>
-
-            <div className="grid gap-4 md:grid-cols-3">
-              <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                <p className="cynyassy-eyebrow mb-2">Complexity</p>
-                <p className="text-base leading-relaxed text-[#444]">Mental health, emotional regulation, shame, self-worth, and everyday inner conflict.</p>
-              </div>
-              <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                <p className="cynyassy-eyebrow mb-2">Community</p>
-                <p className="text-base leading-relaxed text-[#444]">People looking for language, comfort, humor, and a softer way into difficult emotional material.</p>
-              </div>
-              <div className="rounded-[8px] border-2 border-black bg-white p-4">
-                <p className="cynyassy-eyebrow mb-2">What changed</p>
-                <p className="text-base leading-relaxed text-[#444]">Private emotional experiences became simple visual stories people could share and return to.</p>
-              </div>
-            </div>
-
-            <ul className="cynyassy-highlight-list" aria-label="Key outcomes">
-              {heroMetrics.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-
-            <p className="cynyassy-summary">
-              This case study is about <strong>turning emotional learning into a repeatable storytelling system</strong>
-              {' '}that could help people feel less alone, understand themselves more clearly, and return to difficult
-              ideas in a simpler, more humane format.
+            <p className="muted">
+              The practice began in 2018 while I was learning to understand and regulate my own emotions. I started
+              publishing Cynyassy publicly in 2019, with its most intensive near-daily period continuing through 2021.
+              Comics gave me a way to turn that learning into something lighter, clearer, and easier to share. The
+              practice has continued since, becoming a community, a recognizable visual language, and now an
+              illustrated book.
+            </p>
+            <p className="role">
+              <span className="label">My work</span>
+              Writing · Illustration · Publishing · Audience learning · Creative direction
             </p>
           </div>
 
-          <div className="cynyassy-hero-visual">
-            <div className="cynyassy-art-panel">
-              <div className="cynyassy-art-panel__meta">
-                <span>Storytelling platform</span>
-                <span>Daily output</span>
-              </div>
-              <div className="cynyassy-art-panel__image-shell">
-                <img src={artImage} alt="Illustration representing the Cynyassy storytelling platform" />
-              </div>
-              <div className="cynyassy-art-panel__note">
-                <strong>Community education and care, told simply.</strong>
-                <p>
-                  The long-term goal was not just to grow an audience. It was to build a body of work people could
-                  return to when they needed language, comfort, or perspective.
-                </p>
-              </div>
-            </div>
+          <figure className="hero-comic">
+            <img src={sufferingComic} alt="ChaddiMan comic about unnecessary suffering" />
+          </figure>
+        </section>
+
+        <section className="proof" aria-label="Cynyassy in numbers">
+          {proof.map(([value, description]) => (
+            <p key={value}>
+              <strong>{value}</strong>
+              <span>{description}</span>
+            </p>
+          ))}
+        </section>
+
+        <section id="story" className="section">
+          <SectionIntro label="Why I made it" title="Understanding became more useful when I could share it">
+            <p>
+              Mental-health language can be clinical, intimidating, or simply unavailable at the moment someone needs
+              it. I wanted to make difficult inner experiences easier to recognize without making them shallow.
+            </p>
+          </SectionIntro>
+
+          <blockquote>
+            “All stories worth telling are worth telling simply.”
+          </blockquote>
+
+          <div className="story-copy">
+            <p>
+              ChaddiMan’s simple body, sparse expressions, and conversational writing became an advantage. There was
+              very little visual noise between the reader and the idea.
+            </p>
+            <p>
+              Humor created an entrance. Honesty created recognition. Simplicity made the work easy to remember, share,
+              and return to.
+            </p>
           </div>
         </section>
 
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Problem"
-            title="Most creators optimize for posting, not understanding"
-            description="The real challenge was not just making more work. It was learning what people actually respond to, what helps them feel understood, and how to turn difficult emotional material into something more accessible."
-          />
+        <section id="comics" className="section">
+          <SectionIntro label="Selected comics" title="The work should speak before the analysis does">
+            <p>
+              These examples show how the same minimal visual language could hold humor, confusion, introspection, and
+              practical reflection.
+            </p>
+          </SectionIntro>
 
-          <div className="cynyassy-problem-grid">
-            {problemPoints.map((point) => (
-              <article key={point} className="cynyassy-problem-card">
-                <p>{point}</p>
-              </article>
-            ))}
-          </div>
-        </section>
+          <div className="comic-viewer">
+            <figure>
+              <img src={comic.image} alt={`${comic.title} comic by Cynyassy`} />
+            </figure>
 
-        <section id="system" className="space-y-10">
-          <SectionHeader
-            eyebrow="Approach / System"
-            title="A long-term system for learning through output"
-            description="The project worked because output, feedback, and iteration were connected. Each post was a small experiment inside a larger system."
-          />
-
-          <div className="cynyassy-layer-grid">
-            {approachLayers.map((layer) => (
-              <article key={layer.title} className="cynyassy-layer-card">
-                <h3>{layer.title}</h3>
-                <p>{layer.description}</p>
-                <div className="cynyassy-layer-card__insight">{layer.insight}</div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="What Became Easier To Hold"
-            title="The comics made difficult inner experiences easier to hold"
-            description="The point was not just audience growth. It was community education and care: making emotional ideas simple enough that people could recognize themselves without feeling overwhelmed."
-          />
-
-          <div className="cynyassy-layer-grid">
-            {clarityPoints.map((point) => (
-              <article key={point.title} className="cynyassy-layer-card">
-                <h3>{point.title}</h3>
-                <p>{point.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Formats, Content Types, And What They Did"
-            title="Different formats and emotional modes served different jobs"
-            description="The platform became more effective once I understood that not every piece needed to do the same thing. Format shaped attention, and emotional mode shaped what people did next."
-          />
-
-          <div className="space-y-6">
-            <div>
-              <p className="cynyassy-eyebrow mb-4">Content Types</p>
-              <div className="cynyassy-content-grid">
-                {contentTypes.map((item) => (
-                  <article key={item.type} className="cynyassy-content-card">
-                    <div className="cynyassy-content-card__top">
-                      <h3>{item.type}</h3>
-                      <span>{item.outcome}</span>
-                    </div>
-                    <p>{item.description}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <p className="cynyassy-eyebrow mb-4">Formats And Experiments</p>
-              <div className="cynyassy-formats-grid">
-                {formatExperiments.map((item) => (
-                  <article key={item.title} className="cynyassy-format-card">
-                    <div className="cynyassy-format-card__media">
-                      <img src={item.image} alt={`${item.title} example from Cynyassy`} />
-                    </div>
-                    <div className="cynyassy-format-card__body">
-                      <p className="cynyassy-eyebrow">{item.label}</p>
-                      <h3>{item.title}</h3>
-                      <p>{item.description}</p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Selected Comics"
-            title="Examples made the learning visible"
-            description="These examples show the kinds of emotional hooks, structures, and observations that helped clarify what resonated and why."
-          />
-
-          <div className="cynyassy-comics-carousel">
-            <div className="cynyassy-comics-carousel__copy">
-              <p className="cynyassy-eyebrow">
-                {String(comicIndex + 1).padStart(2, '0')} / {String(comicExamples.length).padStart(2, '0')}
+            <div className="comic-note">
+              <p className="label">
+                {String(comicIndex + 1).padStart(2, '0')} / {String(comics.length).padStart(2, '0')}
               </p>
-              <h3>{currentComic.title}</h3>
-              <div className="cynyassy-comics-carousel__notes">
-                <div>
-                  <strong>What worked</strong>
-                  <p>{currentComic.worked}</p>
-                </div>
-                <div>
-                  <strong>What I learned</strong>
-                  <p>{currentComic.learned}</p>
-                </div>
-              </div>
+              <h3>{comic.title}</h3>
+              <p>{comic.note}</p>
 
-              <div className="cynyassy-comics-carousel__controls">
-                <button type="button" onClick={showPrevComic} className="cynyassy-carousel-button" aria-label="Previous comic">
+              <div className="comic-controls">
+                <button type="button" onClick={() => moveComic(-1)} aria-label="Previous comic">
                   <ChevronLeft size={18} />
-                  <span>Prev</span>
+                  Previous
                 </button>
-                <div className="cynyassy-carousel-dots" aria-label="Comic examples">
-                  {comicExamples.map((comic, index) => (
+                <div className="comic-dots" aria-label="Choose a comic">
+                  {comics.map((item, index) => (
                     <button
-                      key={comic.title}
+                      key={item.title}
                       type="button"
-                      aria-label={`Go to ${comic.title}`}
+                      aria-label={`Show ${item.title}`}
                       aria-pressed={index === comicIndex}
-                      className={`cynyassy-carousel-dot${index === comicIndex ? ' is-active' : ''}`}
+                      className={index === comicIndex ? 'active' : ''}
                       onClick={() => setComicIndex(index)}
                     />
                   ))}
                 </div>
-                <button type="button" onClick={showNextComic} className="cynyassy-carousel-button" aria-label="Next comic">
-                  <span>Next</span>
+                <button type="button" onClick={() => moveComic(1)} aria-label="Next comic">
+                  Next
                   <ChevronRight size={18} />
                 </button>
               </div>
             </div>
+          </div>
+        </section>
 
-            <figure className="cynyassy-comics-carousel__figure">
-              <img src={currentComic.image} alt={`${currentComic.title} comic by Cynyassy`} />
+        <section className="section">
+          <SectionIntro label="The practice" title="Make, listen, refine">
+            <p>
+              During its most intensive period, publishing nearly every day was not a creator-hustle exercise. It was
+              how I learned what people understood, what they felt, and what the work still needed. The pace changed
+              after 2021, but the writing and illustration practice did not end.
+            </p>
+          </SectionIntro>
+
+          <ol className="practice">
+            {practice.map(([title, description], index) => (
+              <li key={title}>
+                <span className="number">{String(index + 1).padStart(2, '0')}</span>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section className="section">
+          <SectionIntro label="Beyond the panel" title="One voice, several forms">
+            <p>
+              The comic language expanded into motion, objects, and more episodic storytelling without losing its
+              essential tone.
+            </p>
+          </SectionIntro>
+
+          <div className="format-gallery">
+            {formats.map((format) => (
+              <figure key={format.title}>
+                <img src={format.image} alt={`${format.title} by Cynyassy`} />
+                <figcaption>
+                  <span className="label">{format.label}</span>
+                  <strong>{format.title}</strong>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        <section id="book" className="section book">
+          <div className="book-intro">
+            <div>
+              <p className="label">Published work</p>
+              <h2>Not Everything Is Urgent</h2>
+            </div>
+            <div className="book-copy">
+              <p className="dek">
+                My first illustrated book carries the same visual language into a longer form: difficult things can be
+                explored with warmth, humor, and simplicity.
+              </p>
+              <p className="muted">
+                Created with Kim and Ian through The Pound Project, the two-part book asks what deserves our attention
+                now, and what can wait.
+              </p>
+              <a href="https://itsnotthaturgent.co" target="_blank" rel="noreferrer" className="book-link">
+                Visit the book website
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="book-covers" aria-label="Not Everything Is Urgent book covers">
+            <figure>
+              <img src={firstThisCover} alt="Not Everything Is Urgent: First This book cover" />
+              <figcaption>First this</figcaption>
+            </figure>
+            <figure>
+              <img src={thenThisCover} alt="Not Everything Is Urgent: Then This book cover" />
+              <figcaption>Then this</figcaption>
             </figure>
           </div>
         </section>
 
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Audience Insights"
-            title="What this taught me about people"
-            description="The most useful outcome was not follower count alone. It was a much sharper understanding of what people hold onto, share, and return to."
-          />
-
-          <div className="cynyassy-insight-grid">
-            {audienceInsights.map((insight) => (
-              <div key={insight} className="cynyassy-insight-item">
-                {insight}
-              </div>
+        <section className="section reflection">
+          <SectionIntro label="What stayed with me" title="Audience understanding is built, not guessed" />
+          <ol>
+            {learnings.map((learning, index) => (
+              <li key={learning}>
+                <span className="number">{String(index + 1).padStart(2, '0')}</span>
+                {learning}
+              </li>
             ))}
-          </div>
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Craft Evolution"
-            title="The work improved because the craft improved"
-            description="This was not just an exercise in consistency. It was a deliberate improvement loop across visual language, writing, and narrative structure."
-          />
-
-          <div className="cynyassy-craft-grid">
-            {craftEvolution.map((group) => (
-              <article key={group.label} className="cynyassy-craft-card">
-                <h3>{group.label}</h3>
-                <ul>
-                  {group.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="results" className="space-y-10">
-          <SectionHeader
-            eyebrow="Results"
-            title="The output compounded into a recognizable platform"
-            description="The clearest proof is the combination of audience growth, publishing volume, and a voice that became recognizable over time."
-          />
-
-          <div className="cynyassy-results-grid">
-            {results.map((result) => (
-              <div key={result} className="cynyassy-result-item">
-                {result}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Translation To Product / Design"
-            title="Why this matters beyond content"
-            description="This project matters in a portfolio because it demonstrates the same skills that make product, strategy, and systems work stronger."
-          />
-
-          <div className="cynyassy-translation-block">
-            <p>
-              The work translated directly into product thinking: understanding people deeply, designing for clarity
-              and trust, building feedback loops, and turning complex emotional experiences into formats people can
-              actually stay with. That is as relevant to education and product design as it is to storytelling.
-            </p>
-            <ul className="cynyassy-translation-list">
-              {translationPoints.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className="space-y-10">
-          <SectionHeader
-            eyebrow="Reflection"
-            title="Audience understanding is built, not guessed"
-            description="This project taught me that audience understanding is not a theoretical exercise. It is built through care, consistency, honest feedback loops, and long-term iteration."
-          />
-
-          <div className="cynyassy-reflection-panel">
-            <p>
-              Cynyassy was never only an audience-building exercise. It was a community-building one. People reached
-              out by the thousands to say the work helped them, and some even tattooed the art onto their bodies. That
-              taught me that what resonates most is not cleverness for its own sake, but care translated into a form
-              people can carry with them.
-            </p>
-            <p>
-              The inspiration came less from creator culture and more from figures like Mr. Rogers and{' '}
-              <em>Calvin and Hobbes</em>: work that is gentle, honest, emotionally literate, and simple without being
-              shallow.
-            </p>
-            <a href="https://instagram.com/cynyassy" target="_blank" rel="noreferrer" className="cynyassy-link">
-              Visit Cynyassy on Instagram
-            </a>
-          </div>
+          </ol>
+          <a href="https://instagram.com/cynyassy" target="_blank" rel="noreferrer" className="instagram-link">
+            Explore Cynyassy on Instagram
+          </a>
         </section>
       </main>
     </div>

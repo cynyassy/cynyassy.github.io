@@ -651,7 +651,7 @@ export function PerspectivesPlayableProof() {
           <div className="perspectives-proof-stage__header">
             <div>
               <p className="perspectives-eyebrow">Playable Proof</p>
-              <h3 id="playable-proof-title" className="text-4xl md:text-5xl font-semibold tracking-[-0.05em] text-[#1a1a1a]">
+              <h3 id="playable-proof-title">
                 What happens when geography shapes opportunity, and institutions shape survival?
               </h3>
             </div>
@@ -678,6 +678,85 @@ export function PerspectivesPlayableProof() {
             <span><i className="terrain-corridor" /> Fertile corridor</span>
             <span><i className="terrain-institution" /> Institution</span>
           </div>
+
+          <div className="perspectives-proof-live">
+            <div className="perspectives-proof-live__topline">
+              <div>
+                <p className="perspectives-proof-panel__label"><b>Players</b></p>
+                <div className="perspectives-proof-player-legend">
+                  <div><span className="perspectives-player-chip perspectives-player-chip--you" /> You</div>
+                  <div><span className="perspectives-player-chip perspectives-player-chip--npc1" /> NPC 1</div>
+                  <div><span className="perspectives-player-chip perspectives-player-chip--npc2" /> NPC 2</div>
+                  <div><span className="perspectives-player-chip perspectives-player-chip--npc3" /> NPC 3</div>
+                </div>
+              </div>
+
+              <div>
+                <p className="perspectives-proof-panel__label"><b>Controls</b></p>
+                <div className="perspectives-proof-controls">
+                  <button type="button" className="perspectives-control-button" onClick={() => setRunning(true)} disabled={!metrics.ready || running || metrics.tick >= MAX_TURNS}>
+                    Run
+                  </button>
+                  <button type="button" className="perspectives-control-button" onClick={() => setRunning(false)} disabled={!metrics.ready || !running}>
+                    Pause
+                  </button>
+                  <button type="button" className="perspectives-control-button" onClick={resetSimulation}>
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="perspectives-proof-live__status" aria-live="polite">
+              <strong>Turn {metrics.tick}/{MAX_TURNS}</strong>
+              <span>{metrics.systemSignal}</span>
+            </div>
+
+            <dl className="perspectives-proof-metrics perspectives-proof-metrics--stage">
+              <div>
+                <dt>Territory</dt>
+                <dd>{metrics.playerTerritory}</dd>
+              </div>
+              <div>
+                <dt>Resources</dt>
+                <dd>{metrics.playerResources}</dd>
+              </div>
+              <div>
+                <dt>Institutions</dt>
+                <dd>{metrics.playerInstitutions}</dd>
+              </div>
+              <div>
+                <dt>Resilience</dt>
+                <dd>{metrics.playerResilience}%</dd>
+              </div>
+              <div>
+                <dt>Crises</dt>
+                <dd>{metrics.crisisCount}</dd>
+              </div>
+              <div>
+                <dt>Leader territory</dt>
+                <dd>{metrics.leadingTerritory}</dd>
+              </div>
+            </dl>
+
+            {metrics.summaryReady ? (
+              <div className="perspectives-proof-live__summary">
+                <p className="perspectives-proof-panel__label"><b>Final standings</b></p>
+                <div className="perspectives-proof-summary">
+                  {metrics.finalStandings.map((entry, index) => (
+                    <div key={entry.id} className="perspectives-proof-summary__row">
+                      <div className="perspectives-proof-summary__title">
+                        <span className={`perspectives-player-chip perspectives-player-chip--${entry.id === 0 ? 'you' : `npc${entry.id}`}`} />
+                        <span>{index + 1}. {entry.label}</span>
+                      </div>
+                      <span>{entry.territory} tiles</span>
+                      <span>{TERRAIN_LABEL[entry.startTerrain]}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+          </div>
         </div>
 
         <aside className="perspectives-proof-panel">
@@ -703,61 +782,6 @@ export function PerspectivesPlayableProof() {
           </div>
 
           <div className="perspectives-proof-panel__section">
-            <p className="perspectives-proof-panel__label"><b>Player legend</b></p>
-            <div className="perspectives-proof-player-legend">
-              <div><span className="perspectives-player-chip perspectives-player-chip--you" /> You</div>
-              <div><span className="perspectives-player-chip perspectives-player-chip--npc1" /> NPC 1</div>
-              <div><span className="perspectives-player-chip perspectives-player-chip--npc2" /> NPC 2</div>
-              <div><span className="perspectives-player-chip perspectives-player-chip--npc3" /> NPC 3</div>
-            </div>
-          </div>
-
-          <div className="perspectives-proof-panel__section">
-            <p className="perspectives-proof-panel__label"><b>Controls</b></p>
-            <div className="perspectives-proof-controls">
-              <button type="button" className="perspectives-control-button" onClick={() => setRunning(true)} disabled={!metrics.ready || running || metrics.tick >= MAX_TURNS}>
-                Run
-              </button>
-              <button type="button" className="perspectives-control-button" onClick={() => setRunning(false)} disabled={!metrics.ready || !running}>
-                Pause
-              </button>
-              <button type="button" className="perspectives-control-button" onClick={resetSimulation}>
-                Reset
-              </button>
-            </div>
-          </div>
-
-          <div className="perspectives-proof-panel__section">
-            <p className="perspectives-proof-panel__label"><b>Your Territory Metrics</b></p>
-            <dl className="perspectives-proof-metrics">
-              <div>
-                <dt>Turn</dt>
-                <dd>{metrics.tick}/{MAX_TURNS}</dd>
-              </div>
-              <div>
-                <dt>Territory</dt>
-                <dd>{metrics.playerTerritory}</dd>
-              </div>
-              <div>
-                <dt>Resources</dt>
-                <dd>{metrics.playerResources}</dd>
-              </div>
-              <div>
-                <dt>Institutions</dt>
-                <dd>{metrics.playerInstitutions}</dd>
-              </div>
-              <div>
-                <dt>Resilience</dt>
-                <dd>{metrics.playerResilience}%</dd>
-              </div>
-              <div>
-                <dt>Crises</dt>
-                <dd>{metrics.crisisCount}</dd>
-              </div>
-            </dl>
-          </div>
-
-          <div className="perspectives-proof-panel__section">
             <p className="perspectives-proof-panel__label"><b>Interpretation</b></p>
             <p>{metrics.interpretation}</p>
             <p className="perspectives-proof-signal">{metrics.systemSignal}</p>
@@ -767,29 +791,6 @@ export function PerspectivesPlayableProof() {
               </p>
             ) : null}
           </div>
-
-          <div className="perspectives-proof-panel__footer">
-            <span><b>Leader territory</b>: {metrics.leadingTerritory}</span>
-            <span><b>Leader resources</b>: {metrics.leadingResources}</span>
-          </div>
-
-          {metrics.summaryReady ? (
-            <div className="perspectives-proof-panel__section">
-              <p className="perspectives-proof-panel__label"><b>End summary</b></p>
-              <div className="perspectives-proof-summary">
-                {metrics.finalStandings.map((entry, index) => (
-                  <div key={entry.id} className="perspectives-proof-summary__row">
-                    <div className="perspectives-proof-summary__title">
-                      <span className={`perspectives-player-chip perspectives-player-chip--${entry.id === 0 ? 'you' : `npc${entry.id}`}`} />
-                      <span>{index + 1}. {entry.label}</span>
-                    </div>
-                    <span>{entry.territory} tiles</span>
-                    <span>{TERRAIN_LABEL[entry.startTerrain]}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ) : null}
 
           <div className="perspectives-proof-panel__section">
             <p className="perspectives-proof-panel__label"><b>What this panel means</b></p>

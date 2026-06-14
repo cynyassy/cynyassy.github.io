@@ -4,6 +4,7 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 import { PerspectivesCoverArt } from '../../perspectives/PerspectivesCoverArt';
 import coffeeToolsDetailImage from '../../assets/coffee-tools-case-study/cover-image.png';
 import algotestLogoImage from '../../assets/algotest-case-study/algotest-logo.png';
+import algotestDocumentationImage from '../../assets/algotest_documentation.png';
 import cynyassyCoverImage from '../../assets/cynyassy-formats/chaddiman-suffering.png';
 
 type CaseStudyLink = {
@@ -45,54 +46,29 @@ function CoffeeToolsShowcase() {
 
 function AlgoTestShowcase() {
   return (
-    <div className="flex h-full w-full items-center justify-center">
-      <div className="flex w-full max-w-[34rem] origin-center scale-[0.48] flex-col gap-5 rounded-[18px] border-2 border-black bg-white p-5 sm:scale-[0.72] md:scale-100">
-        <div className="flex items-center gap-3 border-b-2 border-black pb-4">
-          <img
-            src={algotestLogoImage}
-            alt="AlgoTest logo"
-            className="h-10 w-10 rounded-[10px] bg-white object-cover"
-          />
-          <div>
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-[#666]">Documentation-Led Growth</p>
-            <p className="text-lg font-semibold tracking-[-0.03em] text-[#222]">AlgoTest</p>
-          </div>
-        </div>
+    <div className="grid h-full w-full grid-rows-[minmax(0,1fr)_auto] overflow-hidden bg-white">
+      <div className="min-h-0 overflow-hidden border-b border-black">
+        <img
+          src={algotestDocumentationImage}
+          alt="AlgoTest documentation showing educational pages for trading strategies"
+          className="h-full w-full object-cover object-left-top"
+        />
+      </div>
 
-        <div className="grid grid-cols-2 gap-3">
-          {[
-            ['Search clicks', '25K → 150K'],
-            ['Revenue', '₹15–18L → ₹50L+'],
-            ['Domain Rating', '23 → 37'],
-            ['Role', 'SEO + docs + onboarding'],
-          ].map(([label, value]) => (
-            <div key={label} className="rounded-[12px] border-2 border-black bg-white p-3">
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[#666]">{label}</p>
-              <p className="mt-2 text-base font-semibold tracking-[-0.03em] text-[#111]">{value}</p>
-            </div>
-          ))}
+      <div className="grid gap-5 bg-black px-5 py-5 text-white sm:grid-cols-[1fr_auto] sm:items-end sm:px-7">
+        <div>
+          <p className="text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-white/55">
+            Product knowledge → customer education
+          </p>
+          <p className="mt-2 max-w-sm text-base leading-snug text-white/80">
+            Documentation became a reusable surface for support, onboarding, and discovery.
+          </p>
         </div>
-
-        <div className="rounded-[14px] border-2 border-black bg-white p-4">
-          <div className="mb-3 flex items-end justify-between">
-            <div>
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[#666]">Growth snapshot</p>
-              <p className="text-sm text-[#333]">Utility turned docs into acquisition infrastructure.</p>
-            </div>
-            <span className="text-sm font-semibold text-[#FF4400]">1.29M clicks</span>
-          </div>
-          <svg viewBox="0 0 260 90" className="h-[5.5rem] w-full">
-            <path
-              d="M6 72 C34 70, 48 60, 73 58 S120 52, 140 48 S176 35, 194 30 S224 24, 254 12"
-              fill="none"
-              stroke="#FF4400"
-              strokeWidth="4"
-              strokeLinecap="round"
-            />
-            {[6, 73, 140, 194, 254].map((x, index) => (
-              <circle key={x} cx={x} cy={[72, 58, 48, 30, 12][index]} r="4.5" fill="#FF4400" stroke="black" strokeWidth="2" />
-            ))}
-          </svg>
+        <div className="sm:text-right">
+          <p className="text-3xl font-semibold tracking-[-0.05em] text-[#FF4400]">6×</p>
+          <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-white/65">
+            organic growth
+          </p>
         </div>
       </div>
     </div>

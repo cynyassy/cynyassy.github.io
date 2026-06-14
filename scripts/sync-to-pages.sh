@@ -14,10 +14,17 @@ fi
 rsync -av \
   --delete \
   --exclude ".git" \
+  --exclude ".DS_Store" \
   --exclude ".portfolio-memory" \
+  --exclude "Case Study Page Design" \
+  --exclude "DEPLOYMENT_GUIDE.md" \
+  --exclude "FEATURES.md" \
+  --exclude "PORTFOLIO_GUIDE.md" \
+  --exclude "QUICK_START.md" \
+  --exclude "guidelines" \
+  --exclude "small_game_simulation.py" \
   --exclude "node_modules" \
   --exclude "dist" \
-  --exclude ".DS_Store" \
   "$SOURCE_DIR/" \
   "$TARGET_DIR/"
 

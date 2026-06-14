@@ -1,2 +1,21 @@
+# Generated dependencies and builds
+node_modules/
+dist/
+
+# Local operating context
 .portfolio-memory/
 DEPLOYMENT_GUIDE.md
+
+# Superseded design exports and local reference material
+Case Study Page Design/
+FEATURES.md
+PORTFOLIO_GUIDE.md
+QUICK_START.md
+guidelines/
+small_game_simulation.py
+
+# OS and editor noise
+.DS_Store
+*.log
+*.tmp
+*.bak

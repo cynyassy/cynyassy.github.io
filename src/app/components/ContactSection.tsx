@@ -12,8 +12,8 @@ const socialLinks = [
   {
     name: 'LinkedIn',
     icon: <Linkedin size={24} />,
-    href: 'https://www.linkedin.com/in/shashank-sharma-6a18437a/',
-    label: 'linkedin.com/in/shashank-sharma-6a18437a',
+    href: 'https://www.linkedin.com/in/cynyassy/',
+    label: 'linkedin.com/in/cynyassy',
   },
   {
     name: 'Instagram',
@@ -131,7 +131,6 @@ export function ContactSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.9 }}
         >
-          <p className="mb-4 text-sm opacity-60">Portfolio built with React, Motion, and attention to detail</p>
           <p className="text-sm opacity-40">© 2026 Shashank Sharma / Cynyassy. All rights reserved.</p>
         </motion.div>
       </div>

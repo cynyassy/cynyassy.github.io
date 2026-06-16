@@ -32,7 +32,7 @@ const heroDoodles = [
 const heroLinks = [
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/shashank-sharma-6a18437a/',
+    href: 'https://www.linkedin.com/in/cynyassy/',
     icon: Linkedin,
   },
   {

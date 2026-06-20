@@ -75,7 +75,7 @@ export function OtherProjects() {
             transition={{ delay: 0.16 }}
           >
             <a
-              href="https://itsnotthaturgent.co"
+              href="https://www.poundproject.co.uk/not-everything-is-urgent"
               target="_blank"
               rel="noreferrer"
               className="block border-b-2 border-white/40 bg-[#d8bdca]"
@@ -100,7 +100,7 @@ export function OtherProjects() {
                 </p>
               </div>
               <a
-                href="https://itsnotthaturgent.co"
+                href="https://www.poundproject.co.uk/not-everything-is-urgent"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-8 inline-flex w-fit items-center gap-2 text-sm font-semibold uppercase tracking-[0.13em] text-white underline decoration-[#FF4400] decoration-2 underline-offset-8"

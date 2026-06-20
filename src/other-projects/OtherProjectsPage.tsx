@@ -118,7 +118,7 @@ export default function OtherProjectsPage() {
                 same urgency.
               </p>
               <a
-                href="https://itsnotthaturgent.co"
+                href="https://www.poundproject.co.uk/not-everything-is-urgent"
                 target="_blank"
                 rel="noreferrer"
                 className="other-projects-inline-link"

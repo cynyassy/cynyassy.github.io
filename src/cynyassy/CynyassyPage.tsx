@@ -299,7 +299,7 @@ export default function CynyassyPage() {
                 Created with Kim and Ian through The Pound Project, the two-part book asks what deserves our attention
                 now, and what can wait.
               </p>
-              <a href="https://itsnotthaturgent.co" target="_blank" rel="noreferrer" className="book-link">
+              <a href="https://www.poundproject.co.uk/not-everything-is-urgent" target="_blank" rel="noreferrer" className="book-link">
                 Visit the book website
                 <span aria-hidden="true">↗</span>
               </a>

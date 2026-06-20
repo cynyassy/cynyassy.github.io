@@ -1,13 +1,138 @@
-import { ArrowRight, BookOpen, ExternalLink } from 'lucide-react';
-import { CustomCursor } from '../app/components/CustomCursor';
+import type { ReactNode } from 'react';
+import { ArrowRight, BookOpen, ExternalLink, Film, Github, Sparkles, Youtube } from 'lucide-react';
 import emotionIdentifierCover from '../assets/other-projects/emotion-identifier-cover.png';
+import bookCover from '../assets/cynyassy-book/not-everything-is-urgent-first-this.png';
 import '../styles/other-projects.css';
+
+type OtherProjectLink = {
+  label: string;
+  href: string;
+  icon?: ReactNode;
+};
+
+type OtherProject = {
+  id: string;
+  status: string;
+  category: string;
+  title: string;
+  headline: string;
+  description: string;
+  proof: string[];
+  links: OtherProjectLink[];
+  visual: ReactNode;
+};
+
+function EmotionVisual() {
+  return (
+    <img
+      src={emotionIdentifierCover}
+      alt="Emotion Identifier Tool interface asking the user to name what they feel"
+      className="other-projects-image other-projects-image-contain other-projects-image-emotion"
+    />
+  );
+}
+
+function BookVisual() {
+  return (
+    <img
+      src={bookCover}
+      alt="Not Everything Is Urgent book cover"
+      className="other-projects-image other-projects-image-contain"
+    />
+  );
+}
+
+function FilmVisual() {
+  return (
+    <div className="other-projects-film-card" aria-hidden="true">
+      <div className="other-projects-film-card__top">
+        <span>Friday</span>
+        <Film size={32} />
+      </div>
+      <p>Watch</p>
+      <p>Notice</p>
+      <p>Make</p>
+    </div>
+  );
+}
+
+const projects: OtherProject[] = [
+  {
+    id: 'emotion-identifier',
+    status: 'Shipped',
+    category: 'Live interactive tool',
+    title: 'Emotion Identifier',
+    headline: 'A guided entrance into emotional clarity',
+    description:
+      'Many people can tell that they feel “good,” “bad,” “off,” or “fine,” but do not have the vocabulary to describe what is happening underneath. This NVC-inspired tool turns that gap into a guided learning journey.',
+    proof: [
+      'Seven guided steps connect broad feelings to precise emotions and needs.',
+      'Reflection summary can be copied, downloaded, or shared.',
+      'Built with React, TypeScript, Vite, and original Cynyassy art.',
+    ],
+    links: [
+      {
+        label: 'Try the live tool',
+        href: 'https://cynyassy.github.io/emotions/',
+        icon: <ExternalLink size={16} />,
+      },
+    ],
+    visual: <EmotionVisual />,
+  },
+  {
+    id: 'not-everything-is-urgent',
+    status: 'Published',
+    category: 'Illustrated book',
+    title: 'Not Everything Is Urgent',
+    headline: 'An illustrated book about attention, pressure, and urgency',
+    description:
+      'A two-part illustrated book made with Kim and Ian through The Pound Project. It asks what deserves our attention now, and what can wait.',
+    proof: [
+      'Extends Cynyassy’s visual storytelling into a published book format.',
+      'Uses simple drawings and quiet language to make emotional pressure easier to discuss.',
+      'Published through The Pound Project.',
+    ],
+    links: [
+      {
+        label: 'Visit the book website',
+        href: 'https://www.poundproject.co.uk/not-everything-is-urgent',
+        icon: <ExternalLink size={16} />,
+      },
+    ],
+    visual: <BookVisual />,
+  },
+  {
+    id: 'film-festival-friday',
+    status: 'In progress',
+    category: 'Creative practice + bot',
+    title: 'Film Festival Friday',
+    headline: 'Keeping a filmmaking practice alive through weekly prompts',
+    description:
+      'A weekly filmmaking practice powered by a prompt bot. The goal is to turn the love of cinema into a repeatable ritual for watching closely, noticing craft, and making small creative responses.',
+    proof: [
+      'Weekend Movie Bot turns a vague intention into a concrete prompt.',
+      'YouTube channel creates a public shelf for the practice.',
+      'Designed as a ritual: prompt, watch, notice, make.',
+    ],
+    links: [
+      {
+        label: 'Visit YouTube channel',
+        href: 'https://www.youtube.com/channel/UCxwAvV6fwi2on14yENSJL6w',
+        icon: <Youtube size={16} />,
+      },
+      {
+        label: 'View bot repo',
+        href: 'https://github.com/cynyassy/weekend-movie-bot',
+        icon: <Github size={16} />,
+      },
+    ],
+    visual: <FilmVisual />,
+  },
+];
 
 export default function OtherProjectsPage() {
   return (
     <div className="other-projects-page min-h-screen bg-white text-[#111]">
-      <CustomCursor />
-
       <header className="other-projects-topbar">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 md:px-10">
           <a href="../index.html#other-projects" className="other-projects-back-link">
@@ -16,117 +141,72 @@ export default function OtherProjectsPage() {
         </div>
       </header>
 
-      <main className="mx-auto flex max-w-6xl flex-col gap-20 px-6 py-12 md:px-10 md:py-16">
-        <section id="emotion-identifier" className="space-y-8">
-          <div className="max-w-4xl space-y-4">
+      <main className="mx-auto flex max-w-6xl flex-col px-6 py-12 md:px-10 md:py-16">
+        <section className="other-projects-hero">
+          <div>
             <p className="other-projects-eyebrow">Other Projects</p>
-            <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.06em] md:text-7xl">
-              Useful experiments that deserve their own shelf
-            </h1>
-            <p className="text-xl leading-relaxed text-[#555]">
-              Smaller shipped tools, learning experiences, games, and publishing projects. Some stay compact; others
-              may grow into full case studies as the work develops.
-            </p>
+            <h1>Useful ideas in other forms</h1>
           </div>
-
-          <div className="other-projects-highlight">
-            <strong>The thread:</strong>
+          <div>
             <p>
-              Each project turns something abstract or difficult into an experience people can enter, understand, and
-              use.
+              Smaller shipped tools, publishing projects, creative rituals, games, and experiments.
             </p>
+            <div className="other-projects-highlight">
+              <Sparkles size={20} aria-hidden="true" />
+              <span>Same thought has gone into making these as before. Understand something carefully, then give it a clear and useful form.</span>
+            </div>
           </div>
         </section>
 
-        <section className="space-y-8">
-          <div className="space-y-3">
-            <p className="other-projects-eyebrow">Shipped</p>
-            <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-5xl">
-              Giving people language for feelings they struggle to name
-            </h2>
-          </div>
+        <section className="other-projects-list" aria-label="Other projects">
+          {projects.map((project, index) => (
+            <article key={project.id} id={project.id} className="other-projects-row">
+              <a
+                href={project.links[0]?.href}
+                target="_blank"
+                rel="noreferrer"
+                className={index % 2 === 0 ? 'other-projects-media' : 'other-projects-media md:order-2'}
+                aria-label={`Open ${project.title}`}
+              >
+                {project.visual}
+              </a>
 
-          <article className="other-projects-feature">
-            <a
-              className="other-projects-feature-image"
-              href="https://cynyassy.github.io/emotions/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Open the live Emotion Identifier Tool"
-            >
-              <img
-                src={emotionIdentifierCover}
-                alt="Emotion Identifier Tool interface asking the user to name what they feel"
-              />
-            </a>
+              <div className={index % 2 === 0 ? 'other-projects-copy' : 'other-projects-copy md:order-1'}>
+                <p className="other-projects-meta">
+                  0{index + 1} / {project.status} / {project.category}
+                </p>
+                <a href={project.links[0]?.href} target="_blank" rel="noreferrer" className="other-projects-title-link">
+                  <h2>{project.title}</h2>
+                </a>
+                <h3>{project.headline}</h3>
+                <p className="other-projects-description">{project.description}</p>
 
-            <div className="other-projects-feature-copy">
-              <div className="other-projects-status">Live interactive tool</div>
-              <h3>A guided entrance into emotional clarity</h3>
-              <p>
-                Many people can tell that they feel “good,” “bad,” “off,” or “fine,” but do not have the vocabulary to
-                describe what is happening underneath. This NVC-inspired tool turns that gap into a guided learning
-                journey.
-              </p>
+                <ul className="other-projects-proof-list">
+                  {project.proof.map((item) => (
+                    <li key={item}>
+                      <span />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
 
-              <div className="other-projects-summary-grid">
-                <div>
-                  <span>Barrier</span>
-                  <p>Unnamed emotions can feel shapeless, overwhelming, and difficult to communicate.</p>
-                </div>
-                <div>
-                  <span>Guided translation</span>
-                  <p>Seven guided steps connect broad feelings to precise emotions and underlying needs.</p>
-                </div>
-                <div>
-                  <span>Agency</span>
-                  <p>A reflection summary that can be copied, downloaded, or shared with someone else.</p>
-                </div>
-                <div>
-                  <span>Built with</span>
-                  <p>React, TypeScript, Vite, responsive interaction design, and original Cynyassy art.</p>
+                <div className="other-projects-actions">
+                  {project.links.map((link, linkIndex) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={linkIndex === 0 ? 'other-projects-primary-link' : 'other-projects-secondary-link'}
+                    >
+                      {link.label}
+                      {link.icon}
+                    </a>
+                  ))}
                 </div>
               </div>
-
-              <a
-                href="https://cynyassy.github.io/emotions/"
-                target="_blank"
-                rel="noreferrer"
-                className="other-projects-primary-link"
-              >
-                Try the live tool <ExternalLink size={18} />
-              </a>
-            </div>
-          </article>
-        </section>
-
-        <section className="space-y-8">
-          <div className="space-y-3">
-            <p className="other-projects-eyebrow">Coming Soon</p>
-            <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-5xl">The shelf keeps growing</h2>
-          </div>
-
-          <article className="other-projects-upcoming">
-            <div>
-              <BookOpen size={30} aria-hidden="true" />
-              <div className="other-projects-status other-projects-status-dark">Illustrated book</div>
-            </div>
-            <div>
-              <h3>Not Everything Is Urgent</h3>
-              <p>
-                A two-part illustrated book about attention, pressure, and remembering that not everything deserves the
-                same urgency.
-              </p>
-              <a
-                href="https://www.poundproject.co.uk/not-everything-is-urgent"
-                target="_blank"
-                rel="noreferrer"
-                className="other-projects-inline-link"
-              >
-                Visit the book website <ExternalLink size={18} />
-              </a>
-            </div>
-          </article>
+            </article>
+          ))}
         </section>
 
         <section className="other-projects-footer">

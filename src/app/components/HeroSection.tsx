@@ -161,13 +161,22 @@ export function HeroSection() {
             </motion.p>
 
             <motion.h1
-              className="mb-7 text-5xl font-semibold leading-[1.02] tracking-[-0.055em] md:text-6xl lg:text-[4.35rem]"
+              className="mb-7 text-5xl font-semibold leading-[1.02] tracking-[-0.055em] md:text-6xl lg:text-[3.35rem]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              I learn complex things and make them clear, useful, and engaging.
+              I learn complex things and turn them into products, stories, tools, and systems people can actually use.
             </motion.h1>
+
+            <motion.p
+              className="mx-auto mb-6 max-w-2xl text-sm font-semibold uppercase tracking-[0.12em] text-[#222] md:text-base lg:mx-0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.54 }}
+            >
+              MFA from SVA · 100K+ audience built · 6× organic growth at YC-backed AlgoTest · Backend developer
+            </motion.p>
 
             <motion.p
               className="mx-auto mb-9 max-w-2xl text-base leading-relaxed text-[#666] md:text-lg lg:mx-0"

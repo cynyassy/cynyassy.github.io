@@ -163,17 +163,17 @@ const projects: Project[] = [
     id: 'coffee-tools',
     title: 'Coffee Tools',
     status: 'Working technical prototype',
-    headline: 'Designing a bag-centred brew tracker from backend to interface',
-    oneLine: 'A working prototype built to explore product flows, authentication, APIs, and data modelling through a real coffee workflow.',
+    headline: 'How I taught myself backend architecture by building a real product',
+    oneLine: 'A working prototype where a familiar coffee workflow became a way to learn APIs, authentication, data modelling, and product structure.',
     role: 'Backend Learner / Product Builder',
     category: 'Technical learning build',
     problem:
       'As someone rotating multiple coffee bags and four grinders, I found note-taking too loose for comparison and most tracking too laborious for consistent use.',
     approach:
-      'I modeled the workflow around the coffee bag, then built the supporting structure: Supabase authentication, bag lifecycle tracking, brew logs, grinder-aware inputs, analytics, and an Express and PostgreSQL backend.',
+      'Instead of practicing backend concepts in isolation, I used a real problem I understood intimately. I modeled the workflow around the coffee bag, then built the supporting structure: Supabase authentication, bag lifecycle tracking, brew logs, grinder-aware inputs, analytics, and an Express and PostgreSQL backend.',
     outcome:
-      'Coffee Tools is proof of technical learning made tangible. It taught me to move from a familiar problem to data relationships, API boundaries, interface flows, and a working prototype rather than stopping at an idea.',
-    highlights: ['A personal workflow became a data model', 'Backend concepts were learned through a real product', 'Design and engineering decisions evolved together'],
+      'Coffee Tools is proof of technical learning made tangible. It shows how I learn: choose a real use case, understand the domain, model the data, define the API boundaries, and turn the idea into a working product.',
+    highlights: ['A personal workflow became a data model', 'Backend architecture was learned through a real product', 'Design and engineering decisions evolved together'],
     metrics: ['Supabase authentication', 'Express + TypeScript + PostgreSQL architecture', 'Multi-bag and multi-grinder workflow'],
     links: [
       { label: 'Open case study', href: 'projects/coffee-tools.html' },

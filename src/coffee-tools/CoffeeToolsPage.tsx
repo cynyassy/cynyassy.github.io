@@ -178,12 +178,12 @@ export default function CoffeeToolsPage() {
             <p className="coffee-eyebrow">Product build / backend learning</p>
             <h1>Coffee Tools</h1>
             <p className="coffee-hero__dek">
-              A brew tracker built around the coffee bag, not the isolated note.
+              I taught myself backend architecture by building a real product around a problem I understood intimately.
             </p>
             <p className="coffee-hero__body">
               I keep several coffees and four grinders in rotation. Remembering what worked across changing beans,
-              roast age, recipes, and equipment was harder than brewing itself. I used that familiar problem to learn
-              how product flows, authentication, APIs, and data models fit together.
+              roast age, recipes, and equipment was harder than brewing itself. Coffee Tools became a practical way to
+              learn how product flows, authentication, APIs, and data models fit together.
             </p>
             <p className="coffee-role">
               <span>My work</span>

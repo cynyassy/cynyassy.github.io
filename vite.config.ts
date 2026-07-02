@@ -26,6 +26,7 @@ export default defineConfig({
         algotest: path.resolve(__dirname, 'projects/algotest.html'),
         cynyassy: path.resolve(__dirname, 'projects/cynyassy.html'),
         otherProjects: path.resolve(__dirname, 'projects/other-projects.html'),
+        workWithMe: path.resolve(__dirname, 'projects/work-with-me.html'),
       },
     },
   },

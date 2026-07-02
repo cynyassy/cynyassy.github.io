@@ -1,0 +1,217 @@
+.work-with-me-page {
+  color: #111111;
+}
+
+.work-with-me-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 2px solid #000;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+}
+
+.work-with-me-toplink,
+.work-with-me-primary-link,
+.work-with-me-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.work-with-me-toplink:hover,
+.work-with-me-toplink:focus-visible {
+  color: #ff4400;
+}
+
+.work-with-me-eyebrow {
+  margin: 0 0 1rem;
+  color: #666666;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.work-with-me-hero {
+  max-width: 58rem;
+  padding: clamp(3rem, 8vw, 6rem) 0 clamp(3rem, 7vw, 5rem);
+  border-bottom: 2px solid #000;
+}
+
+.work-with-me-hero h1,
+.work-with-me-cta h2 {
+  margin: 0;
+  font-weight: 650;
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+
+.work-with-me-hero h1 {
+  max-width: 38rem;
+  font-size: clamp(2.35rem, 4.3vw, 3.5rem);
+}
+
+.work-with-me-intro {
+  max-width: 43rem;
+  margin: 2rem 0 0;
+  color: #55524d;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.65;
+}
+
+.work-with-me-section,
+.work-with-me-note,
+.work-with-me-cta {
+  padding: clamp(3rem, 7vw, 5rem) 0;
+  border-bottom: 2px solid #000;
+}
+
+.work-with-me-offers-block {
+  margin: 0 calc(50% - 50vw);
+  padding: clamp(3rem, 7vw, 5rem) 0;
+  border-bottom: 2px solid #000;
+  background: #000;
+  color: #fff;
+}
+
+.work-with-me-offers-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.work-with-me-offers-block .work-with-me-eyebrow {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.work-with-me-offers {
+  display: grid;
+  gap: clamp(1.6rem, 4vw, 3rem);
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+  max-width: 56rem;
+}
+
+.work-with-me-offer {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.58fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 2.75rem);
+  padding: 0;
+}
+
+.work-with-me-offer h2 {
+  position: relative;
+  margin: 0;
+  font-size: clamp(1.35rem, 2.8vw, 2rem);
+  font-weight: 650;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.work-with-me-offer p,
+.work-with-me-note p {
+  margin: 0;
+  max-width: 43rem;
+  color: #55524d;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.65;
+}
+
+.work-with-me-offers-block .work-with-me-offer h2 {
+  color: #fff;
+}
+
+.work-with-me-offers-block .work-with-me-offer h2::before {
+  content: '';
+  position: absolute;
+  top: -1.15rem;
+  left: 0;
+  display: block;
+  width: 2rem;
+  height: 0.3rem;
+  background: #ff4400;
+}
+
+.work-with-me-offers-block .work-with-me-offer p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.work-with-me-note p:not(.work-with-me-eyebrow) {
+  color: #222222;
+  font-size: clamp(1.25rem, 2.8vw, 2rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+
+.work-with-me-cta {
+  border-bottom: 0;
+}
+
+.work-with-me-cta h2 {
+  max-width: 44rem;
+  font-size: clamp(2.2rem, 4.8vw, 3.75rem);
+}
+
+.work-with-me-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.work-with-me-primary-link,
+.work-with-me-secondary-link {
+  min-height: 3.45rem;
+  border: 2px solid #000;
+  padding: 0.9rem 1.15rem;
+}
+
+.work-with-me-primary-link {
+  background: #ff4400;
+  color: #fff;
+}
+
+.work-with-me-primary-link:hover,
+.work-with-me-primary-link:focus-visible {
+  background: #000;
+  transform: translateY(-2px);
+}
+
+.work-with-me-secondary-link {
+  background: #fff;
+  color: #111111;
+}
+
+.work-with-me-secondary-link:hover,
+.work-with-me-secondary-link:focus-visible {
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 720px) {
+  .work-with-me-offer {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .work-with-me-topbar .mx-auto {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .work-with-me-offers-inner {
+    padding: 0 2.5rem;
+  }
+}

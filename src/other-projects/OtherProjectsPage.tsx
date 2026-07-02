@@ -64,7 +64,7 @@ const projects: OtherProject[] = [
     title: 'Emotion Identifier',
     headline: 'A guided entrance into emotional clarity',
     description:
-      'Many people can tell that they feel “good,” “bad,” “off,” or “fine,” but do not have the vocabulary to describe what is happening underneath. This NVC-inspired tool turns that gap into a guided learning journey.',
+      'Many people can sense that something is happening emotionally before they have language for it. This NVC-inspired tool gives that moment a softer, more structured way in.',
     proof: [
       'Seven guided steps connect broad feelings to precise emotions and needs.',
       'Reflection summary can be copied, downloaded, or shared.',
@@ -86,7 +86,7 @@ const projects: OtherProject[] = [
     title: 'Not Everything Is Urgent',
     headline: 'An illustrated book about attention, pressure, and urgency',
     description:
-      'A two-part illustrated book made with Kim and Ian through The Pound Project. It asks what deserves our attention now, and what can wait.',
+      'A two-part illustrated book made with Kim and Ian through The Pound Project. It turns the pressure of urgency into a simpler conversation about attention, pace, and choice.',
     proof: [
       'Extends Cynyassy’s visual storytelling into a published book format.',
       'Uses simple drawings and quiet language to make emotional pressure easier to discuss.',
@@ -108,7 +108,7 @@ const projects: OtherProject[] = [
     title: 'Film Festival Friday',
     headline: 'Keeping a filmmaking practice alive through weekly prompts',
     description:
-      'A weekly filmmaking practice powered by a prompt bot. The goal is to turn the love of cinema into a repeatable ritual for watching closely, noticing craft, and making small creative responses.',
+      'A weekly filmmaking practice powered by a prompt bot. The goal is to turn a love of cinema into a repeatable ritual for watching closely, noticing craft, and making small creative responses.',
     proof: [
       'Weekend Movie Bot turns a vague intention into a concrete prompt.',
       'YouTube channel creates a public shelf for the practice.',
@@ -153,7 +153,7 @@ export default function OtherProjectsPage() {
             </p>
             <div className="other-projects-highlight">
               <Sparkles size={20} aria-hidden="true" />
-              <span>Same thought has gone into making these as before. Understand something carefully, then give it a clear and useful form.</span>
+              <span>Same pattern, smaller forms: understand something carefully, then make a useful way in.</span>
             </div>
           </div>
         </section>

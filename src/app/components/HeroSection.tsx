@@ -166,7 +166,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              I learn complex things and turn them into products, stories, tools, and systems people can actually use.
+              I make complex things usable.
             </motion.h1>
 
             <motion.p
@@ -184,8 +184,8 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              I move between strategy and execution: understanding a subject, finding the form that serves it best,
-              and making the result real. That might be documentation, a product flow, a comic, a simulation, or code.
+              I learn the subject, understand who needs a way in, and turn the idea into something people can use:
+              documentation, product flows, comics, learning tools, simulations, or code.
             </motion.p>
 
             <motion.blockquote
@@ -202,11 +202,17 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.76 }}
               whileHover={{ y: -2 }}
-              className="inline-block"
+              className="flex flex-wrap items-center justify-center gap-3 lg:justify-start"
             >
               <WireframeButton onClick={scrollToWork} variant="primary" className="w-auto">
                 See the work
               </WireframeButton>
+              <a
+                href="/projects/work-with-me.html"
+                className="inline-flex min-h-[60px] items-center justify-center rounded-[4px] border-4 border-[#333] bg-white px-6 py-3 text-[22px] font-semibold leading-7 text-[#333] transition-colors hover:bg-black hover:text-white"
+              >
+                Work with me
+              </a>
             </motion.div>
 
             <motion.div

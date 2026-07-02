@@ -4,10 +4,8 @@ import { Menu, X } from 'lucide-react';
 import chaddimanPortraitLogo from '../../assets/chaddiman-portrait-logo.png';
 
 const navItems = [
-  { label: 'Home', id: 'hero' },
   { label: 'Work', id: 'work' },
-  { label: 'How I Work', id: 'skills' },
-  { label: 'Learning', id: 'qualifications' },
+  { label: 'Work With Me', href: '/projects/work-with-me.html' },
   { label: 'Contact', id: 'contact' }
 ];
 
@@ -71,15 +69,27 @@ export function Navigation() {
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
               {navItems.map((item) => (
-                <motion.button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-lg font-medium hover:text-[#FF4400] transition-colors relative group"
-                  whileHover={{ y: -2 }}
-                >
-                  {item.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF4400] group-hover:w-full transition-all duration-300" />
-                </motion.button>
+                'href' in item ? (
+                  <motion.a
+                    key={item.label}
+                    href={item.href}
+                    className="text-lg font-medium hover:text-[#FF4400] transition-colors relative group"
+                    whileHover={{ y: -2 }}
+                  >
+                    {item.label}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF4400] group-hover:w-full transition-all duration-300" />
+                  </motion.a>
+                ) : (
+                  <motion.button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-lg font-medium hover:text-[#FF4400] transition-colors relative group"
+                    whileHover={{ y: -2 }}
+                  >
+                    {item.label}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF4400] group-hover:w-full transition-all duration-300" />
+                  </motion.button>
+                )
               ))}
             </div>
 
@@ -109,17 +119,31 @@ export function Navigation() {
           >
             <div className="flex flex-col items-center justify-center h-full gap-8 pt-20">
               {navItems.map((item, index) => (
-                <motion.button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-3xl font-semibold tracking-[-0.03em] hover:text-[#FF4400] transition-colors"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {item.label}
-                </motion.button>
+                'href' in item ? (
+                  <motion.a
+                    key={item.label}
+                    href={item.href}
+                    className="text-3xl font-semibold tracking-[-0.03em] hover:text-[#FF4400] transition-colors"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {item.label}
+                  </motion.a>
+                ) : (
+                  <motion.button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-3xl font-semibold tracking-[-0.03em] hover:text-[#FF4400] transition-colors"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {item.label}
+                  </motion.button>
+                )
               ))}
             </div>
           </motion.div>

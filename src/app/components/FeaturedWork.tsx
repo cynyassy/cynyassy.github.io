@@ -95,7 +95,7 @@ const projects: Project[] = [
     title: 'AlgoTest',
     status: 'Shipped & scaled',
     headline: 'How documentation helped grow organic traffic 6×',
-    oneLine: 'I turned recurring support questions into a search, onboarding, and product-education engine.',
+    oneLine: 'I turned customer confusion into a documentation-led growth engine for a complex fintech product.',
     role: 'Product Education / Growth Strategy',
     category: 'Documentation-led growth',
     problem:
@@ -118,7 +118,7 @@ const projects: Project[] = [
     title: 'Cynyassy / ChaddiMan',
     status: 'Live community platform',
     headline: 'How simple visual stories grew a 100K community',
-    oneLine: 'I built a recognizable visual voice by publishing consistently, listening to audience response, and refining the work over time.',
+    oneLine: 'I made emotional learning feel simpler, softer, and easier to share through recurring visual stories.',
     role: 'Visual Communication / Community Education',
     category: 'Comics / Care / Learning',
     problem:
@@ -141,7 +141,7 @@ const projects: Project[] = [
     title: 'Perspectives',
     status: 'Playable thesis',
     headline: 'A playable model of how geography and institutions shape outcomes',
-    oneLine: 'I translated a complex social system into rules, choices, crises, and consequences people could experience together.',
+    oneLine: 'I turned an abstract social system into a playable experience people could observe, question, and discuss.',
     role: 'Learning Experience / Simulation Design',
     category: 'Thesis / Board Game',
     problem:
@@ -197,8 +197,8 @@ export function FeaturedWork() {
           <p className="mb-3 text-[0.78rem] uppercase tracking-[0.22em] text-[#666]">Selected work</p>
           <h2 className="mb-4 text-5xl font-semibold tracking-[-0.05em] md:text-6xl">Four projects. Four different forms.</h2>
           <p className="max-w-3xl text-lg leading-relaxed text-[#555]">
-            The work ranges from growth and storytelling to simulations and software. Each project shows what I
-            understood, what I made, and what changed.
+            The work ranges from growth and storytelling to simulations and software. Each project starts with
+            something hard to understand, then turns it into a form people can use.
           </p>
         </motion.div>
 

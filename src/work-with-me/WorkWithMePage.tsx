@@ -10,12 +10,16 @@ const offers = [
     description: 'Turn scattered expertise and support pain into reusable explanations.',
   },
   {
-    title: 'Learning tools and explainers',
-    description: 'Make difficult ideas easier to practice through stories, workshops, visuals, or guided tools.',
+    title: 'Learning tools, workshops, and explainers',
+    description: 'Make difficult ideas easier to practice through workshops, stories, visuals, games, or guided tools.',
+  },
+  {
+    title: 'Research synthesis and storytelling',
+    description: 'Turn research, interviews, insights, or messy information into clear narratives, decks, reports, scripts, or public-facing stories.',
   },
   {
     title: 'Prototypes and interactive artifacts',
-    description: 'Build quick, testable versions of ideas so teams can discuss something concrete.',
+    description: 'Build quick, testable versions of ideas so teams can discuss, learn, and improve something concrete.',
   },
 ];
 
@@ -36,7 +40,7 @@ export default function WorkWithMePage() {
       <main className="mx-auto max-w-5xl px-6 py-14 md:px-10 md:py-20">
         <section className="work-with-me-hero">
           <p className="work-with-me-eyebrow">Work With Me</p>
-          <h1>I help teams make complex ideas easier to understand and use.</h1>
+          <h1>I help teams turn complex ideas into clear stories, learning tools, product systems, and prototypes.</h1>
           <p className="work-with-me-intro">
             I am useful when a product, service, curriculum, or idea is important but hard to explain. I can help
             turn it into documentation, learning material, product flows, prototypes, or public-facing stories.
@@ -60,8 +64,8 @@ export default function WorkWithMePage() {
         <section className="work-with-me-note">
           <p className="work-with-me-eyebrow">Best Fit</p>
           <p>
-            I work best with teams building complex, technical, educational, or behavior-driven products where clarity
-            matters as much as execution.
+            I work best with teams building complex, technical, educational, or behavior-driven products, programs,
+            and services where clarity matters as much as execution.
           </p>
         </section>
 

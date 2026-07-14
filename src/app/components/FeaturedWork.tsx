@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { PerspectivesCoverArt } from '../../perspectives/PerspectivesCoverArt';
-import coffeeToolsDetailImage from '../../assets/coffee-tools-case-study/cover-image.png';
+import coffeeToolsBagsImage from '../../assets/coffee-tools-case-study/current-bags.png';
+import coffeeToolsBrewStoryImage from '../../assets/coffee-tools-case-study/current-brew-story.png';
 import algotestLogoImage from '../../assets/algotest-case-study/algotest-logo.png';
 import algotestDocumentationImage from '../../assets/algotest_documentation.png';
 import cynyassyCoverImage from '../../assets/cynyassy-formats/chaddiman-suffering.png';
@@ -34,12 +35,30 @@ interface Project {
 
 function CoffeeToolsShowcase() {
   return (
-    <div className="flex h-full w-full items-center justify-center">
-      <img
-          src={coffeeToolsDetailImage}
-          alt="Coffee Tools bag detail and brew history screen"
-          className="h-full max-h-[26rem] w-full rounded-[16px] border-2 bg-white object-contain object-center "
+    <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[#f8f6f1]">
+      <div className="absolute left-5 top-5 flex items-center gap-2">
+        <span className="h-3 w-3 rounded-full bg-[#ea7444]" />
+        <span className="h-3 w-3 rounded-full bg-[#67c7e9]" />
+        <span className="h-3 w-3 rounded-full bg-[#086b6f]" />
+      </div>
+      <div className="absolute bottom-5 left-5 right-5 border-t border-black/20 pt-4">
+        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[#666]">Live AWS beta</p>
+        <p className="mt-1 text-lg font-semibold tracking-[-0.04em] text-[#086b6f]">
+          Bag-centered brewing history
+        </p>
+      </div>
+      <div className="relative flex h-full w-full max-w-[34rem] items-center justify-center px-5 pb-24 pt-10">
+        <img
+          src={coffeeToolsBagsImage}
+          alt="Brew Tracker active coffee shelf screen"
+          className="relative z-10 h-full max-h-[24rem] w-auto rounded-[22px] border border-black/10 bg-white object-contain shadow-[0_18px_45px_rgba(0,0,0,0.12)]"
         />
+        <img
+          src={coffeeToolsBrewStoryImage}
+          alt="Brew Tracker brew story analytics screen"
+          className="absolute right-5 top-14 h-[82%] max-h-[23rem] w-auto rounded-[22px] border border-black/10 bg-white object-contain opacity-85 shadow-[0_18px_45px_rgba(0,0,0,0.1)]"
+        />
+      </div>
     </div>
   );
 }
@@ -161,23 +180,24 @@ const projects: Project[] = [
   },
   {
     id: 'coffee-tools',
-    title: 'Coffee Tools',
-    status: 'Working technical prototype',
-    headline: 'How I taught myself backend architecture by building a real product',
-    oneLine: 'A working prototype where a familiar coffee workflow became a way to learn APIs, authentication, data modelling, and product structure.',
-    role: 'Backend Learner / Product Builder',
-    category: 'Technical learning build',
+    title: 'Brew Tracker',
+    status: 'Live AWS beta',
+    headline: 'A serverless coffee journal for repeatable brewing',
+    oneLine: 'I moved the project from prototype to authenticated beta: users can create bags, log brews, archive coffees, and review analytics backed by AWS.',
+    role: 'Product Builder / Backend Implementation',
+    category: 'AWS-backed product',
     problem:
       'As someone rotating multiple coffee bags and four grinders, I found note-taking too loose for comparison and most tracking too laborious for consistent use.',
     approach:
-      'Instead of practicing backend concepts in isolation, I used a real problem I understood intimately. I modeled the workflow around the coffee bag, then built the supporting structure: Supabase authentication, bag lifecycle tracking, brew logs, grinder-aware inputs, analytics, and an Express and PostgreSQL backend.',
+      'Instead of practicing backend concepts in isolation, I used a real problem I understood intimately. I modeled the workflow around the coffee bag, then built the supporting structure: Cognito authentication, API Gateway, Lambda, DynamoDB, bag lifecycle tracking, brew logs, grinder-aware inputs, and analytics.',
     outcome:
-      'Coffee Tools is proof of technical learning made tangible. It shows how I learn: choose a real use case, understand the domain, model the data, define the API boundaries, and turn the idea into a working product.',
-    highlights: ['A personal workflow became a data model', 'Backend architecture was learned through a real product', 'Design and engineering decisions evolved together'],
-    metrics: ['Supabase authentication', 'Express + TypeScript + PostgreSQL architecture', 'Multi-bag and multi-grinder workflow'],
+      'Brew Tracker is now a working beta with real authenticated user data. It shows how I learn: choose a real use case, understand the domain, model the data, define the API boundaries, and turn the idea into a deployed product.',
+    highlights: ['A personal workflow became a data model', 'Serverless AWS backend with real persistence', 'Analytics are designed around comparable brew setups'],
+    metrics: ['AWS Amplify + Cognito', 'API Gateway + Lambda + DynamoDB', 'Multi-bag and multi-grinder workflow'],
     links: [
       { label: 'Open case study', href: 'projects/coffee-tools.html' },
-      { label: 'View GitHub repo', href: 'https://github.com/cynyassy/coffee-tool', external: true },
+      { label: 'Open live beta', href: 'https://test.dpdc9h20103x8.amplifyapp.com', external: true },
+      { label: 'View GitHub repo', href: 'https://github.com/cynyassy/coffee-tools-api', external: true },
     ],
     illustration: <CoffeeToolsShowcase />,
     imageHref: 'projects/coffee-tools.html',

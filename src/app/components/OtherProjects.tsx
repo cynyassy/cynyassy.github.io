@@ -23,7 +23,7 @@ export function OtherProjects() {
           </p>
         </motion.div>
 
-        <div className="grid gap-8 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           <motion.article
             className="flex h-full flex-col overflow-hidden rounded-[8px] border-2 border-black bg-white text-black"
             initial={{ opacity: 0, y: 24 }}

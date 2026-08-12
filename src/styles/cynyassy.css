@@ -180,6 +180,78 @@
   border: var(--line);
 }
 
+.cynyassy-home {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(20rem, 1.15fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 5rem) var(--page-padding);
+  background: var(--ink);
+  color: #fff;
+}
+
+.cynyassy-home__copy {
+  display: grid;
+  align-content: center;
+  gap: 1.4rem;
+}
+
+.cynyassy-home .label,
+.cynyassy-home__copy > p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.cynyassy-home h2 {
+  font-size: clamp(2.3rem, 4.5vw, 3.8rem);
+}
+
+.cynyassy-home__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.45rem;
+}
+
+.cynyassy-home__actions a {
+  border: 1px solid #fff;
+  padding: 0.85rem 1rem;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.cynyassy-home__actions a:first-child {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.cynyassy-home__actions a:hover,
+.cynyassy-home__actions a:focus-visible {
+  background: #fff;
+  color: var(--ink);
+}
+
+.cynyassy-home__art {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 1rem;
+}
+
+.cynyassy-home__art img {
+  display: block;
+  width: 100%;
+  background: #fff;
+}
+
+.cynyassy-home__art img:last-child {
+  transform: translateY(2rem);
+}
+
 .proof {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -462,18 +534,13 @@ blockquote {
   padding: 1rem 0;
 }
 
-.instagram-link {
-  grid-column: 2;
-  width: fit-content;
-  font-weight: var(--weight-bold);
-}
-
 @media (max-width: 900px) {
   .hero,
   .section-head,
   .comic-viewer,
   .book-intro,
-  .reflection {
+  .reflection,
+  .cynyassy-home {
     grid-template-columns: 1fr;
   }
 
@@ -508,9 +575,7 @@ blockquote {
     position: static;
   }
 
-  .instagram-link {
-    grid-column: 1;
-  }
+  .cynyassy-home__art img:last-child { transform: none; }
 }
 
 @media (max-width: 640px) {

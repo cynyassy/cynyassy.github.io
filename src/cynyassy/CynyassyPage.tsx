@@ -143,9 +143,7 @@ export default function CynyassyPage() {
           <div className="hero-copy">
             <p className="label">Cynyassy / ChaddiMan</p>
             <h1>Simple stories for complicated feelings</h1>
-            <p className="dek">
-              A long-running comic practice about emotions, everyday life, and helping people feel a little less alone.
-            </p>
+            <p className="dek">An ongoing archive of comics, writing, illustrated books, and gentle tools for everyday life.</p>
             <p className="muted">
               The practice began in 2018 while I was learning to understand and regulate my own emotions. I started
               publishing Cynyassy publicly in 2019, with its most intensive near-daily period continuing through 2021.
@@ -162,6 +160,25 @@ export default function CynyassyPage() {
           <figure className="hero-comic">
             <img src={sufferingComic} alt="ChaddiMan comic about unnecessary suffering" />
           </figure>
+        </section>
+
+        <section className="cynyassy-home" aria-labelledby="cynyassy-home-title">
+          <div className="cynyassy-home__copy">
+            <p className="label">Now live</p>
+            <h2 id="cynyassy-home-title">Cynyassy.com is the living home for the work</h2>
+            <p>
+              The site brings current stories, older comics, books, videos, and ways to stay connected into one
+              accessible place. It is where the archive becomes something people can enter, browse, and return to.
+            </p>
+            <div className="cynyassy-home__actions">
+              <a href="https://cynyassy.com" target="_blank" rel="noreferrer">Visit Cynyassy.com <span aria-hidden="true">↗</span></a>
+              <a href="https://instagram.com/cynyassy" target="_blank" rel="noreferrer">Browse the Instagram archive <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div className="cynyassy-home__art" aria-label="A selection of Cynyassy comic art">
+            <img src={purposeComic} alt="Cynyassy Purpose comic" />
+            <img src={feelingLostComic} alt="Cynyassy Feeling Lost comic" />
+          </div>
         </section>
 
         <section className="proof" aria-label="Cynyassy in numbers">
@@ -319,7 +336,7 @@ export default function CynyassyPage() {
         </section>
 
         <section className="section reflection">
-          <SectionIntro label="What stayed with me" title="Audience understanding is built, not guessed" />
+          <SectionIntro label="What the practice taught me" title="Audience understanding is built, not guessed" />
           <ol>
             {learnings.map((learning, index) => (
               <li key={learning}>
@@ -328,9 +345,6 @@ export default function CynyassyPage() {
               </li>
             ))}
           </ol>
-          <a href="https://instagram.com/cynyassy" target="_blank" rel="noreferrer" className="instagram-link">
-            Explore Cynyassy on Instagram
-          </a>
         </section>
       </main>
     </div>

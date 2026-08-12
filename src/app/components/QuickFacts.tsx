@@ -17,9 +17,9 @@ const facts = [
     detail: '1.2M monthly reach at peak in 2021',
   },
   {
-    value: 'Level 100',
-    label: 'Backend path completed',
-    detail: '200+ days of hands-on learning through Boot.dev',
+    value: '706',
+    label: 'Active users',
+    detail: 'Indian Coffee Stories and Coffee Atlas, first 28 days',
   },
 ];
 

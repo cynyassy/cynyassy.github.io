@@ -2,6 +2,7 @@
   --coffee-ink: #111111;
   --coffee-muted: #606060;
   --coffee-soft: #f5f3f0;
+  --coffee-accent: #ff4400;
   --coffee-line: 1px solid #111111;
   --coffee-page: 75rem;
   --coffee-pad: clamp(1.5rem, 5vw, 5rem);
@@ -382,6 +383,73 @@ html {
   line-height: 1.45;
 }
 
+.coffee-launch-signals {
+  background: #f5f3f0;
+  width: 100%;
+  max-width: none;
+  padding-inline: max(var(--coffee-pad), calc((100vw - var(--coffee-page)) / 2 + var(--coffee-pad)));
+}
+
+.coffee-launch-signals__metrics {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: var(--coffee-line);
+}
+
+.coffee-launch-signals__metrics li {
+  display: grid;
+  grid-template-columns: minmax(6rem, 0.2fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: baseline;
+  border-bottom: var(--coffee-line);
+  padding: 1.2rem 0;
+}
+
+.coffee-launch-signals__metrics strong {
+  color: var(--coffee-accent);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 650;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+.coffee-launch-signals__metrics span {
+  max-width: 40rem;
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+  font-weight: 520;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.coffee-launch-signals__proof {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.coffee-launch-signals__proof figure {
+  display: grid;
+  gap: 0.8rem;
+  min-width: 0;
+}
+
+.coffee-launch-signals__proof img {
+  display: block;
+  width: 100%;
+  border: var(--coffee-line);
+  background: #fff;
+  object-fit: cover;
+}
+
+.coffee-launch-signals__proof figcaption {
+  color: var(--coffee-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
 .coffee-workflow {
   display: grid;
   grid-template-columns: minmax(15rem, 0.38fr) minmax(0, 0.62fr);
@@ -638,8 +706,14 @@ html {
   .coffee-section-intro,
   .coffee-decision__panel,
   .coffee-discovery__panel,
-  .coffee-backend__decisions {
+  .coffee-backend__decisions,
+  .coffee-launch-signals__proof {
     grid-template-columns: 1fr;
+  }
+
+  .coffee-launch-signals__metrics li {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
   }
 
   .coffee-discovery__loop {

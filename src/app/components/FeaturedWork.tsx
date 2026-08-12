@@ -2,8 +2,8 @@ import type { ReactNode } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { PerspectivesCoverArt } from '../../perspectives/PerspectivesCoverArt';
-import coffeeToolsBagsImage from '../../assets/coffee-tools-case-study/current-bags.png';
-import coffeeToolsBrewStoryImage from '../../assets/coffee-tools-case-study/current-brew-story.png';
+import coffeeToolsShareCardImage from '../../assets/coffee-tools-case-study/live-product/share-card-current.jpg';
+import coffeeToolsBagContextImage from '../../assets/coffee-tools-case-study/live-product/bag-context.jpg';
 import algotestLogoImage from '../../assets/algotest-case-study/algotest-logo.png';
 import algotestDocumentationImage from '../../assets/algotest_documentation.png';
 import cynyassyCoverImage from '../../assets/cynyassy-formats/chaddiman-suffering.png';
@@ -42,21 +42,21 @@ function CoffeeToolsShowcase() {
         <span className="h-3 w-3 rounded-full bg-[#086b6f]" />
       </div>
       <div className="absolute bottom-5 left-5 right-5 border-t border-black/20 pt-4">
-        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[#666]">Live AWS beta</p>
+        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[#666]">Live product ecosystem</p>
         <p className="mt-1 text-lg font-semibold tracking-[-0.04em] text-[#086b6f]">
-          Bag-centered brewing history
+          Remember what worked. Brew what&apos;s next.
         </p>
       </div>
       <div className="relative flex h-full w-full max-w-[34rem] items-center justify-center px-5 pb-24 pt-10">
         <img
-          src={coffeeToolsBagsImage}
-          alt="Brew Tracker active coffee shelf screen"
+          src={coffeeToolsShareCardImage}
+          alt="Brew Tracker share card from the live product"
           className="relative z-10 h-full max-h-[24rem] w-auto rounded-[22px] border border-black/10 bg-white object-contain shadow-[0_18px_45px_rgba(0,0,0,0.12)]"
         />
         <img
-          src={coffeeToolsBrewStoryImage}
-          alt="Brew Tracker brew story analytics screen"
-          className="absolute right-5 top-14 h-[82%] max-h-[23rem] w-auto rounded-[22px] border border-black/10 bg-white object-contain opacity-85 shadow-[0_18px_45px_rgba(0,0,0,0.1)]"
+          src={coffeeToolsBagContextImage}
+          alt="Brew Tracker bag context screen"
+          className="absolute right-5 top-14 h-[82%] max-h-[23rem] w-auto rounded-[22px] border border-black/10 bg-white object-contain opacity-90 shadow-[0_18px_45px_rgba(0,0,0,0.1)]"
         />
       </div>
     </div>
@@ -150,6 +150,7 @@ const projects: Project[] = [
     metrics: ['100K+ community', '1.2M monthly reach at peak in 2021', '600+ multi-panel comics'],
     links: [
       { label: 'Open case study', href: 'projects/cynyassy.html' },
+      { label: 'Visit Cynyassy.com', href: 'https://cynyassy.com', external: true },
       { label: "Cynyassy's Instagram", href: 'https://instagram.com/cynyassy', external: true },
     ],
     illustration: <CynyassyShowcase />,
@@ -181,22 +182,23 @@ const projects: Project[] = [
   {
     id: 'coffee-tools',
     title: 'Brew Tracker',
-    status: 'Live AWS beta',
-    headline: 'A serverless coffee journal for repeatable brewing',
-    oneLine: 'I moved the project from prototype to authenticated beta: users can create bags, log brews, archive coffees, and review analytics backed by AWS.',
-    role: 'Product Builder / Backend Implementation',
-    category: 'AWS-backed product',
+    status: 'Live product ecosystem',
+    headline: 'A coffee product that connects discovery to better brewing',
+    oneLine: 'Indian Coffee Stories creates the public learning path; Brew Tracker turns curiosity into a private, repeatable brewing practice backed by AWS.',
+    role: 'Product Builder / Growth System Design',
+    category: 'Product / Discovery / AWS',
     problem:
       'As someone rotating multiple coffee bags and four grinders, I found note-taking too loose for comparison and most tracking too laborious for consistent use.',
     approach:
-      'Instead of practicing backend concepts in isolation, I used a real problem I understood intimately. I modeled the workflow around the coffee bag, then built the supporting structure: Cognito authentication, API Gateway, Lambda, DynamoDB, bag lifecycle tracking, brew logs, grinder-aware inputs, and analytics.',
+      'I used a real problem I understood intimately to build both sides of the journey: Indian Coffee Stories for education and discovery, then Brew Tracker for private logging and learning. The utility is backed by Cognito, API Gateway, Lambda, DynamoDB, S3, bag lifecycle tracking, grinder-aware inputs, and analytics.',
     outcome:
-      'Brew Tracker is now a working beta with real authenticated user data. It shows how I learn: choose a real use case, understand the domain, model the data, define the API boundaries, and turn the idea into a deployed product.',
-    highlights: ['A personal workflow became a data model', 'Serverless AWS backend with real persistence', 'Analytics are designed around comparable brew setups'],
-    metrics: ['AWS Amplify + Cognito', 'API Gateway + Lambda + DynamoDB', 'Multi-bag and multi-grinder workflow'],
+      'The live ecosystem has already created early discovery and discussion: 706 active users in its first 28 days, 1.2K Coffee Atlas views, and a 6.8K-view Reddit launch post. It shows how I connect a real user workflow, distribution surface, data model, and deployed product.',
+    highlights: ['Public discovery connects to a private utility', 'Serverless AWS backend with real persistence', 'Analytics are designed around comparable brew setups'],
+    metrics: ['706 active users in the first 28 days', '95 Indian coffee roasters mapped', '6.8K Reddit views in the first 48 hours'],
     links: [
       { label: 'Open case study', href: 'projects/coffee-tools.html' },
-      { label: 'Open live beta', href: 'https://test.dpdc9h20103x8.amplifyapp.com', external: true },
+      { label: 'Open Brew Tracker', href: 'https://brew.indiancoffeestories.com', external: true },
+      { label: 'Visit Indian Coffee Stories', href: 'https://indiancoffeestories.com', external: true },
       { label: 'View GitHub repo', href: 'https://github.com/cynyassy/coffee-tools-api', external: true },
     ],
     illustration: <CoffeeToolsShowcase />,

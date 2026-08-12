@@ -10,8 +10,8 @@ const offers = [
     description: 'Turn scattered expertise and support pain into reusable explanations.',
   },
   {
-    title: 'Learning tools, workshops, and explainers',
-    description: 'Make difficult ideas easier to practice through workshops, stories, visuals, games, or guided tools.',
+    title: 'Learning tools and explainers',
+    description: 'Make difficult ideas easier to practice through stories, visuals, games, or guided tools.',
   },
   {
     title: 'Research synthesis and storytelling',

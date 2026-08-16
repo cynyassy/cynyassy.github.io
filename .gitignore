@@ -2,9 +2,8 @@
 node_modules/
 dist/
 
-# Local operating context
+# Local-only working context
 .portfolio-memory/
-DEPLOYMENT_GUIDE.md
 
 # Superseded design exports and local reference material
 Case Study Page Design/

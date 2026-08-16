@@ -6,8 +6,8 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "sync:pages": "./scripts/sync-to-pages.sh",
-    "deploy:pages": "./scripts/deploy-to-pages.sh"
+    "check": "npm run build",
+    "release:check": "./scripts/deploy-to-pages.sh"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

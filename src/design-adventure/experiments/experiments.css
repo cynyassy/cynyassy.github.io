@@ -1,0 +1,93 @@
+@import '../machinery/controls.css';
+/* Separate entry and vocabulary: none of the adventure's dashboard CSS is imported. */
+html,body{margin:0;background:#fff}
+.ix-space{--ink:#353535;--muted:#666663;--rule:#deded9;--paper:#f5f5f2;--red:#d00000;--blue:#3f88c5;color:var(--ink);font:15px/1.5 'Helvetica Neue',Helvetica,Arial,sans-serif;max-width:1160px;padding:0 32px;margin:0 auto;box-sizing:border-box;min-height:100dvh}
+.ix-space *{box-sizing:border-box}.ix-space button,.ix-space a,.ix-space summary{touch-action:manipulation}.ix-space button{font:inherit;color:inherit;cursor:pointer}.ix-space button:disabled{cursor:default}.ix-space a{color:inherit;text-underline-offset:4px}.ix-space :is(a,button,summary):focus-visible{outline:2px solid var(--blue);outline-offset:5px}.ix-space h1:focus,.ix-space main:focus{outline:0}.ix-space h1,.ix-space h2,.ix-space h3,.ix-space p{margin:0}.ix-skip{position:fixed;left:12px;top:-90px;background:white;padding:12px;z-index:30}.ix-skip:focus{top:12px}
+.ix-header{display:flex;align-items:center;gap:24px;min-height:80px}.ix-brand{font-size:27px;font-weight:750;letter-spacing:-1.5px;text-decoration:none;white-space:nowrap}.ix-brand sup{font-size:11px;letter-spacing:0;vertical-align:top;margin-left:3px}.ix-header>span{font-size:12px;color:var(--muted)}.ix-reference{margin-left:auto;display:inline-flex;align-items:center;min-height:44px;font-size:12px;text-decoration:none}
+.ix-versions{display:flex;gap:28px;border-bottom:1px solid var(--rule);margin-bottom:28px}.ix-versions button{display:flex;gap:9px;align-items:center;border:0;background:none;padding:10px 0 12px;min-height:48px;font-size:13px;border-bottom:2px solid transparent;margin-bottom:-1px}.ix-versions button>span{font-size:11px;color:var(--muted)}.ix-versions button[aria-current]{border-color:var(--red);font-weight:650}.ix-versions button:hover{color:#000}.ix-notice{padding:10px 0;color:var(--muted);font-size:13px}
+.ix-style{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}.ix-style h1{font-size:36px;line-height:1.15;letter-spacing:-1.3px;font-weight:600}.ix-style h1>span{font-size:13px;font-weight:400;letter-spacing:0;color:var(--muted);margin-left:12px;vertical-align:middle}.ix-text{border:0;background:none;min-height:44px;padding:8px 0;font-size:13px!important;text-underline-offset:5px}.ix-text:hover{text-decoration:underline}
+.ix-scene{position:relative}.ix-space .rx-window{position:relative;height:clamp(180px,27vh,260px);margin:0;overflow:hidden;background:var(--ink);border:0}.ix-space .rx-window :is(picture,img){display:block;width:100%;height:100%}.ix-space .rx-window picture,.ix-space .rx-window>svg{position:absolute;inset:0;width:100%;height:100%}.ix-space .rx-window img{object-fit:contain}.ix-space .rx-window>svg{pointer-events:none}.ix-space .rx-window-caption,.ix-space .rx-instruments{display:none}.ix-scene-state{position:absolute;bottom:12px;left:16px;color:#fff;font:11px/1.4 'Courier New',monospace;letter-spacing:1px;background:rgba(53,53,53,.8);padding:4px 7px}
+.ix-console{padding:24px 0 0;display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.4fr);column-gap:40px}.ix-task{grid-column:1;grid-row:1 / 3}.ix-task h2{font-size:28px;line-height:1.2;letter-spacing:-.8px;font-weight:600;max-width:260px}.ix-order{font:600 23px/1.3 'Courier New',monospace;margin-top:18px!important;letter-spacing:1px}.ix-order>span{color:var(--muted);font-weight:400;margin-inline:6px}
+.ix-feedback{grid-column:2;min-height:44px;padding-top:12px;display:flex;align-items:center;gap:16px;font-size:13px;color:var(--muted)}.ix-feedback progress{width:90px;height:5px;accent-color:var(--ink)}.ix-error{color:#ad0000}.ix-feedback .ix-text{color:var(--ink)}
+.ix-step{display:flex;align-items:center;gap:7px;margin-top:22px}.ix-step i{height:7px;width:7px;background:#d6d6d0;border-radius:50%}.ix-step i[data-set=true]{background:var(--ink)}.ix-step b{font-size:12px;line-height:1;font-weight:400;margin-left:8px;color:var(--muted)}.ix-treatment{grid-column:2;display:flex;align-items:center;gap:4px;margin:-8px 0 14px;font-size:12px;flex-wrap:wrap}.ix-treatment>span{margin-right:auto;color:var(--muted)}.ix-treatment button{border:0;border-bottom:2px solid transparent;background:none;padding:8px 10px;min-height:44px;font-size:12px}.ix-treatment button[aria-pressed=true]{border-bottom-color:var(--red);background:var(--paper)}
+.ix-completion{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid var(--rule);padding:18px 0;margin-top:12px}.ix-small{font-size:11px;letter-spacing:1px;color:var(--muted)}.ix-completion h3{font-size:20px;line-height:1.35;letter-spacing:-.4px;font-weight:500;margin-top:5px;max-width:540px}.ix-completion>div:last-child{display:flex;gap:24px;flex:none}.ix-footer{border-top:1px solid var(--rule);margin:30px 0 0;padding:14px 0 28px;display:flex;gap:20px;font-size:12px;color:var(--muted)}.ix-footer>details{margin-right:auto;max-width:680px}.ix-footer summary{cursor:pointer;min-height:32px}.ix-footer p{margin:8px 0;max-width:650px}.ix-footer>a{min-height:32px;display:inline-flex;align-items:flex-start;text-decoration:none;padding-top:1px}
+.ix-dialog{border:0;border-top:3px solid var(--red);background:#fff;color:var(--ink);width:min(480px,calc(100% - 32px));max-height:calc(100dvh - 32px);padding:24px 28px 28px;font:15px/1.6 'Helvetica Neue',Helvetica,Arial,sans-serif;overflow:auto}.ix-dialog::backdrop{background:rgba(53,53,53,.4)}.ix-close{display:block;margin:0 0 12px auto}.ix-dialog h2{font-size:28px;line-height:1.2;letter-spacing:-.6px;margin-bottom:18px}.ix-dialog p{margin:12px 0}.ix-dialog a{display:inline-block;min-height:44px}.ix-dialog details{border-top:1px solid var(--rule);margin-top:20px;padding-top:10px}.ix-dialog summary{cursor:pointer;min-height:44px;font-size:13px}
+@media(min-width:900px) and (max-height:820px){.ix-header{min-height:64px}.ix-versions{margin-bottom:20px}.ix-style{margin-bottom:14px}.ix-style h1{font-size:32px}.ix-space .rx-window{height:190px}.ix-console{padding-top:20px}.ix-task h2{font-size:26px}.ix-switches>button{min-height:104px}.ix-footer{margin-top:20px}.ix-completion{padding:12px 0}.ix-completion h3{font-size:18px}}
+@media(max-width:700px){.ix-space{padding-inline:20px}.ix-header{gap:14px;min-height:72px;flex-wrap:wrap;padding-block:10px}.ix-brand{font-size:25px}.ix-header>span{display:none}.ix-reference{font-size:12px}.ix-versions{gap:12px;margin-bottom:24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.ix-versions button{font-size:12px;line-height:1.3;align-items:flex-start;gap:6px;min-width:0;text-align:left;padding:10px 0 12px}.ix-style{gap:12px;align-items:center;margin-bottom:16px}.ix-style h1{font-size:30px}.ix-style h1>span{font-size:12px;margin-left:4px}.ix-style .ix-text{max-width:80px;line-height:1.3;text-align:right;font-size:12px!important}.ix-space .rx-window{height:auto;aspect-ratio:2170/725}.ix-scene-state{font-size:10px;left:8px;bottom:6px;padding:2px 4px;letter-spacing:.4px}.ix-console{display:block;padding-top:22px}.ix-task{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px}.ix-task h2{font-size:26px;max-width:200px}.ix-order{font-size:18px;white-space:nowrap;margin:0!important}.ix-order>span{margin-inline:1px}.ix-step{margin:0;flex:none;gap:5px}.ix-step b{margin-left:4px}.ix-treatment{margin:0 0 18px}.ix-switches{gap:10px}.ix-switches>button{min-height:110px}.ix-actions{gap:10px}.ix-actions button{font-size:13px;min-height:48px;padding:10px 6px}.ix-connect{gap:10px}.ix-feedback{padding-top:10px;font-size:13px;min-height:44px}.ix-completion{align-items:flex-start;flex-direction:column;gap:8px;margin-top:16px}.ix-completion h3{font-size:21px}.ix-completion>div:last-child{gap:24px}.ix-footer{margin-top:26px;gap:14px}.ix-footer>details{max-width:calc(100% - 90px)}.ix-footer p{font-size:13px}.ix-dialog{padding:18px 22px 22px}}
+@media(max-width:360px){.ix-space{padding-inline:16px}.ix-style h1{font-size:27px}.ix-task{align-items:flex-start;flex-direction:column;gap:12px}.ix-task h2{max-width:none}.ix-switches>button{min-height:102px}.ix-order{font-size:20px}.ix-actions{gap:8px}.ix-actions button{font-size:12px}.ix-switches{gap:9px}}
+@media(prefers-reduced-motion:reduce){.ix-space *{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+/* Guided puzzle: one outlined control at a time. */
+.ix-version-b .ix-actions button[data-active=true]{outline:2px solid var(--red);outline-offset:5px;border-radius:2px}
+.ix-hint-toggle{margin-left:auto;white-space:nowrap}.ix-hint-toggle:disabled{opacity:.5}.ix-hint{grid-column:2;font-size:13px;line-height:1.5;color:var(--muted);padding:3px 0 10px}.ix-hint[hidden]{display:none}
+@media(max-width:700px){.ix-version-b .ix-task{align-items:center}.ix-feedback:has(.ix-hint-toggle){flex-wrap:wrap;gap:6px 12px}.ix-hint{font-size:13px}}
+@media(max-width:360px){.ix-version-b .ix-task{align-items:flex-start}}
+/* Second guided puzzle: the scene supplies clues; emphasis supplies direction. */
+.ix-task h2:focus{outline:0}.ix-pump-clue{font-size:15px;color:var(--muted);margin-top:16px!important}
+
+
+
+
+
+
+
+
+:is(.ix-pump,.ix-signal) .rx-instruments{display:flex;position:absolute;top:14px;left:14px;gap:8px}
+:is(.ix-pump,.ix-signal) .rx-instrument{display:grid;gap:4px;background:#fff;color:var(--ink);padding:8px 12px;border:1px solid #d6d6d0;min-width:90px}
+:is(.ix-pump,.ix-signal) .rx-instrument span{font:11px/1.3 'Courier New',monospace}:is(.ix-pump,.ix-signal) .rx-instrument strong{font:600 27px/1.2 'Courier New',monospace}
+.ix-next-puzzle{border:1px solid var(--ink);padding:10px 16px;outline:2px solid var(--red);outline-offset:4px;border-radius:2px;background:var(--ink);color:#fff!important}
+@media(max-width:700px){
+ .ix-pump .ix-task{display:block}.ix-pump-clue{margin-top:8px!important}.ix-code-machine{grid-template-columns:minmax(0,.8fr) minmax(150px,1.2fr);gap:18px}.ix-code-input{height:66px;font-size:29px;padding:10px;letter-spacing:3px}.ix-code-input::placeholder{font-size:20px}
+ :is(.ix-pump,.ix-signal) .rx-instruments{top:7px;left:7px;gap:5px}:is(.ix-pump,.ix-signal) .rx-instrument{padding:4px 6px;min-width:45px;gap:2px}:is(.ix-pump,.ix-signal) .rx-instrument span{font-size:11px;max-width:65px}:is(.ix-pump,.ix-signal) .rx-instrument strong{font-size:22px}
+ .ix-completion>div:last-child{flex-wrap:wrap}.ix-code-actions{margin-top:16px}
+}
+@media(max-width:360px){.ix-code-machine{gap:14px;grid-template-columns:minmax(0,.7fr) minmax(144px,1.3fr)}.ix-code-input{font-size:26px;letter-spacing:1px;padding:8px}.ix-code-label{font-size:13px}:is(.ix-pump,.ix-signal) .rx-instrument span{font-size:11px}:is(.ix-pump,.ix-signal) .rx-instrument{min-width:40px;padding:3px 5px}:is(.ix-pump,.ix-signal) .rx-instrument strong{font-size:20px}}
+/* Third guided puzzle: physical rotation and an immediately visible route. */
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:700px){.ix-routing .ix-task{display:block}.ix-routing .ix-pump-clue{margin-top:10px!important}.ix-pipe-board{width:min(100%,360px);margin-block:8px 18px}}
+/* Fourth guided puzzle: static reference, live trace, one native continuous control. */
+
+
+
+
+
+
+
+
+@media(max-width:700px){.ix-signal .ix-task{display:block}.ix-signal-scope{height:100px}.ix-wave-key{font-size:11px;gap:8px}.ix-frequency-row{gap:12px}.ix-signal .ix-pump-clue{margin-top:10px!important}}
+/* Fifth guided puzzle: one steady action outline and a clearly labelled timing constraint. */
+
+
+
+
+
+
+
+
+
+@media(max-width:700px){.ix-ignition .ix-task{display:block}.ix-ignition .ix-pump-clue{margin-top:10px!important}.ix-charge-readout output{font-size:32px}.ix-timing-mode{gap:10px;flex-wrap:wrap}.ix-charge-state{margin-bottom:16px!important}}
+/* Sixth guided puzzle: visible valve state, gradual pressure response, known hold duration. */
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:700px){.ix-pressure .ix-task{display:block}.ix-pressure .ix-pump-clue{margin-top:10px!important}.ix-pressure-valves{gap:10px}.ix-pressure-valves>button{padding:10px;gap:5px 7px;font-size:13px}.ix-valve-effect{font-size:11px}.ix-pressure-controls .ix-charge-readout output{font-size:29px}}
+@media(max-width:360px){.ix-pressure-valves>button{grid-template-columns:1fr 25px;padding:10px 8px}.ix-valve-wheel{width:25px;height:25px}.ix-valve-wheel i{width:18px}.ix-valve-wheel i:after{height:17px;left:7px;top:-7px}}

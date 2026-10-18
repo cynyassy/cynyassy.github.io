@@ -21,6 +21,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
+        designAdventure: path.resolve(__dirname, 'projects/design-adventure.html'),
+        interfaceExperiments: path.resolve(__dirname, 'projects/interface-experiments.html'),
         perspectives: path.resolve(__dirname, 'projects/perspectives.html'),
         coffeeTools: path.resolve(__dirname, 'projects/coffee-tools.html'),
         algotest: path.resolve(__dirname, 'projects/algotest.html'),

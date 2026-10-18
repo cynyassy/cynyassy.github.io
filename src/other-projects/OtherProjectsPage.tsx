@@ -8,6 +8,7 @@ type OtherProjectLink = {
   label: string;
   href: string;
   icon?: ReactNode;
+  external?: boolean;
 };
 
 type OtherProject = {
@@ -57,6 +58,17 @@ function FilmVisual() {
 }
 
 const projects: OtherProject[] = [
+  {
+    id: 'design-adventure',
+    status: 'Interactive prototype',
+    category: 'Design + learning experiment',
+    title: 'Playable Design Laboratory',
+    headline: 'Bring the reactor online',
+    description: 'One reactor. Six puzzles. 22 visual styles. Play with design and discover how interfaces guide you, respond to you, and help you recover.',
+    proof: ['Learn by trying switches, codes, pipes, signals, timing and pressure.', 'Every visual style has its own artwork. The puzzles and your progress stay the same.', 'Take your time in practice, or try the 60-second mission.'],
+    links: [{ label: 'Try the design adventure', href: 'design-adventure.html', external: false, icon: <ArrowRight size={16} /> }],
+    visual: <div className="flex min-h-[300px] flex-col justify-between bg-[#ffffff] p-10 text-[#353535]"><span className="text-xs font-semibold uppercase tracking-[0.2em]">Cynyassy / Mars Array 07</span><p className="my-8 text-5xl font-semibold leading-none tracking-[-0.05em]">Connect.<br />Recover.<br /><span className="text-[#d00000]">Stabilise.</span></p><span className="text-xs uppercase tracking-[0.15em]">6 commands / 22 styles / one reactor</span></div>,
+  },
   {
     id: 'emotion-identifier',
     status: 'Shipped',
@@ -163,7 +175,7 @@ export default function OtherProjectsPage() {
             <article key={project.id} id={project.id} className="other-projects-row">
               <a
                 href={project.links[0]?.href}
-                target="_blank"
+                target={project.links[0]?.external === false ? undefined : "_blank"}
                 rel="noreferrer"
                 className={index % 2 === 0 ? 'other-projects-media' : 'other-projects-media md:order-2'}
                 aria-label={`Open ${project.title}`}
@@ -175,7 +187,7 @@ export default function OtherProjectsPage() {
                 <p className="other-projects-meta">
                   0{index + 1} / {project.status} / {project.category}
                 </p>
-                <a href={project.links[0]?.href} target="_blank" rel="noreferrer" className="other-projects-title-link">
+                <a href={project.links[0]?.href} target={project.links[0]?.external === false ? undefined : "_blank"} rel="noreferrer" className="other-projects-title-link">
                   <h2>{project.title}</h2>
                 </a>
                 <h3>{project.headline}</h3>
@@ -195,7 +207,7 @@ export default function OtherProjectsPage() {
                     <a
                       key={link.href}
                       href={link.href}
-                      target="_blank"
+                      target={link.external === false ? undefined : "_blank"}
                       rel="noreferrer"
                       className={linkIndex === 0 ? 'other-projects-primary-link' : 'other-projects-secondary-link'}
                     >

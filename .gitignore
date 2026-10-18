@@ -2,8 +2,9 @@
 node_modules/
 dist/
 
-# Local-only working context
+# Local operating context
 .portfolio-memory/
+DEPLOYMENT_GUIDE.md
 
 # Superseded design exports and local reference material
 Case Study Page Design/
@@ -18,3 +19,9 @@ small_game_simulation.py
 *.log
 *.tmp
 *.bak
+
+test-results/
+
+playwright-report/
+
+artifacts/

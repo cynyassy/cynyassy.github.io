@@ -1,0 +1,118 @@
+/* Audit fixes: shared usability before theme decoration. */
+.adventure-shell[data-theme=glass] .choice-options{background:#fff;backdrop-filter:none}
+.adventure-shell[data-theme=glass] .choice-options button[aria-selected=true]{background:#edf2f5}
+.adventure-shell[data-theme] .choice-options{scroll-padding-block:8px}
+.adventure-shell[data-theme] .choice-trigger>span:first-child{min-width:0;overflow-wrap:anywhere}
+.adventure-shell[data-theme] .choice-trigger>span:last-child{flex:none}
+.adventure-shell[data-theme] .shell-tools button span{display:none}
+.adventure-shell[data-theme] .shell-mission-status>span{max-width:none}
+.adventure-shell[data-theme] .clean-controls .ix-actions button:disabled{opacity:1;background:#e8e8e4;color:#73736e!important;border-color:#ccc;box-shadow:none}
+.adventure-shell[data-theme] .clean-controls .ix-switches>button{position:relative}
+/* Important text remains readable in the wider mono styles. */
+.adventure-shell[data-theme=pixel] :is(.style-definition p,.clean-guidance,.clean-task p),
+.adventure-shell[data-theme=cybercore] :is(.style-definition p,.clean-guidance,.clean-task p),
+.adventure-shell[data-theme=sketch] :is(.style-definition p,.clean-guidance,.clean-task p){font-size:15px;line-height:1.55}
+.adventure-shell[data-theme=pixel] :is(.shell-tools button,.shell-modes button,.shell-mission-status),
+.adventure-shell[data-theme=cybercore] :is(.shell-tools button,.shell-modes button,.shell-mission-status),
+.adventure-shell[data-theme=sketch] :is(.shell-tools button,.shell-modes button,.shell-mission-status){font-family:Arial,Helvetica,sans-serif;font-size:14px}
+.adventure-shell[data-theme=sketch] .clean-controls :is(.ix-switches>button,.ix-actions button,.ix-keypad button,.ix-fine-tune){border-style:solid}
+.adventure-shell[data-theme=pixel] .clean-controls .ix-switches>button>i{border-radius:0;box-shadow:2px 0 0 var(--ink)}
+.adventure-shell[data-theme=pixel] .clean-controls .ix-switches>button>span:first-child{font-family:var(--heading);font-size:25px}
+/* Separate soft-material families without relying on colour for state. */
+.adventure-shell[data-theme=clay] .rx-window{box-shadow:0 3px 8px #35353518}
+.adventure-shell[data-theme=clay] .clean-controls :is(.ix-switches>button[aria-checked=true],.ix-pressure-valves>button[aria-pressed=true]){box-shadow:inset 3px 3px 6px #0004,inset -2px -2px 4px #fff3}
+.adventure-shell[data-theme=neumorphism] .clean-controls :is(.ix-switches>button[aria-checked=true],.ix-pressure-valves>button[aria-pressed=true]){box-shadow:inset 4px 4px 7px #0007,inset -3px -3px 6px #fff3}
+.adventure-shell[data-theme=neumorphism] .clean-controls :is(.ix-signal-scope,.ix-charge-track){background:#eee;box-shadow:inset 3px 3px 6px #d0d0d0,inset -3px -3px 6px #fff}
+.adventure-shell[data-theme=editorial] .clean-task h2{font-weight:600;font-size:30px;letter-spacing:-.8px}
+.adventure-shell[data-theme=luxury] .clean-task h2{font-weight:400;font-size:32px;line-height:1.25;letter-spacing:.4px}
+.adventure-shell[data-theme=editorial] .da-exhibit h3{font-weight:600;letter-spacing:-.8px}
+.adventure-shell[data-theme=luxury] .da-exhibit h3{font-weight:400;letter-spacing:.7px}
+.adventure-shell[data-theme=minimal] .da-exhibit-browser{border-bottom:0}
+.adventure-shell[data-theme=minimal] .da-exhibit-meta{display:none}
+/* Bounded modules express Bento while preserving the location/order of controls. */
+.adventure-shell[data-theme=bento] .clean-task{padding:16px;border:1px solid #ddd;border-radius:16px;background:#f6f6f3}
+.adventure-shell[data-theme=bento] .clean-controls .ix-actions{padding:10px;background:#f1f3f5;border-radius:14px}
+.adventure-shell[data-theme=bento] .clean-controls :is(.ix-signal-scope,.ix-charge-track){border-radius:12px}
+/* Decorative colour is deliberately quieter than red guidance and blue focus. */
+.adventure-shell[data-theme=maximal]{--catalogue-control-shadow:3px 3px 0 #d7d3c7;--menu-shadow:3px 3px 0 #d7d3c7}
+.adventure-shell.da-page[data-theme=maximal]:not(:has(.lab-comparison)) :is(.rx-window,.da-art,.da-exhibit,.da-stage-heading,.da-button){box-shadow:3px 3px 0 #d7d3c7;border-color:#777}
+.adventure-shell.da-page[data-theme=maximal]:not(:has(.lab-comparison)) .da-stage-heading{border-bottom:1px solid #aaa}
+.adventure-shell[data-theme=cyberpunk]{--catalogue-control-radius:0px;--menu-shadow:3px 3px 0 #b7bec2;--catalogue-control-shadow:2px 2px 0 #b7bec2}
+.adventure-shell[data-theme=cyberpunk] .clean-controls .ix-switches>button:after{content:'';position:absolute;right:-1px;top:-1px;width:12px;height:12px;background:var(--bg);border-bottom:1px solid var(--ink);transform:rotate(45deg) translate(4px,-5px);pointer-events:none}
+.adventure-shell[data-theme=ethereal] .da-art{background:radial-gradient(ellipse at 75% 25%,#dce9ef99,transparent 60%),#fff}
+/* Original visual motifs are decorative: no labels, target areas, motion or puzzle clues. */
+.adventure-shell[data-theme] .style-accent{display:none;pointer-events:none;color:#353535}
+.style-accent>g{display:none}
+.adventure-shell[data-theme=surreal] .style-accent,
+.adventure-shell[data-theme=synthwave] .style-accent,
+.adventure-shell[data-theme=bohemian] .style-accent,
+.adventure-shell[data-theme=wabi] .style-accent,
+.adventure-shell[data-theme=scrapbook] .style-accent,
+.adventure-shell[data-theme=victorian] .style-accent,
+.adventure-shell[data-theme=cyberpunk] .style-accent,
+.adventure-shell[data-theme=maximal] .style-accent{display:block}
+.adventure-shell[data-theme=surreal] .accent-surreal,
+.adventure-shell[data-theme=synthwave] .accent-synthwave,
+.adventure-shell[data-theme=bohemian] .accent-bohemian,
+.adventure-shell[data-theme=wabi] .accent-wabi,
+.adventure-shell[data-theme=scrapbook] .accent-scrapbook,
+.adventure-shell[data-theme=victorian] .accent-victorian,
+.adventure-shell[data-theme=cyberpunk] .accent-cyberpunk,
+.adventure-shell[data-theme=maximal] .accent-maximal{display:block}
+.adventure-shell[data-theme] .rx-window>svg.style-accent{position:absolute;inset:auto;top:12px;right:14px;left:auto;width:min(18%,116px);height:auto;aspect-ratio:1.6;background:#fffffff2;padding:4px;border-radius:2px;z-index:1}
+.adventure-shell[data-theme] .da-art{position:relative}
+.adventure-shell[data-theme] .da-art>svg.style-accent{position:absolute;inset:auto;top:3px;left:4px;width:22%;max-width:100px;height:auto;min-height:0;aspect-ratio:1.6;z-index:1}
+.adventure-shell[data-theme=bohemian] :is(.rx-window,.da-art)>.style-accent{background:#fffdf5}
+.adventure-shell[data-theme=wabi] :is(.rx-window,.da-art)>.style-accent{background:#faf9f4}
+@media(max-width:899px){
+ .adventure-shell .shell-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:0 10px;margin-bottom:14px;min-height:48px}
+ .adventure-shell .shell-modes{width:auto;flex:none}.adventure-shell .shell-modes button{font-size:14px;min-height:44px}
+ .adventure-shell .shell-tools{width:auto;margin-left:auto;gap:2px;border:0}
+ .adventure-shell .shell-tools button{font-size:14px;padding:6px;min-height:44px}
+ .adventure-shell .shell-state,.adventure-shell .shell-state:has(.shell-mission-status){flex:1 1 0;min-width:0;padding:0;margin:0}
+ .adventure-shell .shell-mission-status{gap:6px;flex-wrap:nowrap;justify-content:center;font-size:14px;padding:0}
+ .adventure-shell .shell-mission-status>span{font:400 13px/1.3 Arial,Helvetica,sans-serif;max-width:none;text-align:left}
+ .adventure-shell .shell-mission-status .da-button{font:500 13px/1.3 Arial,Helvetica,sans-serif;min-height:44px;padding:6px 8px}
+ .adventure-shell .shell-mission-status strong{font-size:20px}
+ .adventure-shell .style-showcase-main,.adventure-shell .style-showcase-compact .style-showcase-main{padding-top:8px;padding-bottom:6px}
+ .adventure-shell .style-about>summary{min-height:40px}
+ .adventure-shell .da-stage-heading{gap:10px}.adventure-shell .da-live-label{font-size:11px}
+ .adventure-shell .da-task{margin:8px 0 12px;font-size:15px}
+ .adventure-shell .da-lessons{margin-bottom:14px;gap:8px}
+ .adventure-shell .da-lessons button{min-height:54px;font-size:12px;padding:7px 5px}
+ .adventure-shell[data-theme] .rx-window>svg.style-accent{top:7px;right:8px;left:auto;width:18%;padding:2px}
+}
+@media(max-width:599px){
+ .adventure-shell .shell-header{row-gap:5px;padding-top:12px;padding-bottom:6px}
+ .adventure-shell .shell-tools button{padding-inline:5px}
+ .adventure-shell .shell-mission-status.rx-urgent>span:last-child{position:absolute;top:100%;left:0;padding:3px 6px;background:#fff;color:#ad0000;font-size:12px;z-index:2}
+ .adventure-shell .shell-toolbar{position:relative}
+ .adventure-shell[data-story=workshop] .da-exhibit-body{padding:10px 12px}
+ .adventure-shell[data-story=workshop] .da-exhibit-body>.da-eyebrow,.adventure-shell[data-story=workshop] .da-exhibit-meta{display:none}
+ .adventure-shell[data-story=workshop] .da-art{height:76px;margin:0 0 8px}
+ .adventure-shell[data-story=workshop] .da-exhibit h3{font-size:23px;line-height:1.25;margin:5px 0}
+ .adventure-shell[data-story=workshop] .da-artifact-description{font-size:14px;line-height:1.45;margin:5px 0 0}
+ .adventure-shell[data-story=workshop] .da-stage-actions{margin-top:12px}
+ .adventure-shell .da-exhibit-browser{padding:5px 8px;font-size:10px}
+ .adventure-shell .clean-task h2{font-size:26px}
+}
+@media(max-width:359px){
+ .adventure-shell .shell-mission-status>span:first-child:not(:only-child){display:none}
+ .adventure-shell .da-live-label{max-width:85px;text-align:right}
+}
+
+.adventure-shell[data-theme] .rx-window--failure>svg.style-accent{display:none}
+/* A light mat keeps uncropped artwork without large dominant dark side panels. */
+.adventure-shell[data-theme] .rx-window{background:#efefeb}
+.adventure-shell[data-theme] .rx-window-caption{font:11px/1.4 'Courier New',monospace;letter-spacing:.3px}
+.adventure-shell[data-theme] .rx-window--failure{background:#111}
+@media(max-width:599px){
+ .adventure-shell .da-stage-heading>div{min-width:0;flex:1}
+ .adventure-shell .da-stage-heading .da-live-label{flex:none;max-width:none;font:400 11px/1.4 Arial,Helvetica,sans-serif}
+}
+
+.adventure-shell[data-theme] .rx-recovery-lever:not(:disabled){outline:2px solid #d00000;outline-offset:4px}
+.adventure-shell[data-theme] .rx-recovery-lever:focus-visible{outline:2px solid #3f88c5;outline-offset:4px}
+.adventure-shell[data-theme=cybercore] .clean-controls .ix-controls{position:relative}
+.adventure-shell[data-theme=cybercore] .clean-controls .ix-controls:before{content:'';position:absolute;top:-7px;left:-7px;width:13px;height:13px;border-top:1px solid #87949c;border-left:1px solid #87949c;pointer-events:none}
+.adventure-shell[data-theme=cybercore] .clean-controls .ix-actions{padding-top:10px;border-top:1px dashed #9aa1a6}

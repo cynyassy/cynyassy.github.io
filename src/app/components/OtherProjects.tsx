@@ -199,6 +199,25 @@ export function OtherProjects() {
           </motion.article>
         </div>
 
+
+        <article className="mt-10 flex flex-col justify-between gap-8 rounded-[8px] border-2 border-black bg-white p-8 text-[#111] md:flex-row md:items-center">
+          <div className="max-w-2xl">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#555]">Cynyassy / Interactive experiment</span>
+            <h3 className="mb-3 mt-4 text-3xl font-semibold tracking-[-0.04em]">Playable Design Laboratory</h3>
+            <p className="leading-relaxed text-[#555]">One reactor. Six puzzles. 22 visual styles. Play with design and discover how interfaces guide you, respond to you, and help you recover.</p>
+            <div className="mt-5 flex gap-2" aria-hidden="true">
+              <span className="h-5 w-5 border border-black bg-[#353535]" />
+              <span className="h-5 w-5 border-2 border-black bg-[#ffffff]" />
+              <span className="h-5 w-5 border border-black bg-[#d00000]" />
+              <span className="h-5 w-5 rounded-full border border-black bg-[#ffba08]" />
+              <span className="h-5 w-5 border border-black bg-[#3f88c5]" />
+            </div>
+          </div>
+          <a href="projects/design-adventure.html" className="inline-flex w-fit shrink-0 items-center gap-3 rounded-[4px] border-2 border-black bg-black px-5 py-3 font-semibold text-white transition-colors hover:bg-[#d00000]">
+            Try the design adventure <ArrowRight size={18} aria-hidden="true" />
+          </a>
+        </article>
+
         <motion.div
           className="mt-12"
           initial={{ opacity: 0, y: 14 }}

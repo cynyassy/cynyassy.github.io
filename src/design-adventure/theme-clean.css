@@ -1,0 +1,34 @@
+/* All 22 styles share the quiet composition; materials live on objects and controls. */
+.adventure-shell.da-page[data-theme]:not(:has(.lab-comparison)) :is(.style-showcase,.rx-console,.da-stage){border:0;border-image:none;background:transparent;box-shadow:none;outline:none;border-radius:0;backdrop-filter:none}
+.adventure-shell.da-page[data-theme]:not(:has(.lab-comparison)) :is(.style-showcase,.rx-console,.da-stage):before,
+.adventure-shell.da-page[data-theme]:not(:has(.lab-comparison)) :is(.style-showcase,.rx-console,.da-stage):after{display:none;content:none}
+.adventure-shell.da-page[data-theme]:not(:has(.lab-comparison)) .style-showcase-main{background:transparent;border:0}
+.adventure-shell.da-page[data-theme] .style-about{border:0}
+.adventure-shell.da-page[data-theme] .style-definition{font-family:var(--body);font-style:normal;text-transform:none;letter-spacing:normal}
+/* Existing catalogue tokens extend to the new shared machinery. */
+.adventure-shell[data-theme]{--clean-border-width:var(--catalogue-border-width,1px);--clean-border-style:var(--catalogue-border-style,solid);--clean-control-radius:var(--catalogue-control-radius,var(--radius));--clean-control-shadow:var(--catalogue-control-shadow,var(--shadow));--menu-radius:var(--clean-control-radius);--menu-shadow:0 8px 26px #0002}
+.adventure-shell[data-theme=neo],.adventure-shell[data-theme=pixel]{--clean-border-width:2px;--menu-shadow:4px 4px 0 #353535}
+.adventure-shell[data-theme=scrapbook]{--clean-control-radius:2px 6px 1px 5px;--clean-control-shadow:2px 3px 0 #d7d7d1;--menu-shadow:3px 4px 0 #d7d7d1}
+.adventure-shell[data-theme=glass]{--clean-control-radius:12px;--clean-control-shadow:0 3px 9px #35353518;--menu-radius:12px}
+.adventure-shell[data-theme=clay]{--menu-shadow:5px 7px 18px #35353526}
+.adventure-shell[data-theme=synthwave]{--menu-shadow:3px 3px 0 #3f88c5,-2px -2px 0 #d00000}
+.adventure-shell[data-theme=neumorphism]{--menu-shadow:6px 6px 12px #d9d9d9,-4px -4px 10px #fff}
+.adventure-shell[data-theme=sketch]{--menu-radius:5px 11px 4px 9px}
+.adventure-shell[data-theme=cyberpunk]{--menu-shadow:3px 3px 0 #3f88c5}
+.adventure-shell[data-theme] .clean-controls :is(.ix-switches>button,.ix-keypad button,.ix-code-input,.ix-fine-tune,.ix-pipe-junction,.ix-pressure-valves>button,.ix-actions button){border-width:var(--clean-border-width);border-style:var(--clean-border-style);border-radius:var(--clean-control-radius);box-shadow:var(--clean-control-shadow)}
+/* Pipe joints stay circular so rotation continues to map to the diagram. */
+.adventure-shell[data-theme] .clean-controls .ix-pipe-junction{border-radius:50%}
+.adventure-shell[data-theme] .clean-controls :is(.ix-keypad button,.ix-switches>button,.ix-pressure-valves>button,.ix-fine-tune):not([aria-checked=true]):not([aria-pressed=true]){background:var(--catalogue-surface,var(--panel));background-size:var(--catalogue-surface-size,auto)}
+.adventure-shell[data-theme=neo] .clean-controls .ix-connect{background:#ffba08;color:#353535!important}
+.adventure-shell[data-theme=y2k] .clean-controls :is(.ix-keypad button,.ix-switches>button,.ix-pressure-valves>button):not([aria-checked=true]):not([aria-pressed=true]){background:linear-gradient(#fff 0,#fff 45%,#e2e5e7 50%,#f5f7f8 100%)}
+.adventure-shell[data-theme=clay] .clean-controls .ix-code-input,.adventure-shell[data-theme=neumorphism] .clean-controls .ix-code-input{background:var(--soft);box-shadow:inset 3px 3px 6px #d5d5d5,inset -3px -3px 6px #fff}
+.adventure-shell[data-theme] .choice-options{border-width:var(--clean-border-width);border-style:var(--clean-border-style);border-radius:var(--menu-radius);box-shadow:var(--menu-shadow);background:var(--panel);color:var(--ink);font:400 16px/1.4 Arial,Helvetica,sans-serif;isolation:isolate}
+.adventure-shell[data-theme] .choice-options button{border-radius:var(--menu-radius);font:inherit;min-height:44px;letter-spacing:normal;font-variant:normal;text-transform:none;font-style:normal}
+.adventure-shell[data-theme] .choice-options button[aria-selected=true]{font-weight:700}
+.adventure-shell[data-theme] .choice-trigger{font-family:var(--body);text-transform:none;font-variant:normal;letter-spacing:normal}
+/* Maintain geometry and legibility regardless of decorative theme rules. */
+.adventure-shell[data-theme] .style-title h1 .choice-options{font-size:16px;line-height:1.4}
+.adventure-shell[data-theme] .choice-options button:focus-visible{outline:2px solid #3f88c5;outline-offset:-3px}
+.adventure-shell[data-theme] .clean-controls :is(button,input):disabled{animation:none;outline:none}
+@media(max-width:599px){.adventure-shell.da-page[data-theme] .shell-header{display:grid;grid-template-columns:minmax(0,1fr) auto}.adventure-shell[data-theme] .shell-header .choice-trigger{font-size:16px;min-height:44px}.adventure-shell[data-theme] .choice-options{max-width:calc(100vw - 40px);max-height:min(360px,55dvh)}}
+@media(prefers-reduced-motion:reduce){.adventure-shell[data-theme] .clean-controls *{animation:none!important;transition:none!important}}

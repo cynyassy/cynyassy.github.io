@@ -1,0 +1,78 @@
+.rx-window{height:clamp(180px,22vh,230px);aspect-ratio:auto}
+/* Machinery puzzles: one active instrument, the same rules in every visual style. */
+.rx-progress-strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));list-style:none;padding:0;margin:12px 0 0;gap:8px}
+.rx-progress-strip li{display:flex;align-items:center;gap:7px;min-height:35px;font-size:10px;border-bottom:2px solid var(--line);color:var(--muted)}
+.rx-progress-strip li[aria-current=step]{border-color:var(--ink);color:var(--ink);font-weight:700}.rx-progress-strip .rx-step-complete{border-color:var(--accent);color:var(--ink)}
+.rx-progress-strip b{font:11px 'Courier New',monospace}.rx-module{display:grid;grid-template-columns:minmax(210px,.8fr) minmax(0,1.35fr);gap:26px;margin-top:14px;padding-top:13px;border-top:1px solid var(--line)}
+.rx-module-copy .da-eyebrow{font-size:8px;margin-bottom:5px}.rx-module h3{font-family:var(--heading);font-size:23px;line-height:1.2;margin:0 0 8px;letter-spacing:-.5px}.rx-module h3:focus{outline:0}
+.rx-module-copy>p{font-size:12px;margin:0 0 9px;line-height:1.45}.rx-principle-tag{display:grid;border-left:3px solid var(--accent);padding-left:9px;margin:10px 0;font-size:11px;gap:2px}
+.rx-principle-tag>span{font-size:8px;letter-spacing:1px}.rx-machine-note{color:var(--muted);font-size:11px!important}
+.rx-wiring{display:flex;align-items:center;gap:10px;margin-top:13px}.rx-wiring span{border:2px solid var(--ink);padding:5px 13px;font:700 16px 'Courier New',monospace;background:var(--soft)}.rx-wiring b{font-size:18px}
+.rx-machinery{min-width:0;background:var(--soft);border:1px solid var(--line);border-radius:var(--radius);padding:14px 17px}
+.rx-switchbank{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.rx-switch{display:grid;justify-items:center;gap:6px;background:var(--panel);border:2px solid var(--ink);border-radius:var(--radius);padding:9px;min-height:100px;box-shadow:inset 0 -4px 0 rgba(53,53,53,.15);font-size:13px;font-weight:700}
+.rx-switch i{display:block;width:23px;height:33px;border:2px solid var(--ink);background:var(--soft);position:relative;border-radius:3px}
+.rx-switch i:after{content:'';position:absolute;left:3px;right:3px;top:17px;height:10px;background:var(--ink);transition:top .15s ease}
+.rx-switch-on i:after{top:3px}.rx-switch small{font:9px 'Courier New',monospace}.rx-switch-on{border-bottom-color:var(--accent)}
+.rx-machine-summary{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:7px 0 0;font-size:10px}.rx-machine-summary .da-text-button{font-size:10px}
+.rx-commit-row{display:flex;align-items:center;gap:15px;margin-top:12px}.rx-commit-row>span{max-width:200px;font-size:10px;line-height:1.4;color:var(--muted)}.rx-commit-row .da-button{font-size:11px;min-width:145px;white-space:nowrap}
+.rx-code-machine{display:flex;justify-content:center;gap:25px;align-items:center}.rx-code-label{display:grid;gap:6px;font-size:10px;font-weight:700;max-width:170px}
+.rx-code-label input{width:100%;min-height:54px;padding:8px 10px;text-align:center;font:700 27px 'Courier New',monospace;letter-spacing:8px;background:var(--panel);border:2px solid var(--ink)}
+.rx-keypad{display:grid;grid-template-columns:repeat(3,48px);gap:5px}.rx-keypad button{min-height:32px;border:1px solid var(--ink);border-radius:var(--radius);background:var(--panel);font-size:12px;box-shadow:0 2px 0 var(--ink)}
+.rx-pipe-board{position:relative;width:min(100%,330px);aspect-ratio:2;margin:auto}.rx-pipe-board>svg{position:absolute;inset:0;width:100%;height:100%}.rx-fixed-pipe{fill:none;stroke:var(--ink);stroke-width:9;stroke-linecap:round}.rx-pipe-board text{font:10px var(--body);fill:var(--ink)}
+.rx-pipe-junction{position:absolute;width:48px;height:48px;transform:translate(-50%,-50%);border:2px solid var(--ink);border-radius:50%;padding:3px;background:var(--panel)}
+.rx-pipe-junction svg{width:100%;height:100%;overflow:visible}.rx-pipe-junction path{fill:none;stroke:var(--ink);stroke-width:8;stroke-linecap:round}.rx-pipe-junction>span{position:absolute;bottom:-17px;left:0;right:0;font-size:9px}
+.rx-pipe-connected .rx-fixed-pipe,.rx-pipe-connected .rx-pipe-junction path{stroke:#3f88c5}
+.rx-scope{width:100%;height:75px;border:1px solid var(--line);background:var(--panel);display:block}
+.rx-scope-grid{stroke:var(--line);stroke-width:.5}.rx-reference-wave{stroke:var(--ink);fill:none;stroke-width:2}.rx-live-wave{stroke:#3f88c5;fill:none;stroke-width:2;stroke-dasharray:4 3}
+.rx-signal-key{display:flex;justify-content:space-between;gap:10px;font-size:9px;margin:5px 0 8px}.rx-dial-row{display:flex;align-items:center;gap:12px}
+.rx-dial{height:56px;width:56px;flex:none;border:3px solid var(--ink);border-radius:50%;display:grid;place-items:center;background:var(--panel);box-shadow:3px 3px 0 var(--line)}
+.rx-dial i{width:3px;height:40px;display:block;background:linear-gradient(var(--ink) 45%,transparent 45%);border-radius:50%;transition:transform .08s linear}
+.rx-dial-row label{display:grid;gap:2px;font-size:10px;flex:1}.rx-dial-row output{font:bold 16px 'Courier New',monospace}
+.rx-module input[type=range]{width:100%;min-height:24px;accent-color:var(--ink)}.rx-fine-tune{display:flex;gap:5px}.rx-fine-tune button{width:34px;min-height:44px;font-size:20px;background:var(--panel);border:1px solid var(--ink)}
+.rx-ignition-readout,.rx-pressure-readout{display:flex;align-items:center;justify-content:space-between;gap:15px}.rx-ignition-readout strong,.rx-pressure-readout strong{font:700 30px 'Courier New',monospace}.rx-ignition-readout>span,.rx-pressure-readout>span{font-size:9px;font-weight:700;letter-spacing:.5px}
+.rx-pressure-readout small{font-size:15px}
+.rx-charge-track,.rx-pressure-track{height:37px;position:relative;border:2px solid var(--ink);background:var(--panel);margin:14px 7px 12px}
+.rx-charge-safe{position:absolute;left:65%;width:20%;inset-block:0;background:#ffba08}.rx-charge-track>i,.rx-pressure-track>i{position:absolute;height:49px;top:-7px;width:4px;background:var(--ink);transform:translateX(-2px)}
+.rx-charge-track>span{position:absolute;top:-15px;font:9px 'Courier New',monospace}.rx-safe-start{left:65%}.rx-safe-end{left:85%}
+.rx-manual-charge{font-size:10px;display:grid;grid-template-columns:140px 1fr;align-items:center;gap:12px;margin-top:5px}
+.rx-pressure-safe{position:absolute;left:45%;width:10%;inset-block:0;background:#ffba08}
+.rx-valves{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:12px}.rx-valves button{display:grid;grid-template-columns:27px 1fr;gap:3px 6px;align-items:center;padding:7px;border:1px solid var(--ink);background:var(--panel);font-size:11px;text-align:left;min-height:55px}
+.rx-valves button i{width:25px;height:25px;border:3px solid var(--ink);border-radius:50%;grid-row:span 2;position:relative;transition:transform .15s}
+.rx-valves button i:before{content:'';position:absolute;inset:8px -3px;border-top:3px solid var(--ink)}.rx-valves button i:after{content:'';position:absolute;inset:-3px 8px;border-left:3px solid var(--ink)}.rx-valves button[aria-pressed=true] i{transform:rotate(45deg)}
+.rx-valves button small{font-size:8px;line-height:1.3}.rx-valves label{display:grid;font-size:10px;gap:4px}.rx-valves progress{width:100%;height:8px;accent-color:var(--ink)}
+.rx-instruments{position:absolute;left:12px;top:12px;display:flex;gap:7px;pointer-events:none}.rx-instrument{background:rgba(255,255,255,.95);color:#353535;border:1px solid #353535;padding:5px 8px;display:grid;min-width:42px;gap:2px}
+.rx-instrument span{font:8px 'Courier New',monospace;letter-spacing:.5px}.rx-instrument strong{font:700 19px 'Courier New',monospace}
+.rx-learning-moment{font-size:11px;border-left:3px solid var(--accent);padding-left:10px;margin:5px 0 0}
+.rx-recovery-lever{background:var(--panel);border:2px solid var(--ink);border-radius:var(--radius);min-height:66px;padding:8px 12px;display:flex;align-items:center;gap:14px;text-align:left;font-size:12px;font-weight:700}
+.rx-lever-handle{height:40px;width:22px;display:block;position:relative;flex:none}.rx-lever-handle:before{content:'';position:absolute;left:9px;width:4px;inset-block:8px;background:var(--ink)}.rx-lever-handle:after{content:'';position:absolute;top:2px;left:-2px;width:27px;height:13px;background:#d00000;border:2px solid var(--ink);border-radius:3px}
+.rx-recovery-lever small{display:block;font-weight:400;font-size:10px}.rx-lesson-ledger{display:grid;grid-template-columns:1fr 1fr;gap:5px 20px;font-size:11px;padding-left:18px;margin:9px 0}
+@media(min-width:900px) and (max-height:920px){.rx-window{height:150px}.rx-mission-bar{padding:8px 0}.rx-console{padding:10px 14px}.rx-module{margin-top:9px;padding-top:10px;gap:20px}.rx-module h3{font-size:21px}.rx-machinery{padding:10px 13px}.rx-module-copy>p{font-size:11px}.rx-principle-tag{margin:7px 0}.rx-keypad button{min-height:30px}.rx-scope{height:63px}.rx-feedback{margin-top:9px}.rx-teaching{display:none}.rx-utilities{padding-top:0}}
+@media(max-width:899px){.rx-module{grid-template-columns:minmax(180px,.8fr) minmax(0,1.2fr);gap:17px}.rx-code-machine{gap:15px}.rx-keypad{grid-template-columns:repeat(3,42px)}.rx-commit-row{flex-wrap:wrap;gap:9px}.rx-commit-row>span{max-width:none}.rx-progress-strip{gap:5px}.rx-progress-strip li{font-size:9px}}
+@media(max-width:599px){.rx-progress-strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 9px}.rx-progress-strip li{font-size:9px;min-height:28px}.rx-module{display:block}.rx-module-copy>p{font-size:12px}.rx-module h3{font-size:23px}.rx-principle-tag{font-size:11px}.rx-machinery{margin-top:12px;padding:12px}.rx-code-machine{gap:15px}.rx-code-label{max-width:135px}.rx-keypad{grid-template-columns:repeat(3,42px);gap:5px}.rx-keypad button{min-height:40px}.rx-commit-row .da-button{width:100%;font-size:12px}.rx-switch{min-height:108px}.rx-module input[type=range]{min-height:40px}.rx-valves{gap:7px;grid-template-columns:1fr 1fr}.rx-valves label{grid-column:span 2}.rx-manual-charge{display:block}.rx-instruments{top:5px;left:5px;gap:3px}.rx-instrument{padding:3px 5px;min-width:30px}.rx-instrument span{font-size:7px;letter-spacing:0}.rx-instrument strong{font-size:15px}.rx-lesson-ledger{grid-template-columns:1fr}.rx-recovery-lever{width:100%;font-size:12px}.rx-signal-key{font-size:9px}.rx-fine-tune button{width:30px}}
+
+@media(max-width:899px){.rx-window{height:auto;aspect-ratio:2170/725}}
+
+.rx-dial{touch-action:none;cursor:ns-resize}
+
+.rx-learning-moment .da-text-button{min-height:24px;padding:1px 0;margin-left:5px;font-size:11px}
+@media(min-width:900px) and (max-height:920px){
+ .rx-learning-moment{display:none}
+ .rx-progress-strip{margin-top:8px}
+ .rx-progress-strip li{min-height:24px}
+ .rx-feedback{min-height:20px;margin-top:6px}
+ .rx-scope{height:56px}
+ .rx-dial{width:48px;height:48px}
+ .rx-commit-row{margin-top:9px}
+ .rx-module-copy .rx-machine-note{font-size:10px!important}
+}
+
+@media(min-width:900px) and (max-height:920px){.rx-pipe-board{max-width:270px}}
+
+@media(min-width:900px) and (max-height:920px){.rx-window{height:180px}}
+@media(min-width:900px) and (max-height:820px){.rx-window{height:150px}}
+.rx-pipe-connected .rx-fixed-pipe{stroke-dasharray:16 4;animation:rx-coolant-flow 1.2s linear infinite}
+@keyframes rx-coolant-flow{to{stroke-dashoffset:-20}}
+.rx-style-comparison{border-left:3px solid var(--accent);padding-left:10px;margin:12px 0}
+.rx-style-comparison h4{font-size:12px;margin:0 0 3px}
+
+.rx-pipe-junction>span:not(.da-sr-only){bottom:-10px;right:-12px;left:auto;background:var(--panel);border:1px solid var(--line);padding:1px 4px;border-radius:var(--radius)}

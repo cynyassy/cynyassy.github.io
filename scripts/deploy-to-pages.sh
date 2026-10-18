@@ -3,26 +3,10 @@
 set -euo pipefail
 
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+TARGET_DIR="/Users/Shishu/workspace/github.com/cynyassy/cynyassy.github.io"
 
-cd "$PROJECT_DIR"
-
-echo "Building the portfolio..."
-npm run build
+"$PROJECT_DIR/scripts/sync-to-pages.sh"
 
 echo
-echo "Checking the pending change set..."
-git diff --check
-
-echo
-echo "Git status:"
-git status --short
-
-echo
-echo "Release preflight complete. Review the changes, then run:"
-BRANCH="$(git branch --show-current)"
-if [ -z "$BRANCH" ]; then
-  BRANCH="main"
-fi
-echo "  git add ."
-echo "  git commit -m \"Describe the portfolio update\""
-echo "  git push origin $BRANCH"
+echo "Git status for Pages repo:"
+git -C "$TARGET_DIR" status --short

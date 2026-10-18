@@ -1,0 +1,90 @@
+/* Quiet shared shell; the selected material still comes from the theme. */
+.adventure-shell .shell-main{--red:#d00000;--blue:#3f88c5;--paper:var(--soft);--rule:var(--line)}
+.adventure-shell .shell-intro,.adventure-shell .style-switch-help{display:none}
+.adventure-shell .shell-toolbar{border-top:0;min-height:48px;margin-top:0;margin-bottom:18px}
+.adventure-shell .shell-modes button{min-height:48px;font-size:13px;font-weight:500;padding:8px 14px}
+.adventure-shell .shell-modes button:first-child{padding-left:0}
+.adventure-shell .shell-tools button{font-size:12px}
+.adventure-shell .style-title h1{font-size:36px;letter-spacing:-1px}
+.adventure-shell .style-showcase-main,.adventure-shell .style-showcase-compact .style-showcase-main{grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr);gap:36px;padding-block:12px}
+.adventure-shell .style-definition p{font-size:13px;max-width:600px}
+.adventure-shell .style-about:not([open]){position:static!important;padding:0 0 6px!important}
+.adventure-shell .style-about>summary{min-height:32px}
+.adventure-shell .style-showcase-compact .style-definition{padding-right:0}
+.adventure-shell .shell-workspace[data-mode=try]{display:block}
+.adventure-shell .shell-workspace[data-mode=try]>.shell-design-lab{display:none}
+.adventure-shell .shell-footer>span:last-child{display:none}
+.adventure-shell .shell-footer{margin-top:16px}
+.adventure-shell[data-story=reactor] .rx-window,.adventure-shell[data-story=reactor] .shell-main[data-focused=true] .rx-window{height:clamp(190px,28vh,270px);border:0}
+.adventure-shell[data-story=reactor]:not([data-stage="1"]) .rx-instruments{display:none}
+.adventure-shell[data-story=reactor] .rx-window-caption{font-size:10px}
+.adventure-shell[data-story=reactor] .rx-console{padding-top:4px;margin-top:16px}
+.adventure-shell[data-story=reactor] .rx-task-row[hidden]{display:none}
+.adventure-shell[data-story=reactor] .rx-briefing{display:flex;gap:24px;margin-top:8px}
+.adventure-shell[data-story=reactor] .rx-briefing p{font-size:14px;margin:0;max-width:450px}
+.adventure-shell[data-story=reactor] .rx-feedback:has(>span:empty):not(:has(progress)){display:none}
+.adventure-shell[data-story=reactor] .rx-learning-moment{display:none}
+.clean-puzzle{display:grid;grid-template-columns:minmax(200px,.8fr) minmax(0,1.4fr);gap:40px;align-items:start}
+.clean-task h2{font:600 28px/1.2 var(--heading);letter-spacing:-.7px;margin:7px 0 16px}
+.clean-task h2:focus{outline:0}.clean-task p{font-size:14px;color:var(--muted);max-width:245px;margin:0}
+.clean-step{font-size:11px;letter-spacing:1px;color:var(--muted)}
+.clean-controls{min-width:0}.clean-controls button{font-family:var(--body);color:var(--ink);cursor:pointer}.clean-controls button:disabled{cursor:default}
+.clean-guidance{font-size:13px;line-height:1.5;color:var(--muted);margin:12px 0 0;min-height:20px}
+/* Shared controls adopt every style's materials rather than hardcoding white cards. */
+.clean-controls :is(.ix-switches>button,.ix-keypad button,.ix-fine-tune,.ix-pipe-junction,.ix-code-input,.ix-pressure-valves>button,.ix-reset){background:var(--panel);color:var(--ink);border-color:var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.clean-controls :is(.ix-switches>button[aria-checked=true],.ix-pressure-valves>button[aria-pressed=true],.ix-connect){background:var(--ink);color:var(--bg)!important;border-color:var(--ink)}
+.clean-controls .ix-signal-scope{background:var(--soft);border-color:var(--line)}
+.clean-controls .ix-junction-number{background:var(--panel);color:var(--ink);border-color:var(--line)}
+.clean-controls .ix-actions button{font-size:14px;min-height:46px}
+.clean-controls .ix-switches>button{min-height:108px}
+.clean-controls .ix-pressure-valves>button[aria-pressed=true] .ix-valve-effect{color:var(--bg)}
+.clean-controls :is(button,input):focus-visible{outline:2px solid #3f88c5!important;outline-offset:5px}
+.clean-puzzle[data-attention=solid] [data-active=true],.clean-puzzle[data-attention=solid] [data-next=true]{font-weight:700}
+.clean-puzzle[data-attention=pulse] [data-active=true],.clean-puzzle[data-attention=pulse] [data-next=true]{animation:clean-attention 1.8s ease-in-out infinite}
+@keyframes clean-attention{50%{outline-offset:7px}}
+.adventure-shell .shell-session-tools{margin-top:12px}
+.adventure-shell .rx-terminal .rx-style-comparison{display:none}
+@media(min-width:900px) and (max-height:820px){.adventure-shell .shell-header{min-height:52px}.adventure-shell .style-title h1{font-size:32px}.adventure-shell .style-showcase-main,.adventure-shell .style-showcase-compact .style-showcase-main{padding-block:6px}.adventure-shell[data-story=reactor] .rx-window,.adventure-shell[data-story=reactor] .shell-main[data-focused=true] .rx-window{height:200px}.clean-task h2{font-size:26px}.clean-controls .ix-switches>button{min-height:98px}}
+@media(max-width:899px){.adventure-shell .shell-modes{display:flex;width:auto;flex-wrap:wrap}.adventure-shell .shell-modes button{padding-inline:10px}.adventure-shell .shell-toolbar{gap:0 12px;position:static}.adventure-shell .shell-state:has(.shell-mission-status){flex:1 1 150px}.adventure-shell .shell-tools{width:auto;margin-left:auto}.adventure-shell .style-showcase-main,.adventure-shell .style-showcase-compact .style-showcase-main{display:block}.adventure-shell .style-title h1{font-size:32px}.adventure-shell .style-definition p{margin-top:8px}.adventure-shell[data-story=reactor] .rx-window,.adventure-shell[data-story=reactor] .shell-main[data-focused=true] .rx-window{height:auto;aspect-ratio:2170/725}.clean-puzzle{gap:24px;grid-template-columns:minmax(170px,.7fr) minmax(0,1.3fr)}.adventure-shell[data-story=reactor] .rx-briefing{display:block}.adventure-shell[data-story=reactor] .rx-starts{margin-top:12px}}
+@media(max-width:600px){.clean-puzzle{display:block}.clean-task{margin-bottom:22px}.clean-task h2{font-size:26px;margin-block:5px 10px}.clean-task p{max-width:none}.adventure-shell .shell-mission-status strong{font-size:22px}.adventure-shell .shell-tools button{min-height:44px}.adventure-shell .style-about>summary>span{display:none}.adventure-shell .shell-workspace[data-mode=make] .shell-design-lab{scroll-margin-top:16px}.clean-controls .ix-actions button{font-size:13px}.clean-step{font-size:11px}.adventure-shell .shell-footer{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.clean-puzzle *{animation:none!important;transition:none!important}}
+
+.clean-controls .ix-actions:has(>button:only-child){grid-template-columns:1fr}
+.adventure-shell .rx-feedback:has(>span:empty){min-height:0}
+/* Keep the native menu readable without inheriting exhibition-heading scale. */
+.adventure-shell .style-title h1 select{font:400 14px/1.4 Arial,Helvetica,sans-serif;letter-spacing:normal}
+.adventure-shell .style-title h1 select option{font:400 14px/1.4 Arial,Helvetica,sans-serif}
+/* Put the definition on the heading row, excluding the kicker from alignment. */
+@media(min-width:900px){
+ .adventure-shell .style-showcase-main,.adventure-shell .style-showcase-compact .style-showcase-main{align-items:center;row-gap:4px}
+ .adventure-shell .style-title{display:contents}
+ .adventure-shell .style-kicker{grid-column:1;grid-row:1}
+ .adventure-shell .style-title h1{grid-column:1;grid-row:2;margin:0}
+ .adventure-shell .style-definition{grid-column:2;grid-row:2;align-self:center;padding:0}
+ .adventure-shell .style-definition p{margin:0}
+}
+.adventure-shell .shell-modes button:first-child{font-weight:400}
+.adventure-shell .style-title h1{width:fit-content;max-width:100%}
+/* Mobile header: identity first, navigation on a separate row. */
+@media(max-width:599px){
+ .adventure-shell .shell-header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 18px;padding-top:16px;padding-bottom:10px;align-items:center}
+ .adventure-shell .shell-header .da-brand{grid-column:1 / -1;grid-row:1;justify-self:start}
+ .adventure-shell .shell-header .shell-wordmark{display:none}
+ .adventure-shell .shell-header .shell-story{grid-column:1;grid-row:2;order:0;display:grid;grid-template-columns:minmax(0,1fr);gap:0;width:100%;max-width:none;min-width:0;margin:0}
+ .adventure-shell .shell-header .shell-story select{width:100%;max-width:100%;min-width:0}
+ .adventure-shell .shell-header .shell-portfolio{grid-column:2;grid-row:2;align-self:end;margin:0;min-height:44px}
+}
+/* Page-rendered menus avoid native popup scaling in mobile previews. */
+.choice-menu{position:relative;display:block;min-width:0}
+.adventure-shell .choice-trigger{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:44px;padding:6px 4px 6px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;color:var(--ink);font:400 14px/1.4 var(--body);text-align:left;cursor:pointer;box-shadow:none}
+.adventure-shell .choice-options{position:absolute;top:calc(100% + 6px);left:0;z-index:40;display:block;width:max-content;min-width:100%;max-width:min(320px,calc(100vw - 40px));max-height:min(360px,55dvh);overflow-y:auto;padding:6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);box-shadow:0 8px 26px #0002;font:400 16px/1.4 Arial,Helvetica,sans-serif;letter-spacing:normal;text-transform:none}
+.adventure-shell .choice-options button{display:flex;gap:10px;align-items:center;min-height:44px;width:100%;padding:9px 12px;border:0;border-radius:3px;background:transparent;color:inherit;box-shadow:none;text-align:left;font:inherit;letter-spacing:normal;text-transform:none;white-space:normal;cursor:pointer}
+.adventure-shell .choice-options button>span{width:16px;flex:none}
+.adventure-shell .choice-options button[aria-selected=true]{font-weight:700;background:var(--soft)}
+.adventure-shell .choice-options button:hover,.adventure-shell .choice-options button:focus-visible{outline:2px solid #3f88c5;outline-offset:-2px;background:var(--soft)}
+.adventure-shell .style-title h1>.choice-menu{position:absolute;inset:0;width:100%;height:100%;font:400 16px/1.4 Arial,Helvetica,sans-serif;letter-spacing:normal}
+.adventure-shell .style-title h1 .choice-trigger{height:100%;opacity:0}
+.adventure-shell .style-title h1:has(.choice-trigger:focus-visible){outline:2px solid #3f88c5;outline-offset:5px}
+.adventure-shell .style-title h1 .choice-options{font-size:16px;min-width:240px}
+.adventure-shell .shell-header .shell-story .choice-menu{width:100%;min-width:0}
+@media(max-width:599px){.adventure-shell .shell-header .choice-trigger{font-size:16px}.adventure-shell .choice-options{font-size:16px}.adventure-shell .shell-header .shell-story{min-width:0}.adventure-shell .shell-header .shell-story .choice-trigger{font-size:16px}}

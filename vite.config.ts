@@ -22,6 +22,7 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, 'index.html'),
         designAdventure: path.resolve(__dirname, 'projects/design-adventure.html'),
+        styleStudio: path.resolve(__dirname, 'projects/style-studio.html'),
         interfaceExperiments: path.resolve(__dirname, 'projects/interface-experiments.html'),
         perspectives: path.resolve(__dirname, 'projects/perspectives.html'),
         coffeeTools: path.resolve(__dirname, 'projects/coffee-tools.html'),

@@ -4,6 +4,7 @@ import { useEffect, useReducer, useRef, useState } from 'react';
 import { ArrowRight, Check, Copy, Lightbulb, Undo2 } from 'lucide-react';
 import { lessons, stories } from './content';
 import { Exhibit } from './Exhibit';
+import { RunReflection } from './RunReflection';
 import { createShareURL, sharedInitialState } from './share';
 import { isBuilding, reducer, referenceChoices } from './state';
 import type { Layout } from './types';
@@ -120,6 +121,7 @@ export default function AdventurePage({ active = true, onStoryChange, search,the
             </div>
             {state.hint && <p className="da-hint-note" role="status">{done ? 'You have tried this lesson. Replay it or compare a different style.' : pending ? 'Watch the build status; the simulation is running.' : 'Try “' + hintTarget + '”. Notice how its treatment helps you find it.'}</p>}
             {done && <div className="da-completion" data-testid="lesson-completion"><Check size={19} /><div><strong>{allDone ? 'You’ve tried all three interactions.' : 'You’ve tried this interaction.'}</strong><p>{allDone ? 'Try another style, or share this setup.' : 'Switch a style or move to another lesson.'}</p></div></div>}
+            {allDone&&<RunReflection story="workshop" theme={sharedTheme} completed={state.completed.length} recovered={state.completed.includes('recovery')}/>}
           </section>
 
 

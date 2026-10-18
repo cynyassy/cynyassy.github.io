@@ -19,7 +19,7 @@ export function AdventureShell({story,theme,onThemeChange,onStoryChange,onLearn,
  <StyleShowcase value={theme} onChange={onThemeChange} compact/>
  <nav className="shell-toolbar" aria-label="Experiment tools"><div className="shell-modes"><button title="Explore the current interaction and its sources" onClick={onLearn}>Learn</button></div>{status&&<div className="shell-state">{status}</div>}<div className="shell-tools"><button onClick={onReplay} title={story==='reactor'?'Restart this run':'Restart this lesson'}>Replay <span>{story==='reactor'?'run':'lesson'}</span></button><button onClick={onShare}>Share</button></div></nav>
  {children}
- <footer className="shell-footer"><span>Cynyassy / Play. Notice. Understand.</span><span>22 visual interpretations · one interface laboratory</span></footer>
+ <footer className="shell-footer"><span>Cynyassy / Play. Notice. Understand.</span><a className="shell-studio-link" href={'style-studio.html?theme='+theme} target="_blank" rel="noopener noreferrer" aria-label="Open Style Studio in a new tab">Remix &amp; shortlist styles ↗</a></footer>
  </main></>;
 }
 

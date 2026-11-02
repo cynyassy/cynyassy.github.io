@@ -2072,3 +2072,18 @@ body:has(.brick-home) {
     min-width: 52px;
   }
 }
+
+/* Early hazard cues remain readable when the world moves faster than the viewport. */
+.brick-home .runner-cue {
+  position: absolute;
+  top: 76px;
+  left: 20px;
+  padding: 6px 10px;
+  border: 1px solid #718099;
+  border-radius: 2px;
+  background: #0a1224;
+  color: #fff;
+  font: 600 13px/1.4 Helvetica, Arial, sans-serif;
+  pointer-events: none;
+}
+.brick-home .runner-cue[data-cue=bonus] { color: #ffdf77; }

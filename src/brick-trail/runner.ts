@@ -1,6 +1,10 @@
 import {body,jump,vertical,GROUND,HALF_WIDTH,PLAYER_HEIGHT,JUMP_DURATION} from './physics';
 import {storageAccess} from './storage';
 export const DUCK_HEIGHT=38,BONUS_POINTS=50;
+export const START_SPEED=210,ACCELERATION=2,REACTION_TIME=1.25;
+export type RunnerCue='jump'|'duck'|'bonus';
+const travel=(speed:number,seconds:number)=>speed*seconds+ACCELERATION*seconds*seconds/2;
+const arrivalTime=(speed:number,distance:number)=>2*Math.max(0,distance)/(Math.sqrt(speed*speed+2*ACCELERATION*Math.max(0,distance))+speed);
 export interface RunRecord{id:string;score:number;bonus?:number;seconds:number;distance:number;outcome:'collision'|'ended';at:number}
 export interface Obstacle{x:number;y:number;w:number;h:number;kind:'barrier'|'crate'|'rock'|'drone'}
 export interface BonusBrick{x:number;y:number;w:number;h:number}
@@ -15,14 +19,17 @@ export function sweptHit(ax:number,ay:number,bx:number,by:number,o:Obstacle,heig
  }return exit>0&&enter<1;
 }
 export function createRunner(onFinish:(record:RunRecord)=>void,onLand:()=>void,random=Math.random,onBonus:()=>void=()=>{}){
- const player=body(54);let phase:RunPhase='ready',reason='',elapsed=0,distance=0,speed=210,obstacles:Obstacle[]=[],bricks:BonusBrick[]=[],bursts:BonusBurst[]=[],bonus=0,duckHeld=false,spawnAt=0,viewWidth=1000,id='',lastKind=-1,encounter=0;
+ const player=body(54);let phase:RunPhase='ready',reason='',elapsed=0,distance=0,speed=START_SPEED,obstacles:Obstacle[]=[],bricks:BonusBrick[]=[],bursts:BonusBurst[]=[],bonus=0,duckHeld=false,spawnAt=0,viewWidth=1000,id='',lastKind=-1,encounter=0;
  const score=()=>Math.floor(distance/10)+bonus;
  function finish(outcome:RunRecord['outcome']){if(phase!=='running'&&phase!=='paused')return;phase='finished';reason=outcome;duckHeld=false;const savedDistance=Math.floor(distance*10)/10;onFinish({id,score:Math.floor(savedDistance/10)+bonus,bonus,seconds:Math.round(elapsed*10)/10,distance:savedDistance,outcome,at:Date.now()});}
- function start(){Object.assign(player,body(54));phase='running';reason='';elapsed=0;distance=0;speed=210;obstacles=[];bricks=[];bursts=[];bonus=0;duckHeld=false;spawnAt=0;lastKind=-1;encounter=0;id=Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);}
+ function start(){Object.assign(player,body(54));phase='running';reason='';elapsed=0;distance=0;speed=START_SPEED;obstacles=[];bricks=[];bursts=[];bonus=0;duckHeld=false;spawnAt=0;lastKind=-1;encounter=0;id=Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);}
  function pause(why='Paused. Ready when you are.'){if(phase==='running'){phase='paused';reason=why;player.jumpBuffer=0;duckHeld=false;}}
  function resume(){if(phase==='paused'){phase='running';reason='';}}
  function spawn(){
-  const x=distance+Math.max(410,viewWidth)+40;
+  // At high speeds a hazard can cross a phone in less than a second. Spawn it
+  // early enough for the next-action cue, even before it enters the window.
+  const lead=Math.max(Math.max(410,viewWidth)+40,54+HALF_WIDTH+travel(speed,REACTION_TIME));
+  const x=distance+lead;
   // Each slot is one clearable obstacle OR an optional brick, never a forced combo.
   let width=40;
   if(elapsed>=6&&encounter%4===3)bricks.push({x,y:GROUND-164,w:40,h:32});
@@ -32,12 +39,18 @@ export function createRunner(onFinish:(record:RunRecord)=>void,onLand:()=>void,r
    let kind=Math.max(0,Math.min(2,Math.floor(random()*choices.length)));if(kind===lastKind)kind=(kind+1)%3;lastKind=kind;const choice=choices[kind];obstacles.push({x,y:GROUND-choice.h,...choice});width=choice.w;
   }
   encounter++;
-  const gapTime=JUMP_DURATION+.35,arrivalSpeed=Math.min(330,Math.sqrt(speed*speed+4*Math.max(410,viewWidth)));
-  spawnAt=distance+width+arrivalSpeed*gapTime+gapTime*gapTime+random()*24;
+  const gapTime=JUMP_DURATION+.35,arrivalSpeed=Math.sqrt(speed*speed+2*ACCELERATION*(lead+width+2*HALF_WIDTH));
+  spawnAt=distance+width+2*HALF_WIDTH+travel(arrivalSpeed,gapTime)+random()*24;
+ }
+ function cue():RunnerCue|null{
+  if(phase!=='running')return null;
+  const next=[...obstacles.map(o=>({x:o.x,w:o.w,kind:o.kind==='drone'?'duck' as const:'jump' as const})),...bricks.map(b=>({x:b.x,w:b.w,kind:'bonus' as const}))]
+   .filter(o=>o.x+o.w>player.x-HALF_WIDTH).sort((a,b)=>a.x-b.x)[0];
+  return next&&arrivalTime(speed,next.x-player.x-HALF_WIDTH)<=REACTION_TIME?next.kind:null;
  }
  function step(dt:number){if(phase!=='running'||!Number.isFinite(dt)||dt<=0)return;if(dt>.25){pause('The game paused while the screen caught up.');return;}
   let left=dt;while(left>1e-8&&phase==='running'){
-   const slice=Math.min(1/120,left);left-=slice;const x=player.x,y=player.y;elapsed+=slice;speed=210+120*Math.min(1,elapsed/60);distance+=speed*slice;player.x=54+distance;player.walkTime+=slice;vertical(player,slice,[],onLand);
+   const slice=Math.min(1/120,left);left-=slice;const x=player.x,y=player.y;distance+=travel(speed,slice);elapsed+=slice;speed=START_SPEED+ACCELERATION*elapsed;player.x=54+distance;player.walkTime+=slice;vertical(player,slice,[],onLand);
    bursts=bursts.map(b=>({...b,age:b.age+slice})).filter(b=>b.age<.8);
    if(elapsed>=3&&distance>=spawnAt)spawn();
    const height=duckHeld&&player.grounded?DUCK_HEIGHT:PLAYER_HEIGHT;
@@ -49,7 +62,7 @@ export function createRunner(onFinish:(record:RunRecord)=>void,onLand:()=>void,r
    obstacles=obstacles.filter(o=>o.x+o.w>distance-60);bricks=bricks.filter(b=>b.x+b.w>distance-60);
   }
  }
- return {player,get phase(){return phase;},get reason(){return reason;},get elapsed(){return elapsed;},get distance(){return distance;},get score(){return score();},get bonus(){return bonus;},get speed(){return speed;},get obstacles(){return obstacles;},get bricks(){return bricks;},get bursts(){return bursts;},get ducking(){return duckHeld&&player.grounded&&phase==='running';},setViewWidth(w:number){viewWidth=Math.max(410,w);},start,pause,resume,finish,step,duck(held:boolean){duckHeld=phase==='running'&&held;},jump(){return phase==='running'&&!duckHeld&&jump(player);}};
+ return {player,get phase(){return phase;},get reason(){return reason;},get elapsed(){return elapsed;},get distance(){return distance;},get score(){return score();},get bonus(){return bonus;},get speed(){return speed;},get cue(){return cue();},get obstacles(){return obstacles;},get bricks(){return bricks;},get bursts(){return bursts;},get ducking(){return duckHeld&&player.grounded&&phase==='running';},setViewWidth(w:number){viewWidth=Math.max(410,w);},start,pause,resume,finish,step,duck(held:boolean){duckHeld=phase==='running'&&held;},jump(){return phase==='running'&&!duckHeld&&jump(player);}};
 }
 export const RUN_KEY='cynyassy:brick-trail:runner:v1';
 export function createRunStore(storage:Storage|null=storageAccess()){

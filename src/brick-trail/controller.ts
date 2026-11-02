@@ -1,13 +1,13 @@
 import {projects,worlds,type Area} from './data';
 import {createExplorer} from './explore';
 import {createTrailStore} from './storage';
-import {createRunner,createRunStore,type RunPhase} from './runner';
+import {createRunner,createRunStore,type RunPhase,type RunnerCue} from './runner';
 import {jump} from './physics';
 import {createRenderer,loadSprites,type SceneLayout} from './renderer';
 import {playSound} from '../audio/sound';
 import {createSkillCollection,SKILL_BRICK,type Skill} from './skills';
 export type Mode='explore'|'runner';
-export interface SceneView{mode:Mode;area:Area;seen:string[];skillFound:{skill:Skill;found:number;total:number;revisited:boolean}|null;ready:boolean;error:boolean;message:string;saveNotice:string;phase:RunPhase;reason:string;score:number;bonus:number;ducking:boolean;speed:number;best:number;seconds:number;history:ReturnType<ReturnType<typeof createRunStore>['read']>}
+export interface SceneView{mode:Mode;area:Area;seen:string[];skillFound:{skill:Skill;found:number;total:number;revisited:boolean}|null;ready:boolean;error:boolean;message:string;saveNotice:string;phase:RunPhase;reason:string;score:number;bonus:number;ducking:boolean;speed:number;cue:RunnerCue|null;best:number;seconds:number;history:ReturnType<ReturnType<typeof createRunStore>['read']>}
 export function mountTrail(canvas:HTMLCanvasElement,region:HTMLElement,onChange:(view:SceneView)=>void,onPreview:(id:string,origin:HTMLElement)=>void,onLayout:(layout:SceneLayout)=>void){
  const explore=createExplorer(),store=createTrailStore(),runStore=createRunStore(),renderer=createRenderer(canvas),keys=new Set<string>(),abort=new AbortController();
  let loaded=store.load(),epoch=loaded.snapshot.resetId,mode:Mode='explore',alive=true,ready=false,error=false,blocked=false,offscreen=false,last=0,raf=0,saveElapsed=0,frames:Record<string,HTMLImageElement>={},pending:{id:string;origin:HTMLElement;remaining:number}|null=null;
@@ -41,7 +41,7 @@ export function mountTrail(canvas:HTMLCanvasElement,region:HTMLElement,onChange:
  function end(){runner.finish('ended');clearInput();refresh(true);}
  function snapshot():SceneView{
   if(seenValues.length!==explore.seen.size||seenValues.some(id=>!explore.seen.has(id)))seenValues=[...explore.seen];
-  return {mode,skillFound,area:explore.area,seen:seenValues,ready,error,message,saveNotice,phase:runner.phase,reason:runner.reason,score:runner.score,bonus:runner.bonus,ducking:runner.ducking,speed:runner.speed,best:history.best,seconds:Math.floor(runner.elapsed),history};
+  return {mode,skillFound,area:explore.area,seen:seenValues,ready,error,message,saveNotice,phase:runner.phase,reason:runner.reason,score:runner.score,bonus:runner.bonus,ducking:runner.ducking,speed:runner.speed,cue:runner.cue,best:history.best,seconds:Math.floor(runner.elapsed),history};
  }
  function notify(force=false){
   if(!alive)return;

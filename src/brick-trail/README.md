@@ -28,7 +28,7 @@ Artwork and sprites are copied into this source module and resolved through Vite
 
 Explore my work is the default. All project links remain available regardless of play. Opening unique previews adds discoveries; repeats do not. The main trail and Bonus Content each retain a position. The completion message appears at eight discoveries.
 
-Endless run starts only on Start run. The character moves automatically on continuous ground. Space, Up, tapping the canvas or Jump triggers the same jump as exploration, with no midair jump. Three opening seconds are clear. Speed ramps from 210 to 330 world units/second over 60 active seconds. Barriers (wide/low), crates and rocks (narrow/tall) use distinct shapes and colours and do not repeat immediately. Flying drones join after the ground-obstacle introduction. Hold Down / S or the Duck button to crouch underneath; release to stand. Optional bonus bricks occupy separate safe encounter slots and award 50 points when struck from below. Jumping is disabled while holding Duck. Gaps allow a full jump plus 0.35 seconds, adjusted for predicted arrival speed. One collision ends a run. Score is floor(distance / 10) + brick bonuses.
+Endless run starts only on Start run. The character moves automatically on continuous ground. Space, Up, tapping the canvas or Jump triggers the same jump as exploration, with no midair jump. Three opening seconds are clear. Speed starts at 210 world units/second and increases by 2 per active second without a ceiling. Barriers (wide/low), crates and rocks (narrow/tall) use distinct shapes and colours and do not repeat immediately. Flying drones join after the ground-obstacle introduction. Hold Down / S or the Duck button to crouch underneath; release to stand. Optional bonus bricks occupy separate safe encounter slots and award 50 points when struck from below. Jumping is disabled while holding Duck. Gaps allow a full jump plus 0.35 seconds after the preceding encounter clears the player, adjusted for predicted arrival speed. At high speeds, hazards spawn beyond the viewport when necessary and a short next-action cue appears up to 1.25 seconds before contact. One collision ends a run. Score is floor(distance / 10) + brick bonuses.
 
 Runner state pauses on mode changes, previews, hidden tabs, window blur, a fully offscreen game, or a simulation frame gap above 0.25 seconds. Resume is explicit. Simulation uses 1/120-second substeps and swept collision checks. Mode switching keeps the paused run during the visit. Leaving/reloading records it as ended; refresh does not restore active gameplay. Terminal events record once.
 
@@ -58,7 +58,7 @@ The main trail has a repeatable question-mark brick at x=470. Hit it from below 
 
 Skills reveal once each, then cycle as revisits. This collection is in memory for the visit and does not change the project meter or runner scores. Confirmed trail reset also resets the current skill sequence. Reduced motion shows the skill name in a fixed position for one second, then removes it. A focused model check covered repeated physical hits, the 25-item cycle and main-trail-only collision.
 
-The runner HUD now shows speed as a multiplier of the 210-unit starting pace. It rises to 1.57× by 60 active seconds. The maximum preserves readable approaches and clearable obstacles; score and speed never advance while paused.
+The runner HUD now shows speed as a multiplier of the 210-unit starting pace. It rises through 1.57× at 60 active seconds, 2.14× at 120 seconds and 3.86× at five minutes, then keeps increasing. Encounter spacing and advance cues adapt to speed; score and speed never advance while paused.
 
 The legacy `#featured-work`/`#work` anchors are retained at the project list. A mount-time hash scroll restores cross-page anchor navigation after React renders the homepage.
 
@@ -100,3 +100,8 @@ Focused checks and screenshots: `docs/brick-trail-gallery-runner/` at the portfo
 ## Frame scheduling and overlays
 
 The controller owns a wakeable animation loop. Physics and canvas drawing stay separate from `SceneView` notifications. `overlay.ts` positions accessible DOM controls from the same `SceneLayout` returned by the renderer, avoiding page-wide React updates during movement. Idle, blocked, off-screen and hidden states stop continuous work; input, resizing, asset readiness and visibility changes wake it. Runner HUD notifications are limited to 10 Hz during ordinary play, with immediate phase/action feedback. Exploration saves are skipped when the saved snapshot has not changed.
+
+
+## Uncapped runner speed, 2 November 2026
+
+Removed the former 330-unit ceiling. Constant acceleration continues at 2 units/s², with analytically integrated travel. Encounter spacing predicts speed after the preceding obstacle clears the full player width. Unchanged jump and Duck physics remain clearable. A non-flashing Jump/Duck/optional-bonus cue protects reaction time when an encounter crosses a narrow viewport quickly. The controller publishes cues through its existing 10 Hz HUD path. Existing best scores and save formats remain. Older verification notes about a speed cap describe the earlier release.

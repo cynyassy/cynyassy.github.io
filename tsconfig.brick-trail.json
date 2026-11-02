@@ -1,0 +1,1 @@
+{"extends":"./tsconfig.adventure.json","include":["src/brick-trail/**/*.ts","src/brick-trail/**/*.tsx","src/app/App.tsx","src/main.tsx"]}

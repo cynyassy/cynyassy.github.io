@@ -181,11 +181,11 @@ const projects: Project[] = [
   },
   {
     id: 'coffee-tools',
-    title: 'Brew Tracker',
+    title: 'Indian Coffee Stories',
     status: 'Live product ecosystem',
-    headline: 'A coffee product that connects discovery to better brewing',
+    headline: 'Coffee stories, discovery tools and a brewing app. Built together.',
     oneLine: 'Indian Coffee Stories creates the public learning path; Brew Tracker turns curiosity into a private, repeatable brewing practice backed by AWS.',
-    role: 'Product Builder / Growth System Design',
+    role: 'Writing / Research / Design / Full-stack Development',
     category: 'Product / Discovery / AWS',
     problem:
       'As someone rotating multiple coffee bags and four grinders, I found note-taking too loose for comparison and most tracking too laborious for consistent use.',
@@ -199,7 +199,6 @@ const projects: Project[] = [
       { label: 'Open case study', href: 'projects/coffee-tools.html' },
       { label: 'Open Brew Tracker', href: 'https://brew.indiancoffeestories.com', external: true },
       { label: 'Visit Indian Coffee Stories', href: 'https://indiancoffeestories.com', external: true },
-      { label: 'View GitHub repo', href: 'https://github.com/cynyassy/coffee-tools-api', external: true },
     ],
     illustration: <CoffeeToolsShowcase />,
     imageHref: 'projects/coffee-tools.html',

@@ -1,3 +1,4 @@
+import { useReactorAudio } from '../audio/useReactorAudio';
 import { useEffect, useReducer, useRef, useState } from 'react';
 import { themes } from './content';
 import { AdventureShell } from './AdventureShell';
@@ -16,6 +17,7 @@ export default function ReactorPage({ search, active, onStoryChange,theme,onThem
  const mode = initial.configuration.mode;
  const choices = initial.configuration.choices;
  const [state,dispatch] = useReducer(reactorReducer, initial.configuration.session, initialReactor);
+ useReactorAudio(state, active);
  const [drawer,setDrawer] = useState<'learn' | 'share' | 'style' | null>(null);
  const [copyMessage,setCopyMessage] = useState('');
  const [fallback,setFallback] = useState('');
@@ -64,7 +66,7 @@ export default function ReactorPage({ search, active, onStoryChange,theme,onThem
  <AdventureShell story="reactor" theme={theme} onThemeChange={onThemeChange} onStoryChange={next=>{dispatch({type:'pause',now:now()});onStoryChange(next);}} onLearn={()=>openPanel('learn')} onReplay={()=>reset(state.session)} onShare={()=>openPanel('share')} status={<div className={'shell-mission-status '+(urgency?'rx-urgent':'')}><span>{state.paused?'Paused':state.session==='practice'?'Practice':state.phase==='briefing'?'Mission':'Remaining'}</span>{state.session==='mission'&&<strong data-testid="countdown">{time}</strong>}{state.session==='practice'&&<span data-testid="countdown" className="da-sr-only">— —</span>}{running&&<button className="da-button da-secondary" onClick={()=>dispatch({type:state.paused?'resume':'pause',now:now()})}>{state.paused?'Resume':'Pause'}</button>}{urgency&&<span>15 seconds left.</span>}</div>}>
  {initial.notice&&<p className="rx-notice" role="status">{initial.notice}</p>}
  <div className="shell-workspace" data-mode="try"><div className="shell-artifact lab-playground"><ReactorScene state={state} theme={theme} compactInstruments styleAccent/>
- <section className="rx-console" aria-label="Reactor controls">
+ <section data-sound-scope="game" className="rx-console" aria-label="Reactor controls">
  <div className="rx-task-row" hidden={running&&!state.fault}><div><p className="da-eyebrow">{state.phase==='briefing'?'MARS / ARRAY 07':state.paused?'SEQUENCE PAUSED':state.fault?'RECOVERY REQUIRED':state.phase==='success'?'ALL SYSTEMS ONLINE':state.phase==='failure'?'MISSION ENDED':'NEXT OPERATION · '+String(state.step+1).padStart(2,'0')+'/06'}</p>
  <h2 id="task-heading">{state.phase==='briefing'?"Let’s get the reactor running.":state.fault?'Restore the faulty setting.':state.phase==='success'?'Reactor stabilised.':state.phase==='failure'?'Reactor meltdown.':current.label}</h2></div>
 </div>

@@ -1,417 +1,105 @@
 import { useState } from 'react';
-import currentBrewHistoryImg from '../assets/coffee-tools-case-study/current-brew-history.png';
-import currentBrewStoryImg from '../assets/coffee-tools-case-study/current-brew-story.png';
-import currentProfileShelfImg from '../assets/coffee-tools-case-study/current-profile-shelf.png';
-import indianCoffeeStoriesHeroImg from '../assets/coffee-tools-case-study/indian-coffee-stories-hero.png';
-import liveShareCardImg from '../assets/coffee-tools-case-study/live-product/share-card-current.jpg';
-import liveBagContextImg from '../assets/coffee-tools-case-study/live-product/bag-context.jpg';
-import liveFeedImg from '../assets/coffee-tools-case-study/live-product/live-feed-mobile.png';
-import recipeLibraryImg from '../assets/coffee-tools-case-study/live-product/recipe-library-desktop.png';
-import gaLaunchProofImg from '../assets/coffee-tools-case-study/launch-proof/indian-coffee-stories-ga-launch.jpeg';
-import redditLaunchProofImg from '../assets/coffee-tools-case-study/launch-proof/coffee-atlas-reddit-launch.jpeg';
+import { SoundToggle } from '../audio/SoundToggle';
+import shelf from '../assets/coffee-tools-case-study/current-product/shelf-mobile.webp';
+import shelfFull from '../assets/coffee-tools-case-study/current-product/shelf-mobile.jpg';
+import logBrew from '../assets/coffee-tools-case-study/current-product/log-mobile.webp';
+import logFull from '../assets/coffee-tools-case-study/current-product/log-mobile.jpg';
+import result from '../assets/coffee-tools-case-study/current-product/result-mobile.webp';
+import resultFull from '../assets/coffee-tools-case-study/current-product/result-mobile.jpg';
+import bagFull from '../assets/coffee-tools-case-study/current-product/bag-mobile-full.jpg';
+import analytics from '../assets/coffee-tools-case-study/current-product/analytics-charts.webp';
+import analyticsFull from '../assets/coffee-tools-case-study/current-product/analytics-full.jpg';
+import shareCard from '../assets/coffee-tools-case-study/current-product/share-card.webp';
+import shareFull from '../assets/coffee-tools-case-study/current-product/share-card.png';
+import recipes from '../assets/coffee-tools-case-study/current-product/recipes-desktop.webp';
+import recipesFull from '../assets/coffee-tools-case-study/current-product/recipes-desktop.jpg';
+import website from '../assets/coffee-tools-case-study/connected-story/website.webp';
+import websiteFull from '../assets/coffee-tools-case-study/connected-story/website.jpg';
+import article from '../assets/coffee-tools-case-study/connected-story/article.webp';
+import articleFull from '../assets/coffee-tools-case-study/connected-story/article.jpg';
+import weekly from '../assets/coffee-tools-case-study/connected-story/weekly.webp';
+import weeklyFull from '../assets/coffee-tools-case-study/connected-story/weekly.jpg';
+import video from '../assets/coffee-tools-case-study/connected-story/video.webp';
+import videoFull from '../assets/coffee-tools-case-study/connected-story/video.jpg';
+import roasters from '../assets/coffee-tools-case-study/connected-story/roasters.webp';
+import roastersFull from '../assets/coffee-tools-case-study/connected-story/roasters.jpg';
+import cafes from '../assets/coffee-tools-case-study/connected-story/cafes.webp';
+import cafesFull from '../assets/coffee-tools-case-study/connected-story/cafes.jpg';
+import roasterProfile from '../assets/coffee-tools-case-study/connected-story/roaster-profile.webp';
+import roasterProfileFull from '../assets/coffee-tools-case-study/connected-story/roaster-profile.jpg';
+import analyticsProof from '../assets/coffee-tools-case-study/launch-proof/indian-coffee-stories-ga-launch.jpeg';
+import redditProof from '../assets/coffee-tools-case-study/launch-proof/coffee-atlas-reddit-launch.jpeg';
 
-const workflowSteps = [
-  {
-    title: 'Remember what worked',
-    description:
-      'Every coffee keeps its roast age, recipes, equipment, tasting notes, and best cups connected to the same bag.',
-    image: [liveShareCardImg, liveBagContextImg],
-  },
-  {
-    title: 'Make coffee social',
-    description:
-      'Public brews, photos, reactions, comments, recipes, and reviews let a useful coffee moment travel beyond one shelf.',
-    image: [liveFeedImg],
-  },
-  {
-    title: 'Find a recipe worth repeating',
-    description:
-      'A public recipe library lets people browse proven cups before they commit to brewing one themselves.',
-    image: [recipeLibraryImg],
-  },
-  {
-    title: 'Dial in the next cup',
-    description:
-      'The bag history and brew story make it easier to compare attempts, find a best cup, and make the next adjustment deliberately.',
-    image: [currentBrewStoryImg, currentBrewHistoryImg],
-  },
+interface ProductView { label:string; title:string; copy:string; image:string; fullImage:string; alt:string; width:number; height:number }
+const views:ProductView[]=[
+ {label:'1. Coffee shelf',title:'Give each coffee a place.',copy:'Add a bag with its roaster and roast date. Every cup from that bag stays together, so you can see what you tried as the coffee gets older. Archive it when the bag is finished.',image:shelf,fullImage:shelfFull,alt:'The current coffee shelf showing coffees in rotation, their roast ages, brew counts and ratings.',width:390,height:844},
+ {label:'2. Record a cup',title:'What did you make, and how did it taste?',copy:'Choose the drink, record the brew, then rate the result. For this cappuccino, the form asks for coffee in, espresso out and brew time. Equipment, recipe attribution and a public coffee moment are there when you need them.',image:logBrew,fullImage:logFull,alt:'Step two of the current three-step brew form, showing espresso measurements and optional equipment and recipe details.',width:390,height:844},
+ {label:'3. Compare brews',title:'Find your best cup. Work out what to try next.',copy:'Return to the bag’s rating journey and brewing history. Narrow the comparison by method, brewer and grinder before looking at a recipe variable. This view compares espresso brews from the same Gaggia and Encore ESP setup.',image:analytics,fullImage:analyticsFull,alt:'Filtered analytics with the rating journey, brew time versus rating and a taste-profile chart for one espresso setup.',width:1440,height:960},
+ {label:'4. Keep a recipe',title:'A starting point you can make your own.',copy:'Browse curated recipes, save a private copy or write your own. When a recipe changes, a new version keeps the earlier cups tied to the instructions they actually used. Publishing a recipe is a separate choice.',image:recipes,fullImage:recipesFull,alt:'The current recipe catalogue with search, brewer filtering and attributed editorial recipe cards.',width:1440,height:960},
+ {label:'5. Share a brew',title:'Let someone else try the cup you enjoyed.',copy:'Each saved brew has a public page under your username. Share its link or download a card with the photo and recipe. Your email, private bag notes and AI insights are not part of that public record.',image:shareCard,fullImage:shareFull,alt:'A newly downloaded Kaapi Robusta share card with a cappuccino photo, rating, dose, output and brew time.',width:720,height:1290},
 ];
-
-const backendSteps = [
-  {
-    label: '01',
-    title: 'Capture',
-    description: 'The frontend collects method, grinder, dose, water, settings, rating, and tasting notes.',
-  },
-  {
-    label: '02',
-    title: 'Authenticate',
-    description: 'Cognito Hosted UI signs the user in and the browser sends a JWT with protected API requests.',
-  },
-  {
-    label: '03',
-    title: 'Authorize',
-    description: 'API Gateway verifies the token before the Lambda handler receives the request.',
-  },
-  {
-    label: '04',
-    title: 'Process',
-    description: 'Lambda validates the brew, scopes it to the signed-in user, and connects it to the right bag.',
-  },
-  {
-    label: '05',
-    title: 'Persist',
-    description: 'DynamoDB stores the bag and brew history so analytics can surface patterns over time.',
-  },
-];
-
-const nextSteps = [
-  {
-    title: 'Automated deployment',
-    description: 'Move the beta from manual Amplify uploads to a repeatable GitHub-connected deployment flow.',
-  },
-  {
-    title: 'More real-user testing',
-    description: 'Validate the mobile flow with brewers logging while they are actually making coffee.',
-  },
-  {
-    title: 'Sharper brew fields',
-    description: 'Add method-specific details like water temperature, espresso yield, and recipe adjustment notes.',
-  },
-];
-
-function ScreenCarousel() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeItem = workflowSteps[activeIndex];
-
-  const goPrev = () =>
-    setActiveIndex((current) => (current === 0 ? workflowSteps.length - 1 : current - 1));
-  const goNext = () =>
-    setActiveIndex((current) => (current === workflowSteps.length - 1 ? 0 : current + 1));
-
-  return (
-    <div className="coffee-workflow" aria-label="Coffee Tools product workflow">
-      <div className="coffee-workflow__copy">
-        <p className="coffee-index">
-          {String(activeIndex + 1).padStart(2, '0')} / {String(workflowSteps.length).padStart(2, '0')}
-        </p>
-        <h3>{activeItem.title}</h3>
-        <p>{activeItem.description}</p>
-      </div>
-
-      <div className="coffee-workflow__visual">
-        <div
-          className={`coffee-workflow__screens${
-            Array.isArray(activeItem.image) && activeItem.image.length === 3
-              ? ' coffee-workflow__screens--triple'
-              : ''
-          }`}
-        >
-          {(Array.isArray(activeItem.image) ? activeItem.image : [activeItem.image]).map((image, index) => (
-            <img key={image} src={image} alt={`${activeItem.title} screen ${index + 1}`} />
-          ))}
-        </div>
-      </div>
-
-      <div className="coffee-workflow__controls">
-        <button type="button" onClick={goPrev} aria-label="Previous workflow step">
-          Prev
-        </button>
-        <div className="coffee-workflow__dots" aria-label="Workflow navigation">
-          {workflowSteps.map((step, index) => (
-            <button
-              key={step.title}
-              type="button"
-              className={index === activeIndex ? 'is-active' : ''}
-              aria-label={`Go to ${step.title}`}
-              aria-pressed={index === activeIndex}
-              onClick={() => setActiveIndex(index)}
-            />
-          ))}
-        </div>
-        <button type="button" onClick={goNext} aria-label="Next workflow step">
-          Next
-        </button>
-      </div>
-    </div>
-  );
+function Evidence({src,fullSrc=src,alt,width,height,caption}:{src:string;fullSrc?:string;alt:string;width:number;height:number;caption:string}){
+ return <figure className="coffee-evidence"><a href={fullSrc} target="_blank" rel="noopener" aria-label={`Open full-size image: ${alt}`}><img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" /></a><figcaption>{caption} <a href={fullSrc} target="_blank" rel="noopener">View full size ↗</a></figcaption></figure>;
 }
-
-function SectionIntro({
-  label,
-  title,
-  children,
-}: {
-  label: string;
-  title: string;
-  children?: React.ReactNode;
-}) {
-  return (
-    <header className="coffee-section-intro">
-      <p className="coffee-eyebrow">{label}</p>
-      <div>
-        <h2>{title}</h2>
-        {children}
-      </div>
-    </header>
-  );
+function ProductWalkthrough(){
+ const [active,setActive]=useState(0);const view=views[active];
+ return <div className="coffee-walkthrough">
+  <div className="coffee-view-choices" role="group" aria-label="Choose a product view">{views.map((item,i)=><button type="button" key={item.label} aria-pressed={i===active} onClick={()=>setActive(i)}>{item.label}</button>)}</div>
+  <div className={'coffee-view-grid'+(view.width>view.height?' is-landscape':'')}>
+   <div className="coffee-view-copy"><p className="coffee-index">{String(active+1).padStart(2,'0')} / {String(views.length).padStart(2,'0')}</p><h3>{view.title}</h3><p>{view.copy}</p><p className="coffee-screen-note">Captured from the live product · November 2026.</p><a href={view.fullImage} target="_blank" rel="noopener">Open the full-size capture ↗</a></div>
+   <figure className="coffee-view-image"><img src={view.image} alt={view.alt} width={view.width} height={view.height} decoding="async" /></figure>
+  </div>
+ </div>;
 }
+function Intro({label,title,children}:{label:string;title:string;children?:React.ReactNode}){return <header className="coffee-section-intro"><p className="coffee-eyebrow">{label}</p><h2>{title}</h2>{children}</header>}
+export default function CoffeeToolsPage(){return <div className="coffee-page">
+ <a className="coffee-skip-link" href="#coffee-main">Skip to content</a>
+ <header className="coffee-topbar"><div><a className="coffee-home" href="/#projects">cynyassy<span> / Back to projects</span></a><nav aria-label="Indian Coffee Stories sections"><a href="#stories">Stories</a><a href="#product">Tracker</a><a href="#backend">Build</a></nav><SoundToggle /></div></header>
+ <main id="coffee-main">
+  <section className="coffee-hero coffee-connected-hero">
+   <div className="coffee-hero-copy"><p className="coffee-eyebrow">An independent coffee ecosystem</p><h1>Indian Coffee Stories</h1><p className="coffee-dek">A love of coffee. A whole lot built around it.</p><p>I wanted to understand my coffee better. I started writing about it, made guides to Indian roasters and cafes, and built Brew Tracker to remember what worked in my own cup.</p><p className="coffee-role"><span>My work</span>Communication & GTM strategy · Writing, video & research · Product & interface design · Full-stack development · Deployment & maintenance</p><div className="coffee-actions"><a className="coffee-primary" href="https://www.indiancoffeestories.com/" target="_blank" rel="noopener">Visit Indian Coffee Stories ↗</a><a href="https://brew.indiancoffeestories.com/" target="_blank" rel="noopener">Try Brew Tracker ↗</a></div></div>
+   <figure className="coffee-connected-art"><a href={websiteFull} target="_blank" rel="noopener" aria-label="Open full-size Indian Coffee Stories homepage capture"><img src={website} width={1435} height={807} alt="Current Indian Coffee Stories homepage with its editorial identity, coffee guides, discovery tools and Brew Tracker link" decoding="async" fetchPriority="high" /></a><figcaption>Stories bring people in. Discovery tools and Brew Tracker give them ways to explore further.</figcaption></figure>
+  </section>
+  <section id="overview" className="coffee-section"><Intro label="The idea" title="Make coffee easier to get into. And easier to keep learning."><p>I took a personal interest and built the communication, publication, discovery tools and software around it. YouTube, Instagram and Substack are part of the plan for reaching people and keeping the conversation going. Brew Tracker is one part of that wider coffee ecosystem.</p></Intro>
+   <ol className="coffee-connected-path" aria-label="How the parts fit together"><li><span>01</span><h3>Learn</h3><p>Read a guide or watch a comparison.</p><a href="#stories">The publication ↓</a></li><li><span>02</span><h3>Discover</h3><p>Find a roaster or a cafe worth trying.</p><a href="#discovery">The Atlases ↓</a></li><li><span>03</span><h3>Brew</h3><p>Keep the recipe and see what changes.</p><a href="#product">Brew Tracker ↓</a></li><li><span>04</span><h3>Share</h3><p>Pass on a brew or a roaster experience.</p><a href="#connection">The connection ↓</a></li></ol>
+  </section>
+  <section id="communication" className="coffee-section"><Intro label="Communication & go-to-market" title="Give each part a reason to exist."><p>I am building a communication plan around Indian coffee: what to talk about, who it helps, where it belongs and what someone can do next. The goal is to make the stories, channels and tools useful together.</p></Intro>
+   <dl className="coffee-channels"><div><dt>YouTube</dt><dd>Show the brewing and comparisons, with time to explain what I noticed. The C2 versus ZP6 video and article give people two ways into the same story.<a href="https://www.youtube.com/@IndianCoffeeStories" target="_blank" rel="noopener">Watch Indian Coffee Stories ↗</a></dd></div>
+   <div><dt>Instagram</dt><dd>The shorter, visual side of the communication plan I am building: coffee moments, ideas and routes into the longer work.<a href="https://www.instagram.com/indiancoffeestories/" target="_blank" rel="noopener">Find the Instagram channel ↗</a></dd></div>
+   <div><dt>Substack</dt><dd>A place to keep in touch beyond a single visit, through useful coffee notes, discoveries and updates.<a href="https://indiancoffeestories.substack.com/" target="_blank" rel="noopener">Read the newsletter ↗</a></dd></div>
+   <div><dt>The website & Atlases</dt><dd>A searchable home for the longer stories and researched guides. Someone can arrive with a question and leave with a coffee or cafe to try.<a href="#discovery">See the discovery tools ↓</a></dd></div>
+   <div><dt>Brew Tracker</dt><dd>Turn an idea into something you can try in your own cup. Record what happened, keep the recipe and share an experience.<a href="#product">Look inside the tracker ↓</a></dd></div></dl>
+   <details className="coffee-technical"><summary>How the communication plan connects to the work</summary><p>A comparison can become a video and a detailed article. A weekly edition can bring useful events and links together. A guide can lead naturally to a roaster profile or a brewing experiment. Each format has its own job; I am building the connections around what would help someone next.</p><p>The published comparison, weekly editions and existing newsletter are examples of work already out there. The Instagram approach and wider channel plan are still developing. These connections describe the strategy, not measured conversion between channels.</p></details>
+  </section>
+  <section id="stories" className="coffee-section"><Intro label="Writing, photography & video" title="Start with something worth sharing."><p>I write for someone who likes coffee and wants to understand it better. That means everyday language, Indian prices and availability, and practical things to try with the equipment they already have.</p></Intro>
+   <div className="coffee-story-grid">
+    <article><Evidence src={article} fullSrc={articleFull} width={1435} height={897} alt="The C2 versus ZP6 article, with Shashank’s byline and original grinder photograph" caption="A first-hand comparison, with the equipment and brewing context made visible." /><h3>What does a better grinder actually change?</h3><p>I brewed the same coffee with my C2 and ZP6, tasted the cups side by side, and turned the comparison into an article and video. The story keeps my experience at the centre, with research where it helps explain the equipment.</p><a className="coffee-text-link" href="https://www.indiancoffeestories.com/blog/timemore-c2-vs-zp6" target="_blank" rel="noopener">Read the comparison ↗</a><details><summary>See the video and how it connects</summary><Evidence src={video} fullSrc={videoFull} width={1275} height={717} alt="The dedicated C2 versus ZP6 video page with its original title and video player" caption="The article links to a dedicated watch page. The watch page links back to the full comparison." /><a className="coffee-text-link" href="https://www.indiancoffeestories.com/videos/timemore-c2-vs-zp6" target="_blank" rel="noopener">Watch the comparison ↗</a></details></article>
+    <article><Evidence src={weekly} fullSrc={weeklyFull} width={1435} height={897} alt="This Week in Indian Coffee, issue 03, with an illustrated cover and Shashank’s byline" caption="Issue 03, published 30 October 2026: events, coffee news and a personal point of view." /><h3>Give people a reason to come back.</h3><p>The weekly editions bring together coffee events, useful links and my own take on what is happening. Each one has to answer a simple question: what would another Indian coffee drinker find useful this week?</p><a className="coffee-text-link" href="https://www.indiancoffeestories.com/blog/this-week-in-indian-coffee-2026-10-30" target="_blank" rel="noopener">Read the weekly edition ↗</a></article>
+   </div>
+   <details className="coffee-technical"><summary>A few choices behind the publication</summary><p>Beginner guides, reviews and weekly editions have different jobs. Categories and internal links help readers move between them. Original photographs show the equipment and coffee behind a review; sources support the explanation. Article and video pages point to each other so people can choose how they want to spend their time.</p><p>The visual system gives longer stories room to breathe: readable columns, expressive headings, restrained colour and clear routes into the Atlases and tracker. The newsletter provides another way to keep in touch.</p><a className="coffee-text-link" href="https://indiancoffeestories.substack.com/" target="_blank" rel="noopener">Read the newsletter ↗</a></details>
+  </section>
+  <section id="discovery" className="coffee-section"><Intro label="Research made useful" title="Help someone find their next coffee."><p>A list becomes more useful when it helps you choose. I organised the Atlases around the questions people bring: where is it, what is it known for, and why might I want to try it?</p></Intro>
+   <div className="coffee-story-grid"><article><Evidence src={roasters} fullSrc={roastersFull} width={1435} height={897} alt="Coffee Atlas with its India map, roaster directory, region filter and search" caption="Coffee Atlas: roaster discovery by region, name and coffee style." /><h3>Coffee Atlas</h3><p>Search Indian roasters, narrow the list by region, or let the Atlas pick one at random. Profiles give you a starting point and a route to the roaster’s own website.</p><a className="coffee-text-link" href="https://www.indiancoffeestories.com/roasters" target="_blank" rel="noopener">Explore Coffee Atlas ↗</a></article>
+   <article><Evidence src={cafes} fullSrc={cafesFull} width={1435} height={897} alt="Cafe Atlas with its India map, city selection and searchable cafe directory" caption="Cafe Atlas: a city-by-city guide focused on the coffee itself." /><h3>Cafe Atlas</h3><p>Find a cafe by city and see what makes its coffee worth a visit. Branch details, directions and source links help turn discovery into a practical plan.</p><a className="coffee-text-link" href="https://www.indiancoffeestories.com/cafes" target="_blank" rel="noopener">Explore Cafe Atlas ↗</a></article></div>
+   <details className="coffee-technical"><summary>How the directory research stays maintainable</summary><p>Roaster profiles use stable IDs shared with Brew Tracker. Cafe records separate research leads from complete profiles and retain sources, verification dates and questions still to check. Validation catches missing fields and broken content before a release. That makes updating the directory part of the product, rather than a one-off spreadsheet exercise.</p></details>
+  </section>
+  <section id="product" className="coffee-section"><Intro label="Brew Tracker" title="From opening a bag to making that cup again."><p>I keep several coffees and four grinders in rotation. Which recipe worked? What did I change? I built the tracker to keep those measurements, tasting notes and history together. Choose a step to look inside.</p></Intro><ProductWalkthrough /></section>
+  <section id="decisions" className="coffee-section"><Intro label="Design decisions" title="The details that make the record useful." /><div className="coffee-decisions">
+   <article><span>01</span><div><h3>Start with the drink, not the data model.</h3><p>“Cappuccino” is the drink. “Espresso” is the method. A Gaggia is the brewer. The form separates those ideas and asks for the essentials first, with equipment and recipe details tucked away until they are useful.</p></div></article>
+   <article><span>02</span><div><h3>Compare like with like.</h3><p>One grind setting does not mean the same thing on every grinder. Method, brewer and grinder filters help people compare cups made with a similar setup.</p><details><summary>How the history and charts stay connected</summary><p>The time-versus-rating plot is enabled only for a single method, brewer and grinder. Filtering keeps the original brew sequence, so the coffee’s history is not renumbered to fit a chart.</p><Evidence src={bagFull} alt="The full current bag page, including its Brew Story, best cup and all four recorded brews" width={390} height={1926} caption="The bag keeps the chart, best cup and individual brew records together." /></details></div></article>
+   <article><span>03</span><div><h3>Keep the recipe that made that cup.</h3><p>Recipes change as you learn. Each saved brew keeps the recipe version used at the time, so a later edit does not rewrite an earlier result.</p></div></article>
+   <article><span>04</span><div><h3>Explain what becomes public before Save.</h3><p>The result step names what saving will publish: the brew recipe and flavour notes under a username, plus a photo or coffee moment when added. Bag notes, email and AI insights stay private.</p><details><summary>See the message before saving</summary><Evidence src={result} fullSrc={resultFull} alt="The result step with rating, optional notes and the public-sharing notice immediately before Save brew" width={390} height={844} caption="The sharing explanation is part of the form, before the final action." /></details></div></article>
+  </div></section>
+  <section id="connection" className="coffee-section"><Intro label="The connection" title="The software feeds back into the publication."><p>A roaster profile is more useful when people can add their own experience. Public reviews written in Brew Tracker appear in Coffee Atlas, alongside the editorial profile. Visitors can follow the link back to read more or contribute.</p></Intro><details className="coffee-technical"><summary>See the connected roaster profile</summary><div className="coffee-connection-evidence"><Evidence src={roasterProfile} fullSrc={roasterProfileFull} width={1275} height={2535} alt="Blue Tokai’s Coffee Atlas profile with public roaster experience, coffee review summaries and links into Brew Tracker" caption="A current live example. Roaster experience and completed-bag coffee ratings are shown separately." /></div><a className="coffee-text-link" href="https://www.indiancoffeestories.com/roasters/blue-tokai" target="_blank" rel="noopener">Open the connected profile ↗</a></details><p className="coffee-screen-note">Public reviews are shared across the two products. Private bag notes, email and AI insights stay out of the Atlas.</p></section>
+  <section id="backend" className="coffee-section"><Intro label="Designing, building & keeping it running" title="Two systems. One coffee project."><p>I built the publishing website and the brewing app around different needs, then connected the parts they share. Articles should be easy to publish and find. Personal brew records need accounts, persistent storage and clear privacy boundaries.</p></Intro>
+   <div className="coffee-build-notes"><article><h3>A publishing system I can keep using.</h3><p>The Next.js website turns Markdown articles into readable pages. A single article record also supplies its video watch page, metadata and sitemap entry. Roaster and cafe content is structured and checked before publishing.</p></article><article><h3>A product that remembers the cup.</h3><p>Brew Tracker began with Express and Postgres. The current React app runs on Amplify, with Cognito sign-in and an AWS API that keeps coffee bags, brews and versioned recipes.</p></article></div>
+   <ol className="coffee-architecture" aria-label="A protected brew request"><li><strong>React / Amplify</strong><span>Capture the brew</span></li><li><strong>Cognito</strong><span>Sign the brewer in</span></li><li><strong>API Gateway</strong><span>Verify the token</span></li><li><strong>Lambda</strong><span>Validate the request</span></li><li><strong>DynamoDB</strong><span>Keep the history</span></li></ol>
+   <details className="coffee-technical"><summary>More about the integration, privacy and AI</summary><p>The Atlas exports roaster data in a format Brew Tracker can use. Its public pages fetch validated review summaries from the tracker API and refresh them without making the publication depend on a signed-in session. Empty and unavailable responses have distinct states.</p><p>API Gateway checks the Cognito token. Lambda validates requests and scopes personal records to the signed-in user. Brew photos live in private S3 storage; public images are served through the feed API. Separate public records limit what the feed and Atlas expose.</p><p>Private AI Brew Insights use Amazon Bedrock to suggest a next experiment. Response structure and confidence are validated, and insight generation can fail without losing a saved brew. Comparing different grinder scales still needs further work; the brew history remains the reference.</p><p>I maintain the publication through version-controlled content, validation and Vercel deployment. The app has its own AWS build and deployment workflow. Publishing content and operating the software are both part of the work.</p></details>
 
-export default function CoffeeToolsPage() {
-  return (
-    <div className="coffee-page">
-      <a href="#coffee-main" className="coffee-skip-link">
-        Skip to content
-      </a>
-
-      <header className="coffee-topbar">
-        <a href="../index.html#featured-work">Back to portfolio</a>
-        <nav aria-label="Coffee Tools sections">
-          <a href="#product">Product</a>
-          <a href="#backend">Backend</a>
-          <a href="#next">Next</a>
-        </nav>
-      </header>
-
-      <main id="coffee-main">
-        <section className="coffee-hero">
-          <div className="coffee-hero__copy">
-            <p className="coffee-eyebrow">Live product / discovery + utility</p>
-            <h1>Brew Tracker</h1>
-            <p className="coffee-hero__dek">
-              A live coffee product that connects discovery to better brewing.
-            </p>
-            <p className="coffee-hero__body">
-              I keep several coffees and four grinders in rotation. Remembering what worked across changing beans,
-              roast age, recipes, and equipment was harder than brewing itself. I built Brew Tracker as the private,
-              AWS-backed utility, then Indian Coffee Stories as the public learning and discovery path into it.
-            </p>
-            <p className="coffee-role">
-              <span>My work</span>
-              Product model · UX flow · AWS backend · discovery strategy · analytics design
-            </p>
-            <div className="coffee-actions">
-              <a href="https://brew.indiancoffeestories.com" target="_blank" rel="noreferrer">
-                Open Brew Tracker
-              </a>
-              <a href="https://github.com/cynyassy/coffee-tools-api" target="_blank" rel="noreferrer" className="coffee-actions__secondary">
-                View GitHub repo
-              </a>
-              <a href="https://indiancoffeestories.com" target="_blank" rel="noreferrer" className="coffee-actions__secondary">
-                Visit Indian Coffee Stories
-              </a>
-              <a href="#product" className="coffee-actions__secondary">
-                See the product
-              </a>
-            </div>
-          </div>
-
-          <figure className="coffee-hero__visual">
-            <img src={liveShareCardImg} alt="Brew Tracker share card from the live product" />
-          </figure>
-        </section>
-
-        <section className="coffee-section coffee-decision">
-          <SectionIntro label="The product loop" title="Remember what worked. Brew what's next.">
-            <p>
-              Brew Tracker starts with a personal shelf, then turns repeated brewing into a record people can learn
-              from, share, and return to.
-            </p>
-          </SectionIntro>
-
-          <div className="coffee-decision__panel">
-            <article>
-              <p className="coffee-index">01 / Track</p>
-              <h3>Keep the context</h3>
-              <p>Bag, roast age, recipe, equipment, notes, and every cup stay attached to the same coffee.</p>
-            </article>
-            <article>
-              <p className="coffee-index">02 / Improve</p>
-              <h3>See what changed</h3>
-              <p>Compare attempts, locate the best cup, and use the record to choose a more intentional next step.</p>
-            </article>
-            <article>
-              <p className="coffee-index">03 / Share</p>
-              <h3>Make the cup useful</h3>
-              <p>Publish a brew, recipe, or review when it is worth someone else discovering and repeating.</p>
-            </article>
-          </div>
-
-          <dl className="coffee-model">
-            <div>
-              <dt>Core object</dt>
-              <dd>Coffee bag</dd>
-            </div>
-            <div>
-              <dt>Repeated action</dt>
-              <dd>Log a brew</dd>
-            </div>
-            <div>
-              <dt>Live stack</dt>
-              <dd>React · Cognito · API Gateway · Lambda · DynamoDB · S3</dd>
-            </div>
-          </dl>
-        </section>
-
-        <section className="coffee-section coffee-discovery">
-          <SectionIntro label="Discovery and education" title="A public path into better brewing">
-            <p>
-              Indian Coffee Stories is the public-facing companion to Brew Tracker: an approachable place to learn,
-              discover Indian coffee, and then bring those questions into a personal brewing practice.
-            </p>
-          </SectionIntro>
-
-          <div className="coffee-discovery__panel">
-            <div>
-              <p className="coffee-index">Indian Coffee Stories</p>
-              <h3>Make specialty coffee easier to enter</h3>
-              <p>
-                The live platform brings together beginner-friendly articles, the Coffee Atlas, and a newsletter.
-                It makes specialty coffee easier to enter, then points people toward a more personal practice.
-              </p>
-              <ol className="coffee-discovery__loop">
-                <li>
-                  <span>01</span>
-                  <div>
-                    <strong>Learn</strong>
-                    <p>Articles make beans, brewing, equipment, and tasting more legible.</p>
-                  </div>
-                </li>
-                <li>
-                  <span>02</span>
-                  <div>
-                    <strong>Discover</strong>
-                    <p>Coffee Atlas connects people to a growing directory of Indian roasters.</p>
-                  </div>
-                </li>
-                <li>
-                  <span>03</span>
-                  <div>
-                    <strong>Track</strong>
-                    <p>Brew Tracker turns that interest into repeatable cups and personal learning.</p>
-                  </div>
-                </li>
-              </ol>
-              <a href="https://indiancoffeestories.com" target="_blank" rel="noreferrer">
-                Visit Indian Coffee Stories
-              </a>
-            </div>
-
-            <figure className="coffee-discovery__visual">
-              <img
-                src={indianCoffeeStoriesHeroImg}
-                alt="Indian Coffee Stories botanical homepage artwork"
-              />
-              <figcaption>Indian Coffee Stories: curiosity, without the snobbery.</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <section className="coffee-section coffee-launch-signals" aria-labelledby="coffee-launch-signals-title">
-          <SectionIntro label="Early launch proof" title="Useful things travel when people can find them">
-            <p>
-              These are early launch signals, measured from July 15 to August 11, 2026, or the first 48 hours of the
-              Coffee Atlas Reddit post. They show interest across both the public discovery layer and the utility it supports.
-            </p>
-          </SectionIntro>
-
-          <ul className="coffee-launch-signals__metrics" id="coffee-launch-signals-title">
-            <li><strong>706</strong><span>active users across Indian Coffee Stories and Coffee Atlas in the first 28 days</span></li>
-            <li><strong>1.2K</strong><span>Coffee Atlas views in the same launch window</span></li>
-            <li><strong>95</strong><span>Indian coffee roasters mapped in the public directory</span></li>
-            <li><strong>6.8K</strong><span>Reddit views in 48 hours, with 50 shares and 22 comments</span></li>
-          </ul>
-
-          <div className="coffee-launch-signals__proof">
-            <figure>
-              <img src={gaLaunchProofImg} alt="Google Analytics launch snapshot for Indian Coffee Stories and Coffee Atlas" />
-              <figcaption>Google Analytics, July 15-August 11, 2026: 706 active users and 1.2K Coffee Atlas views.</figcaption>
-            </figure>
-            <figure>
-              <img src={redditLaunchProofImg} alt="Reddit post insights for the Coffee Atlas launch post" />
-              <figcaption>Reddit, first 48 hours: 6.8K views, 50 shares, and 22 comments on the Coffee Atlas launch post.</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <section id="product" className="coffee-section">
-          <SectionIntro label="Live product" title="From a coffee shelf to a cup worth repeating">
-            <p>
-              The public landing page is built around real outputs from the live product: a personal record, a useful
-              next step, and public paths for coffee people to learn from each other before signing in.
-            </p>
-          </SectionIntro>
-          <ScreenCarousel />
-        </section>
-
-        <section id="backend" className="coffee-section coffee-backend">
-          <SectionIntro label="Backend architecture" title="What happens when a user logs a brew">
-            <p>
-              The backend turns a quick interaction into structured history. Authentication, validation, storage, and
-              analytics are separate responsibilities, but they serve one continuous user action.
-            </p>
-          </SectionIntro>
-
-          <ol className="coffee-backend__flow">
-            {backendSteps.map((step) => (
-              <li key={step.title}>
-                <span>{step.label}</span>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </li>
-            ))}
-          </ol>
-
-          <div className="coffee-backend__decisions">
-            <div>
-              <p className="coffee-eyebrow">Why Cognito</p>
-              <p>Use AWS-managed authentication so identity, tokens, and protected requests are handled cleanly.</p>
-            </div>
-            <div>
-              <p className="coffee-eyebrow">Why Lambda</p>
-              <p>Keep the beta low-operations: no VM, no always-on container, and no production database server to manage.</p>
-            </div>
-            <div>
-              <p className="coffee-eyebrow">Why DynamoDB</p>
-              <p>Model each user&apos;s bags and brews as one scoped history that can be queried and analyzed over time.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="next" className="coffee-section coffee-next">
-          <div>
-            <p className="coffee-eyebrow">Next iteration</p>
-            <h2>Turn recorded history into better decisions</h2>
-            <p className="coffee-next__intro">
-              The beta proves the core workflow: authenticated users can create bags, log brews, archive finished
-              coffees, and review analytics. The next work is making deployment, testing, and brewing ergonomics sharper.
-            </p>
-            <ul>
-              {nextSteps.map((step) => (
-                <li key={step.title}>
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <img src={currentProfileShelfImg} alt="Brew Tracker profile shelf screen with current coffee stats" />
-        </section>
-      </main>
-
-      <footer className="coffee-footer">
-        <p>Brew Tracker</p>
-        <div>
-          <a href="https://brew.indiancoffeestories.com" target="_blank" rel="noreferrer">
-            Brew Tracker
-          </a>
-          <a href="https://indiancoffeestories.com" target="_blank" rel="noreferrer">Indian Coffee Stories</a>
-          <a href="https://github.com/cynyassy/coffee-tools-api" target="_blank" rel="noreferrer">
-            GitHub
-          </a>
-          <a href="../index.html#featured-work">More work</a>
-        </div>
-      </footer>
-    </div>
-  );
-}
+  </section>
+  <section id="results" className="coffee-section"><Intro label="Early launch signals" title="People started finding their way in."><p>These figures describe Indian Coffee Stories and Coffee Atlas, not Brew Tracker adoption. The Analytics window is July 15 to August 11, 2026; the Reddit figures cover the post’s first 48 hours.</p></Intro><dl className="coffee-results"><div><dt>706</dt><dd>active users across Stories and Atlas in the first 28 days</dd></div><div><dt>1.2K</dt><dd>Coffee Atlas views in the same window</dd></div><div><dt>95</dt><dd>roasters listed in the directory at that point</dd></div><div><dt>6.8K</dt><dd>Reddit views in 48 hours, with 50 shares and 22 comments</dd></div></dl>
+   <details className="coffee-proof"><summary>See the launch evidence</summary><div><Evidence src={analyticsProof} alt="Analytics launch snapshot for Indian Coffee Stories and Coffee Atlas" width={2560} height={1440} caption="Analytics, July 15 to August 11, 2026: 706 active users and 1.2K Atlas views." /><Evidence src={redditProof} alt="Coffee Atlas Reddit post insights showing views, shares and comments" width={2560} height={2209} caption="Reddit, first 48 hours: 6.8K views, 50 shares and 22 comments." /></div></details>
+  </section>
+  <section id="next" className="coffee-section coffee-reflection"><Intro label="What I want to learn next" title="Does the whole thing help someone make a better cup?" /><p>I want to watch someone move from a guide or Atlas discovery into their own brewing. Can they find a useful starting point, log a cup while their hands are busy, and use that record next time? Those are the next questions to test. I am also tightening how AI suggestions handle different brewing setups.</p></section>
+  <footer className="coffee-footer"><div><p className="coffee-eyebrow">Keep exploring</p><a className="coffee-next-project" href="/projects/design-adventure.html">Design Adventure ↗</a></div><nav aria-label="Continue exploring"><a href="/#projects">All projects ↗</a><a href="mailto:cynyassy@gmail.com">Have a project in mind? Email me ↗</a></nav></footer>
+ </main></div>}

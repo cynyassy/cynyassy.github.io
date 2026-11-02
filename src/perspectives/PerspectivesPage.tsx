@@ -1,421 +1,101 @@
-import { useState } from 'react';
+import { SoundToggle } from '../audio/SoundToggle';
 import { PerspectivesCoverArt } from './PerspectivesCoverArt';
 import { PerspectivesPlayableProof } from './PerspectivesPlayableProof';
-import UpgradeAndCostSheetV from './imports/UpgradeAndCostSheetV1/UpgradeAndCostSheetV1';
-import womanImg from '../assets/perspectives/b57fa03efae908dc0ffc9d2d8992cf3c0e8877fc.png';
-import gentlemanImg from '../assets/perspectives/040a89687a081c8922d47ce01181afc7f12d47d4.png';
-import farmerImg from '../assets/perspectives/d7eee63e5d931ab5ac6b52272cadaf9a9cf4e474.png';
-import kingImg from '../assets/perspectives/fd62593ed3a99dc48c1587c439fc5a0ee82e8ff2.png';
+import { PerspectivesRules } from './PerspectivesRules';
+import { PerspectivesIllustratedTurn } from './PerspectivesIllustratedTurn';
+import { ThesisFigure, thesisPages } from './ThesisEvidence';
 
-type CardTab = 'scenario' | 'media' | 'perk';
-
-const visibilityChain = [
-  {
-    title: 'Starting position',
-    description: 'Geography changes which resources a player can reach first.',
-  },
-  {
-    title: 'Early opportunity',
-    description: 'Access changes what a player can extract, trade, and build.',
-  },
-  {
-    title: 'Institutions',
-    description: 'Buildings turn temporary advantage into protection and resilience.',
-  },
-  {
-    title: 'Compounding outcomes',
-    description: 'Crises reveal who can absorb shocks and who loses ground.',
-  },
-];
-
-const tutorialSteps = [
-  {
-    title: "You're probably wondering...",
-    content:
-      'How do you play this? What does it all mean? The walkthrough makes the model understandable before the game begins.',
-    image: farmerImg,
-  },
-  {
-    title: 'Set up the board',
-    content:
-      'Players begin with a shared terrain layout. Rearranging the board creates new strategic and social conditions.',
-  },
-  {
-    title: 'Decide who goes first',
-    content:
-      'Order immediately introduces asymmetry. The discomfort is intentional: sequence is part of the model, not neutral administration.',
-    image: womanImg,
-    highlight: true,
-  },
-  {
-    title: 'Choose a representative',
-    content:
-      'Players place a representative near the resources that will shape their earliest opportunities.',
-    image: gentlemanImg,
-  },
-  {
-    title: 'Define a culture',
-    content:
-      'Players articulate identity, language, rituals, and origin before expansion begins, making culture part of what is at stake.',
-    image: kingImg,
-  },
-  {
-    title: 'Gather resources',
-    content:
-      'Each turn limits extraction. Scarcity and geography shape what choices remain available.',
-  },
-  {
-    title: 'Move and expand',
-    content:
-      'Positioning determines who can reach new territory, block an opponent, or access future opportunities.',
-  },
-  {
-    title: 'Build institutions',
-    content:
-      'Structures convert territory and resources into durable protection, making early advantages harder to reverse.',
-  },
-];
-
-const scenarioCards = [
-  { name: 'Earthquake', effect: 'Lose a building if hit with an earthquake', defense: 'Hospital prevents loss' },
-  { name: 'Famine', effect: "Can't extract grain for 2 turns", defense: 'None' },
-  { name: 'Flooding', effect: "Can't produce any resources for 1 turn", defense: 'None' },
-  { name: 'Plague', effect: 'Lose a citizen and all lands they occupy', defense: 'Hospital protects region' },
-  { name: 'Disease', effect: 'Produce only half of the resource for 1 turn', defense: 'Hospital protects region' },
-  { name: 'Storm', effect: 'Lose 1 resource for each building in region', defense: 'Hospital prevents loss' },
-];
-
-const mediaCards = [
-  { name: 'Rival Campaign', effect: 'Lose 1 citizen and 1 resource', defense: 'School prevents' },
-  { name: 'Religious Movement', effect: 'One piece converts to rival team', defense: 'School prevents' },
-  { name: 'Scandal', effect: 'Lose 1 building', defense: 'None' },
-  { name: 'Fake News', effect: 'Lose 1 citizen', defense: 'School prevents' },
-  { name: 'Hackers', effect: 'Lose 2 resources', defense: 'None' },
-  { name: 'Obsolete Technology', effect: 'Lose 2 resources per turn', defense: 'None' },
-];
-
-const perkCards = [
-  { name: 'City Planner', effect: 'Build two structures during your turn' },
-  { name: 'Emergency Services', effect: 'Become immune to one scenario card' },
-  { name: 'Lucky Break', effect: 'Draw an additional resource card during your turn' },
-  { name: 'Master Trader', effect: 'Initiate a trade with any player at any time' },
-  { name: 'Resourceful', effect: 'Extract two additional resources during your turn' },
-  { name: 'Wild Card', effect: 'Draw a scenario, media, or perk card of your choice' },
-];
-
-const reflectionQuestions = [
-  'Who gained access to resources first?',
-  'Which early advantages became difficult to reverse?',
-  'Who could afford institutions before the first crisis?',
-  'Which players recovered from shocks, and which lost ground?',
-  'When did an apparently fair rule produce an unequal outcome?',
-  'What would need to change for the outcome to be different?',
-];
-
-function SectionIntro({
-  label,
-  title,
-  children,
-}: {
-  label: string;
-  title: string;
-  children?: React.ReactNode;
-}) {
-  return (
-    <header className="perspectives-section-head">
-      <p className="perspectives-eyebrow">{label}</p>
-      <div>
-        <h2>{title}</h2>
-        {children}
-      </div>
-    </header>
-  );
+function SectionIntro({ label, title, children }: { label: string; title: string; children?: React.ReactNode }) {
+  return <header className="perspectives-section-head"><p className="perspectives-eyebrow">{label}</p><div><h2>{title}</h2>{children}</div></header>;
 }
 
 export default function PerspectivesPage() {
-  const [currentStep, setCurrentStep] = useState(0);
-  const [activeTab, setActiveTab] = useState<CardTab>('scenario');
+  return <div className="perspectives-page">
+    <a href="#main-content" className="perspectives-skip-link">Skip to content</a>
+    <header className="perspectives-topbar"><div>
+      <a className="perspectives-home-link" href="/#projects">cynyassy<span> / Back to projects</span></a>
+      <nav aria-label="Perspectives sections"><a href="#playable-proof">Try it</a><a href="#gameplay">The game</a><a href="#process">My process</a><a href="#reflection">After play</a></nav><SoundToggle />
+    </div></header>
 
-  const activeCardSet =
-    activeTab === 'scenario' ? scenarioCards : activeTab === 'media' ? mediaCards : perkCards;
-
-  return (
-    <div className="perspectives-page">
-      <a href="#main-content" className="perspectives-skip-link">
-        Skip to content
-      </a>
-
-      <header className="perspectives-topbar">
-        <div>
-          <a href="../#featured-work">Back to portfolio</a>
-          <nav aria-label="Perspectives sections">
-            <a href="#playable-proof">Playable proof</a>
-            <a href="#model">The model</a>
-            <a href="#gameplay">Gameplay</a>
-            <a href="#reflection">Reflection</a>
-          </nav>
+    <main id="main-content">
+      <section id="overview" className="perspectives-hero">
+        <div className="perspectives-hero-copy">
+          <p className="perspectives-eyebrow">MFA thesis · School of Visual Arts, New York</p>
+          <h1>Perspectives</h1>
+          <p className="perspectives-dek">Who gets to build? Who gets left behind?</p>
+          <p className="perspectives-muted">I designed a board game and facilitated conversations about power, privilege and inequality. Players build competing communities, compare what happened and ask how they could share power differently.</p>
+          <p className="perspectives-role"><span className="perspectives-eyebrow">My work</span>Research · Game & service design · Illustration · Prototyping · Playtesting</p>
+          <a className="perspectives-play-link" href="#playable-proof">Play the mini game ↓</a>
         </div>
-      </header>
+        <figure className="perspectives-cover-shell"><PerspectivesCoverArt className="perspectives-cover-art" editorial /><figcaption className="sr-only">Perspectives thesis cover featuring the original illustrated representatives.</figcaption></figure>
+      </section>
 
-      <main id="main-content">
-        <section className="perspectives-hero">
-          <div className="perspectives-hero-copy">
-            <p className="perspectives-eyebrow">MFA thesis / speculative game</p>
-            <h1>Perspectives</h1>
-            <p className="perspectives-dek">
-              A board game that makes compounding advantage visible through play.
-            </p>
-            <p className="perspectives-muted">
-              Players begin in different geographies, gather unequal resources, build institutions, and face the same
-              crises with very different levels of protection. The rules may be shared; the outcomes are not.
-            </p>
-            <p className="perspectives-role">
-              <span className="perspectives-eyebrow">My work</span>
-              Research · causal modelling · game mechanics · prototyping · playtesting · facilitation
-            </p>
-          </div>
+      <section id="playable-proof" className="perspectives-section perspectives-playable-section">
+        <SectionIntro label="A small digital adaptation" title="Try a starting point. Watch what changes."><p>Choose where to start and build. Run the game, then try a different rule on the same map.</p></SectionIntro>
+        <PerspectivesPlayableProof />
+      </section>
 
-          <figure className="perspectives-cover-shell">
-            <PerspectivesCoverArt className="perspectives-cover-art" />
-            <figcaption className="sr-only">
-              Perspectives thesis cover featuring illustrated player characters.
-            </figcaption>
-          </figure>
-        </section>
+      <section id="model" className="perspectives-section">
+        <SectionIntro label="The question" title="How do you make a system something people can experience?">
+          <p>My research began with caste and unequal access to opportunity in India. I wanted to explore how control over resources becomes control over other people’s choices.</p>
+        </SectionIntro>
+        <div className="perspectives-context"><h3>Why a game?</h3><p>A shared board gives people an experience to talk about. Someone gains ground. Someone loses access. The conversation can move from what a person chose to what the system made possible.</p></div>
+      </section>
 
-        <section id="playable-proof" className="perspectives-section perspectives-playable-section">
-          <SectionIntro
-            label="Playable proof"
-            title="Try the thesis in miniature"
-          >
-            <p>
-              Pick a starting tile, let four societies expand, and watch early access become durable advantage. This is
-              a compact digital proof of the thesis, not the full board-game simulation.
-            </p>
-          </SectionIntro>
-          <PerspectivesPlayableProof />
-        </section>
-
-        <section id="model" className="perspectives-section">
-          <SectionIntro label="The model" title="One condition changes the next">
-            <p>
-              Perspectives does not ask players to accept an argument before playing. It lets them observe a chain of
-              causes unfolding across turns.
-            </p>
-          </SectionIntro>
-
-          <ol className="perspectives-chain">
-            {visibilityChain.map((item, index) => (
-              <li key={item.title}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </li>
-            ))}
-          </ol>
-
-          <div className="perspectives-context">
-            <div>
-              <p className="perspectives-eyebrow">Why a game?</p>
-              <h2>Play creates distance without removing consequence</h2>
-            </div>
-            <div className="perspectives-context-copy">
-              <p>
-                Conversations about inequality can quickly become abstract, defensive, or morally predetermined. A
-                game gives people a shared event to examine instead.
-              </p>
-              <p>
-                Players can point to a turn, a building, a resource, or a crisis and ask what changed. The discussion
-                begins with something everyone witnessed, then moves toward the larger forces it represents.
-              </p>
-              <blockquote>
-                The design challenge was not to explain inequity more forcefully. It was to make cause and effect
-                easier to notice.
-              </blockquote>
-            </div>
-          </div>
-        </section>
-
-        <section className="perspectives-section perspectives-system-section">
-          <SectionIntro label="From theory to mechanics" title="Temporary access becomes durable power">
-            <p>
-              The game turns resources, buildings, protection, and crisis response into one progression model. Each
-              mechanic matters because it changes what remains possible later.
-            </p>
-          </SectionIntro>
-
-          <div className="perspectives-upgrade-sheet">
-            <div className="min-w-[595px] bg-white">
-              <UpgradeAndCostSheetV />
-            </div>
-          </div>
-
-          <div className="perspectives-loop">
-            {['Move', 'Extract', 'Build', 'Protect'].map((step, index) => (
-              <div key={step}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <strong>{step}</strong>
-              </div>
-            ))}
-          </div>
-
-          <div className="perspectives-design-notes">
-            <p>Scarcity narrows choices early.</p>
-            <p>Structures convert resources into resilience.</p>
-            <p>Protection determines who can absorb the same shock.</p>
-          </div>
-        </section>
-
-        <section id="gameplay" className="perspectives-section">
-          <SectionIntro label="Gameplay" title="The lesson lives inside the rules">
-            <p>
-              Onboarding, turn order, movement, and cards are not supporting material. They are how the model becomes
-              understandable through action.
-            </p>
-          </SectionIntro>
-
-          <div className="perspectives-tutorial-shell">
-            <article
-              className={`perspectives-tutorial-card ${
-                tutorialSteps[currentStep].highlight ? 'is-highlighted' : ''
-              }`}
-            >
-              <div className="perspectives-tutorial-content">
-                <div>
-                  <p className="perspectives-eyebrow">Step {currentStep + 1}</p>
-                  <h3>{tutorialSteps[currentStep].title}</h3>
-                  <p>{tutorialSteps[currentStep].content}</p>
-                </div>
-                {tutorialSteps[currentStep].image ? (
-                  <img src={tutorialSteps[currentStep].image} alt="Illustrated gameplay character" />
-                ) : null}
-              </div>
-
-              <div className="perspectives-tutorial-controls">
-                <button
-                  type="button"
-                  onClick={() => setCurrentStep((value) => Math.max(0, value - 1))}
-                  disabled={currentStep === 0}
-                  className="perspectives-control-button"
-                >
-                  Previous
-                </button>
-                <p>
-                  {currentStep + 1} / {tutorialSteps.length}
-                </p>
-                <button
-                  type="button"
-                  onClick={() => setCurrentStep((value) => Math.min(tutorialSteps.length - 1, value + 1))}
-                  disabled={currentStep === tutorialSteps.length - 1}
-                  className="perspectives-control-button"
-                >
-                  Next
-                </button>
-              </div>
-            </article>
-
-            <div className="perspectives-progress" aria-label="Tutorial progress">
-              {tutorialSteps.map((step, index) => (
-                <button
-                  key={step.title}
-                  type="button"
-                  onClick={() => setCurrentStep(index)}
-                  className={`perspectives-progress-dot ${index === currentStep ? 'is-active' : ''}`}
-                  aria-label={`Go to ${step.title}`}
-                  aria-pressed={index === currentStep}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="perspectives-cards-section">
-            <div>
-              <p className="perspectives-eyebrow">Cards and shocks</p>
-              <h2>Equal events do not create equal consequences</h2>
-              <p>
-                Scenario and media cards introduce volatility. Institutions, luck, and prior advantage determine how
-                much damage each player absorbs.
-              </p>
-            </div>
-
-            <div className="perspectives-tab-shell">
-              <div className="perspectives-tab-list" role="tablist" aria-label="Card types">
-                {(['scenario', 'media', 'perk'] as CardTab[]).map((tab) => (
-                  <button
-                    key={tab}
-                    type="button"
-                    role="tab"
-                    aria-selected={activeTab === tab}
-                    className={`perspectives-tab ${activeTab === tab ? 'is-active' : ''}`}
-                    onClick={() => setActiveTab(tab)}
-                  >
-                    {tab}
-                  </button>
-                ))}
-              </div>
-
-              <div className="perspectives-card-list">
-                {activeCardSet.map((card) => (
-                  <article key={card.name}>
-                    <h3>{card.name}</h3>
-                    <p>{card.effect}</p>
-                    {'defense' in card ? <span>Defense: {card.defense}</span> : null}
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="perspectives-section perspectives-video-section">
-          <SectionIntro label="Thesis presentation" title="The full academic framing">
-            <p>
-              The presentation explains the research, design intent, and evolution of the physical board game at
-              Design for Social Innovation, SVA.
-            </p>
-          </SectionIntro>
-          <div className="perspectives-video-frame">
-            <iframe
-              src="https://www.youtube.com/embed/G3VoClPmiKM"
-              title="Perspectives thesis presentation"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
-          </div>
-        </section>
-
-        <section id="reflection" className="perspectives-section perspectives-reflection">
-          <SectionIntro label="After play" title="The board becomes evidence for a conversation">
-            <p>
-              Reflection connects the game state back to the choices, structures, and assumptions that produced it.
-            </p>
-          </SectionIntro>
-
-          <ol>
-            {reflectionQuestions.map((question, index) => (
-              <li key={question}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <p>{question}</p>
-              </li>
-            ))}
-          </ol>
-
-          <p className="perspectives-closing">
-            Perspectives is ultimately a translation project: an attempt to turn an invisible web of relationships
-            into a world people can enter, alter, and question together.
-          </p>
-        </section>
-      </main>
-
-      <footer className="perspectives-footer">
-        <p>Perspectives / MFA Design for Social Innovation, SVA</p>
-        <div>
-          <a href="../#featured-work">Back to projects</a>
-          <a href="../#contact">Get in touch</a>
+      <section id="gameplay" className="perspectives-section">
+        <SectionIntro label="The physical game" title="Compete first. Then question the game.">
+          <p>Perspectives has three stages: Capture, Consolidate and Cooperate. The illustrations below come directly from my thesis. They show the larger arc, rather than every move or rule.</p>
+        </SectionIntro>
+        <PerspectivesIllustratedTurn />
+        <details className="perspectives-details perspectives-setup-details"><summary>Read the final setup, turn rules and building costs</summary><PerspectivesRules /></details>
+        <div className="perspectives-cards-section perspectives-final-cards">
+          <div><p className="perspectives-eyebrow">Choices and interruptions</p><h3>Plans meet things you cannot control.</h3><p>Scenario cards affect the board at the end of a round. Players can also buy media cards to disrupt competitors, or keep perk cards for a useful moment. Buildings and power cards change which shocks a community can absorb.</p></div>
+          <div className="perspectives-card-example"><h3>For example: plague</h3><p>In the final version, a region without a hospital loses a house. A region with a hospital is protected. The same event has different consequences because of what was built earlier.</p><a href={thesisPages[117]} target="_blank" rel="noreferrer">See the original scenario cards ↗</a></div>
         </div>
-      </footer>
-    </div>
-  );
+        <details className="perspectives-details"><summary>See the original scenario, media and perk cards</summary><div className="perspectives-source-pages">{[{page:117,name:'Scenario cards'},{page:118,name:'Media cards'},{page:119,name:'Perk cards'}].map(item => <figure key={item.page}><a href={thesisPages[item.page]} target="_blank" rel="noreferrer"><img src={thesisPages[item.page]} width="842" height="595" alt={`${item.name} and their explanation from thesis page ${item.page}. Open the full page to read.`} loading="lazy" decoding="async" /></a><figcaption><a href={thesisPages[item.page]} target="_blank" rel="noreferrer">{item.name} · p. {item.page} ↗</a></figcaption></figure>)}</div></details>
+      </section>
+
+      <section id="process" className="perspectives-section">
+        <SectionIntro label="My process" title="The game took shape through making and testing.">
+          <p>I moved from role-playing situations to a resource-based board game. Each version helped me work out what players needed to experience, and what was getting in their way.</p>
+        </SectionIntro>
+        <div className="perspectives-process-grid">
+          <article><ThesisFigure image="stakeholder-prototype" page={70} alt="Photographs of classmates around a table with paper characters, sticky notes and prototype materials." /><p className="perspectives-eyebrow">01 · Roles and missing information</p><h3>Start with people trying to get something done.</h3><p>In an early classroom prototype, players took roles such as parents, teachers, students and government representatives. Each knew only part of the situation. I explored how incomplete information affected their ability to get their needs met.</p></article>
+          <article><ThesisFigure image="seventh-board" page={106} alt="A later prototype with coloured hexagonal resource tiles, cards and a player resource dashboard." /><p className="perspectives-eyebrow">02 · Simplify the system</p><h3>Keep the decisions. Reduce the machinery.</h3><p>An early role-playing version stalled around movement rules. Later iterations removed the separate centres of power and refined resource gathering and holding limits, making the game faster and less cumbersome.</p><a href={thesisPages[99]} target="_blank" rel="noreferrer">Compare the first board iteration ↗</a></article>
+        </div>
+        <div className="perspectives-final-board">
+          <ThesisFigure image="final-board" page={107} alt="Final physical board headed Domination, with grain, wood, brick and ore hexagons, power cards and three card decks." />
+          <div><p className="perspectives-eyebrow">03 · Set up the conversation</p><h3>Why does the board say “Domination”?</h3><p>I renamed the final game to draw first-time players into the competitive objective. They could pursue expansion and victory before discussing the power dynamics they had just helped create.</p><p>The player dashboard made resources and progress visible. Media and perk cards offered different ways to play, beyond expanding across the board.</p><a href={thesisPages[115]} target="_blank" rel="noreferrer">Read the design decision · p. 115 ↗</a></div>
+        </div>
+      </section>
+
+      <section id="testing" className="perspectives-section">
+        <SectionIntro label="Playtesting · 20+ sessions documented in the thesis" title="The uncomfortable moments mattered.">
+          <p>Across the sessions, players described reflection, frustration and a tension between luck and strategy. Their responses showed where the experience prompted a conversation and where the rules needed more work.</p>
+        </SectionIntro>
+        <ThesisFigure image="playtest-photos" page={129} alt="Thesis photographs of tabletop playtests and people handling physical game prototypes." className="perspectives-testing-evidence">Playtesting and prototype development, documented during the thesis.</ThesisFigure>
+        <div className="perspectives-testing-findings">
+          <article><h3>Reflection</h3><p>Some players described questioning assumptions about privilege and recognising how structural factors affected their progress.</p></article>
+          <article><h3>Frustration</h3><p>Players also felt that bad luck could leave them behind, and wanted more control over how to win. That exposed a tension between the competitive goal and the discussion I wanted to facilitate.</p></article>
+          <article><h3>Further development</h3><p>Ideas for a future iteration included finite resources, regional scenario effects and a gentler opening to give players time to settle in.</p></article>
+        </div>
+        <div className="perspectives-source-links"><a href={thesisPages[130]} target="_blank" rel="noreferrer">Read participant feedback · p. 130 ↗</a><a href={thesisPages[131]} target="_blank" rel="noreferrer">Read suggested improvements · p. 131 ↗</a></div>
+      </section>
+
+
+
+      <section id="reflection" className="perspectives-section perspectives-reflection">
+        <SectionIntro label="Consolidate → Cooperate" title="The conversation is part of the design."><p>After competitive play, players compare their experiences before considering how the system could change. Facilitation needs to make room for everyone, particularly those who had less power on the board.</p></SectionIntro>
+        <div className="perspectives-reflection-pair"><article><p className="perspectives-eyebrow">First, compare</p><h3>What helped you get ahead?</h3><p>Was it your decisions, your starting position or a lucky event? What did another player experience differently?</p></article><article><p className="perspectives-eyebrow">Then, reconsider</p><h3>How would you share power?</h3><p>Which rules would need to change? Who would benefit, and whose voice is missing from that decision?</p></article></div>
+        <details className="perspectives-details"><summary>Read the original facilitation prompts</summary><a className="perspectives-facilitation-page" href={thesisPages[116]} target="_blank" rel="noreferrer"><img src={thesisPages[116]} width="842" height="595" alt="Original thesis facilitation sheet, with separate prompts for the victor and everyone, followed by the three stages of play." loading="lazy" decoding="async" />Open thesis page 116 ↗</a></details>
+        <p className="perspectives-closing">The board creates a shared experience. The discussion makes room to question it.</p>
+      </section>
+
+      <section id="presentation" className="perspectives-section perspectives-video-section">
+        <SectionIntro label="Thesis presentation" title="Hear the story behind the game."><p>I walk through the research and development of Perspectives for my MFA in Design for Social Innovation at SVA.</p></SectionIntro>
+        <div className="perspectives-video-frame"><iframe src="https://www.youtube.com/embed/G3VoClPmiKM" title="Perspectives thesis presentation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /></div>
+      </section>
+    </main>
+    <footer className="perspectives-footer"><div><p className="perspectives-eyebrow">Keep exploring</p><a className="perspectives-next" href="/projects/cynyassy.html">ChaddiMan ↗</a><p>Stories, illustration & a comic community</p></div><div><a href="/#projects">All projects ↗</a><a href="mailto:cynyassy@gmail.com">Have a project in mind? Email me ↗</a></div></footer>
+  </div>;
 }

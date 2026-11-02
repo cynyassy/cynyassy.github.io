@@ -1,0 +1,25 @@
+export type Area = 'main' | 'bonus';
+export interface Platform {x:number;y:number;w:number;color:string}
+export interface World {width:number;portal:number;spawn:number;platforms:Platform[]}
+export type LandmarkId = 'coffee-cart' | 'terminal' | 'comic-kiosk' | 'reactor' | 'board-table' | 'feeling-meter' | 'bookshelf' | 'cinema';
+export interface Project {id:string;landmark:LandmarkId;area:Area;name:string;type:string;role:string;hook:string;description:string;url:string;x:number;y:number;color:string}
+export const projects: Project[] =[
+ {id:'brew',area:'main',landmark:'coffee-cart',name:'Indian Coffee Stories',type:'Publication & connected product',role:'Communication strategy, writing, research, design and full-stack development',hook:'Stories, channels, discovery tools and a brewing app. Built together.',description:'Indian Coffee Stories brings together my writing, video, communication strategy, discovery tools and Brew Tracker. The app is one part of the coffee ecosystem I am building.',url:'/projects/coffee-tools.html',x:330,y:198,color:'#f5f3ee'},
+ {id:'algotest',area:'main',landmark:'terminal',name:'AlgoTest',type:'Product education & growth',role:'Product education, content and growth strategy',hook:'See how the documentation became a way to grow the product.',description:'I helped turn a complicated trading product into something people could get started with and keep using.',url:'/projects/algotest.html',x:815,y:130,color:'#ffba08'},
+ {id:'chaddiman',area:'main',landmark:'comic-kiosk',name:'ChaddiMan',type:'Comics & storytelling',role:'Creator, writer and illustrator',hook:'Explore the comics, the community and the work behind them.',description:'Sometimes a short conversation between two characters says more than a long explanation. That’s where ChaddiMan comes in.',url:'/projects/cynyassy.html',x:1380,y:112,color:'#f5f3ee'},
+ {id:'adventure',area:'main',landmark:'reactor',name:'Design Adventure',type:'Interactive design experiment',role:'Concept, interaction design and development',hook:'Play the full experiment and switch between 22 visual styles.',description:'What if learning about interfaces felt more like playing? Six reactor puzzles became a place to try that out.',url:'/projects/design-adventure.html',x:1945,y:130,color:'#3f88c5'},
+ {id:'perspectives',area:'bonus',landmark:'board-table',name:'Perspectives',type:'Board game & systems thinking',role:'Research, game design, prototyping and facilitation',hook:'Play a small version of the thesis and see how starting conditions change what follows.',description:'My MFA thesis at SVA: a board game that gives people a shared way to explore how starting conditions change what follows.',url:'/projects/perspectives.html',x:340,y:198,color:'#ffba08'},
+ {id:'emotions',area:'bonus',landmark:'feeling-meter',name:'Emotion Identifier',type:'Guided reflection tool',role:'Concept, guided interaction and development',hook:'Try the live tool at your own pace.',description:'Sometimes I know something is going on before I have the words for it. This tool helps turn a broad feeling into something easier to name.',url:'https://cynyassy.github.io/emotions/',x:760,y:130,color:'#3f88c5'},
+ {id:'book',area:'bonus',landmark:'bookshelf',name:'Not Everything Is Urgent',type:'Published illustrated book',role:'Writer, illustrator and designer, with Kim and Ian through The Pound Project',hook:'Explore the two-part book on its publisher’s website.',description:'A book about attention, pressure and remembering that not everything needs us right now. The same simple drawings, with more room to breathe.',url:'https://www.poundproject.co.uk/not-everything-is-urgent',x:1160,y:190,color:'#f5f3ee'},
+ {id:'film',area:'bonus',landmark:'cinema',name:'Film Festival Friday',type:'Filmmaking practice & prompt bot',role:'Creative practice, prompt design and bot development',hook:'Visit the YouTube channel, or explore the prompt bot.',description:'I wanted to do more with my love of films than keep a watchlist. A weekly prompt became a reason to watch closely, notice the craft and make something.',url:'https://www.youtube.com/channel/UCxwAvV6fwi2on14yENSJL6w',x:1570,y:126,color:'#ffba08'}
+];
+export const areaCount = (area:Area) => projects.filter(project=>project.area===area).length;
+export const worlds: Record<Area, World> ={
+ main:{width:2400,portal:2270,spawn:110,platforms:[
+  {x:515,y:330,w:92,color:'#b7becb'},{x:650,y:295,w:345,color:'#f5f3ee'},
+  {x:1100,y:325,w:95,color:'#b7becb'},{x:1220,y:278,w:340,color:'#f5f3ee'},
+  {x:1665,y:330,w:95,color:'#b7becb'},{x:1785,y:295,w:340,color:'#3f88c5'}]},
+ bonus:{width:1850,portal:82,spawn:185,platforms:[
+  {x:520,y:330,w:92,color:'#b7becb'},{x:630,y:295,w:280,color:'#f5f3ee'},
+  {x:1320,y:330,w:92,color:'#b7becb'},{x:1440,y:290,w:280,color:'#ffba08'}]}
+};

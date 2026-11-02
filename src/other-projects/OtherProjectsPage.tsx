@@ -1,3 +1,4 @@
+import { SoundToggle } from '../audio/SoundToggle';
 import type { ReactNode } from 'react';
 import { ArrowRight, BookOpen, ExternalLink, Film, Github, Sparkles, Youtube } from 'lucide-react';
 import emotionIdentifierCover from '../assets/other-projects/emotion-identifier-cover.png';
@@ -147,9 +148,10 @@ export default function OtherProjectsPage() {
     <div className="other-projects-page min-h-screen bg-white text-[#111]">
       <header className="other-projects-topbar">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 md:px-10">
-          <a href="../index.html#other-projects" className="other-projects-back-link">
+          <a href="/#projects" className="other-projects-back-link">
             Back To Portfolio
           </a>
+          <SoundToggle />
         </div>
       </header>
 

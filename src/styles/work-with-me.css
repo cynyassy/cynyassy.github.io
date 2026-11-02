@@ -215,3 +215,13 @@
     padding: 0 2.5rem;
   }
 }
+.work-with-me-page .offer-proof{display:inline-flex;align-items:center;min-height:44px;margin-top:14px;font-size:14px;text-decoration:underline;text-underline-offset:5px}
+.work-with-me-page .offer-proof:focus-visible{outline:3px solid #3f88c5;outline-offset:4px}
+.work-with-me-page .work-with-me-brand{font-size:24px;letter-spacing:-1px;text-transform:none;font-weight:700}
+.work-with-me-page .work-with-me-brand span{font-size:12px;font-weight:400;letter-spacing:0}
+@media(max-width:720px){
+ .work-with-me-page .work-with-me-topbar>div{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px 12px;padding:12px 20px}
+ .work-with-me-page .work-with-me-brand{grid-column:1/-1;justify-self:start}
+ .work-with-me-page .work-with-me-topbar .portfolio-sound{grid-column:2;grid-row:2}
+ .work-with-me-page .work-with-me-topbar a:not(.work-with-me-brand){grid-column:1;min-height:44px;display:inline-flex;align-items:center}
+}

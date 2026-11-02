@@ -10,7 +10,8 @@
     "deploy:pages": "./scripts/deploy-to-pages.sh",
     "test:adventure": "playwright test -c playwright.adventure.config.ts",
     "typecheck:adventure": "tsc -p tsconfig.adventure.json --noEmit",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "typecheck:brick-trail": "tsc -p tsconfig.brick-trail.json --noEmit"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

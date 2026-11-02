@@ -12,12 +12,20 @@ import kingImg from '../assets/perspectives/fd62593ed3a99dc48c1587c439fc5a0ee82e
 type PerspectivesCoverArtProps = {
   className?: string;
   compact?: boolean;
+  editorial?: boolean;
 };
 
 const topRow = [farmerImg, kingImg, womanImg, sadPersonImg, merchantImg];
 const bottomRow = [personImg, womanTwoImg, childImg, warriorImg, gentlemanImg];
 
-export function PerspectivesCoverArt({ className = '', compact = false }: PerspectivesCoverArtProps) {
+export function PerspectivesCoverArt({ className = '', compact = false, editorial = false }: PerspectivesCoverArtProps) {
+  if (editorial) return (
+    <div className={`perspectives-editorial-cover ${className}`}>
+      <div className="perspectives-character-row">{topRow.map(src => <img key={src} src={src} alt="" />)}</div>
+      <div className="perspectives-cover-title"><p>Perspectives</p><span>A game by<br />Shashank Sharma</span></div>
+      <div className="perspectives-character-row">{bottomRow.map(src => <img key={src} src={src} alt="" />)}</div>
+    </div>
+  );
   const titleClass = compact ? 'text-3xl md:text-4xl' : 'text-5xl md:text-6xl lg:text-7xl';
   const subtitleClass = compact ? 'text-sm md:text-base' : 'text-base md:text-xl';
   const smallTextClass = compact ? 'text-[10px] md:text-xs' : 'text-xs md:text-sm';

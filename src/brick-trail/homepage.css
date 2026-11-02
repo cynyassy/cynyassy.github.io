@@ -1,0 +1,2074 @@
+/* Game, controls and previews.
+ * Base, state and responsive rules retain cascade order deliberately.
+ */
+
+.brick-home * {
+  box-sizing: border-box;
+}
+
+.brick-home {
+  margin: 0;
+}
+
+.brick-home main {
+  margin: auto;
+}
+
+.brick-home a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
+.brick-home button,.brick-home a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.brick-home button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.brick-home header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d9d8d2;
+  gap: 24px;
+}
+
+.brick-home .brand {
+  letter-spacing: -1.6px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.brick-home nav {
+  display: flex;
+  gap: 26px;
+  font-size: 14px;
+}
+
+.brick-home nav a {
+  text-decoration: none;
+}
+
+.brick-home .intro {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brick-home .eyebrow {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.brick-home .meter {
+  height: 5px;
+  background: #deddd7;
+  margin: 10px 0 12px;
+}
+
+.brick-home .meter i {
+  display: block;
+  width: 0;
+  background: #3f88c5;
+  height: 100%;
+  transition: width .2s;
+}
+
+.brick-home .instructions {
+  margin-bottom: 15px;
+}
+
+.brick-home .scene {
+  position: relative;
+  overflow: hidden;
+  background: #0a1224;
+  border: 1px solid #0a1224;
+}
+
+.brick-home canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: pixelated;
+}
+
+.brick-home .scene-label {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  font: 10px/1.4 monospace;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
+
+.brick-home .block {
+  position: absolute;
+  border-radius: 0;
+  background: #ffba08;
+  padding: 5px;
+  line-height: 1.15;
+  font-weight: 750;
+  font-size: 13px;
+  text-align: center;
+  min-height: 44px;
+  color: #222;
+  transform: translateX(-50%);
+  touch-action: manipulation;
+}
+
+.brick-home .block[data-id=chaddiman] {
+  background: #f5f3ee;
+}
+
+.brick-home .block[data-id=adventure] {
+  background: #3f88c5;
+}
+
+.brick-home .block .tag {
+  display: block;
+  font: 10px monospace;
+  margin-bottom: 4px;
+}
+
+.brick-home .block.visited {
+  border-color: #fff;
+}
+
+.brick-home .under {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brick-home .touch {
+  display: flex;
+  gap: 8px;
+}
+
+.brick-home .touch button {
+  height: 46px;
+  min-width: 54px;
+  background: white;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  touch-action: none;
+  user-select: none;
+}
+
+.brick-home .touch #jump {
+  padding: 0 20px;
+}
+
+.brick-home .touch button:active {
+  background: #353535;
+  color: #fff;
+}
+
+.brick-home .quiet {
+  border: 0;
+  border-bottom: 1px solid #aaa;
+  background: transparent;
+  font-size: 12px;
+  padding: 8px 0;
+}
+
+.brick-home footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid #d9d8d2;
+  font-size: 11px;
+}
+
+.brick-home button:focus-visible,.brick-home a:focus-visible,.brick-home canvas:focus-visible {
+  outline: 3px solid #d00000;
+  outline-offset: 4px;
+}
+
+.brick-home canvas:focus-visible {
+  outline-offset: -5px;
+}
+
+.brick-home dialog {
+  width: min(560px,calc(100% - 32px));
+  border: 0;
+  border-radius: 6px;
+  padding: 0;
+  color: #353535;
+  box-shadow: 0 30px 100px #0005;
+}
+
+.brick-home dialog::backdrop {
+  background: #070e20b8;
+}
+
+.brick-home .dialog-inner {
+  padding: 28px;
+}
+
+.brick-home .dialog-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brick-home .dialog-top button {
+  background: transparent;
+  border: 0;
+  font-size: 28px;
+  width: 44px;
+  height: 44px;
+}
+
+.brick-home h2 {
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 18px 0;
+}
+
+.brick-home dialog p {
+  color: #666;
+}
+
+.brick-home .role {
+  border-top: 1px solid #d9d8d2;
+  padding-top: 16px;
+  margin: 24px 0;
+}
+
+.brick-home .role span {
+  display: block;
+  font-size: 11px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.brick-home .role strong {
+  font-size: 14px;
+}
+
+.brick-home .dialog-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.brick-home .dialog-actions a,.brick-home .dialog-actions button {
+  font-size: 14px;
+  padding: 12px 16px;
+  border: 1px solid #353535;
+  border-radius: 2px;
+  min-height: 46px;
+  text-decoration: none;
+}
+
+.brick-home .dialog-actions a {
+  background: #353535;
+  color: #fff;
+}
+
+.brick-home .dialog-actions button {
+  background: transparent;
+}
+
+.brick-home .small {
+  margin-top: 18px;
+}
+
+.brick-home #reward {
+  background: #eeece5;
+  padding: 22px;
+  margin-top: 24px;
+}
+
+.brick-home #reward h2 {
+  font-size: 24px;
+  margin: 0 0 12px;
+}
+
+.brick-home #reward p {
+  max-width: 650px;
+  font-size: 14px;
+}
+
+@media (max-width:650px) {
+
+  .brick-home .brand {
+    font-size: 25px;
+  }
+
+  .brick-home nav {
+    gap: 13px;
+    font-size: 12px;
+    padding-top: 8px;
+  }
+
+  .brick-home .intro {
+    display: block;
+  }
+
+  .brick-home .scene-label {
+    left: 12px;
+    top: 12px;
+  }
+
+  .brick-home .under {
+    align-items: center;
+  }
+
+  .brick-home .touch #jump {
+    padding: 0 12px;
+  }
+
+  .brick-home .dialog-inner {
+    padding: 22px;
+  }
+
+  .brick-home h2 {
+    font-size: 29px;
+  }
+}
+
+.brick-home .mobile-help {
+  display: none;
+}
+
+@media (max-width:650px) {
+
+  .brick-home .desktop-help {
+    display: none;
+  }
+
+  .brick-home .mobile-help {
+    display: inline;
+  }
+
+  .brick-home .block .tag {
+    font-size: 8px;
+    margin-bottom: 2px;
+  }
+}
+
+.brick-home .utilities {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.brick-home .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width:650px) {
+
+  .brick-home .utilities {
+    margin-left: auto;
+  }
+
+  .brick-home .under .touch {
+    flex-shrink: 0;
+  }
+}
+
+/* Level study: quieter intro, tactile bricks and persistent explored markers. */
+
+.brick-home .intro {
+  margin-top: 24px;
+}
+
+.brick-home .block {
+  border: 2px solid #242424;
+  box-shadow: 4px 4px 0 #030817,inset 0 4px 0 #ffffff55,inset 0 -5px 0 #0002;
+}
+
+.brick-home .block:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  height: 1px;
+  background: #0002;
+  pointer-events: none;
+}
+
+.brick-home .block.visited[data-id] {
+  background: #101b30;
+  color: #dce1e8;
+  border: 1px dashed #8d9bb2;
+  box-shadow: none;
+}
+
+.brick-home .block.visited:after {
+  display: none;
+}
+
+.brick-home .trail-position {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  font: 10px monospace;
+  color: #ddd;
+  background: #242424;
+  padding: 4px 7px;
+  pointer-events: none;
+}
+
+@media (max-width:650px) {
+
+  .brick-home .trail-position {
+    right: 10px;
+    bottom: 10px;
+    font-size: 9px;
+  }
+}
+
+/* Project-specific artifacts share a predictable title, role and open action. */
+
+.brick-home dialog#preview {
+  width: min(860px,calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  overflow: auto;
+}
+
+.brick-home #preview h2 {
+  margin: 12px 0 22px;
+}
+
+.brick-home .reveal-layout {
+  display: grid;
+  grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.brick-home .reveal-copy>p {
+  margin: 0 0 20px;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.brick-home .reveal-copy .role {
+  margin: 20px 0;
+}
+
+.brick-home .reveal-copy .reveal-hook {
+  font-size: 13px;
+  color: #555;
+}
+
+.brick-home .dialog-actions {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #d9d8d2;
+  background: #fff;
+  padding-bottom: 12px;
+  z-index: 1;
+}
+
+.brick-home .artifact-kicker {
+  font-size: 9px;
+  line-height: 1.5;
+  letter-spacing: 1.1px;
+}
+
+.brick-home .artifact-chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font: 10px/1.4 monospace;
+  border-bottom: 1px solid #ffffff20;
+  padding: 12px 14px;
+  color: #b4bdcb;
+}
+
+.brick-home .terminal-artifact {
+  background: #0a1224;
+  border: 1px solid #18233b;
+  color: #e8eaf0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.brick-home .terminal-body {
+  padding: 20px;
+}
+
+.brick-home .terminal-body .artifact-kicker {
+  color: #aeb8cb;
+}
+
+.brick-home .terminal-command {
+  font: 16px/1.5 monospace !important;
+  color: #fff !important;
+  margin: 14px 0 20px !important;
+}
+
+.brick-home .terminal-command>span {
+  color: #3f88c5;
+}
+
+.brick-home .terminal-lines {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  font: 12px/1.6 monospace;
+}
+
+.brick-home .terminal-lines li {
+  margin: 12px 0;
+}
+
+.brick-home .terminal-lines span {
+  color: #8d9db7;
+  margin-right: 8px;
+}
+
+.brick-home .artifact-button {
+  min-height: 44px;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  background: transparent;
+  color: inherit;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.4;
+  cursor: pointer;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.brick-home .artifact-button:focus-visible {
+  outline-color: #ffba08;
+}
+
+.brick-home .terminal-caption {
+  border-top: 1px solid #ffffff20;
+  padding: 12px 14px;
+  font-size: 10px;
+  color: #b4bdcb;
+}
+
+.brick-home .terminal-impact {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 18px;
+  margin-top: 22px;
+  border-top: 1px solid #ffffff30;
+  padding-top: 16px;
+}
+
+.brick-home .terminal-impact[hidden] {
+  display: none;
+}
+
+.brick-home .terminal-impact>strong {
+  font-size: 49px;
+  line-height: 1;
+  color: #ffba08;
+  letter-spacing: -2px;
+}
+
+.brick-home .terminal-impact>span {
+  font-size: 11px;
+  align-self: center;
+}
+
+.brick-home .terminal-impact b {
+  font-size: 16px;
+  color: white;
+}
+
+.brick-home .terminal-impact small {
+  grid-column: 1/-1;
+  font-size: 9px;
+  color: #aeb8cb;
+  margin-top: 8px;
+}
+
+.brick-home .comic-artifact {
+  margin: 0;
+  background: white;
+  border: 1px solid #353535;
+  box-shadow: 4px 4px 0 #dedbd4;
+}
+
+.brick-home .comic-header {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-bottom: 1px solid #ddd;
+}
+
+.brick-home .comic-header strong {
+  font: 24px/1.1 Georgia,serif;
+}
+
+.brick-home .comic-artifact>img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.brick-home .comic-artifact figcaption {
+  font-size: 9px;
+  color: #666;
+  padding: 8px 12px;
+  border-top: 1px solid #ddd;
+}
+
+.brick-home .comic-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 12px 10px;
+  font-size: 11px;
+}
+
+.brick-home .comic-controls button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #aaa;
+  background: white;
+}
+
+.brick-home .comic-controls button:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+.brick-home .comic-transcript {
+  margin: 0;
+  border-top: 1px solid #ddd;
+  padding: 0 12px;
+  font-size: 11px;
+}
+
+.brick-home .comic-transcript summary {
+  padding: 10px 0;
+  min-height: 44px;
+}
+
+.brick-home .comic-transcript p {
+  margin: 0 0 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.brick-home .reactor-artifact {
+  background: #0a1224;
+  color: #dce1e8;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.brick-home .mini-reactor {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.brick-home .reactor-row rect {
+  fill: #353535;
+}
+
+.brick-home .reactor-row[data-lit=true] rect {
+  fill: #ffba08;
+}
+
+.brick-home .reactor-artifact-controls {
+  padding: 16px;
+}
+
+.brick-home .reactor-artifact-controls>p {
+  font-size: 12px;
+  margin: 0 0 16px;
+  color: #dce1e8;
+}
+
+.brick-home .reactor-artifact-controls>p>span {
+  display: block;
+  color: #aeb8cb;
+  font: 10px/1.4 monospace;
+  margin-top: 8px;
+}
+
+.brick-home .reactor-artifact-controls .artifact-note {
+  font-size: 10px;
+  color: #aeb8cb;
+  margin: 12px 0 0;
+}
+
+@media (max-width:600px) {
+
+  .brick-home .reveal-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .brick-home .reveal-copy>p {
+    font-size: 14px;
+  }
+
+  .brick-home .dialog-actions {
+    bottom: -22px;
+    margin-top: 16px;
+    gap: 8px;
+  }
+
+  .brick-home .dialog-actions>a,.brick-home .dialog-actions>button {
+    flex: 1;
+    text-align: center;
+    padding: 12px 9px;
+    font-size: 12px;
+  }
+
+  .brick-home .comic-artifact {
+    max-width: 370px;
+    margin-inline: auto;
+  }
+
+  .brick-home .reveal-copy .role {
+    margin: 14px 0;
+  }
+
+  .brick-home .terminal-body {
+    padding: 18px;
+  }
+
+  .brick-home .terminal-command {
+    font-size: 14px !important;
+  }
+}
+
+@media (min-width:601px) {
+
+  .brick-home .comic-artifact {
+    width: 100%;
+    max-width: 310px;
+    margin-inline: auto;
+  }
+
+  .brick-home .comic-header {
+    padding: 8px 12px;
+  }
+
+  .brick-home .comic-artifact figcaption {
+    padding: 5px 10px;
+  }
+
+  .brick-home .comic-controls {
+    padding: 2px 10px 6px;
+  }
+
+  .brick-home .comic-transcript summary {
+    min-height: 32px;
+    padding: 6px 0;
+  }
+}
+
+.brick-home .dialog-actions {
+  bottom: 0;
+}
+
+/* The bonus room is optional and available from the beginning. */
+
+.brick-home .area-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 14px 0 0;
+}
+
+.brick-home .area-nav button {
+  background: transparent;
+  border: 1px solid #bbb;
+  padding: 9px 12px;
+  border-radius: 3px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.brick-home .area-nav button[aria-pressed=true] {
+  background: #353535;
+  color: white;
+  border-color: #353535;
+}
+
+.brick-home .area-nav button>span {
+  font: 10px monospace;
+  opacity: .75;
+}
+
+.brick-home .area-nav>span {
+  margin-left: auto;
+  font-size: 11px;
+  color: #777;
+}
+
+.brick-home .tunnel-portal {
+  position: absolute;
+  transform: translateX(-50%);
+  width: 156px;
+  min-height: 46px;
+  border: 1px solid #ffba08;
+  background: #0a1224;
+  color: #ffdf77;
+  padding: 7px 9px;
+  font: 700 12px/1.3 system-ui,sans-serif;
+  box-shadow: 3px 3px 0 #0003;
+  cursor: pointer;
+}
+
+.brick-home .tunnel-portal small {
+  display: block;
+  font-size: 9px;
+  font-weight: 400;
+  color: #dce1e8;
+  margin-top: 4px;
+}
+
+.brick-home .project-group-heading {
+  grid-column: 1/-1;
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+}
+
+.brick-home .project-group-heading:not(:first-child) {
+  margin-top: 22px;
+}
+
+.brick-home .bonus-artifact {
+  margin: 0;
+  background: #fff;
+  border: 1px solid #c5c5bf;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.brick-home .bonus-artifact-heading {
+  padding: 15px;
+  border-bottom: 1px solid #d7d7d2;
+}
+
+.brick-home .bonus-artifact-heading strong {
+  display: block;
+  font-size: 23px;
+  line-height: 1.2;
+  margin-top: 8px;
+}
+
+.brick-home .bonus-artifact figcaption {
+  font-size: 11px;
+  color: #666;
+  line-height: 1.6;
+  padding: 12px 15px;
+  border-top: 1px solid #d7d7d2;
+}
+
+.brick-home .board-artifact svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.brick-home .image-artifact img {
+  display: block;
+  width: 100%;
+  height: 310px;
+  object-fit: contain;
+  padding: 16px;
+  background: #fff;
+}
+
+.brick-home .film-artifact {
+  background: #0a1224;
+  border-color: #0a1224;
+  color: #f5f3ee;
+  padding: 24px;
+}
+
+.brick-home .film-artifact .artifact-kicker {
+  color: #b7c0d0;
+}
+
+.brick-home .film-artifact>strong {
+  display: block;
+  font-size: 38px;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin: 16px 0;
+}
+
+.brick-home .film-artifact>p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #b7c0d0;
+}
+
+.brick-home .clapper {
+  height: 65px;
+  margin: 24px 0 18px;
+  background: #353535;
+  border: 1px solid #9ca4b2;
+  max-width: 170px;
+}
+
+.brick-home .clapper>div {
+  height: 15px;
+  border-bottom: 1px solid #9ca4b2;
+  background: repeating-linear-gradient(120deg,#eee 0 13px,#353535 13px 26px);
+}
+
+.brick-home .clapper>span {
+  display: block;
+  padding: 8px 12px;
+  font: 12px monospace;
+  letter-spacing: 3px;
+}
+
+@media (max-width:650px) {
+
+  .brick-home .area-nav {
+    gap: 8px;
+  }
+
+  .brick-home .area-nav>span {
+    display: none;
+  }
+
+  .brick-home .area-nav button {
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  .brick-home .image-artifact img {
+    height: 270px;
+  }
+
+  .brick-home .tunnel-portal {
+    width: 136px;
+    font-size: 11px;
+  }
+
+  .brick-home .project-group-heading {
+    padding-top: 12px;
+  }
+
+  .brick-home .film-artifact>strong {
+    font-size: 34px;
+  }
+}
+
+@media (max-width:650px) {
+
+  .brick-home .area-nav button {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+
+  .brick-home .area-nav button>span {
+    font-size: 10px;
+  }
+}
+
+.brick-home .block[data-id=brew],.brick-home .block[data-id=book] {
+  background: #f5f3ee;
+}
+
+.brick-home .block[data-id=emotions] {
+  background: #3f88c5;
+  color: #111;
+}
+
+.brick-home .save-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 11px;
+}
+
+.brick-home .save-tools button {
+  font: inherit;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #aaa;
+  min-height: 44px;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.brick-home .reset-progress-dialog {
+  max-width: 460px;
+}
+
+.brick-home .reset-progress-dialog p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.brick-home .reset-progress-dialog .dialog-actions {
+  position: static;
+  flex-direction: column;
+  gap: 10px;
+  border: 0;
+  padding-top: 8px;
+}
+
+.brick-home .reset-progress-dialog .dialog-actions button {
+  width: 100%;
+  text-align: center;
+}
+
+.brick-home .reset-progress-dialog #confirm-reset {
+  background: #353535;
+  color: white;
+}
+
+@media (max-width:650px) {
+
+  .brick-home .save-tools>span {
+    padding-top: 12px;
+  }
+
+  .brick-home .save-tools button {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width:650px) {
+
+  .brick-home header {
+    flex-wrap: wrap;
+  }
+
+  .brick-home header nav {
+    gap: 8px;
+    padding-top: 0;
+  }
+}
+
+/* Homepage-only composition. Existing case studies keep their own styles. */
+
+body:has(.brick-home) {
+  margin: 0;
+  background: #fff;
+}
+
+.brick-home {
+  background: #fff;
+  min-height: 100vh;
+  color: #353535;
+  font: 15px/1.5 Helvetica,Arial,sans-serif;
+}
+
+.brick-home sup {
+  font-size: 11px;
+  vertical-align: top;
+  position: relative;
+  top: 7px;
+  letter-spacing: 0;
+}
+
+.brick-home main {
+  max-width: 1320px;
+  padding: 24px 40px;
+}
+
+.brick-home header {
+  padding-bottom: 18px;
+  border-color: #dedede;
+}
+
+.brick-home .brand {
+  font-size: 30px;
+}
+
+.brick-home .intro {
+  margin: 24px 0 18px;
+  align-items: end;
+}
+
+.brick-home h1 {
+  font-size: clamp(32px,3.2vw,44px);
+  font-weight: 650;
+  letter-spacing: -1.7px;
+  line-height: 1.08;
+  margin: 0;
+}
+
+.brick-home h1>span {
+  color: #797979;
+}
+
+.brick-home .home-byline {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 12px 0 0;
+  max-width: 570px;
+}
+
+.brick-home .progress {
+  min-width: 210px;
+  font-size: 12px;
+}
+
+.brick-home .progress .meter {
+  height: 4px;
+  margin-bottom: 3px;
+  background: #ececec;
+}
+
+.brick-home .progress .meter i {
+  background: #353535;
+}
+
+.brick-home .play-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.brick-home .mode-tabs {
+  display: flex;
+  gap: 6px;
+}
+
+.brick-home .mode-tabs button {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #fff;
+  padding: 10px 17px;
+  min-height: 44px;
+  font-size: 13px;
+}
+
+.brick-home .mode-tabs button[aria-pressed=true] {
+  background: #353535;
+  color: #fff;
+  border-color: #353535;
+}
+
+.brick-home .browse-link {
+  font-size: 12px;
+  color: #626262;
+}
+
+.brick-home .instructions {
+  margin: 10px 0 12px;
+  line-height: 1.5;
+  font-size: 12px;
+  color: #626262;
+}
+
+.brick-home .scene {
+  height: clamp(300px,41vh,390px);
+  border-radius: 3px;
+}
+
+.brick-home canvas {
+  touch-action: pan-y;
+}
+
+.brick-home[data-mode=runner] canvas {
+  touch-action: pan-y;
+}
+
+.brick-home .scene-loading {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 8px;
+  background: #0a1224;
+  color: #e6e8ed;
+  font-size: 13px;
+  padding: 12px;
+}
+
+.brick-home .under {
+  margin-top: 12px;
+}
+
+.brick-home .area-nav {
+  margin-top: 10px;
+  gap: 8px;
+}
+
+.brick-home .area-nav button {
+  min-height: 40px;
+  font-size: 12px;
+}
+
+.brick-home .game-message {
+  font-size: 12px;
+  color: #626262;
+  min-height: 18px;
+  margin: 10px 0 0;
+}
+
+.brick-home .save-tools {
+  margin: 10px 0 24px;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 12px;
+  color: #626262;
+}
+
+.brick-home .save-tools button {
+  color: #626262;
+}
+
+.brick-home .block[data-id=adventure] {
+  color: #111;
+}
+
+.brick-home .block .tag {
+  font-size: 9px;
+}
+
+.brick-home .runner-hud {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  color: #b8c5d8;
+  font: 11px/1.4 monospace;
+}
+
+.brick-home .runner-hud strong {
+  display: block;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.brick-home .runner-hud>span:last-child {
+  text-align: right;
+}
+
+.brick-home .runner-overlay {
+  position: absolute;
+  inset: 70px 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.brick-home .runner-panel {
+  pointer-events: auto;
+  background: #0a1224f5;
+  color: #f5f3ee;
+  border: 1px solid #718099;
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  width: min(100%,380px);
+  max-height: 100%;
+  overflow: auto;
+}
+
+.brick-home .runner-panel h2 {
+  font-size: 24px;
+  margin: 0 0 10px;
+  letter-spacing: -.5px;
+}
+
+.brick-home .runner-panel p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #c6d0df;
+  margin: 0 0 14px;
+}
+
+.brick-home .runner-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.brick-home .runner-actions button {
+  min-height: 44px;
+  padding: 10px 15px;
+  background: transparent;
+  color: #f5f3ee;
+  border: 1px solid #718099;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.brick-home .runner-actions .primary {
+  background: #ffba08;
+  border-color: #ffba08;
+  color: #171717;
+  font-weight: 700;
+}
+
+.brick-home .runner-panel .final-score strong {
+  font-size: 32px;
+  display: block;
+  color: #ffdf77;
+  line-height: 1.1;
+  margin-bottom: 3px;
+}
+
+.brick-home .runner-panel .final-score span {
+  font-size: 11px;
+}
+
+.brick-home button:disabled {
+  opacity: .5;
+  cursor: default;
+}
+
+.brick-home .run-history {
+  margin: 18px 0 28px;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 14px;
+  font-size: 12px;
+}
+
+.brick-home .run-history summary {
+  min-height: 44px;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.brick-home .table-scroll {
+  overflow: auto;
+}
+
+.brick-home table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.brick-home td,.brick-home th {
+  padding: 10px 8px;
+  border-bottom: 1px solid #dedede;
+  white-space: nowrap;
+}
+
+.brick-home .work-section {
+  position: relative;
+  scroll-margin-top: 20px;
+  padding-top: 20px;
+}
+
+.brick-home .anchor-alias {
+  position: absolute;
+  top: 0;
+  scroll-margin-top: 20px;
+}
+
+.brick-home .section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.brick-home .section-heading h2 {
+  font-size: 25px;
+  letter-spacing: -.7px;
+  margin: 0;
+}
+
+.brick-home .section-heading>span {
+  font-size: 11px;
+  color: #666;
+}
+
+.brick-home .project-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 0 36px;
+}
+
+.brick-home .project-card {
+  padding: 24px 0;
+  border-top: 1px solid #dedede;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.brick-home .project-index {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11px;
+  color: #666;
+}
+
+.brick-home .project-card h3 {
+  font-size: 25px;
+  letter-spacing: -.7px;
+  line-height: 1.2;
+  margin: 14px 0 12px;
+  font-weight: 600;
+}
+
+.brick-home .project-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0 0 16px;
+}
+
+.brick-home .project-card .project-role {
+  font-size: 12px;
+  color: #626262;
+}
+
+.brick-home .project-role>span {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  color: #353535;
+  margin-bottom: 3px;
+}
+
+.brick-home .completion {
+  padding: 28px;
+  background: #f6f6f4;
+  border-left: 3px solid #3f88c5;
+  margin: 24px 0;
+}
+
+.brick-home .completion h2 {
+  font-size: 25px;
+}
+
+.brick-home .completion p {
+  max-width: 680px;
+}
+
+.brick-home .about-section {
+  border-top: 1px solid #353535;
+  margin-top: 50px;
+  padding: 36px 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  scroll-margin-top: 24px;
+}
+
+.brick-home .about-section h2 {
+  font-size: 34px;
+  margin: 0 0 20px;
+}
+
+.brick-home .about-section p {
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 650px;
+}
+
+.brick-home .about-section a {
+  display: inline-block;
+  font-size: 13px;
+  min-height: 44px;
+  padding: 10px 0;
+}
+
+.brick-home .contact-section {
+  border-top: 1px solid #dedede;
+  padding-top: 36px;
+  margin-top: 18px;
+  scroll-margin-top: 24px;
+}
+
+.brick-home .contact-section h2 {
+  font-size: clamp(28px,3.3vw,42px);
+  font-weight: 600;
+  letter-spacing: -1.4px;
+  max-width: 720px;
+  margin: 16px 0 24px;
+}
+
+.brick-home .contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 30px;
+  font-size: 14px;
+}
+
+.brick-home .contact-links a {
+  min-height: 44px;
+  padding: 10px 0;
+}
+
+.brick-home .skip-link {
+  position: absolute;
+  left: 16px;
+  top: -80px;
+  z-index: 100;
+  background: white;
+  padding: 12px;
+}
+
+.brick-home .skip-link:focus {
+  top: 12px;
+}
+
+.brick-home .small {
+  font-size: 11px;
+}
+
+.brick-home .dialog-actions {
+  position: static;
+}
+
+.brick-home dialog {
+  background: #fff;
+}
+
+.brick-home .scene button:focus-visible,.brick-home .scene canvas:focus-visible {
+  outline-color: #ffba08;
+}
+
+.brick-home .runner-panel button:focus-visible {
+  outline-color: #fff;
+}
+
+.brick-home .scene-label {
+  color: #c4cfde;
+}
+
+@media (max-width:650px) {
+
+  .brick-home main {
+    padding: 18px;
+  }
+
+  .brick-home header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .brick-home header nav {
+    width: 100%;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+
+  .brick-home header nav a {
+    min-height: 44px;
+    padding: 10px 0;
+  }
+
+  .brick-home h1 {
+    font-size: 32px;
+    letter-spacing: -1.2px;
+  }
+
+  .brick-home .home-byline {
+    font-size: 13px;
+    max-width: 360px;
+  }
+
+  .brick-home .progress {
+    margin: 16px 0 0;
+    max-width: none;
+    font-size: 11px;
+  }
+
+  .brick-home .play-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .brick-home .mode-tabs button {
+    flex: 1;
+    padding: 10px 9px;
+    font-size: 12px;
+  }
+
+  .brick-home .browse-link {
+    align-self: end;
+    min-height: 36px;
+    padding: 9px 0;
+    font-size: 11px;
+  }
+
+  .brick-home .instructions {
+    margin-top: 4px;
+  }
+
+  .brick-home .scene-label {
+    font-size: 8px;
+  }
+
+  .brick-home .quiet {
+    font-size: 11px;
+    min-height: 44px;
+  }
+
+  .brick-home .area-nav button {
+    min-height: 44px;
+  }
+
+  .brick-home .runner-panel {
+    padding: 14px;
+  }
+
+  .brick-home .runner-panel h2 {
+    font-size: 21px;
+  }
+
+  .brick-home .runner-panel p {
+    font-size: 12px;
+  }
+
+  .brick-home .runner-overlay {
+    inset: 64px 10px 12px;
+  }
+
+  .brick-home .section-heading {
+    display: block;
+  }
+
+  .brick-home .section-heading h2 {
+    font-size: 23px;
+    margin-bottom: 10px;
+  }
+
+  .brick-home .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brick-home .project-index {
+    flex-wrap: wrap;
+  }
+
+  .brick-home .project-card h3 {
+    font-size: 25px;
+  }
+
+  .brick-home .project-card {
+    padding: 22px 0;
+  }
+
+  .brick-home .project-card p {
+    font-size: 14px;
+  }
+
+  .brick-home .about-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 28px;
+    padding: 28px 0;
+  }
+
+  .brick-home .about-section h2 {
+    font-size: 30px;
+  }
+
+  .brick-home .about-section p {
+    font-size: 15px;
+  }
+
+  .brick-home .contact-links {
+    gap: 4px 22px;
+  }
+
+  .brick-home .contact-links a {
+    font-size: 13px;
+  }
+
+  .brick-home .save-tools {
+    align-items: center;
+    gap: 12px;
+  }
+
+  .brick-home .save-tools>span {
+    padding: 0;
+    font-size: 10px;
+    max-width: 160px;
+  }
+
+  .brick-home .save-tools button {
+    font-size: 10px;
+    white-space: normal;
+    max-width: 100px;
+  }
+
+  .brick-home footer {
+    flex-wrap: wrap;
+    font-size: 11px;
+  }
+}
+
+@media (max-height:800px) and (min-width:651px) {
+
+  .brick-home main {
+    padding-top: 18px;
+  }
+
+  .brick-home .intro {
+    margin-top: 18px;
+  }
+
+  .brick-home h1 {
+    font-size: 38px;
+  }
+
+  .brick-home .scene {
+    height: 300px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+  .brick-home * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.brick-home .quiet,.brick-home .area-nav button {
+  min-height: 44px;
+}
+
+.brick-home footer {
+  color: #707070;
+}
+
+.brick-home .skill-brick {
+  position: absolute;
+  transform: translateX(-50%);
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffba08;
+  color: #242424;
+  border: 2px solid #353535;
+  border-radius: 2px;
+  box-shadow: 4px 4px 0 #030817,inset 0 4px 0 #fff5,inset 0 -4px 0 #0002;
+  padding: 0;
+  line-height: 1;
+}
+
+.brick-home .skill-brick>span {
+  font: 700 28px/1 monospace;
+}
+
+.brick-home .skill-brick>small {
+  font: 8px/1.2 monospace;
+  letter-spacing: .5px;
+  margin-top: 2px;
+}
+
+.brick-home .runner-hud>span:nth-child(2) {
+  text-align: center;
+}
+
+.brick-home [hidden] {
+  display: none !important;
+}
+
+.brick-home .block.visited {
+  background: #0a1224 !important;
+  color: #fff !important;
+  border: 1px dashed #c5d6ec;
+  box-shadow: none;
+  text-shadow: 0 1px 3px #000;
+}
+
+.brick-home .block.visited .tag {
+  color: #d9e7f8;
+}
+
+.brick-home #duck {
+  padding: 0 18px;
+  touch-action: none;
+}
+
+.brick-home #duck[aria-pressed=true] {
+  background: #353535;
+  color: white;
+}
+
+.brick-home .runner-hud small {
+  display: block;
+  color: #ffdf77;
+  font: 10px/1.4 monospace;
+  margin-top: 4px;
+}
+
+.brick-home[data-mode=runner] .touch {
+  flex-wrap: wrap;
+}
+
+@media (max-width:650px) {
+
+  .brick-home #duck {
+    padding: 0 14px;
+  }
+
+  .brick-home .block.visited {
+    background: #0a1224 !important;
+  }
+}
+
+/* Brand first, then one useful row of navigation and sound. */
+
+@media (max-width:650px) {
+
+  .brick-home header.home-header {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) auto;
+    align-items: center;
+  }
+
+  .brick-home header.home-header>a {
+    grid-column: 1/-1;
+    justify-self: start;
+  }
+
+  .brick-home header.home-header nav {
+    grid-column: 1;
+    display: flex;
+    justify-content: flex-start;
+    gap: 14px;
+    font-size: 13px;
+    width: auto;
+    margin: 0;
+  }
+
+  .brick-home header.home-header .portfolio-sound {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .brick-home header.home-header nav a {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+
+  .brick-home .intro {
+    margin-top: 18px;
+  }
+
+  .brick-home .mode-tabs button {
+    min-height: 44px;
+  }
+
+  .brick-home .under {
+    position: relative;
+    padding-block: 8px;
+  }
+}
+
+@media (max-width:350px) {
+
+  .brick-home header.home-header nav {
+    gap: 9px;
+  }
+
+  .brick-home header.home-header nav a {
+    font-size: 12px;
+  }
+}
+
+/* The game and its controller form one mobile play surface. */
+
+.brick-home .direction-pad {
+  display: flex;
+  gap: 8px;
+}
+
+@media (max-width:650px) {
+
+  .brick-home header.home-header {
+    gap: 2px 12px;
+    padding-bottom: 8px;
+  }
+
+  .brick-home .intro {
+    margin: 14px 0 12px;
+  }
+
+  .brick-home .intro h1 {
+    font-size: clamp(26px,7vw,28px);
+    line-height: 1.1;
+  }
+
+  .brick-home .home-byline {
+    margin-top: 8px;
+    line-height: 1.45;
+  }
+
+  .brick-home .progress {
+    margin-top: 10px;
+  }
+
+  .brick-home .progress .meter {
+    margin: 5px 0 0;
+  }
+
+  .brick-home .play-toolbar {
+    gap: 0;
+  }
+
+  .brick-home .browse-link {
+    display: none;
+  }
+
+  .brick-home .instructions {
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 8px 0;
+  }
+
+  .brick-home .scene {
+    height: 270px;
+  }
+
+  .brick-home .game-region {
+    scroll-margin-block: 12px;
+  }
+
+  .brick-home .under {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 0;
+    padding: 8px 0 0;
+    background: #fff;
+  }
+
+  .brick-home .touch {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .brick-home .touch button {
+    min-width: 56px;
+    min-height: 52px;
+    font-size: 16px;
+    border-color: #777;
+  }
+
+  .brick-home .touch #jump {
+    margin-left: auto;
+    min-width: 100px;
+    background: #353535;
+    color: #fff;
+    font-weight: 600;
+    touch-action: none;
+  }
+
+  .brick-home .touch #jump:active {
+    background: #111;
+  }
+
+  .brick-home .touch #duck {
+    min-width: 100px;
+  }
+
+  .brick-home .utilities {
+    width: 100%;
+    justify-content: flex-end;
+    margin: 0;
+    gap: 20px;
+  }
+
+  .brick-home .area-nav {
+    margin-top: 4px;
+  }
+
+  .brick-home #preview .dialog-inner {
+    display: grid;
+    grid-template-rows: auto auto minmax(0,1fr) auto auto;
+    max-height: calc(100dvh - 32px);
+    overflow: hidden;
+  }
+
+  .brick-home #preview h2 {
+    margin: 10px 0 16px;
+    font-size: 26px;
+  }
+
+  .brick-home #preview .reveal-layout {
+    overflow: auto;
+    min-height: 0;
+    overscroll-behavior: contain;
+    gap: 16px;
+  }
+
+  .brick-home #preview .bonus-artifact-heading {
+    display: none;
+  }
+
+  .brick-home #preview .image-artifact img {
+    height: 210px;
+    padding: 10px;
+  }
+
+  .brick-home #preview .dialog-actions {
+    position: static;
+    margin-top: 12px;
+    padding-top: 12px;
+    padding-bottom: 0;
+  }
+
+  .brick-home #preview .small {
+    margin: 8px 0 0;
+  }
+}
+
+@media (max-width:350px) {
+
+  .brick-home .scene {
+    height: 250px;
+  }
+
+  .brick-home .touch button {
+    min-width: 52px;
+  }
+}

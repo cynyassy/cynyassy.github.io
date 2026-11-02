@@ -1,3 +1,5 @@
+import { SoundToggle } from '../../audio/SoundToggle';
+import { useReactorAudio } from '../../audio/useReactorAudio';
 import { useEffect, useReducer, useRef, useState } from 'react';
 import type { RefObject } from 'react';
 import { ReactorScene } from '../ReactorScene';
@@ -53,7 +55,7 @@ export default function Experiments(){
  }
  return <div className="ix-space">
   <a className="ix-skip" href="#prototype">Skip to prototype</a>
-  <header className="ix-header"><a className="ix-brand" href="../index.html">cynyassy<sup>®</sup></a><span>Interface experiments</span><a className="ix-reference" href="design-adventure.html">Full adventure ↗</a></header>
+  <header className="ix-header"><a className="ix-brand" href="../index.html">cynyassy<sup>®</sup></a><span>Interface experiments</span><a className="ix-reference" href="design-adventure.html">Full adventure ↗</a><SoundToggle /></header>
   <nav className="ix-versions" aria-label="Experiment version">{versions.map(v=><button key={v.id} aria-current={version===v.id?'page':undefined} onClick={()=>choose(v.id)}><span>{v.id.toUpperCase()}</span>{v.name}</button>)}</nav>
   {notice&&<p className="ix-notice" role="status">{notice}</p>}
   <main id="prototype" tabIndex={-1}><Prototype key={version} version={version} titleRef={title}/></main>
@@ -68,6 +70,7 @@ export default function Experiments(){
 function Prototype({version,titleRef}:{version:Version;titleRef:RefObject<HTMLHeadingElement>}){
  const [state,dispatch]=useReducer(prototypeReducer,null,()=>initialSandbox(
   initialStage(version),performance.now()));
+ useReactorAudio(state);
  const [equal,setEqual]=useState(true);
  const [panel,setPanel]=useState<'style'|'learning'|null>(null);
  const [error,setError]=useState(false);
@@ -151,7 +154,7 @@ function Prototype({version,titleRef}:{version:Version;titleRef:RefObject<HTMLHe
   routing?(puzzleSolved(state.puzzles,2)?'Route connected. Open the cooling loop.':'Rotate the outlined junction to connect the route.'):
   pump?(state.puzzles.code.length===3?'Ready to authorise.':'Read the instruments. Enter three digits.'):
   version==='b'&&!prefix?'Route off track. Reset the switches.':route.length?`Route: ${route.map(n=>names[n]).join(' → ')}`:'Switches off.';
- return <section className={'ix-prototype ix-version-'+version+(pump?' ix-pump':routing?' ix-routing':signal?' ix-signal':ignition?' ix-ignition':pressure?' ix-pressure':'')} aria-label={lesson.name}>
+ return <section data-sound-scope="game" className={'ix-prototype ix-version-'+version+(pump?' ix-pump':routing?' ix-routing':signal?' ix-signal':ignition?' ix-ignition':pressure?' ix-pressure':'')} aria-label={lesson.name}>
   <div className="ix-style"><h1 ref={titleRef} tabIndex={-1}>Swiss Design<span> / {version.toUpperCase()}</span></h1><button className="ix-text" onClick={()=>open('style')}>About the style</button></div>
   <div className="ix-scene" ref={scene}><ReactorScene state={state} compactInstruments={pump}/><span className="ix-scene-state" aria-hidden="true">{pressure?(done?'ALL SIX SYSTEMS ONLINE':'CORE ONLINE / STABILISER READY'):ignition?(done?'CORE ONLINE':'CONTAINMENT ONLINE / IGNITION READY'):signal?(done?'CONTAINMENT ONLINE':'COOLING ONLINE / SIGNAL READY'):routing?(done?'COOLING LOOP ONLINE':'PUMP ONLINE / ROUTING READY'):pump?(done?'COOLANT ONLINE':'POWER ONLINE / PUMP READY'):done?'POWER ONLINE':'MARS / ARRAY 07'}</span></div>
   <section className="ix-console" aria-label={pressure?'Pressure stabilisation':ignition?'Core ignition':signal?'Containment signal':routing?'Coolant routing':pump?'Pump authorisation':'Power switchboard'}>

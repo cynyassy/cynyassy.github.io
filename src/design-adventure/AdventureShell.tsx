@@ -1,3 +1,4 @@
+import { SoundToggle } from '../audio/SoundToggle';
 import { useEffect, useId, useRef } from 'react';
 import type { ReactNode } from 'react';
 import type { Mode, StoryId, ThemeId } from './types';
@@ -13,7 +14,7 @@ export function AdventureShell({story,theme,onThemeChange,onStoryChange,onLearn,
  const storyMenu=useId();
  return <>
  <a href={`#experiment-${story}`} className="da-skip">Skip to experiment</a>
- <header className="shell-header"><a href="../index.html#other-projects" className="da-brand" aria-label="Cynyassy — back to portfolio">cynyassy<span>®</span></a><span className="shell-wordmark">DESIGN LABORATORY</span><div className="shell-story"><span>Experiment</span><ChoiceMenu id={storyMenu} label="Adventure story" value={story} onChange={value=>onStoryChange(value as StoryId)} options={[{value:'reactor',label:'Mars Reactor'},{value:'workshop',label:'Portfolio Workshop'}]}/></div><a href="../index.html#other-projects" className="shell-portfolio">← Portfolio</a></header>
+ <header className="shell-header"><a href="/#projects" className="da-brand" aria-label="Cynyassy — back to portfolio">cynyassy<span>®</span></a><span className="shell-wordmark">DESIGN LABORATORY</span><div className="shell-story"><span>Experiment</span><ChoiceMenu id={storyMenu} label="Adventure story" value={story} onChange={value=>onStoryChange(value as StoryId)} options={[{value:'reactor',label:'Mars Reactor'},{value:'workshop',label:'Portfolio Workshop'}]}/></div><a href="/#projects" className="shell-portfolio">← Portfolio</a><SoundToggle /></header>
  <main id={`experiment-${story}`} className="shell-main" data-focused={true} tabIndex={-1}>
  
  <StyleShowcase value={theme} onChange={onThemeChange} compact/>

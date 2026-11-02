@@ -1,3 +1,4 @@
+import { playSound } from '../audio/sound';
 import { AdventureShell } from './AdventureShell';
 import type { SharedStoryPresentation } from './AdventureShell';
 import { useEffect, useReducer, useRef, useState } from 'react';
@@ -11,6 +12,19 @@ import type { Layout } from './types';
 
 export default function AdventurePage({ active = true, onStoryChange, search,theme:sharedTheme,onThemeChange }: { active?: boolean; search?: string } & SharedStoryPresentation) {
   const [state, dispatch] = useReducer(reducer, undefined, () => sharedInitialState(search ?? window.location.search));
+  const audioPrevious = useRef(state);
+  useEffect(() => {
+    const old = audioPrevious.current;
+    audioPrevious.current = state;
+    if (!active) return;
+    if (state.completed.length > old.completed.length) playSound(state.completed.length === 3 ? 'complete' : 'progress');
+    else if (state.build.phase !== old.build.phase) {
+      if (state.build.phase === 'interrupted') playSound('fault');
+      else if (state.build.phase === 'preparing') playSound('working');
+      else if (isBuilding(state.build.phase)) playSound('adjust');
+    } else if (state.layout !== old.layout && state.lesson === old.lesson) playSound(state.notice.startsWith('Restored') ? 'recover' : 'adjust');
+    else if (state.opened && !old.opened) playSound('progress');
+  }, [state, active]);
   const [drawer,setDrawer]=useState<'learn'|'share'|null>(null);
   const dialog=useRef<HTMLDialogElement>(null);
   useEffect(()=>{if(drawer&&!dialog.current?.open)dialog.current?.showModal();if(!drawer&&dialog.current?.open)dialog.current.close();},[drawer]);
@@ -82,7 +96,7 @@ export default function AdventurePage({ active = true, onStoryChange, search,the
         {state.notice && <p className="da-notice" role="status">{state.notice}</p>}
 
         <div className="shell-workspace" data-mode="try">
-          <section className="da-stage shell-artifact" aria-labelledby="stage-heading">
+          <section data-sound-scope="game" className="da-stage shell-artifact" aria-labelledby="stage-heading">
             <div className="da-stage-heading"><div><p className="da-eyebrow">LESSON {lesson.number} / INTERACTION</p><h2 id="stage-heading">Your exhibit.</h2></div><span className="da-live-label"><span className="da-dot" /> {done ? 'TRIED' : 'IN PROGRESS'}</span></div>
             <p className="da-task">{lesson.task}</p>
             <Exhibit story={story} layout={state.layout} active={state.opened || state.build.phase === 'done'} />

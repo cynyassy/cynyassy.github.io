@@ -28,6 +28,7 @@ export default defineConfig({
         coffeeTools: path.resolve(__dirname, 'projects/coffee-tools.html'),
         algotest: path.resolve(__dirname, 'projects/algotest.html'),
         cynyassy: path.resolve(__dirname, 'projects/cynyassy.html'),
+        bookStory: path.resolve(__dirname, 'projects/not-everything-is-urgent.html'),
         otherProjects: path.resolve(__dirname, 'projects/other-projects.html'),
         workWithMe: path.resolve(__dirname, 'projects/work-with-me.html'),
       },

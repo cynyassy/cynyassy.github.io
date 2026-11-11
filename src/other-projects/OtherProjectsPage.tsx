@@ -107,8 +107,8 @@ const projects: OtherProject[] = [
     ],
     links: [
       {
-        label: 'Visit the book website',
-        href: 'https://www.poundproject.co.uk/not-everything-is-urgent',
+        label: 'Read the book case study',
+        href: '/projects/not-everything-is-urgent.html',
         icon: <ExternalLink size={16} />,
       },
     ],

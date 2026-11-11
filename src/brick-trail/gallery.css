@@ -1291,3 +1291,7 @@
   box-shadow: none;
   transform: none;
 }
+
+.brick-home .section-heading>p:has(.more-projects-link){display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.brick-home .more-projects-link{display:inline-flex;align-items:center;min-height:44px;font-size:14px;color:#353535;text-underline-offset:4px}
+.brick-home .more-projects-link:focus-visible{outline:2px solid #3f88c5;outline-offset:4px}

@@ -60,11 +60,10 @@ function BookStory() {
               <p>I’m on the sofa with my girlfriend. I’m already thinking about what I need to do next. The evening I’ve been looking forward to is happening, and I’m somewhere else in my head.</p>
               <blockquote>“the problem is there’s always another ‘part.’”</blockquote>
               <p className="book-byline">From my story in <cite>Then This</cite></p>
-              <details className="book-reveal">
-                <summary><span className="book-reveal-closed">Turn the page <span aria-hidden="true">↘</span></span><span className="book-reveal-open">Close the page <span aria-hidden="true">↖</span></span></summary>
-                <figure><img src={waiting} alt="A drawing of Shashank next to the words ‘waiting to live my life’" width="662" height="364" loading="lazy" /></figure>
-              </details>
             </div>
+            <figure className="book-story-image">
+              <img src={waiting} alt="A drawing of Shashank next to the words ‘waiting to live my life’" width="662" height="364" loading="lazy" />
+            </figure>
           </div>
         </section>
 

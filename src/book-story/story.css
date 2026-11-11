@@ -49,18 +49,12 @@ body { margin: 0; }
 .book-bubble { position: absolute; right: 6%; bottom: 4%; margin: 0; padding: .65rem 1.1rem; background: var(--paper); font-style: italic; font-size: clamp(.92rem, 1.4vw, 1.15rem); text-align: center; border-radius: 52% 47% 48% 43%; transform: rotate(5deg); }
 .book-reading { background: var(--burgundy); color: #fff8f5; padding-block: clamp(48px, 7vw, 100px); }
 .book-reading .book-kicker { color: #ffdbe9; }
-.book-reading-grid > div { max-width: 720px; }
+.book-reading-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: clamp(24px, 5vw, 72px); }
 .book-reading-grid p:not(.book-kicker), .book-extras p:not(.book-kicker) { max-width: 48ch; }
 .book-reading blockquote { margin: 1.5rem 0 .25rem; font-size: clamp(1.45rem, 2.8vw, 2.4rem); font-style: italic; line-height: 1.14; }
 .book-byline { font-size: .87rem; }
-.book-reveal { margin-top: .9rem; }
-.book-reveal summary { display: inline-flex; align-items: center; min-height: 44px; cursor: pointer; text-decoration: underline; text-underline-offset: .25em; font-weight: 680; }
-.book-reveal summary::-webkit-details-marker { display: none; }
-.book-reveal summary span span { margin-left: .45rem; }
-.book-reveal-open, .book-reveal[open] .book-reveal-closed { display: none; }
-.book-reveal[open] .book-reveal-open { display: inline; }
-.book-reveal figure { margin: .8rem 0 0; padding: clamp(16px, 4vw, 32px); background: var(--paper); }
-.book-reveal img { width: 100%; mix-blend-mode: multiply; }
+.book-story-image { margin: 0; padding: clamp(16px, 3vw, 32px); background: var(--paper); }
+.book-story-image img { width: 100%; }
 .book-chapter { padding-block: clamp(48px, 7vw, 94px); }
 .book-voices, .book-process, .book-extras { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(16px, 3vw, 34px); align-items: start; }
 .book-voices, .book-process { margin-top: 1.6rem; }
@@ -85,7 +79,7 @@ body { margin: 0; }
 .book-footer p { margin: 0 0 .8rem; }
 @media (max-width: 780px) {
   .book-width { width: calc(100% - 36px); }
-  .book-hero, .book-voices, .book-extras-art { grid-template-columns: minmax(0,1fr); }
+  .book-hero, .book-reading-grid, .book-voices, .book-extras-art { grid-template-columns: minmax(0,1fr); }
   .book-stage { min-height: 310px; padding: 38px 17% 70px; }
   .book-top { min-height: 56px; }
 }

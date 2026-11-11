@@ -19,7 +19,7 @@ export const presentation:Record<string,ProjectPresentation>={
  brew:{category:'Publication & connected product',summary:'Stories, channels, discovery tools and a brewing app. Built together.',role:'Communication · Writing · Design · Development',proof:'From idea to working product',action:'View case study'},
  emotions:{category:'Guided reflection tool',summary:'Find the words for what you’re feeling.',role:'Concept · Interaction design · Development',proof:'Interactive tool',action:'Try the tool'},
  book:{category:'Published illustrated book',summary:'An illustrated book about attention, pressure and slowing down.',role:'Writing · Illustration · Design',proof:'Published book',action:'See the book'},
- film:{category:'Filmmaking & creative practice',summary:'Weekly film prompts that turn watching into making.',role:'Creative practice · Bot development',proof:'Film & code',action:'Watch on YouTube'},
+ film:{category:'Filmmaking & creative practice',summary:'Weekly film prompts that turn watching into making.',role:'Creative practice · Bot development',proof:'Film & code',action:'Explore the project'},
 };
 const imgProps={loading:'lazy' as const,decoding:'async' as const};
 export function ProjectCover({id}:{id:string}){

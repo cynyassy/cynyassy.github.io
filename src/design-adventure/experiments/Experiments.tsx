@@ -1,4 +1,5 @@
-import { SoundToggle } from '../../audio/SoundToggle';
+import { PortfolioFooter } from '../../shared/PortfolioFooter';
+import { PortfolioHeader } from '../../shared/PortfolioHeader';
 import { useReactorAudio } from '../../audio/useReactorAudio';
 import { useEffect, useReducer, useRef, useState } from 'react';
 import type { RefObject } from 'react';
@@ -55,7 +56,7 @@ export default function Experiments(){
  }
  return <div className="ix-space">
   <a className="ix-skip" href="#prototype">Skip to prototype</a>
-  <header className="ix-header"><a className="ix-brand" href="../index.html">cynyassy<sup>®</sup></a><span>Interface experiments</span><a className="ix-reference" href="design-adventure.html">Full adventure ↗</a><SoundToggle /></header>
+  <PortfolioHeader /><nav className="portfolio-section-nav" aria-label="Experiment navigation"><span>Interface experiments</span><a href="design-adventure.html">Design Adventure ↗</a></nav>
   <nav className="ix-versions" aria-label="Experiment version">{versions.map(v=><button key={v.id} aria-current={version===v.id?'page':undefined} onClick={()=>choose(v.id)}><span>{v.id.toUpperCase()}</span>{v.name}</button>)}</nav>
   {notice&&<p className="ix-notice" role="status">{notice}</p>}
   <main id="prototype" tabIndex={-1}><Prototype key={version} version={version} titleRef={title}/></main>
@@ -64,6 +65,7 @@ export default function Experiments(){
    <p>A shows the whole switchboard task. B guides all six reactor systems, from connecting power to stabilising pressure. C lets you compare button emphasis.</p>
    <p>These are untimed prototypes, not the complete adventure. They do not score or measure learning.</p>
   </details>{versions.map(v=><a key={v.id} href={'?version='+v.id} onClick={e=>{e.preventDefault();choose(v.id);}}>{v.id.toUpperCase()}</a>)}</footer>
+ <PortfolioFooter project="Design Adventure" href="design-adventure.html" connection="Explore the interface lessons in the full reactor mission." />
  </div>;
 }
 

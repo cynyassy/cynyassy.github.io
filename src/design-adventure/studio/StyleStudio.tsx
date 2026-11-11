@@ -1,4 +1,5 @@
-import { SoundToggle } from '../../audio/SoundToggle';
+import { PortfolioFooter } from '../../shared/PortfolioFooter';
+import { PortfolioHeader } from '../../shared/PortfolioHeader';
 import { useEffect, useId, useState } from 'react';
 import type { CSSProperties } from 'react';
 import { themes } from '../content';
@@ -47,7 +48,7 @@ export default function StyleStudio() {
  } as CSSProperties;
  return <div className="style-studio">
  <a className="studio-skip" href="#studio-main">Skip to studio</a>
- <header className="studio-header"><a className="studio-brand" href="../index.html">cynyassy<sup>®</sup></a><nav aria-label="Studio navigation"><a href="design-adventure.html">← Back to the adventure</a><a href="#shortlist">Your shortlist ({config.picks.length}/3)</a></nav><SoundToggle /></header>
+ <PortfolioHeader /><nav className="portfolio-section-nav" aria-label="Studio navigation"><a href="design-adventure.html">Back to Design Adventure</a><a href="#shortlist">Your shortlist ({config.picks.length}/3)</a></nav>
  <main id="studio-main">
   <div className="studio-intro"><p className="studio-eyebrow">STYLE STUDIO</p><h1>Find a look that feels right.</h1><p>Try a style. Change a detail. Pick three favourites to start a conversation about your next website.</p></div>
   {initial.notice&&<p className="studio-notice" role="status">{initial.notice}</p>}
@@ -87,6 +88,6 @@ export default function StyleStudio() {
    {shareLink&&<label className="studio-shared-link">Your shortlist link<input readOnly value={shareLink} onFocus={e=>e.target.select()}/></label>}
   </section>
  </main>
- <footer className="studio-footer"><span>Cynyassy / Play. Notice. Understand.</span><a href="../projects/work-with-me.html">Talk about a project →</a></footer>
+ <PortfolioFooter project="Design Adventure" href="design-adventure.html" connection="Try your chosen style in a playable interface and notice what changes." />
  </div>;
 }

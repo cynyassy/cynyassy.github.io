@@ -34,3 +34,17 @@
 .coffee-channels dd{font-size:15px;color:var(--coffee-muted);max-width:60ch}
 .coffee-channels dd a{display:flex;align-items:center;min-height:44px;margin-top:8px;font-size:14px;color:var(--coffee-ink)}
 @media(max-width:760px){.coffee-channels{grid-template-columns:1fr;gap:22px}}
+.coffee-connected-hero{align-items:start}
+.coffee-connected-art{margin-top:8px}
+@media(max-width:760px){
+ .coffee-connected-hero{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+ .coffee-connected-hero .coffee-hero-copy{display:contents}
+ .coffee-connected-hero .coffee-connected-art{order:1;margin-top:4px}
+ .coffee-connected-hero .coffee-role{order:2}
+ .coffee-connected-hero .coffee-actions{order:3}
+}
+
+.coffee-connected-art{position:relative;padding-right:18%}
+.coffee-connected-art .coffee-hero-tracker{position:absolute;right:12px;bottom:56px;width:29%;max-height:56%;overflow:hidden;border:1px solid var(--coffee-rule);background:white;box-shadow:0 4px 12px #00000014}
+.coffee-hero-tracker img{width:100%;height:auto}
+.coffee-connected-art figcaption{margin-right:-15%}

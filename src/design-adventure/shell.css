@@ -164,3 +164,5 @@
 .adventure-shell .style-title h1:has(select:disabled){cursor:default}.adventure-shell .style-title h1:has(select:disabled) .style-chevron{display:none}
 .shell-workshop-status{display:block;white-space:normal;overflow-wrap:anywhere}
 @media(max-width:899px){.shell-modes button{min-width:0;overflow-wrap:anywhere}.shell-state{flex-basis:100%;padding:6px 0 0}.shell-mission-status{padding:0}.shell-tools{margin-left:auto}.shell-toolbar{align-items:center}.shell-state:has(.shell-mission-status){flex-basis:auto;flex:1 1 180px}.shell-workspace[data-mode=make] .shell-design-lab{scroll-margin-top:160px}}
+.shell-project-purpose{font-size:13px;line-height:1.5;margin:12px 0 20px;text-wrap:pretty}
+.shell-project-purpose span{display:block;font-size:11px;opacity:.8;margin-top:3px}

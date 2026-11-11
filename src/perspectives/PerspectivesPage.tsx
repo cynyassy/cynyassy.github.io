@@ -1,4 +1,5 @@
-import { SoundToggle } from '../audio/SoundToggle';
+import { PortfolioFooter } from '../shared/PortfolioFooter';
+import { PortfolioHeader } from '../shared/PortfolioHeader';
 import { PerspectivesCoverArt } from './PerspectivesCoverArt';
 import { PerspectivesPlayableProof } from './PerspectivesPlayableProof';
 import { PerspectivesRules } from './PerspectivesRules';
@@ -12,10 +13,7 @@ function SectionIntro({ label, title, children }: { label: string; title: string
 export default function PerspectivesPage() {
   return <div className="perspectives-page">
     <a href="#main-content" className="perspectives-skip-link">Skip to content</a>
-    <header className="perspectives-topbar"><div>
-      <a className="perspectives-home-link" href="/#projects">cynyassy<span> / Back to projects</span></a>
-      <nav aria-label="Perspectives sections"><a href="#playable-proof">Try it</a><a href="#gameplay">The game</a><a href="#process">My process</a><a href="#reflection">After play</a></nav><SoundToggle />
-    </div></header>
+    <PortfolioHeader /><nav className="portfolio-section-nav" aria-label="Project sections"><a href="#playable-proof">Try it</a><a href="#gameplay">The game</a><a href="#process">My process</a><a href="#reflection">After play</a></nav>
 
     <main id="main-content">
       <section id="overview" className="perspectives-hero">
@@ -23,7 +21,7 @@ export default function PerspectivesPage() {
           <p className="perspectives-eyebrow">MFA thesis · School of Visual Arts, New York</p>
           <h1>Perspectives</h1>
           <p className="perspectives-dek">Who gets to build? Who gets left behind?</p>
-          <p className="perspectives-muted">I designed a board game and facilitated conversations about power, privilege and inequality. Players build competing communities, compare what happened and ask how they could share power differently.</p>
+          <p className="perspectives-muted">My research into caste and unequal access in India became a facilitated board game about power and resources. Players build communities, experience different starting conditions and discuss what the rules make possible.</p>
           <p className="perspectives-role"><span className="perspectives-eyebrow">My work</span>Research · Game & service design · Illustration · Prototyping · Playtesting</p>
           <a className="perspectives-play-link" href="#playable-proof">Play the mini game ↓</a>
         </div>
@@ -96,6 +94,6 @@ export default function PerspectivesPage() {
         <div className="perspectives-video-frame"><iframe src="https://www.youtube.com/embed/G3VoClPmiKM" title="Perspectives thesis presentation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /></div>
       </section>
     </main>
-    <footer className="perspectives-footer"><div><p className="perspectives-eyebrow">Keep exploring</p><a className="perspectives-next" href="/projects/cynyassy.html">ChaddiMan ↗</a><p>Stories, illustration & a comic community</p></div><div><a href="/#projects">All projects ↗</a><a href="mailto:cynyassy@gmail.com">Have a project in mind? Email me ↗</a></div></footer>
+    <PortfolioFooter project="ChaddiMan" href="/projects/cynyassy.html" connection="Meet the characters I use to turn difficult feelings into everyday conversations." />
   </div>;
 }

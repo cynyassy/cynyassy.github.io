@@ -225,3 +225,13 @@
  .work-with-me-page .work-with-me-topbar .portfolio-sound{grid-column:2;grid-row:2}
  .work-with-me-page .work-with-me-topbar a:not(.work-with-me-brand){grid-column:1;min-height:44px;display:inline-flex;align-items:center}
 }
+.work-with-me-page>main{box-sizing:border-box;max-width:1240px;padding-inline:32px}
+.work-with-me-offers-block{margin-inline:0;background:#fff;color:#353535;border-color:#dedede}
+.work-with-me-offers-inner{max-width:none;padding:0}
+.work-with-me-offers-block .work-with-me-eyebrow,.work-with-me-offers-block .work-with-me-offer h2,.work-with-me-offers-block .work-with-me-offer p{color:#353535}
+.work-with-me-offers-block .work-with-me-offer h2::before{background:#353535;height:1px}
+.work-with-me-page .work-with-me-primary-link{background:#353535;color:white;border:1px solid #353535}
+.work-with-me-page h1,.work-with-me-page h2,.work-with-me-page p{text-wrap:pretty}
+@media(max-width:700px){.work-with-me-page>main{padding-inline:20px}}
+.work-with-me-page>main{padding-top:40px}
+.work-with-me-page .work-with-me-hero{padding-top:16px}

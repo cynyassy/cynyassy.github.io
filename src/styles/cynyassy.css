@@ -20,3 +20,11 @@
  .cynyassy-page .panel-transcript{grid-column:2;grid-row:4;width:100%}
  .cynyassy-page .editorial-note{grid-column:1;grid-row:3;margin-top:0}
 }
+@media(min-width:900px){
+ .cynyassy-page .comic-intro{max-width:760px;padding-bottom:24px}
+ .cynyassy-page #comics{padding-top:20px}
+}
+
+.cynyassy-page #comics .comic-reading-title{font-size:18px;letter-spacing:0;margin-bottom:16px}
+.cynyassy-page .comic-intro h1{text-wrap:balance}
+.cynyassy-page .intro-copy{text-wrap:pretty}

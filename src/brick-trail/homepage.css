@@ -2087,3 +2087,9 @@ body:has(.brick-home) {
   pointer-events: none;
 }
 .brick-home .runner-cue[data-cue=bonus] { color: #ffdf77; }
+.brick-home .portfolio-header{display:block}
+.brick-home .portfolio-header-inner{width:100%}
+.brick-home main{width:min(1176px,calc(100% - 64px))}
+.brick-home .home-byline{max-width:62ch;text-wrap:pretty}
+@media(max-width:700px){.brick-home main{width:calc(100% - 40px)}}
+.brick-home main{padding:24px 0}

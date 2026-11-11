@@ -33,10 +33,6 @@ body { margin: 0; }
 .book-hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: center; gap: clamp(26px, 5vw, 75px); padding-block: clamp(32px, 5vw, 70px); }
 .book-intro h1 { font-size: clamp(2.65rem, 5.5vw, 5rem); letter-spacing: -.055em; line-height: .99; }
 .book-deck { font-size: clamp(1rem, 1.5vw, 1.25rem); max-width: 36ch; margin-block: .85rem 1.25rem; }
-.book-brief { margin: 0; display: grid; gap: .6rem; }
-.book-brief > div { border-top: 1px solid #e2ced6; padding-top: .55rem; }
-.book-brief dt { font-weight: 750; font-size: .9rem; }
-.book-brief dd { margin: .1rem 0 0; font-size: .94rem; max-width: 51ch; }
 .book-role { font-size: .9rem; margin: 1rem 0; }
 .book-role strong { margin-right: .45rem; color: var(--burgundy); }
 .book-story .book-button { display: inline-flex; align-items: center; min-height: 44px; background: var(--burgundy); color: #fff; padding: .65rem 1rem; text-decoration: none; font-weight: 680; border-radius: .2rem; cursor: pointer; }
@@ -93,3 +89,7 @@ body { margin: 0; }
 @media (max-width: 390px) {
   .book-intro h1 { font-size: clamp(2.15rem, 10vw, 2.65rem); }
 }
+.book-publisher-credit{padding-block:28px 12px;font-size:14px;line-height:1.6;text-wrap:pretty}
+.book-width{width:min(1176px,calc(100% - 64px))}
+.book-intro h1{font-size:clamp(2.65rem,4.5vw,4rem)}
+@media(max-width:700px){.book-width{width:calc(100% - 40px)}.book-intro h1{font-size:clamp(2rem,9.5vw,2.65rem)}}

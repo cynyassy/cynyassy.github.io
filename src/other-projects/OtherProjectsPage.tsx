@@ -1,7 +1,9 @@
-import { SoundToggle } from '../audio/SoundToggle';
+import { PortfolioFooter } from '../shared/PortfolioFooter';
+import { PortfolioHeader } from '../shared/PortfolioHeader';
 import type { ReactNode } from 'react';
-import { ArrowRight, BookOpen, ExternalLink, Film, Github, Sparkles, Youtube } from 'lucide-react';
-import emotionIdentifierCover from '../assets/other-projects/emotion-identifier-cover.png';
+import { ArrowRight, BookOpen, ExternalLink, Github, Sparkles, Youtube } from 'lucide-react';
+import emotionStart from '../assets/other-projects/emotion-walkthrough/start.webp';
+import emotionSpecific from '../assets/other-projects/emotion-walkthrough/specific.webp';
 import bookCover from '../assets/cynyassy-book/not-everything-is-urgent-first-this.png';
 import '../styles/other-projects.css';
 
@@ -26,11 +28,17 @@ type OtherProject = {
 
 function EmotionVisual() {
   return (
-    <img
-      src={emotionIdentifierCover}
-      alt="Emotion Identifier Tool interface asking the user to name what they feel"
-      className="other-projects-image other-projects-image-contain other-projects-image-emotion"
-    />
+    <div className="emotion-walkthrough">
+      <figure>
+        <img src={emotionStart} width="390" height="844" alt="The first step asks how you feel and offers Good or Bad" loading="lazy" />
+        <figcaption>Start with a familiar word</figcaption>
+      </figure>
+      <figure>
+        <img src={emotionSpecific} width="390" height="844" alt="After choosing Good and Hopeful, a sample journey selects Encouraged with the definition Feeling supported and more hopeful" loading="lazy" />
+        <figcaption>Find a more specific feeling</figcaption>
+      </figure>
+      <p>Sample journey · Good → Hopeful → Encouraged</p>
+    </div>
   );
 }
 
@@ -46,14 +54,14 @@ function BookVisual() {
 
 function FilmVisual() {
   return (
-    <div className="other-projects-film-card" aria-hidden="true">
-      <div className="other-projects-film-card__top">
-        <span>Friday</span>
-        <Film size={32} />
-      </div>
-      <p>Watch</p>
-      <p>Notice</p>
-      <p>Make</p>
+    <div className="film-prompt">
+      <span className="film-prompt-label">A prompt from the weekend bot</span>
+      <h3>Garam chai</h3>
+      <p>Make something in any medium inspired by this prompt.</p>
+      <div className="film-prompt-deadline">Submit by Sunday, 8 p.m.</div>
+      <p className="film-prompt-note">No critique. Make something and have fun!</p>
+      <iframe className="film-response" src="https://www.youtube-nocookie.com/embed/24PBoXh_uXo" title="Watch the creation made for the Garam chai prompt" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+      <a href="https://youtu.be/24PBoXh_uXo" target="_blank" rel="noopener noreferrer">Watch the response on YouTube ↗</a>
     </div>
   );
 }
@@ -75,13 +83,13 @@ const projects: OtherProject[] = [
     status: 'Shipped',
     category: 'Live interactive tool',
     title: 'Emotion Identifier',
-    headline: 'A guided entrance into emotional clarity',
+    headline: 'Find words for what you’re feeling',
     description:
-      'Many people can sense that something is happening emotionally before they have language for it. This NVC-inspired tool gives that moment a softer, more structured way in.',
+      'I built a guided tool for the moment when you feel something but struggle to name it. Start with a broad feeling, then explore more specific emotions and needs.',
     proof: [
       'Seven guided steps connect broad feelings to precise emotions and needs.',
       'Reflection summary can be copied, downloaded, or shared.',
-      'Built with React, TypeScript, Vite, and original Cynyassy art.',
+      'My role · Concept, guided interaction, original artwork and development.',
     ],
     links: [
       {
@@ -119,12 +127,12 @@ const projects: OtherProject[] = [
     status: 'In progress',
     category: 'Creative practice + bot',
     title: 'Film Festival Friday',
-    headline: 'Keeping a filmmaking practice alive through weekly prompts',
+    headline: 'A weekly reason to watch closely and make something.',
     description:
-      'A weekly filmmaking practice powered by a prompt bot. The goal is to turn a love of cinema into a repeatable ritual for watching closely, noticing craft, and making small creative responses.',
+      'I built a weekend prompt bot to turn an intention to make things into a small challenge between friends. A prompt arrives on Friday, with a Sunday deadline and room to work in any medium.',
     proof: [
-      'Weekend Movie Bot turns a vague intention into a concrete prompt.',
-      'YouTube channel creates a public shelf for the practice.',
+      'My role · Creative practice, prompt design and bot development.',
+      '“Garam chai” is one of the prompts sent by the weekend bot.',
       'Designed as a ritual: prompt, watch, notice, make.',
     ],
     links: [
@@ -146,24 +154,17 @@ const projects: OtherProject[] = [
 export default function OtherProjectsPage() {
   return (
     <div className="other-projects-page min-h-screen bg-white text-[#111]">
-      <header className="other-projects-topbar">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 md:px-10">
-          <a href="/#projects" className="other-projects-back-link">
-            Back To Portfolio
-          </a>
-          <SoundToggle />
-        </div>
-      </header>
+      <PortfolioHeader />
 
       <main className="mx-auto flex max-w-6xl flex-col px-6 py-12 md:px-10 md:py-16">
         <section className="other-projects-hero">
           <div>
-            <p className="other-projects-eyebrow">Other Projects</p>
+            <p className="other-projects-eyebrow">More work to explore</p>
             <h1>Useful ideas in other forms</h1>
           </div>
           <div>
             <p>
-              Smaller shipped tools, publishing projects, creative rituals, games, and experiments.
+              Tools, publishing projects, creative practices and experiments.
             </p>
             <div className="other-projects-highlight">
               <Sparkles size={20} aria-hidden="true" />
@@ -175,15 +176,15 @@ export default function OtherProjectsPage() {
         <section className="other-projects-list" aria-label="Other projects">
           {projects.map((project, index) => (
             <article key={project.id} id={project.id} className="other-projects-row">
-              <a
+              {project.id === 'film-festival-friday' ? <div className="other-projects-media other-projects-evidence md:order-2">{project.visual}</div> : <a
                 href={project.links[0]?.href}
                 target={project.links[0]?.external === false ? undefined : "_blank"}
                 rel="noreferrer"
-                className={index % 2 === 0 ? 'other-projects-media' : 'other-projects-media md:order-2'}
+                className={`other-projects-media ${index % 2 !== 0 ? 'md:order-2' : ''} ${project.id === 'emotion-identifier' ? 'other-projects-evidence' : ''}`}
                 aria-label={`Open ${project.title}`}
               >
                 {project.visual}
-              </a>
+              </a>}
 
               <div className={index % 2 === 0 ? 'other-projects-copy' : 'other-projects-copy md:order-1'}>
                 <p className="other-projects-meta">
@@ -228,10 +229,11 @@ export default function OtherProjectsPage() {
             Future card games, browser experiments, and creative tools will join this page as they become tangible
             enough to explore.
           </p>
-          <a href="../index.html#featured-work" className="other-projects-inline-link">
+          <a href="/#projects" className="other-projects-inline-link">
             Return to core case studies <ArrowRight size={18} />
           </a>
         </section>
+        <PortfolioFooter project="Indian Coffee Stories" href="/projects/coffee-tools.html" connection="See how I connect writing, communication, design and software in one working project." />
       </main>
     </div>
   );

@@ -91,3 +91,6 @@ html,body{margin:0;background:#fff}
 
 @media(max-width:700px){.ix-pressure .ix-task{display:block}.ix-pressure .ix-pump-clue{margin-top:10px!important}.ix-pressure-valves{gap:10px}.ix-pressure-valves>button{padding:10px;gap:5px 7px;font-size:13px}.ix-valve-effect{font-size:11px}.ix-pressure-controls .ix-charge-readout output{font-size:29px}}
 @media(max-width:360px){.ix-pressure-valves>button{grid-template-columns:1fr 25px;padding:10px 8px}.ix-valve-wheel{width:25px;height:25px}.ix-valve-wheel i{width:18px}.ix-valve-wheel i:after{height:17px;left:7px;top:-7px}}
+.ix-space{max-width:1240px}
+.ix-space .portfolio-header-inner,.ix-space .portfolio-section-nav{padding-inline:0}
+@media(max-width:700px){.ix-space{padding-inline:20px}}

@@ -302,3 +302,28 @@
     align-items: start;
   }
 }
+.emotion-walkthrough{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:16px;background:#f4f6f8;width:100%}
+.emotion-walkthrough figure{margin:0;min-width:0}
+.emotion-walkthrough img{display:block;width:100%;height:auto;border:1px solid #d8dce2}
+.emotion-walkthrough figcaption{font-size:12px;line-height:1.4;margin-top:8px;text-wrap:pretty}
+.emotion-walkthrough>p{grid-column:1/-1;font-size:12px;line-height:1.5;margin:0;text-wrap:pretty}
+.film-prompt{width:100%;padding:clamp(24px,4vw,48px);background:#fff;border:1px solid #353535;color:#353535}
+.film-prompt-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+.film-prompt h3{font-size:clamp(36px,5vw,64px);line-height:1.05;letter-spacing:-.04em;margin:32px 0 24px;text-wrap:balance}
+.film-prompt p{font-size:17px;line-height:1.5;text-wrap:pretty}
+.film-prompt-deadline{padding-block:16px;border-block:1px solid #d8c8b0;margin-top:24px;font-weight:700}
+.film-prompt .film-prompt-note{font-size:14px;margin-top:16px}
+.film-response{display:block;width:100%;aspect-ratio:16/9;border:0;margin:24px 0 12px}
+.film-prompt>a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;text-underline-offset:4px}
+.other-projects-media.other-projects-evidence{aspect-ratio:auto;overflow:visible;background:#fff}
+.other-projects-evidence .film-prompt{border:0}
+.other-projects-page>main{box-sizing:border-box;max-width:1240px;padding-inline:32px}
+@media(max-width:700px){.other-projects-page>main{padding-inline:20px}}
+.other-projects-page .other-projects-hero{padding-block:40px;border-bottom:1px solid #dedede}
+.other-projects-page .other-projects-hero h1{font-size:clamp(38px,4.5vw,64px);line-height:1.05;letter-spacing:-.045em;text-wrap:balance}
+.other-projects-page .other-projects-row{border-bottom:1px solid #dedede}
+.other-projects-page .other-projects-copy h2{font-size:28px;line-height:1.2;letter-spacing:-.03em}
+.other-projects-page .other-projects-copy h3{font-size:23px;line-height:1.25;letter-spacing:-.025em;text-wrap:balance}
+.other-projects-page .other-projects-primary-link{background:#353535;border:1px solid #353535;color:#fff}
+.other-projects-page .other-projects-highlight{border-left:2px solid #353535}
+.other-projects-page .other-projects-highlight svg{color:#353535}

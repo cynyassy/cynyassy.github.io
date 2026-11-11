@@ -1373,3 +1373,6 @@ html {
 .perspectives-page .perspectives-access-caption>p{font-size:13px}
 @container(max-width:419px){.perspectives-page .perspectives-access-caption{display:block}}
 .perspectives-page .perspectives-build-choices button[aria-pressed=true]{color:#353535}
+.perspectives-page{--page-width:1240px;--page-padding:32px}
+.perspectives-page>.portfolio-footer{width:min(1176px,calc(100% - 64px))}
+@media(max-width:700px){.perspectives-page{--page-padding:20px}.perspectives-page>.portfolio-footer{width:calc(100% - 40px)}}

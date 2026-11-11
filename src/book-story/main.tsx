@@ -1,5 +1,6 @@
+import { PortfolioFooter } from '../shared/PortfolioFooter';
 import { createRoot } from 'react-dom/client';
-import { SoundToggle } from '../audio/SoundToggle';
+import { PortfolioHeader } from '../shared/PortfolioHeader';
 import firstCover from '../assets/cynyassy-book/not-everything-is-urgent-first-this.png';
 import secondCover from '../assets/cynyassy-book/not-everything-is-urgent-then-this.png';
 import waiting from './assets/waiting.webp';
@@ -20,13 +21,7 @@ function BookStory() {
   return (
     <div className="book-story">
       <a className="book-skip" href="#main">Skip to content</a>
-      <header className="book-top book-width">
-        <a className="book-brand" href="/">cynyassy<sup>®</sup></a>
-        <nav aria-label="Case study navigation">
-          <a href="/#projects">← All projects</a>
-          <SoundToggle />
-        </nav>
-      </header>
+      <PortfolioHeader />
 
       <main id="main">
         <section className="book-hero book-width" aria-labelledby="book-title">
@@ -34,12 +29,8 @@ function BookStory() {
             <p className="book-kicker">A book in two parts</p>
             <h1 id="book-title">Not Everything<br />Is Urgent</h1>
             <p className="book-deck">Short illustrated stories about the everyday things we treat like emergencies.</p>
-            <dl className="book-brief">
-              <div><dt>What is it?</dt><dd>Two books with Kim Palmer and Ian Haworth, published by The Pound Project.</dd></div>
-              <div><dt>Why did we make it?</dt><dd>An ad pitch fell through, but we kept writing about why we rush.</dd></div>
-              <div><dt>What problem were we exploring?</dt><dd>When everything feels urgent, it’s hard to tell what actually needs our attention.</dd></div>
-            </dl>
-            <p className="book-role"><strong>My role</strong> I co-wrote the books, drew every illustration, designed the layouts in Figma, and arranged printing for the stickers and some copies of the books.</p>
+            <p className="book-origin">An ad pitch fell through, but the conversations about why we rush stayed with us. Kim, Ian and I kept writing. Those conversations became two books, published by The Pound Project.</p>
+            <p className="book-role"><strong>My role</strong> Co-writer · Illustrator · Book designer</p>
             <a className="book-button" href="#read">Read a story ↓</a>
           </div>
           <div className="book-stage">
@@ -91,7 +82,7 @@ function BookStory() {
             <div className="book-process">
               <figure>
                 <img src={boardDetail} alt="Detail of the Figma board with character sketches and early page layouts" width="248" height="257" loading="lazy" />
-                <figcaption><strong>Sketches beside page layouts.</strong> I worked on the drawings and layouts together in Figma. <a href={board}>Open the full working board</a>.</figcaption>
+                <figcaption><strong>Sketches beside page layouts.</strong> I illustrated the books and designed the layouts in Figma. <a href={board}>Open the full working board</a>.</figcaption>
               </figure>
               <figure>
                 <img src={portraits} alt="Hand-drawn portraits of Kim, Ian and Shashank with their names" width="625" height="935" loading="lazy" />
@@ -119,21 +110,13 @@ function BookStory() {
           </div>
           <div className="book-stickers">
             <img src={stickers} alt="Variations of the Hair on Fire sticker, arranged in a sheet" loading="lazy" />
-            <p><strong>From drawings to stickers.</strong> The drawings became something you could hold, peel off and stick somewhere you’d see every day.</p>
+            <p><strong>From drawings to stickers.</strong> I also arranged printing for stickers and some copies of the books. The drawings became something you could hold, peel off and stick somewhere you’d see every day.</p>
             <img className="book-breathe" src={breathe} alt="" loading="lazy" />
           </div>
         </section>
       </main>
 
-      <footer className="book-footer">
-        <div className="book-width">
-          <p>Written by Kim Palmer, Ian Haworth and Shashank Sharma. Illustrated and designed by Shashank Sharma. Published by The Pound Project.</p>
-          <nav aria-label="Keep exploring">
-            <a href="https://www.poundproject.co.uk/not-everything-is-urgent">See the book at The Pound Project ↗</a>
-            <a href="/#projects">Back to projects ↑</a>
-          </nav>
-        </div>
-      </footer>
+      <div className="book-width"><p className="book-publisher-credit">Written by Kim Palmer, Ian Haworth and Shashank Sharma. Illustrated and designed by Shashank Sharma. <a href="https://www.poundproject.co.uk/not-everything-is-urgent">Published by The Pound Project ↗</a></p><PortfolioFooter project="Design Adventure" href="/projects/design-adventure.html" connection="Explore how I turn design principles into playful interactions you can try." /></div>
     </div>
   );
 }

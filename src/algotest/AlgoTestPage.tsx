@@ -1,7 +1,8 @@
+import { PortfolioFooter } from '../shared/PortfolioFooter';
 import { useState } from 'react';
 import docsFocus from '../assets/algotest-case-study/documentation-focus.webp';
 import searchFocus from '../assets/algotest-case-study/search-focus.webp';
-import { SoundToggle } from '../audio/SoundToggle';
+import { PortfolioHeader } from '../shared/PortfolioHeader';
 import algotestLogoImg from '../assets/algotest-case-study/algotest-logo.png';
 import algotestDocsScreenshot from '../assets/algotest_documentation.png';
 import googleSearchConsoleClicks from '../assets/algotest-case-study/google_search_console2.png';
@@ -47,17 +48,14 @@ export default function AlgoTestPage() {
   return (
     <div className="algotest-page">
       <a href="#main" className="skip-link">Skip to content</a>
-      <header className="topbar"><div>
-        <a className="portfolio-link" href="/#projects">cynyassy<span> / Back to projects</span></a>
-        <nav aria-label="Case study sections"><a href="#overview">Overview</a><a href="#intervention">The work</a><a href="#proof">Results</a></nav><SoundToggle />
-      </div></header>
+      <PortfolioHeader /><nav className="portfolio-section-nav" aria-label="Project sections"><a href="#overview">Overview</a><a href="#intervention">The work</a><a href="#proof">Results</a></nav>
       <main id="main">
         <section id="overview" className="hero">
           <div className="brand"><img src={algotestLogoImg} alt="" /><span>AlgoTest · Product education & growth</span></div>
           <div className="hero-grid">
             <div className="hero-copy">
-              <h1>How documentation helped grow organic traffic 6×</h1>
-              <p className="dek">I built a place where traders could find clear answers, get started and learn how to use AlgoTest.</p>
+              <h1>AlgoTest</h1><p className="algotest-purpose">Helping traders find answers and get started.</p>
+              <p className="dek">I built a searchable documentation hub so traders could find answers, get started and use AlgoTest. Repeated support questions showed me where those answers were hardest to find.</p>
               <p className="role"><span className="label">My role</span>Strategy · Documentation design · SEO · Cross-functional delivery</p>
             </div>
             <aside className="lead-result" aria-label="Leading result"><strong>25K → 150K</strong><p>Monthly organic clicks</p></aside>
@@ -100,7 +98,7 @@ export default function AlgoTestPage() {
         </section>
 
         <section className="section reflection"><p className="label">What I took away</p><div><h2>Pay attention to what people keep asking.</h2><p>Those questions helped me find work that mattered. Clear, useful explanations could help someone get started, give support teams something to share and help new customers find the product.</p></div></section>
-        <footer className="case-footer"><div><p className="label">Keep exploring</p><a className="next-project" href="/projects/perspectives.html">Perspectives <span>Game & service design ↗</span></a></div><nav aria-label="Continue exploring"><a href="/#projects">All projects ↗</a><a href="mailto:cynyassy@gmail.com">Have a project in mind? Email me ↗</a></nav></footer>
+        <PortfolioFooter project="Perspectives" href="/projects/perspectives.html" connection="Explore how I use a game to make unequal access to resources something people can experience." />
       </main>
     </div>
   );

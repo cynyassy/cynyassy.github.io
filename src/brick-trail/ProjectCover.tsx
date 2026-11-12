@@ -1,3 +1,4 @@
+import schoolCover from './assets/gallery/four-names.png';
 import docs from './assets/gallery/algotest.webp';
 import firstBook from './assets/gallery/book-first.webp';
 import secondBook from './assets/gallery/book-then.webp';
@@ -12,6 +13,7 @@ import king from '../assets/perspectives/fd62593ed3a99dc48c1587c439fc5a0ee82e8ff
 import woman from '../assets/perspectives/b57fa03efae908dc0ffc9d2d8992cf3c0e8877fc.png';
 export interface ProjectPresentation{category:string;summary:string;role:string;proof:string;action:string}
 export const presentation:Record<string,ProjectPresentation>={
+ school:{category:'Social-impact game',summary:'A game about the lives that school marks leave out.',role:'Game design · Writing · Illustration · Development',proof:'3 reviews · 12 decisions',action:'Play Four Names'},
  algotest:{category:'Product education & growth',summary:'Turning product knowledge into a growth engine.',role:'Strategy · Documentation · SEO',proof:'6× organic clicks',action:'View case study'},
  chaddiman:{category:'Comics & storytelling',summary:'Comics that make room for life’s messy questions.',role:'Writing · Illustration · Audience building',proof:'100K+ followers',action:'Explore the comics'},
  adventure:{category:'Interaction experiment',summary:'Six puzzles. One reactor. 22 ways to play with design.',role:'Interaction design · Development',proof:'22 visual styles',action:'Play the experiment'},
@@ -23,6 +25,7 @@ export const presentation:Record<string,ProjectPresentation>={
 };
 const imgProps={loading:'lazy' as const,decoding:'async' as const};
 export function ProjectCover({id}:{id:string}){
+ if(id==='school')return <div className="project-cover cover-school"><img {...imgProps} src={schoolCover} width="1200" height="630" alt="Four Names, a classroom and four selected student files: the list is submitted, then the stories open"/></div>;
  if(id==='algotest')return <div className="project-cover cover-docs"><img {...imgProps} src={docs} width="1200" height="751" alt="AlgoTest documentation with strategy guides and product navigation"/></div>;
  if(id==='chaddiman')return <div className="project-cover cover-comic"><div className="cover-comic-grid">{[comicOne,comicTwo,comicThree,comicFour].map((src,i)=><img {...imgProps} key={src} src={src} width="720" height="720" alt={i===0?'I get to decide, a four-panel ChaddiMan comic':''}/>)}</div></div>;
  if(id==='adventure')return <div className="project-cover cover-adventure"><img {...imgProps} src="/og/design-adventure.jpg" width="1200" height="630" alt="Design Adventure’s Mars reactor in Swiss Design, Neo-Brutalism and Pixel Art"/></div>;

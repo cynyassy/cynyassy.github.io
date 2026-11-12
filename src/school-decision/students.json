@@ -1,0 +1,2656 @@
+[
+  {
+    "id": 1,
+    "name": "Meera",
+    "marks": [
+      48,
+      63,
+      51
+    ],
+    "average": 54,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Meera lives with her parents and two brothers in a rented room. Her mother stitches clothes at home and her father delivers parcels. Their work brings roughly ₹8,000–₹12,000 into the household in a month, before rent and other expenses. Her mother can read Hindi and checks the school diary, but English homework often needs help neither parent can provide."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She reads familiar Hindi passages slowly and understands spoken explanations better than new English text. Her attendance is regular. She spends a long time rewriting answers neatly, sometimes without understanding every word. Her average hides the difference between remembering an answer and explaining it herself."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She enjoys making paper decorations and helps her brothers organise their books. Her mother makes time to listen to her read, but needs material at a level they can work through together."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Meera continues attending after transfer. She begins asking more questions in Hindi. Some understanding becomes easier to notice, while English reading still needs deliberate practice."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        48,
+        63,
+        51
+      ],
+      [
+        53,
+        73,
+        43
+      ],
+      [
+        39,
+        59,
+        52
+      ]
+    ],
+    "update": "Meera is still attending. Her family continues reading with her, but has asked for work they can help her understand rather than only check for completion."
+  },
+  {
+    "id": 2,
+    "name": "Dev",
+    "marks": [
+      59,
+      74,
+      62
+    ],
+    "average": 65,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Dev lives with his parents and grandmother. His father repairs bicycles and his mother sells vegetables. Household income is roughly ₹9,000–₹13,000 a month and depends on sales and repair work. His grandmother makes sure he leaves for school, while his parents are usually working when he returns."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He reads short passages and calculates confidently, but rushes through instructions. At home he practises questions from an older cousin’s notebook. Similar exam questions go well; unfamiliar ones are harder. His marks do not show how much help he had with the practice."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He draws bicycle parts and likes explaining how a brake works. His cousin can help on some weekends, but there is no regular time for discussing work he has misunderstood."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Dev stays enrolled after the transfer. He is upset about leaving his friends. A new teacher notices his interest in repairs and asks him to explain a diagram; his adjustment takes time."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        59,
+        74,
+        62
+      ],
+      [
+        48,
+        68,
+        61
+      ],
+      [
+        57,
+        77,
+        70
+      ]
+    ],
+    "update": "Dev’s attendance remains regular. He has found someone to build models with, though he has stopped showing his report card around at home."
+  },
+  {
+    "id": 3,
+    "name": "Anjali",
+    "marks": [
+      70,
+      85,
+      73
+    ],
+    "average": 76,
+    "age": 10,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Anjali lives with her mother, father and younger sister. Her father drives a hired vehicle and her mother does tailoring. Around ₹10,000–₹14,000 is available in a working month. Both parents read Hindi, and an older cousin sometimes helps with English. There is a shared table for homework after dinner."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She has attended the same school for several years. Her strong marks reflect steady attendance and repeated practice, alongside help at home. She finds it difficult to admit when she does not understand something because adults often describe her as the child who manages on her own."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She writes little stories and enjoys showing her sister how to form letters. Support exists, but being asked what she finds hard would give a more complete picture than congratulating the average alone."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Anjali joins the new section and keeps attending. She worries that the transfer means her earlier work no longer counts. Her reading remains strong; she needs time to trust the new setting."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        70,
+        85,
+        73
+      ],
+      [
+        66,
+        86,
+        79
+      ],
+      [
+        75,
+        95,
+        65
+      ]
+    ],
+    "update": "Anjali continues studying. She has asked why she was moved despite completing her work. The office has no answer beyond the review instruction."
+  },
+  {
+    "id": 4,
+    "name": "Ravi",
+    "marks": [
+      15,
+      24,
+      21
+    ],
+    "average": 20,
+    "age": 10,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Ravi lives with his parents, an older sister and a younger brother in a rented room. His father loads goods wherever he can get work. His mother takes occasional cleaning work. Their combined earnings vary between roughly ₹6,000 and ₹9,000 a month. Some weeks there is work every day. In others, the family borrows to cover food and rent.",
+          "They have moved twice in the past year as work and housing arrangements changed. Ravi has changed schools with them. His older sister helps the younger children when she can, but she also has schoolwork and household jobs. Neither parent can read the English instructions in his books. There is no money set aside for tuition."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "Ravi recognises some letters and familiar words, but cannot independently read a short paragraph. During one move he missed several weeks. When he joined the next class, lessons were already underway. He learnt to copy what was on the board without understanding much of it.",
+          "His notebook can look complete. In a written assessment he cannot use it as a guide, and the gaps become visible. He sometimes interrupts a reading lesson with a joke or an argument. That behaviour needs attention, but it does not explain what he was taught, what he missed or what he can currently read."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "Ravi likes taking apart broken toys and working out how the pieces fit. Other children bring him stuck zips and loose wheels. He is patient with those problems, even when he is impatient in class.",
+          "A neighbour sometimes helps him read a few Hindi words. It is occasional help, not a regular lesson. There has been no sustained plan to teach the reading skills he missed across schools."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Ravi joins the Hindi-medium section. He understands more of the spoken instructions, but changing the language does not fill the earlier gaps. He continues attending and copying from the board. At the next review, his books are full. He still needs someone to start with what he can read, rather than the page his class has reached."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        15,
+        24,
+        21
+      ],
+      [
+        18,
+        32,
+        11
+      ],
+      [
+        4,
+        18,
+        20
+      ]
+    ],
+    "update": "Ravi’s notebook is still being completed. A later note asks for an individual reading check; the register does not yet record whether that support happened."
+  },
+  {
+    "id": 5,
+    "name": "Sana",
+    "marks": [
+      43,
+      58,
+      46
+    ],
+    "average": 49,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Sana lives with her parents, two siblings and an aunt. Her father sells fruit from a cart and her mother helps with sorting and selling. Roughly ₹7,000–₹10,000 comes into the household each month. An aunt can supervise homework, but cannot explain English exercises. Evenings are busy and books share space with supplies."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She has missed school during family moves between rented rooms. She understands basic number work when the question is explained, but has trouble working out what an English worksheet asks. Copying a completed example often looks like independent work until the wording changes."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She remembers prices and enjoys arranging objects by shape and size. She asks for help quietly and can be missed in a crowded class. She needs regular checks that she understands the instruction before starting."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Sana continues in the new section. Some instructions become clearer. The gaps from missed lessons remain, and she still needs teaching that starts with the skills she currently has."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        43,
+        58,
+        46
+      ],
+      [
+        53,
+        50,
+        43
+      ],
+      [
+        39,
+        59,
+        52
+      ]
+    ],
+    "update": "Sana is attending. She follows more spoken instructions, while the written reading tasks remain difficult. No regular catch-up arrangement is recorded."
+  },
+  {
+    "id": 6,
+    "name": "Kabir",
+    "marks": [
+      54,
+      69,
+      57
+    ],
+    "average": 60,
+    "age": 10,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Kabir lives with his parents and older brother. His father paints buildings and his mother packs goods through occasional home-based work. Combined income varies around ₹8,000–₹12,000 a month. The family sometimes moves temporarily when a job is far away. His brother helps when he is not studying or working."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "Kabir can read short texts, but changes in attendance have made his progress uneven. A new teacher may see a completed notebook without knowing which lessons someone helped him copy. He does better on rehearsed exercises than on questions asking him to explain his reasoning."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He builds small models from discarded packaging and likes working with other children. There is someone willing to help at home, but no dependable plan for catching up after a move."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Kabir starts in the new section and keeps his model-making friends. He continues attending, but another family work trip interrupts lessons. The section label alone does not explain the next set of marks."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        54,
+        69,
+        57
+      ],
+      [
+        48,
+        68,
+        61
+      ],
+      [
+        57,
+        77,
+        47
+      ]
+    ],
+    "update": "Kabir has missed lessons during another family work trip. His classmates have kept the copied pages; the office has no record of replacement teaching."
+  },
+  {
+    "id": 7,
+    "name": "Pooja",
+    "marks": [
+      65,
+      80,
+      68
+    ],
+    "average": 71,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Pooja lives with her parents, brother and grandfather. Her mother cooks in a canteen and her father works at a printing shop. Income is roughly ₹10,000–₹13,000 a month. Both parents can read Hindi. Her grandfather listens while she practises, although he is unable to help with much English."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She has a fairly steady school history and strong recall. Her marks are higher when questions resemble exercises she has practised. She can explain some ideas in Hindi but hesitates in English, which can make her appear less sure of a concept than she is."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She likes performing poems and making signs for family occasions. She has encouragement and a reading partner. She would benefit from room to explain an answer in her own words, not just reproduce it."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Pooja remains in school after transfer. She performs a poem at a class activity and begins settling in. Leaving her previous section still feels like losing recognition for work she had done."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        65,
+        80,
+        68
+      ],
+      [
+        66,
+        86,
+        79
+      ],
+      [
+        75,
+        72,
+        65
+      ]
+    ],
+    "update": "Pooja is attending and took part in a class poem. She still needs opportunities to explain new work in her own words."
+  },
+  {
+    "id": 8,
+    "name": "Aman",
+    "marks": [
+      76,
+      91,
+      79
+    ],
+    "average": 82,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Aman lives with his parents and younger brother. His father is an electrician’s assistant and his mother runs a small stitching service. Around ₹11,000–₹15,000 is available in a typical working month. They share a room but reserve a corner for the children’s books. A relative helps with difficult homework."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He has attended consistently and practises regularly. His high marks show real progress, but also access to time and help that the register does not record. He sometimes hides mistakes rather than ask a question because he is used to being praised for finishing first."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He likes puzzles and helps his brother sound out words. He has several adults who support study. A classroom where mistakes are ordinary would help him ask for assistance before a gap grows."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Aman continues studying in the new section. He is confused by the transfer despite his marks. His family asks about it, and the teacher helps him find his place without promising that changing sections has no effect."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        76,
+        91,
+        79
+      ],
+      [
+        84,
+        81,
+        74
+      ],
+      [
+        70,
+        90,
+        83
+      ]
+    ],
+    "update": "Aman remains enrolled. His family asked how the decision was reached, and whether support in English will continue in the new section."
+  },
+  {
+    "id": 9,
+    "name": "Neha",
+    "marks": [
+      38,
+      53,
+      41
+    ],
+    "average": 44,
+    "age": 10,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Neha lives with her mother, father and three siblings. Her mother works in domestic cleaning and her father finds occasional warehouse shifts. Household earnings vary around ₹6,000–₹9,000 a month. The older children share care and cooking. Neither parent is comfortable reading the school’s written English messages."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She has missed lessons when an adult could not manage the school run. She recognises common words but struggles with a fresh passage. Work sent home for completion does not come with the explanation she missed. The following lesson assumes she caught up."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She enjoys drawing clothing and remembers songs after hearing them once. An older sister wants to help but has learning gaps of her own. Neha needs teaching time, rather than simply more unfinished work."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Neha keeps attending after transfer. Her sister begins walking with her more regularly. Attendance becomes steadier, while the reading she missed still requires specific support."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        38,
+        53,
+        41
+      ],
+      [
+        30,
+        50,
+        43
+      ],
+      [
+        39,
+        59,
+        52
+      ]
+    ],
+    "update": "Neha is arriving more regularly with her sister. The attendance change is visible; the reading she missed still needs attention."
+  },
+  {
+    "id": 10,
+    "name": "Imran",
+    "marks": [
+      49,
+      64,
+      52
+    ],
+    "average": 55,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Imran lives with his parents and younger sister. His father repairs shoes and his mother prepares food for a small local seller. Their household receives roughly ₹7,000–₹10,000 a month. A missed day of work changes what can be bought that week. His parents read a little Hindi but cannot explain most English homework."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He can work through familiar sums and reads slowly. He loses marks when instructions contain words he does not know. He rarely asks during an exam because he thinks asking means he has already failed. There is no routine record of what he can explain orally."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He enjoys sketching vehicles and remembering routes through the neighbourhood. His father checks whether homework is done, but needs help understanding whether copied answers mean the lesson was learnt."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Imran attends the new section. He begins explaining some answers in Hindi and asks for clarification more often. He still needs practice reading independently, and his family’s work remains irregular."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        49,
+        64,
+        52
+      ],
+      [
+        48,
+        68,
+        61
+      ],
+      [
+        57,
+        54,
+        47
+      ]
+    ],
+    "update": "Imran has begun asking for instructions to be explained. The school has not yet separated what he can calculate from what he can read."
+  },
+  {
+    "id": 11,
+    "name": "Kavya",
+    "marks": [
+      60,
+      75,
+      63
+    ],
+    "average": 66,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Kavya lives with her parents, grandmother and younger sister. Her mother is a shop assistant and her father does repair work. Roughly ₹10,000–₹14,000 comes into the household each month. Her grandmother supervises afternoons. The adults can read Hindi, and a cousin helps with English when visiting."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She has a consistent school history and strong memory for written examples. She finds new problems harder than rehearsed ones, particularly if they require several steps. Her average does not reveal which answers she understands and which she remembers by shape or wording."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She likes making lists and creating pretend lessons for her sister. She has support at home. Being asked to explain how she reached an answer would help reveal the next thing to teach."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Kavya continues studying after transfer. She misses her old group but gradually joins another. Her next teacher asks for explanations alongside answers, revealing strengths and gaps the previous average did not separate."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        60,
+        75,
+        63
+      ],
+      [
+        66,
+        86,
+        56
+      ],
+      [
+        52,
+        72,
+        65
+      ]
+    ],
+    "update": "Kavya is attending. Her new teacher reports that rehearsed exercises go well, while unfamiliar problems still need discussion."
+  },
+  {
+    "id": 12,
+    "name": "Rohan",
+    "marks": [
+      71,
+      86,
+      74
+    ],
+    "average": 77,
+    "age": 10,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Rohan lives with his parents and older sister. His father works at a hardware shop and his mother does tailoring. Earnings are roughly ₹10,000–₹14,000 a month. His sister is in school and often sits with him in the evening. They can usually find time for homework even though space is shared."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He reads comfortably and gets strong marks. He has also benefited from staying at one school and having someone explain missed work. He avoids activities requiring speaking to the whole class. A written result does not capture everything that helps or troubles him at school."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He enjoys building card games and making rules for them. His sister gives him patient help. He needs that same permission to think aloud and make mistakes in front of others."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Rohan remains enrolled after transfer. The work is not his main difficulty at first; rebuilding familiar relationships is. He keeps making games and slowly finds classmates who want to play."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        71,
+        86,
+        74
+      ],
+      [
+        61,
+        81,
+        74
+      ],
+      [
+        70,
+        90,
+        83
+      ]
+    ],
+    "update": "Rohan remains enrolled. He has started sharing a game with new classmates. No further learning assessment has reached the office."
+  },
+  {
+    "id": 13,
+    "name": "Tara",
+    "marks": [
+      27,
+      18,
+      30
+    ],
+    "average": 25,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Tara lives with her mother, grandmother and four-year-old brother. Her mother cleans in several homes, leaving early and returning at different times. The household receives roughly ₹5,000–₹7,000 a month from that work. Losing a household client means losing part of that income. Paying for childcare or tuition would have to come out of the same money used for rent and food.",
+          "Her grandmother has difficulty walking and cannot always take her brother out. Tara washes him, helps him eat and waits until a neighbour can watch him. On those mornings she arrives late. When the neighbour cannot help, she misses school. Her mother wants both children to study, but cannot routinely leave work without risking the job."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "Tara speaks confidently about stories she has heard. Reading them herself is much harder. She can recognise common words, but struggles to follow a new passage independently.",
+          "She misses parts of the week rather than a single long stretch. That makes the gaps easy to overlook: she is present often enough to receive the next worksheet, but not always the explanation that came before it. Missed work is usually sent home to complete. Her mother and grandmother cannot read the exercises well enough to teach them. The unfinished pages come back."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "Tara tells her brother stories, changes the endings and gives each character a different voice. She remembers long sequences of events and enjoys explaining them to other children.",
+          "A classmate shares notes when she is absent. Copying those notes helps her keep a notebook, but does not replace being taught. There is no reliable childcare arrangement or planned time at school for catching up."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Tara moves sections. The same morning responsibilities continue. Later, her family arranges for her brother to leave with another household, and her attendance improves. She now hears more of the lessons, but still needs help with what she missed. The change that gets her through the school gate does not, by itself, catch her up."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        27,
+        18,
+        30
+      ],
+      [
+        24,
+        20,
+        37
+      ],
+      [
+        33,
+        29,
+        23
+      ]
+    ],
+    "update": "Tara’s attendance has improved with a different school-run arrangement. There is still no catch-up plan in her file for the lessons she missed."
+  },
+  {
+    "id": 14,
+    "name": "Mohit",
+    "marks": [
+      44,
+      59,
+      47
+    ],
+    "average": 50,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Mohit lives with his parents and two younger children. His father works as a security guard and his mother cleans homes. Around ₹8,000–₹11,000 is available in a month, with changing shifts. Mohit often waits with his siblings until an adult returns. Neither parent can reliably help with English worksheets."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He knows many letters and reads short familiar lines, but guesses at longer words. He has learnt to copy neatly, which can disguise the effort involved in reading. Some mornings he is tired after interrupted sleep in a shared room. The exam captures his work that day, not the nights before it."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He likes organising playground races and gets younger children involved. A neighbour sometimes checks his work. He needs consistent reading practice with someone who can notice errors and explain them."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Mohit continues attending in the new section. The household shifts remain difficult. His teacher begins checking a short passage with him each week; progress is uneven rather than immediate."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        44,
+        59,
+        47
+      ],
+      [
+        48,
+        68,
+        38
+      ],
+      [
+        34,
+        54,
+        47
+      ]
+    ],
+    "update": "Mohit is attending. A teacher has started short reading checks, but changing work shifts at home still affect his sleep."
+  },
+  {
+    "id": 15,
+    "name": "Nisha",
+    "marks": [
+      55,
+      70,
+      58
+    ],
+    "average": 61,
+    "age": 10,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Nisha lives with her parents, aunt and two cousins. Her mother and aunt make garments at home; her father drives a delivery vehicle. Income available to the household is around ₹9,000–₹13,000 a month. Work materials fill much of the room, and the children wait until the evening to spread their books out."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She has attended regularly but has difficulty with long written instructions. She does better when a teacher breaks a task into steps. At home, adults can check some Hindi work but not English. Extra worksheets have increased the time spent working without always resolving the misunderstanding."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She likes designing patterns and counting repeated shapes. Her aunt notices her persistence. Short explanations followed by a chance to try independently would be more useful than assuming she has not practised."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Nisha joins the new section and remains in school. A different teacher gives shorter instructions and checks the first answer with her. Some work improves, while longer reading tasks remain hard."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        55,
+        70,
+        58
+      ],
+      [
+        66,
+        63,
+        56
+      ],
+      [
+        52,
+        72,
+        65
+      ]
+    ],
+    "update": "Nisha has begun completing more tasks when instructions are broken into steps. Her file does not yet show how consistently this help is available."
+  },
+  {
+    "id": 16,
+    "name": "Yusuf",
+    "marks": [
+      66,
+      81,
+      69
+    ],
+    "average": 72,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Yusuf lives with his parents, grandfather and brother. His father runs a small repair counter and his mother takes sewing orders. Roughly ₹9,000–₹13,000 is available in a month. His grandfather reads with him in Hindi. English homework is checked by an older neighbour when that neighbour has time."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He is comfortable with familiar reading and calculations. He has had fewer breaks in schooling than some classmates. His strongest papers follow a period of regular help; his weaker work often involves unfamiliar vocabulary rather than a new mathematical idea."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He makes paper models and likes finding out how household objects work. He has adults willing to help, but the English support is informal. Asking which part he cannot understand would make that support more precise."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Yusuf keeps attending after transfer. He can follow more spoken instruction, but wants to continue learning English too. His family tries to keep both forms of practice going."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        66,
+        81,
+        69
+      ],
+      [
+        61,
+        81,
+        74
+      ],
+      [
+        70,
+        90,
+        60
+      ]
+    ],
+    "update": "Yusuf is attending. His family wants both clearer classroom explanations and continued English practice; the transfer itself supplies neither plan."
+  },
+  {
+    "id": 17,
+    "name": "Isha",
+    "marks": [
+      77,
+      92,
+      80
+    ],
+    "average": 83,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Isha lives with her mother, father and younger brother. Her mother is an assistant in a small office and her father repairs electrical equipment. Their earnings are roughly ₹11,000–₹15,000 a month. They make regular time for study and can read school messages. A family member lends her storybooks."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She reads independently and has strong written results. She has remained at the same school. She worries about anything below her usual mark and sometimes refuses to try a task unless she is sure she can finish it correctly. The average records achievement, not the pressure she attaches to it."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She likes writing captions for drawings and explaining stories to her brother. Reliable books and adult attention have helped. She also needs reassurance that needing help does not cancel what she has learnt."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Isha continues studying after transfer. She initially treats it as proof she has disappointed everyone. Conversations with her family and teacher help, but the loss of confidence does not disappear overnight."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        77,
+        92,
+        80
+      ],
+      [
+        79,
+        99,
+        69
+      ],
+      [
+        88,
+        85,
+        78
+      ]
+    ],
+    "update": "Isha remains enrolled. Her family reports that she is worried about making mistakes. She continues borrowing books while adjusting to the new class."
+  },
+  {
+    "id": 18,
+    "name": "Vivek",
+    "marks": [
+      39,
+      54,
+      42
+    ],
+    "average": 45,
+    "age": 10,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Vivek lives with his parents, two brothers and grandmother. His father works on construction sites and his mother sorts and packs goods. Household earnings vary around ₹6,000–₹9,000 a month. Work has taken the family to different rented rooms. Older siblings help with younger children and sometimes with paid work."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He has changed schools more than once. He recognises numbers and some words, but cannot follow much of an English passage alone. When a school admits him into his age group, the lesson begins where the class is, not where his previous teaching stopped."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He likes drawing buildings and notices how objects fit together. One brother can help with elementary sums. He needs someone to establish his current reading skills and teach from that point over time."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Vivek remains at school after transfer. He understands more of the explanations but still copies reading exercises. His school history continues to matter even when the section on his record changes."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        39,
+        54,
+        42
+      ],
+      [
+        48,
+        45,
+        38
+      ],
+      [
+        34,
+        54,
+        47
+      ]
+    ],
+    "update": "Vivek is attending, but still copies work he cannot read independently. The record of his earlier school changes has not become a teaching plan."
+  },
+  {
+    "id": 19,
+    "name": "Farah",
+    "marks": [
+      50,
+      65,
+      53
+    ],
+    "average": 56,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Farah lives with her mother, father and two sisters. Her mother cleans offices and her father sells snacks. The household receives roughly ₹7,000–₹11,000 a month. The sisters share cooking and homework space. Her parents can read some Hindi but rely on others for English messages."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She reads familiar text and can solve basic sums, but misses lessons when the family cannot arrange care for her youngest sister. On return, she is given the pages completed during her absence. Copying them fills the notebook without necessarily recovering the explanation."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She enjoys singing and remembers sequences well. An older sister helps when possible. She needs a way back into a missed lesson and a reliable arrangement that lets her attend."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Farah continues attending in the new section. The family finds occasional help with childcare. Her attendance improves for a while, but the arrangement is fragile and the missed learning still needs attention."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        50,
+        65,
+        53
+      ],
+      [
+        43,
+        63,
+        56
+      ],
+      [
+        52,
+        72,
+        42
+      ]
+    ],
+    "update": "Farah’s attendance has improved for now. The childcare arrangement depends on a neighbour being available and could change again."
+  },
+  {
+    "id": 20,
+    "name": "Arjun",
+    "marks": [
+      61,
+      76,
+      64
+    ],
+    "average": 67,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Arjun lives with his parents and grandfather. His father works at a small factory and his mother cooks for nearby households. Combined earnings are around ₹10,000–₹14,000 a month. His grandfather reads Hindi and follows the school diary. English practice depends on a cousin’s visits."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He works steadily and has fairly strong results. He finds it hard to explain answers that he has memorised. When an exam changes the wording, he sometimes applies the wrong method. A single total does not show the difference between recall and understanding."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He likes sketching machines and asking how they work. His grandfather gives him time and attention. Having to demonstrate a method with objects could reveal understanding that an answer sheet misses."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Arjun stays in school after transfer. He begins working with different classmates and continues practising. The change does not erase either his earlier learning or his remaining difficulties."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        61,
+        76,
+        64
+      ],
+      [
+        61,
+        81,
+        74
+      ],
+      [
+        70,
+        67,
+        60
+      ]
+    ],
+    "update": "Arjun is attending. An oral explanation of a model revealed understanding not visible in one written answer. His teacher has asked for more such checks."
+  },
+  {
+    "id": 21,
+    "name": "Ritu",
+    "marks": [
+      72,
+      87,
+      75
+    ],
+    "average": 78,
+    "age": 10,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Ritu lives with her parents and younger sister. Her father works in a warehouse and her mother runs a small ironing service. Income is roughly ₹10,000–₹13,000 a month. Both adults can check basic Hindi work. Her sister shares a study space, and the family tries to keep evenings free for schoolwork."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She has attended consistently and learns well from examples. She reads short texts independently. She rarely asks questions when confused, preferring to copy a familiar pattern and hope it fits. Strong marks can make it easy to assume she never needs a different explanation."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She enjoys drawing comics and creating dialogue for them. She has support at home. A teacher asking her to talk through an unfamiliar task would show more than a rank in the class."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Ritu joins the new section and keeps drawing. She misses her friends and initially speaks less in class. A later teacher uses one of her comics as a reading activity, helping her take part again."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        72,
+        87,
+        75
+      ],
+      [
+        79,
+        76,
+        69
+      ],
+      [
+        65,
+        85,
+        78
+      ]
+    ],
+    "update": "Ritu is still drawing comics and attending school. A class activity has helped her speak more, but the move remains upsetting."
+  },
+  {
+    "id": 22,
+    "name": "Sameer",
+    "marks": [
+      36,
+      30,
+      24
+    ],
+    "average": 30,
+    "age": 10,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Sameer lives with his parents, younger sister and grandfather. His parents run a small tea stall. After ingredients, fuel and other work expenses, the money available to the household is roughly ₹7,000–₹11,000 in an ordinary month. A good day's sales are not the same as a steady monthly salary.",
+          "His grandfather needs help getting around. Sameer sometimes watches the stall while an adult buys supplies or takes his grandfather somewhere. He serves customers, counts change and remembers who has paid. At busy times, an afternoon's help turns into most of the evening. Homework gets pushed back."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "Sameer can add and subtract familiar amounts aloud. He struggles when an English word problem asks him to identify what calculation is needed. He can read some Hindi text slowly, but has had little individual help with English reading.",
+          "His written maths mark combines several things: calculation, reading the question, understanding the instruction and completing the paper in time. The register shows one number. It does not show which part caused difficulty.",
+          "His parents completed a few years of school. They can help with some basic sums but cannot explain much of his current English work. Paid tuition would reduce the money available for household expenses."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "Sameer organises cricket games and remembers everyone's runs. He likes being trusted with a job. At the stall, he gets an immediate response when he does something useful. At school, he often waits for work he cannot begin alone.",
+          "There has been no regular assessment separating what he understands orally from what he can read on the exam paper. His practical arithmetic is a starting point for teaching, not evidence that he has mastered the whole maths curriculum."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "After the transfer, some written instructions become easier to understand. Then his father is unable to work for several weeks. Sameer spends more time at the stall. School absences accumulate, and by the following review he is no longer attending. The family still talks about sending him back. That requires a way to manage the work and help him return, not simply another name on the register."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        36,
+        30,
+        24
+      ],
+      [
+        27,
+        26,
+        25
+      ],
+      [
+        36,
+        35,
+        34
+      ]
+    ],
+    "update": "Sameer’s absences have continued while his father is unable to work. His family talks about returning him to school; no return arrangement is recorded."
+  },
+  {
+    "id": 23,
+    "name": "Jyoti",
+    "marks": [
+      45,
+      60,
+      48
+    ],
+    "average": 51,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Jyoti lives with her mother, father, grandmother and younger brother. Her father takes temporary shop work and her mother cleans homes. Earnings range around ₹7,000–₹10,000 a month. Her grandmother can supervise the children but cannot read their books. Tuition is not part of the household budget."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She has stayed enrolled but reads slowly. She can solve a familiar maths exercise when the instruction is explained, then struggle when the same idea is written differently. In a large class, a quiet child who keeps copying may appear to have understood."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She likes arranging little performances with her brother and remembers dialogue. Her family encourages attendance. She needs a regular chance to read aloud privately and ask questions without having to interrupt the whole class."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Jyoti continues at school after transfer. Some instructions are easier to follow. A teacher begins checking her first answer before leaving her to work; the extra attention helps identify what she has missed."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        45,
+        60,
+        48
+      ],
+      [
+        43,
+        63,
+        56
+      ],
+      [
+        52,
+        49,
+        42
+      ]
+    ],
+    "update": "Jyoti is attending. Checking her first answer has helped reveal misunderstood instructions, but she still needs regular reading practice."
+  },
+  {
+    "id": 24,
+    "name": "Nikhil",
+    "marks": [
+      56,
+      71,
+      59
+    ],
+    "average": 62,
+    "age": 10,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Nikhil lives with his parents and older sister. His father repairs appliances and his mother works at a food stall. Household income is around ₹8,000–₹12,000 a month. His sister is still in school and helps when she can. Evening noise makes it difficult to concentrate, especially while customers are nearby."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He reads familiar passages but needs more time with new material. His calculations are stronger than his written explanations. He sometimes stops attempting a task after misunderstanding the first instruction. The unfinished paper records that stopping point without explaining it."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He likes taking objects apart and drawing the parts. His sister checks basic work but cannot always explain English. He needs to practise starting an unfamiliar task, with support that can gradually be removed."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Nikhil remains enrolled after transfer. He understands some tasks more readily, though he still works slowly. Time and clear instructions matter more than the new label on the class register."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        56,
+        71,
+        59
+      ],
+      [
+        61,
+        81,
+        51
+      ],
+      [
+        47,
+        67,
+        60
+      ]
+    ],
+    "update": "Nikhil is attending and working slowly. He has begun asking for the first instruction to be explained instead of leaving the whole task blank."
+  },
+  {
+    "id": 25,
+    "name": "Asha",
+    "marks": [
+      67,
+      82,
+      70
+    ],
+    "average": 73,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Asha lives with her parents and two younger siblings. Her father works in a workshop and her mother does tailoring. Earnings are roughly ₹10,000–₹14,000 a month. Her mother reads Hindi and makes time for schoolwork. Asha sometimes helps her siblings before beginning her own homework."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She has fairly consistent attendance and strong recall. She can read independently, although new English vocabulary slows her down. Her marks are not only a measure of effort; they also reflect years of relatively steady access to school and help."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She likes making picture books from folded paper. She can explain stories aloud and enjoys sharing them. She has useful support, but needs time for her own learning rather than always being the person helping others."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Asha continues attending after transfer. Helping new classmates gives her a place in the group. Her teacher also needs to notice when being helpful takes time away from her own work."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        67,
+        82,
+        70
+      ],
+      [
+        56,
+        76,
+        69
+      ],
+      [
+        65,
+        85,
+        78
+      ]
+    ],
+    "update": "Asha is attending and helping classmates. Her teacher has noted that she also needs time and support for her own work."
+  },
+  {
+    "id": 26,
+    "name": "Karan",
+    "marks": [
+      78,
+      93,
+      81
+    ],
+    "average": 84,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Karan lives with his parents and brother. His mother works at a shop and his father handles deliveries. Around ₹11,000–₹15,000 is available each month. Both parents read Hindi and some English. They can usually help him practise and contact the school when something is unclear."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He has strong marks and a stable school history. He has benefited from reliable attendance, books and someone noticing unfinished work. He can still struggle when asked to explain a method rather than reproduce it. His position in a ranking does not reveal that difference."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He likes drawing mazes and inventing games for his brother. He has adults who make room for those interests. Opportunities to try unfamiliar problems would help him beyond the next examination."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Karan stays in school after transfer. His parents ask for an explanation. He remains capable of the work, but needs help understanding a decision that does not match how he thought the school valued him."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        78,
+        93,
+        81
+      ],
+      [
+        74,
+        94,
+        87
+      ],
+      [
+        83,
+        100,
+        73
+      ]
+    ],
+    "update": "Karan continues studying. His family asked why a strong mark did not keep his place. The office recorded the question but no explanation beyond the quota."
+  },
+  {
+    "id": 27,
+    "name": "Hina",
+    "marks": [
+      40,
+      55,
+      43
+    ],
+    "average": 46,
+    "age": 10,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Hina lives with her parents and three siblings. Her father works on short construction jobs and her mother cleans homes. Household earnings vary around ₹6,000–₹9,000 a month. Two older children share household work. Books are kept in a bag because there is little safe space to leave them out."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She has moved schools and missed parts of early reading instruction. She can copy a page carefully but cannot read much of a new passage independently. Her parents are unable to explain written homework. A completed notebook therefore gives a misleading impression of support."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She likes copying patterns from fabrics and making new ones. Her siblings save paper for her. She needs regular foundational reading instruction and a way for the family to understand what practice would help."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Hina continues in the new section. She can follow more spoken explanations, but the written work is still difficult. Without consistent reading support, changing classes has not resolved the main gap."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        40,
+        55,
+        43
+      ],
+      [
+        43,
+        63,
+        33
+      ],
+      [
+        29,
+        49,
+        42
+      ]
+    ],
+    "update": "Hina remains enrolled. She understands more of the discussion but still needs teaching in basic reading; moving her did not provide it."
+  },
+  {
+    "id": 28,
+    "name": "Deepak",
+    "marks": [
+      51,
+      66,
+      54
+    ],
+    "average": 57,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Deepak lives with his parents, aunt and cousin. His father drives a rented vehicle and his mother takes packaging work. Around ₹8,000–₹11,000 reaches the household in a month after work expenses. Adults work different hours, so his aunt usually checks whether he has eaten and completed homework."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He can read short familiar texts but finds longer questions hard. He sometimes misses school when there is nobody to take him. On returning he copies classmates’ work, then finds the next test assumes understanding he has not acquired."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He likes recognising buses and making route maps. His aunt encourages school but cannot help with English. He needs missed explanations to be revisited, not simply recorded as incomplete work."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Deepak remains enrolled after transfer. A teacher asks him to explain a route drawing and notices his confidence with directions. Reading and writing still need specific teaching alongside that strength."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        51,
+        66,
+        54
+      ],
+      [
+        61,
+        58,
+        51
+      ],
+      [
+        47,
+        67,
+        60
+      ]
+    ],
+    "update": "Deepak is attending. His route drawings have given the teacher a starting point for explanations, but the missed lessons still need to be revisited."
+  },
+  {
+    "id": 29,
+    "name": "Simran",
+    "marks": [
+      62,
+      77,
+      65
+    ],
+    "average": 68,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Simran lives with her parents and two sisters. Her mother stitches clothing and her father works at a repair shop. Earnings are roughly ₹9,000–₹13,000 a month. The sisters share a room with the adults and do schoolwork after stitching materials are put away. An older sister can help with some English."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She reads short passages and calculates accurately when she understands the task. She spends time making work neat and sometimes runs out of time. Her marks combine knowledge with how quickly she can read, plan and write under exam conditions."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She likes making cards and lettering signs. Her sister provides patient help when available. She needs practice judging how much time a task requires, without treating slower work as lack of understanding."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Simran continues in the new section. She takes time to settle socially. Her teacher notices she can explain unfinished answers aloud, giving a more useful starting point than the total alone."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        62,
+        77,
+        65
+      ],
+      [
+        56,
+        76,
+        69
+      ],
+      [
+        65,
+        85,
+        55
+      ]
+    ],
+    "update": "Simran remains enrolled. She can explain some unfinished answers aloud. There is not yet a record of how written tasks will be adjusted."
+  },
+  {
+    "id": 30,
+    "name": "Adil",
+    "marks": [
+      73,
+      88,
+      76
+    ],
+    "average": 79,
+    "age": 10,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Adil lives with his parents, brother and grandmother. His father works in a shop and his mother takes regular cooking work. Around ₹10,000–₹14,000 is available each month. His grandmother listens to reading practice and keeps track of school timings. His brother can explain some homework."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He has good attendance and strong results. He knows familiar procedures, but hesitates when there is more than one possible approach. The support available at home has helped him keep pace; it does not mean he has no unanswered questions."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He likes building towers from boxes and testing which designs stand. He is willing to retry those activities. He needs the same freedom to make and discuss mistakes in written work."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Adil stays at school after transfer. He misses a familiar teacher but continues working. He asks whether the change means he should stop trying for the English section; the new class still needs to make his learning feel worthwhile."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        73,
+        88,
+        76
+      ],
+      [
+        74,
+        94,
+        87
+      ],
+      [
+        83,
+        80,
+        73
+      ]
+    ],
+    "update": "Adil is attending. He has asked whether there is a reason to keep practising English after the move. His family wants that opportunity kept open."
+  },
+  {
+    "id": 31,
+    "name": "Rekha",
+    "marks": [
+      84,
+      99,
+      87
+    ],
+    "average": 90,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Rekha lives with her parents and younger sister. Her mother is a school support worker and her father does electrical repairs. Household earnings are roughly ₹11,000–₹15,000 a month. The adults read Hindi and some English, keep track of homework and borrow books for both children."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She reads independently, attends regularly and has very strong marks. She has also had continuity: the same school, adults who notice difficulties and a place to keep her materials. Those conditions are not visible beside her average. She can become upset by small mistakes."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She likes writing stories and helping her sister practise. Her family supports her interests. She needs space to learn something difficult without feeling she has to protect the label of being the best."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Rekha continues in the new section. The transfer shakes her confidence despite her skills. Her next teacher has to explain the work and rebuild trust, rather than assume a high-scoring pupil needs no support."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        84,
+        99,
+        87
+      ],
+      [
+        92,
+        89,
+        82
+      ],
+      [
+        78,
+        98,
+        91
+      ]
+    ],
+    "update": "Rekha continues to learn, but the decision has affected her confidence. Her new teacher is making time for questions rather than relying on the high average."
+  },
+  {
+    "id": 32,
+    "name": "Manav",
+    "marks": [
+      46,
+      61,
+      49
+    ],
+    "average": 52,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Manav lives with his mother, father and two brothers. His father takes loading work and his mother cleans homes. Income varies around ₹6,000–₹10,000 a month. The brothers share errands and care when the adults are working. Neither parent can explain much of the written English homework."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He reads familiar words but guesses at new ones. He has been present for many lessons without receiving enough individual reading practice. Copying from the board keeps him occupied and makes his notebook look similar to those of children who can read it."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He enjoys making things from clay and repairing small toys. His family encourages school attendance. A short, regular check of what he can read would reveal more than another page copied into the book."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Manav remains enrolled after transfer. He keeps making models with friends. Some classroom language becomes easier, but he still needs foundational reading teaching rather than assumptions based on his grade."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        46,
+        61,
+        49
+      ],
+      [
+        38,
+        58,
+        51
+      ],
+      [
+        47,
+        67,
+        60
+      ]
+    ],
+    "update": "Manav is attending. His work still includes careful copying, and a reading assessment has been requested. No completed assessment is on file."
+  },
+  {
+    "id": 33,
+    "name": "Zoya",
+    "marks": [
+      57,
+      72,
+      60
+    ],
+    "average": 63,
+    "age": 10,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Zoya lives with her parents, older sister and younger brother. Her mother prepares food for sale and her father works at a workshop. Household earnings are around ₹8,000–₹12,000 a month. Her sister helps the younger children, but her own work and study mean that help is not always available."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She reads slowly and understands more when she can ask about unfamiliar words. Her attendance has been interrupted by changes in the family’s work schedule. She is often handed the missed exercise rather than the missing explanation. Her paper shows the resulting gaps."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She likes telling jokes and drawing faces for the characters in them. Her sister notices when she is stuck. She needs reliable classroom time for catching up so the family is not expected to replace the teaching."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Zoya continues attending after transfer. She gradually makes new friends. When a teacher checks missed work with her, some gaps can be addressed; the family schedule remains a source of uncertainty."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        57,
+        72,
+        60
+      ],
+      [
+        56,
+        76,
+        69
+      ],
+      [
+        65,
+        62,
+        55
+      ]
+    ],
+    "update": "Zoya is attending when the family schedule allows. Her teacher has checked some missed work with her; continuity remains difficult."
+  },
+  {
+    "id": 34,
+    "name": "Varun",
+    "marks": [
+      68,
+      83,
+      71
+    ],
+    "average": 74,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Varun lives with his parents and grandmother. His father works at a small factory and his mother does sewing. Income is roughly ₹9,000–₹13,000 a month. His grandmother can read Hindi, supervises his afternoons and asks about lessons. English questions wait until a cousin visits."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He has mostly steady attendance and good recall. He finds it harder to apply familiar methods when a question uses a new example. His average does not show which concepts he could explain without a memorised sentence."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He enjoys sorting parts and building little mechanisms from cardboard. He can talk patiently about how they work. Showing that reasoning in class could help connect his practical understanding with written explanations."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Varun stays in school after transfer. He continues practising and starts explaining a model to classmates. His teacher finds both secure understanding and memorised steps that still need work."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        68,
+        83,
+        71
+      ],
+      [
+        74,
+        94,
+        64
+      ],
+      [
+        60,
+        80,
+        73
+      ]
+    ],
+    "update": "Varun remains enrolled. Discussing a model showed both understanding and memorised steps. His next teaching needs are clearer than his average alone suggested."
+  },
+  {
+    "id": 35,
+    "name": "Payal",
+    "marks": [
+      33,
+      39,
+      36
+    ],
+    "average": 36,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Payal is the youngest of four children. Her father works on construction sites. Her mother cleans in several homes. Their combined earnings range from roughly ₹5,000 to ₹10,000 a month, depending on available work. Rent, food and travel have to be paid from that income. There is no separate budget for private tuition.",
+          "The family shares one rented room. Two older siblings have already started working to contribute to household expenses. The third is still in school and does much of the cooking and care when the parents are out. Neither parent can read or write. They want Payal to study, but cannot sit with her and explain a worksheet they cannot read themselves."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "Payal has changed schools as her father's work has taken the family to different places. In one earlier placement, her class went through stretches without regular teaching when the teacher was absent. There was no consistent replacement or follow-up for the lessons missed.",
+          "She learnt to copy letters before she understood how to read words. Now she can reproduce familiar writing and some memorised answers, but cannot independently read a short passage or write a sentence expressing her own thought. That is different from leaving every exam answer blank: copying and memorised responses can still earn marks without showing independent reading and writing.",
+          "The current lessons assume skills she has not yet acquired. She does not understand many of the written instructions, and there is no dependable source of help after school. The report card records the answers she could produce. It does not record the teaching she did not receive."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "Payal loves drawing. She copies pictures from packaging, calendars and schoolbooks, noticing shapes and details other children miss. Her siblings save scraps of paper for her. Drawing is something she chooses to practise and something the family recognises she does well.",
+          "She remains enrolled, her parents want her to continue, and she has a clear interest a teacher could build on. What she lacks is sustained instruction at her current reading level. Moving her to a different section does not create that instruction automatically."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Payal continues attending after the transfer. Her new teacher asks her to describe one of her drawings and notices the difference between her spoken explanation and written work. Short reading sessions begin, using simple words alongside pictures. Her progress is gradual. The family still needs money, and as she approaches the end of primary school, her older siblings' earnings make starting work feel like a real alternative. Her continued schooling remains a question, not a settled outcome."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        33,
+        39,
+        36
+      ],
+      [
+        23,
+        34,
+        36
+      ],
+      [
+        32,
+        43,
+        45
+      ]
+    ],
+    "update": "Payal has begun short reading sessions using pictures. The family’s income remains uncertain, and continued attendance will still need practical support."
+  },
+  {
+    "id": 36,
+    "name": "Naveen",
+    "marks": [
+      41,
+      56,
+      44
+    ],
+    "average": 47,
+    "age": 10,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Naveen lives with his parents and three siblings. His father works as a helper at a market and his mother cleans homes. The household receives roughly ₹6,000–₹9,000 a month. The children share one room and take turns using a small table. An older brother has begun working."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He has had breaks in attendance and cannot independently read much of the English text used in class. He copies from classmates rather than ask them to explain again. His parents want him to study but cannot read enough of his books to teach him at home."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He likes drawing cricket players and remembers their scores. His brother sometimes helps with sums. He needs regular reading practice and lessons that do not depend on private tuition the family cannot afford."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Naveen remains enrolled after transfer. The older brother’s earnings make work seem attractive, but he continues coming for now. Keeping him learning requires more than keeping his name on the attendance list."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        41,
+        56,
+        44
+      ],
+      [
+        38,
+        58,
+        51
+      ],
+      [
+        47,
+        67,
+        37
+      ]
+    ],
+    "update": "Naveen is attending for now. His older brother’s earnings make work feel like an alternative. There is no individual reading plan in the office file."
+  },
+  {
+    "id": 37,
+    "name": "Sara",
+    "marks": [
+      52,
+      67,
+      55
+    ],
+    "average": 58,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Sara lives with her parents, younger sister and aunt. Her father repairs furniture and her mother does embroidery work. Income varies around ₹8,000–₹11,000 a month. Her aunt helps with meals and the school run. Adults can read some Hindi, but English homework depends on occasional help from a neighbour."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She reads familiar lines and struggles when vocabulary changes. She can explain an idea after hearing it but needs support putting that explanation into writing. Her work is sometimes marked incomplete without identifying which part prevented her from starting."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She likes making up conversations for paper puppets. She has adults who encourage her, though not the specific teaching help she needs. Working from an oral explanation towards a short written answer could show where she gets stuck."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Sara continues at school after transfer. She can speak more easily in class, but writing remains slow. A teacher begins using her spoken answers to plan what to practise next."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        52,
+        67,
+        55
+      ],
+      [
+        56,
+        76,
+        46
+      ],
+      [
+        42,
+        62,
+        55
+      ]
+    ],
+    "update": "Sara is attending. Her teacher has started from spoken explanations before asking for writing, though progress remains gradual."
+  },
+  {
+    "id": 38,
+    "name": "Rahul",
+    "marks": [
+      63,
+      78,
+      66
+    ],
+    "average": 69,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Rahul lives with his parents and younger brother. His father handles deliveries and his mother works in a small shop. Earnings are roughly ₹10,000–₹14,000 a month. His parents arrange time for study and a neighbour sometimes checks English reading. He has attended the same school for several years."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He has strong recall and fairly high marks. He finds some explanations hard to follow but rarely says so. Being known as a good student makes him reluctant to hand in an unfinished attempt. He sometimes copies a method rather than reveal that he needs another explanation."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He likes making rule sheets for playground games. The family provides books and attention. A classroom where questions are welcome would help him show uncertainty before it becomes a larger gap."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Rahul stays enrolled after transfer. He worries about how the decision will be explained at home. His skills remain, but rebuilding confidence and asking for help take time."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        63,
+        78,
+        66
+      ],
+      [
+        74,
+        71,
+        64
+      ],
+      [
+        60,
+        80,
+        73
+      ]
+    ],
+    "update": "Rahul continues studying. He has begun asking questions in the new section. His family reports that he still worries about disappointing the school."
+  },
+  {
+    "id": 39,
+    "name": "Komal",
+    "marks": [
+      74,
+      89,
+      77
+    ],
+    "average": 80,
+    "age": 10,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Komal lives with her parents, brother and grandmother. Her father repairs machines and her mother cooks in a canteen. Household income is around ₹10,000–₹14,000 a month. Her grandmother supervises homework. An older cousin lends books and answers questions when visiting."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She reads independently and has good attendance. She works carefully through familiar exercises, though new English vocabulary sometimes stops her. The mark rewards what she completed without showing whether she had enough time or understood every instruction."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She likes drawing plants and labelling the parts she knows. She has encouragement and some reading support. Giving her opportunities to explain and investigate would extend her learning beyond practice papers."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Komal continues in the new section and keeps borrowing books. She is upset about leaving her friends, but finds a classmate who also likes drawing. Her adjustment is not captured by the next subject total."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        74,
+        89,
+        77
+      ],
+      [
+        69,
+        89,
+        82
+      ],
+      [
+        78,
+        98,
+        68
+      ]
+    ],
+    "update": "Komal is attending and borrowing books. She has made a new drawing friend. The office has no further assessment of her learning needs."
+  },
+  {
+    "id": 40,
+    "name": "Harish",
+    "marks": [
+      85,
+      100,
+      88
+    ],
+    "average": 91,
+    "age": 9,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Harish lives with his parents and older sister. His mother works in an office and his father runs a small repair service. Around ₹12,000–₹16,000 is available in a typical month. His sister helps with homework, and the family has been able to stay in the same home and school area."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He reads confidently and performs very well on written tests. The continuity and help have supported real learning. He still finds open-ended questions harder than exercises with a single expected answer. A very high average does not mean he has finished needing teaching."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He likes drawing machines and making quizzes for friends. He has someone available when he cannot understand a question. He would benefit from chances to explore answers that cannot be memorised beforehand."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Harish remains enrolled after transfer. The family questions the decision and he feels embarrassed. His learning does not disappear, but the move changes how secure he feels in the school."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        85,
+        100,
+        88
+      ],
+      [
+        87,
+        100,
+        77
+      ],
+      [
+        96,
+        93,
+        86
+      ]
+    ],
+    "update": "Harish continues at school. His family questions the move, and his teacher reports that he needs reassurance as well as academic work."
+  },
+  {
+    "id": 41,
+    "name": "Anaya",
+    "age": 9,
+    "marks": [
+      82,
+      88,
+      85
+    ],
+    "average": 85,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Anaya lives with her parents and younger brother. Her mother does tailoring and her father works in a small workshop. Their household receives roughly ₹10,000–₹14,000 in an ordinary month. Both adults read Hindi and an older cousin helps with English. The family has recently moved closer to the school, reducing a long daily journey."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She enters the section with strong marks from her previous school. She reads familiar passages independently, but new English vocabulary can slow her down. Her previous teacher used frequent oral explanations. A new setting may assume she can begin every written task alone because her admission marks are high."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She draws picture stories and likes explaining how she made them. Her family makes time for homework. She needs a teacher to notice which kinds of instructions are unfamiliar, rather than assume that a new high-scoring student needs no help."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "After transfer, Anaya stays in school. She can explain more freely in Hindi, but feels embarrassed about leaving a section she only recently entered. Her family keeps reading with her while she gets used to another classroom."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        82,
+        88,
+        85
+      ],
+      [
+        91,
+        79,
+        81
+      ],
+      [
+        77,
+        88,
+        90
+      ]
+    ],
+    "update": "After transfer, Anaya stays in school. She can explain more freely in Hindi, but feels embarrassed about leaving a section she only recently entered. Her family keeps reading with her while she gets used to another classroom."
+  },
+  {
+    "id": 42,
+    "name": "Laksh",
+    "age": 10,
+    "marks": [
+      86,
+      92,
+      89
+    ],
+    "average": 89,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Laksh lives with his father, mother and grandmother. His father drives deliveries and his mother cooks for a nearby office. Roughly ₹11,000–₹15,000 is available each month. His grandmother checks that he eats and leaves for school. His parents can read messages from school and ask a neighbour when they need help with English."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "His strongest work is in arithmetic. He remembers procedures and practises them repeatedly. He can struggle to explain why a procedure works or choose a method when the question looks different. A strong entrance result shows what he completed on that paper, not everything he understands."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He likes designing mazes and testing them on friends. He has a regular place to keep his books and someone who notices missed homework. Questions that ask him to explain a choice would help reveal his learning needs."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Laksh continues attending after the transfer. He initially stops volunteering answers. His teacher gives him time to explain a familiar problem, and he begins participating again. Confidence and a test score do not move together in a simple way."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        86,
+        92,
+        89
+      ],
+      [
+        79,
+        90,
+        92
+      ],
+      [
+        88,
+        99,
+        78
+      ]
+    ],
+    "update": "Laksh continues attending after the transfer. He initially stops volunteering answers. His teacher gives him time to explain a familiar problem, and he begins participating again. Confidence and a test score do not move together in a simple way."
+  },
+  {
+    "id": 43,
+    "name": "Diya",
+    "age": 9,
+    "marks": [
+      79,
+      85,
+      82
+    ],
+    "average": 82,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Diya lives with her mother, aunt and two cousins. The adults do garment work and domestic cleaning. Combined income varies around ₹9,000–₹13,000 a month. The children share study space with work materials. Her aunt can read Hindi and helps her practise; English help depends on a cousin’s availability."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She has strong recall and fairly steady attendance. She has learnt to prepare carefully for predictable questions. When an exercise requires her own sentence, she hesitates. Teachers who see only her entrance average may miss the difference between recalling a passage and writing independently."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She makes paper puppets and invents conversations for them. Her aunt encourages that storytelling. Starting with a spoken explanation and helping her turn it into a sentence could show where the difficulty lies."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Diya remains enrolled after the transfer. She misses the classmates she had just met. She continues making puppets, and her new teacher uses one to start a conversation that becomes a short writing exercise."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        79,
+        85,
+        82
+      ],
+      [
+        79,
+        90,
+        92
+      ],
+      [
+        88,
+        76,
+        78
+      ]
+    ],
+    "update": "Diya remains enrolled after the transfer. She misses the classmates she had just met. She continues making puppets, and her new teacher uses one to start a conversation that becomes a short writing exercise."
+  },
+  {
+    "id": 44,
+    "name": "Pranav",
+    "age": 10,
+    "marks": [
+      88,
+      94,
+      91
+    ],
+    "average": 91,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Pranav lives with his parents and sister. His father repairs appliances and his mother works at a shop. Their earnings are roughly ₹11,000–₹16,000 a month. His sister has stayed in school and helps him with homework. A period without moving homes has given both children some continuity."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He reads independently and has done well in written tests. Some of that progress comes from being able to ask a question at home rather than wait for the next lesson. He is less comfortable with tasks where there is no single model answer. He can mistake uncertainty for failure."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He likes building cardboard structures and comparing which designs stand. He has books, time and help. He still needs chances to discuss mistakes without feeling that a high rank is something he has to defend."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Pranav continues studying after the transfer. His family asks for an explanation. His skills remain, but he needs reassurance that asking for help in the new section does not mean his earlier work was worthless."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        88,
+        94,
+        91
+      ],
+      [
+        95,
+        83,
+        85
+      ],
+      [
+        81,
+        92,
+        94
+      ]
+    ],
+    "update": "Pranav continues studying after the transfer. His family asks for an explanation. His skills remain, but he needs reassurance that asking for help in the new section does not mean his earlier work was worthless."
+  },
+  {
+    "id": 45,
+    "name": "Leela",
+    "age": 9,
+    "marks": [
+      83,
+      89,
+      86
+    ],
+    "average": 86,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Leela lives with her parents, grandmother and brother. Her father works at a printing shop and her mother takes sewing orders. Around ₹10,000–₹14,000 reaches the household in a typical month. Her grandmother listens to reading practice. Her brother shares books and helps when he understands the exercise himself."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She arrives with strong marks and a good memory for examples. She reads short passages, but longer instructions can be difficult. At her previous school she could ask a familiar teacher to explain a word. She has not yet learnt when it feels safe to ask in this new class."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She likes drawing signs and making little books. Her family encourages study and keeps her materials safe. A brief check that she understands a task could prevent an entire page of confident copying."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Leela stays in school after the transfer. She begins asking questions in Hindi, but wants to keep reading English too. Her teacher and family need to support both rather than treat the section label as a limit on what she can learn."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        83,
+        89,
+        86
+      ],
+      [
+        74,
+        85,
+        87
+      ],
+      [
+        83,
+        94,
+        96
+      ]
+    ],
+    "update": "Leela stays in school after the transfer. She begins asking questions in Hindi, but wants to keep reading English too. Her teacher and family need to support both rather than treat the section label as a limit on what she can learn."
+  },
+  {
+    "id": 46,
+    "name": "Om",
+    "age": 10,
+    "marks": [
+      90,
+      96,
+      93
+    ],
+    "average": 93,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Om lives with his parents and older sister. His mother works in an office and his father runs a repair counter. Household income is roughly ₹12,000–₹16,000 a month. His sister helps him practise and the adults usually have someone to contact when work from school is unclear."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He has very strong written results and consistent attendance. He has benefited from repeated practice, borrowed books and adults who notice a gap before the next test. He is sometimes more comfortable repeating an explanation than trying to build one himself."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He enjoys making quizzes and playing word games. Those interests have been encouraged at home. A teacher who asks how he reached an answer can recognise both real understanding and material he has memorised."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Om remains enrolled after the transfer. He is confused that a high entrance score did not protect his place. Work continues, but his next teacher also has to help him understand that his value is not the position of his name on a list."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        90,
+        96,
+        93
+      ],
+      [
+        88,
+        99,
+        100
+      ],
+      [
+        97,
+        85,
+        87
+      ]
+    ],
+    "update": "Om remains enrolled after the transfer. He is confused that a high entrance score did not protect his place. Work continues, but his next teacher also has to help him understand that his value is not the position of his name on a list."
+  },
+  {
+    "id": 47,
+    "name": "Roshni",
+    "age": 9,
+    "marks": [
+      80,
+      86,
+      83
+    ],
+    "average": 83,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Roshni lives with her parents and two brothers. Her father takes warehouse shifts and her mother does tailoring. Earnings range around ₹9,000–₹13,000 a month. The adults can check Hindi work. English practice comes from a cousin who visits on weekends. The children share a small table after evening work is cleared."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "She has done well on familiar exercises, especially after a period of regular practice. She understands spoken explanations more readily than new written vocabulary. Her entrance marks do not show which answers depended on a relative explaining the question beforehand."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "She enjoys drawing maps and giving directions. Her family wants her to continue learning and makes space when possible. Checking her understanding of an instruction would help more than assuming that new entrants all learn in the same way."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Roshni continues attending after the transfer. Some instructions become clearer. She needs time to make friends again, and continues to need support with unfamiliar written tasks."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        80,
+        86,
+        83
+      ],
+      [
+        85,
+        96,
+        75
+      ],
+      [
+        71,
+        82,
+        84
+      ]
+    ],
+    "update": "Roshni continues attending after the transfer. Some instructions become clearer. She needs time to make friends again, and continues to need support with unfamiliar written tasks."
+  },
+  {
+    "id": 48,
+    "name": "Sahil",
+    "age": 10,
+    "marks": [
+      85,
+      91,
+      88
+    ],
+    "average": 88,
+    "report": [
+      {
+        "title": "Home and family",
+        "paragraphs": [
+          "Sahil lives with his parents, grandfather and younger sister. His father works at a hardware shop and his mother cooks for nearby households. Around ₹10,000–₹14,000 is available each month. His grandfather reads Hindi with the children. A neighbour occasionally helps with English work."
+        ]
+      },
+      {
+        "title": "School and learning",
+        "paragraphs": [
+          "He reads comfortably and has a strong entrance result. He has remained enrolled without long interruptions. He can still struggle to explain a method when a problem is presented differently. Neither a good score nor a new section tells the next teacher exactly what he needs to learn."
+        ]
+      },
+      {
+        "title": "Interests and available support",
+        "paragraphs": [
+          "He makes games from bottle caps and writes rules for friends. His grandfather gives him time to talk through ideas. Explaining a game could be a way into discussing a written instruction, rather than simply practising another copied answer."
+        ]
+      },
+      {
+        "title": "Later, in this fictional story",
+        "paragraphs": [
+          "Sahil remains enrolled after the transfer. He carries his games into the new classroom and slowly finds people to play with. The move changes relationships as well as the heading on his school record."
+        ]
+      }
+    ],
+    "marksByRound": [
+      [
+        85,
+        91,
+        88
+      ],
+      [
+        74,
+        85,
+        87
+      ],
+      [
+        83,
+        94,
+        96
+      ]
+    ],
+    "update": "Sahil remains enrolled after the transfer. He carries his games into the new classroom and slowly finds people to play with. The move changes relationships as well as the heading on his school record."
+  }
+]

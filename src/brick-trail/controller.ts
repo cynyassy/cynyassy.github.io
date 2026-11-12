@@ -31,7 +31,7 @@ export function mountTrail(canvas:HTMLCanvasElement,region:HTMLElement,onChange:
  }
 
  function pause(why='Paused. Ready when you are.'){const was=runner.phase;runner.pause(why);clearInput();if(was==='running')playSound('pause');refresh();}
- function open(id:string,origin:HTMLElement){const p=projects.find(p=>p.id===id);if(!p||blocked)return;pause('Paused while you look at a project.');pending=null;save();const fresh=!explore.seen.has(id);explore.seen.add(id);save();clearInput();playSound(fresh?(explore.seen.size===8?'complete':'discover'):'revisit');message=explore.seen.size===8?'All eight explored. There’s a little more of my story below.':`${p.name} opened. ${8-explore.seen.size} more to explore.`;blocked=true;onPreview(id,origin);refresh();}
+ function open(id:string,origin:HTMLElement){const p=projects.find(p=>p.id===id);if(!p||blocked)return;pause('Paused while you look at a project.');pending=null;save();const fresh=!explore.seen.has(id);explore.seen.add(id);save();clearInput();playSound(fresh?(explore.seen.size===projects.length?'complete':'discover'):'revisit');message=explore.seen.size===projects.length?'All projects explored. There’s a little more of my story below.':`${p.name} opened. ${projects.length-explore.seen.size} more to explore.`;blocked=true;onPreview(id,origin);refresh();}
  function discover(id:string,origin:HTMLElement){if(mode==='runner'){open(id,origin);return;}if(blocked||pending)return;if(explore.seen.has(id)||matchMedia('(prefers-reduced-motion: reduce)').matches||projects.find(p=>p.id===id)?.area!==explore.area){open(id,origin);return;}pending={id,origin,remaining:.25};clearInput();playSound('tap');refresh();}
  function hitSkill(){if(mode!=='explore'||explore.area!=='main'||blocked||pending||skillCooldown>0)return;skillCooldown=.2;skillPopAge=0;skillFound=skillCollection.hit();playSound('progress');refresh(true);}
  function setMode(next:Mode){if(next===mode||blocked)return;save();pause('Paused while you explore.');pending=null;mode=next;last=0;message=next==='runner'?'Jump over ground obstacles. Hold Duck for drones. Break bonus bricks for 50 points.':'Your place on the trail is saved. Keep exploring.';refresh(true);}
@@ -108,14 +108,14 @@ export function mountTrail(canvas:HTMLCanvasElement,region:HTMLElement,onChange:
  listen(matchMedia('(prefers-reduced-motion: reduce)'),'change',()=>refresh(true));
  const resize=new ResizeObserver(()=>{renderer.resize();refresh(true);});resize.observe(canvas);
  const intersection=new IntersectionObserver(entries=>{offscreen=!entries[0].isIntersecting;if(offscreen){cancelAnimationFrame(raf);raf=0;clearInput();save();pause('Paused while the game is out of view.');}else refresh(true);last=0;},{threshold:0});intersection.observe(canvas);
- renderer.resize();refresh(true);loadSprites().then(images=>{if(!alive)return;frames=images;ready=true;refresh(true);}).catch(()=>{if(!alive)return;error=true;message='The character could not load. All eight projects are still available below.';refresh(true);});wake();
+ renderer.resize();refresh(true);loadSprites().then(images=>{if(!alive)return;frames=images;ready=true;refresh(true);}).catch(()=>{if(!alive)return;error=true;message='The character could not load. All projects are still available below.';refresh(true);});wake();
  return {setMode,switchArea,hitSkill,jump:triggerJump,start,end,pause,discover,open,
  duck(held:boolean){if(mode==='runner'&&!blocked&&!offscreen&&!document.hidden){runner.duck(held);refresh(true);}},
  move(direction:'left'|'right',pressed:boolean){if(mode==='explore'&&!blocked&&!pending){const key=direction==='left'?'arrowleft':'arrowright';if(pressed)keys.add(key);else keys.delete(key);wake();}},
  closePreview(){blocked=false;last=0;clearInput();refresh(true);},
  setBlocked(value:boolean){blocked=value;clearInput();if(value)pause('Paused while you check a setting.');else refresh(true);},
  resetPosition(){if(mode==='explore'){explore.resetPosition();clearInput();save();message='Back at the entrance. Your discoveries are still here.';refresh(true);}},
- resetProgress(){const r=store.clear();epoch=r.snapshot.resetId;explore.apply(r.snapshot);skillCollection.reset();skillFound=null;pending=null;clearInput();message='A fresh trail. All eight projects are ready to explore again.';if(r.kind==='session')saveNotice='Saving is unavailable. Progress lasts for this visit.';refresh(true);},
+ resetProgress(){const r=store.clear();epoch=r.snapshot.resetId;explore.apply(r.snapshot);skillCollection.reset();skillFound=null;pending=null;clearInput();message='A fresh trail. All projects are ready to explore again.';if(r.kind==='session')saveNotice='Saving is unavailable. Progress lasts for this visit.';refresh(true);},
  dispose(){save();alive=false;runner.finish('ended');abort.abort();resize.disconnect();intersection.disconnect();cancelAnimationFrame(raf);clearInput();}
  };
 }

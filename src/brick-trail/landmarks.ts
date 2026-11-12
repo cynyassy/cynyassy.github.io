@@ -9,6 +9,11 @@ export function drawLandmark(ctx:CanvasRenderingContext2D,kind:LandmarkId,x:numb
  // The low plinth anchors each object in the landscape instead of framing it as a card.
  r(3,46,44,2,ink);
  switch(kind){
+ case 'schoolhouse':
+  r(5,15,38,30,paper);r(3,12,42,4,ink);r(9,5,30,8,steel);r(14,7,20,3,paper);
+  for(const wx of [10,28]){r(wx,21,10,10,dark);r(wx+1,22,8,8,opened?gold:blue);r(wx+4,22,1,8,steel);r(wx+1,25,8,1,steel);}
+  r(20,33,8,12,ink);r(21,34,6,11,opened?blue:steel);r(25,39,1,1,paper);r(3,44,42,2,steel);
+  break;
  case 'coffee-cart':
   r(5,8,38,3,steel);r(5,11,38,5,paper);for(let i=5;i<43;i+=8)r(i,11,4,5,red);
   r(7,16,2,16,steel);r(39,16,2,16,steel);r(5,31,38,3,paper);r(7,34,34,9,steel);r(12,36,23,4,dark);

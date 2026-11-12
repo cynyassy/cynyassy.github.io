@@ -1292,3 +1292,6 @@
   transform: none;
 }
 
+
+.brick-home .cover-school{background:#fff}
+.brick-home .cover-school img{width:100%;height:100%;object-fit:contain}

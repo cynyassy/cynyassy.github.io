@@ -235,3 +235,18 @@
 @media(max-width:700px){.work-with-me-page>main{padding-inline:20px}}
 .work-with-me-page>main{padding-top:40px}
 .work-with-me-page .work-with-me-hero{padding-top:16px}
+.work-with-me-page .work-with-me-hero{max-width:none;padding-bottom:36px;border-bottom:1px solid #ddd}
+.work-with-me-page .work-with-me-hero h1{max-width:830px;text-wrap:balance}
+.work-with-me-page .work-with-me-intro{max-width:65ch;font-size:18px;margin-top:24px}
+.work-with-me-page .work-with-me-offers-block{padding:36px 0;border-bottom:1px solid #ddd}
+.work-with-me-page .work-with-me-experience{padding:36px 0;border-bottom:1px solid #ddd}
+.work-with-me-experience h2{font-size:36px;line-height:1.12;letter-spacing:-.04em;font-weight:650;max-width:600px;text-wrap:balance;margin:0 0 20px}
+.work-with-me-experience-intro{font-size:16px;line-height:1.65;max-width:65ch;margin:0 0 28px}
+.work-with-me-page .work-with-me-note{padding:36px 0;border-bottom:1px solid #ddd}
+.work-with-me-page .work-with-me-note p:not(.work-with-me-eyebrow){font-size:24px;max-width:70ch;line-height:1.4;text-wrap:pretty}
+.work-with-me-page .work-with-me-cta{padding:36px 0}
+.work-with-me-page .work-with-me-actions a{text-transform:none;letter-spacing:0;font-size:14px;font-weight:600;min-height:44px;padding:10px 16px}
+@media(max-width:650px){.work-with-me-page .work-with-me-intro{font-size:16px}.work-with-me-experience h2{font-size:30px}.work-with-me-page .work-with-me-note p:not(.work-with-me-eyebrow){font-size:21px}}
+
+.work-with-me-page .work-with-me-hero h1 .headline-products{color:#3f88c5}
+.work-with-me-page .work-with-me-hero h1 .headline-stories{color:#d00000}

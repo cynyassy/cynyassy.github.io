@@ -29,7 +29,7 @@
   cursor: pointer;
 }
 
-.brick-home header {
+.brick-home header.home-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1068,11 +1068,11 @@
 
 @media (max-width:650px) {
 
-  .brick-home header {
+  .brick-home header.home-header {
     flex-wrap: wrap;
   }
 
-  .brick-home header nav {
+  .brick-home header.home-header nav {
     gap: 8px;
     padding-top: 0;
   }
@@ -1105,7 +1105,7 @@ body:has(.brick-home) {
   padding: 24px 40px;
 }
 
-.brick-home header {
+.brick-home header.home-header {
   padding-bottom: 18px;
   border-color: #dedede;
 }
@@ -1578,19 +1578,19 @@ body:has(.brick-home) {
     padding: 18px;
   }
 
-  .brick-home header {
+  .brick-home header.home-header {
     flex-direction: column;
     align-items: stretch;
     gap: 12px;
   }
 
-  .brick-home header nav {
+  .brick-home header.home-header nav {
     width: 100%;
     justify-content: space-between;
     font-size: 14px;
   }
 
-  .brick-home header nav a {
+  .brick-home header.home-header nav a {
     min-height: 44px;
     padding: 10px 0;
   }
@@ -2093,3 +2093,38 @@ body:has(.brick-home) {
 .brick-home .home-byline{max-width:62ch;text-wrap:pretty}
 @media(max-width:700px){.brick-home main{width:calc(100% - 40px)}}
 .brick-home main{padding:24px 0}
+
+/* Professional introduction. Game rules, input and scene geometry are unchanged. */
+.brick-home .profile-intro{display:block;margin:24px 0 32px}
+.brick-home .profile-intro .eyebrow{margin:0 0 18px;color:#626262;font-size:11px}
+.brick-home .profile-intro h1{font-size:clamp(38px,4.4vw,58px);line-height:1.05;letter-spacing:-.05em;font-weight:700;max-width:850px;text-wrap:balance;margin:0}
+.brick-home .profile-intro .home-byline{font-size:16px;line-height:1.65;max-width:68ch;margin:20px 0 0;text-wrap:pretty}
+.brick-home .intro-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:20px}
+.brick-home .intro-actions a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;font-weight:600}
+.brick-home .intro-actions .intro-primary{background:#353535;color:#fff;padding:10px 18px;text-decoration:none}
+.brick-home .experience-signal{display:inline-flex;align-items:center;gap:12px;min-height:44px;margin-top:12px;font-size:12px;line-height:1.6;text-decoration:none;color:#626262;text-wrap:pretty}
+.brick-home .experience-signal:hover{text-decoration:underline}
+.brick-home .play-introduction{display:flex;justify-content:space-between;gap:16px;align-items:baseline;margin-bottom:12px}
+.brick-home .play-introduction p{margin:0;font-size:17px;font-weight:600;letter-spacing:-.02em}
+.brick-home .play-introduction>span{font-size:12px;color:#626262}
+.brick-home .portfolio-header nav{width:auto;justify-content:flex-start}
+@media(max-width:700px){
+ .brick-home .profile-intro{margin:12px 0 28px}
+ .brick-home .profile-intro h1{font-size:clamp(32px,8.5vw,42px)}
+ .brick-home .profile-intro .home-byline{font-size:15px;line-height:1.6;margin-top:16px}
+ .brick-home .profile-intro .eyebrow{font-size:11px;margin-bottom:14px}
+ .brick-home .intro-actions{gap:8px 20px;margin-top:16px}
+ .brick-home .experience-signal{max-width:100%;font-size:11px}
+ .brick-home .play-introduction{align-items:center;margin-bottom:12px}
+ .brick-home .play-introduction p{font-size:16px}
+ .brick-home .play-introduction>span{font-size:11px}
+ .brick-home .play-toolbar{flex-wrap:wrap;gap:8px}
+ .brick-home .play-toolbar .mode-tabs{flex:1 1 100%}
+ .brick-home .play-toolbar .browse-link{display:inline-flex;min-height:44px;align-items:center;font-size:12px;margin:0}
+ .brick-home .portfolio-header .portfolio-header-inner{padding:16px 20px 8px;gap:0 12px}
+ .brick-home .portfolio-header nav{margin-right:auto;gap:20px;flex-wrap:nowrap}
+}
+
+/* Palette accents connect the two parts of the opening proposition. */
+.brick-home .profile-intro h1 .headline-products{color:#3f88c5}
+.brick-home .profile-intro h1 .headline-stories{color:#d00000}

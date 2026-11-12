@@ -9,6 +9,14 @@ export function drawLandmark(ctx:CanvasRenderingContext2D,kind:LandmarkId,x:numb
  // The low plinth anchors each object in the landscape instead of framing it as a card.
  r(3,46,44,2,ink);
  switch(kind){
+ case 'reset-station':
+  // A conversation station. Discovery lights the two speech bubbles.
+  r(8,16,32,27,steel);r(10,18,28,23,dark);r(5,43,38,3,paper);
+  r(12,5,20,13,opened?'#dd5140':paper);r(15,18,4,4,opened?'#dd5140':paper);
+  r(26,21,16,12,opened?'#80b9c4':steel);r(34,33,4,4,opened?'#80b9c4':steel);
+  r(16,10,11,2,ink);r(16,14,7,1,ink);r(29,25,9,2,ink);r(29,29,6,1,ink);
+  for(let i=0;i<5;i++)r(12+i*5,38,4,2,['#46878a','#80b9c4','#dd5140','#ff8851','#d49632'][i]);
+  break;
  case 'schoolhouse':
   r(5,15,38,30,paper);r(3,12,42,4,ink);r(9,5,30,8,steel);r(14,7,20,3,paper);
   for(const wx of [10,28]){r(wx,21,10,10,dark);r(wx+1,22,8,8,opened?gold:blue);r(wx+4,22,1,8,steel);r(wx+1,25,8,1,steel);}

@@ -1,13 +1,7 @@
 import { PortfolioFooter } from '../shared/PortfolioFooter';
 import { PortfolioHeader } from '../shared/PortfolioHeader';
 import { ExternalLink, Mail } from 'lucide-react';
-
-const offers = [
- { title:'Building products', description:'Take an idea through product design, interfaces, software and launch. Connect the parts so the thing actually works.', proof:'Indian Coffee Stories & Brew Tracker', href:'/projects/coffee-tools.html' },
- { title:'Communication and product education', description:'Work out what to say, who it helps and how it reaches them. Build the stories, channels, documentation and useful content around a product.', proof:'AlgoTest', href:'/projects/algotest.html' },
- { title:'Game and interaction design', description:'Give people something to try, question and learn from. Turn research into games, services and interactive experiences.', proof:'Perspectives', href:'/projects/perspectives.html' },
- { title:'Writing and illustration', description:'Find the words, drawings and pacing that make an idea land. From a short comic to a published book.', proof:'ChaddiMan & the book', href:'/projects/cynyassy.html' },
-];
+import { Capabilities,ProfessionalExperience,TechnicalLearning } from '../shared/ProfessionalProfile';
 
 export default function WorkWithMePage() {
   return (
@@ -17,30 +11,31 @@ export default function WorkWithMePage() {
       <main className="mx-auto max-w-5xl px-6 py-14 md:px-10 md:py-20">
         <section className="work-with-me-hero">
           <p className="work-with-me-eyebrow">Work With Me</p>
-          <h1>I turn ideas into stories, products and experiences people can use.</h1>
+          <h1>I <span className="headline-products">build products</span> and the <span className="headline-stories">stories</span> around them.</h1>
           <p className="work-with-me-intro">
-            I work across communication, design and software. I can help shape the idea, make it tangible, build it and find a useful way to put it in front of people.
+            I can help work out what should be made, design and build it, and explain it to the people it is for. My work connects research, interfaces, software and communication.
           </p>
         </section>
 
-        <section className="work-with-me-offers-block">
+        <section className="work-with-me-offers-block" aria-labelledby="hire-title">
           <div className="work-with-me-offers-inner">
-            <p className="work-with-me-eyebrow">What You Can Hire Me For</p>
-            <div className="work-with-me-offers">
-              {offers.map((offer) => (
-                <article className="work-with-me-offer" key={offer.title}>
-                  <h2>{offer.title}</h2>
-                  <p>{offer.description}</p><a className="offer-proof" href={offer.href}>See the work: {offer.proof} ↗</a>
-                </article>
-              ))}
-            </div>
+            <h2 id="hire-title" className="work-with-me-eyebrow">What You Can Hire Me For</h2>
+            <Capabilities />
+            <TechnicalLearning />
           </div>
+        </section>
+
+        <section id="experience" className="work-with-me-experience" aria-labelledby="work-experience-title">
+          <p className="work-with-me-eyebrow">Professional experience</p>
+          <h2 id="work-experience-title">Different settings. The same care for the work.</h2>
+          <p className="work-with-me-experience-intro">From teaching and publishing to product teams, brand consulting and client delivery. These are some of the places I’ve put that combination to work.</p>
+          <ProfessionalExperience />
         </section>
 
         <section className="work-with-me-note">
           <p className="work-with-me-eyebrow">Best Fit</p>
           <p>
-            I work well with teams who need someone to connect the thinking and the making, especially when a product, service or idea crosses more than one discipline.
+            I work well with teams who need someone to connect the thinking and the making. That might be a role in a product team, a client project, or a collaboration that crosses disciplines.
           </p>
         </section>
 

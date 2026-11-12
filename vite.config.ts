@@ -30,6 +30,7 @@ export default defineConfig({
         cynyassy: path.resolve(__dirname, 'projects/cynyassy.html'),
         bookStory: path.resolve(__dirname, 'projects/not-everything-is-urgent.html'),
         schoolDecision: path.resolve(__dirname, 'projects/school-decision.html'),
+        projectReset: path.resolve(__dirname, 'projects/project-reset.html'),
         filmFestivalFriday: path.resolve(__dirname, 'projects/film-festival-friday.html'),
         otherProjects: path.resolve(__dirname, 'projects/other-projects.html'),
         workWithMe: path.resolve(__dirname, 'projects/work-with-me.html'),

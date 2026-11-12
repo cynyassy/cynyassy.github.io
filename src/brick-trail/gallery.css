@@ -1295,3 +1295,74 @@
 
 .brick-home .cover-school{background:#fff}
 .brick-home .cover-school img{width:100%;height:100%;object-fit:contain}
+
+/* Curated work: large product cases, smaller original work, optional experiments. */
+.brick-home .cover-reset{display:block;padding:0;background:#1e1e1c}
+.brick-home .cover-reset svg{display:block;width:100%;height:100%;object-fit:contain}
+.brick-home #preview .image-artifact>svg{display:block;width:100%;height:auto}
+.brick-home .curated-work{padding-top:36px}
+.brick-home .curated-work .featured-project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.brick-home .curated-work .project-cover{aspect-ratio:16/10}
+.brick-home .curated-work .project-copy{padding-top:16px}
+.brick-home .curated-work .project-evidence{font-size:11px;line-height:1.6;color:#626262;margin:0 0 8px}
+.brick-home .curated-work .project-card h3{font-size:26px;line-height:1.12;margin:0 0 10px;letter-spacing:-.035em;text-wrap:balance}
+.brick-home .curated-work .project-copy>p:not(.project-evidence){font-size:14px;margin:0 0 16px}
+.brick-home .curated-work .project-footer{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:auto}
+.brick-home .curated-work .project-role{max-width:none;font-size:11px;line-height:1.6}
+.brick-home .curated-work .project-action{min-height:44px;display:inline-flex;align-items:center;font-size:13px}
+.brick-home .work-group-heading{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin:40px 0 24px;padding-top:28px;border-top:1px solid #ddd}
+.brick-home .work-group-heading h3{font-size:25px;line-height:1.15;letter-spacing:-.03em;margin:0;font-weight:650}
+.brick-home .work-group-heading p{margin:0;font-size:13px;color:#626262;line-height:1.6}
+.brick-home .curated-work .compact-project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.brick-home .curated-work .project-card-compact .project-link{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;align-items:start}
+.brick-home .curated-work .project-card-compact .project-cover{aspect-ratio:1;--cover-inset:4px}
+.brick-home .project-card-compact .cover-perspectives{padding:8px;display:block}
+.brick-home .project-card-compact .perspectives-copy{width:100%;padding:0}
+.brick-home .project-card-compact .perspectives-copy>span{font-size:7px}
+.brick-home .project-card-compact .perspectives-copy strong{font-size:13px;line-height:1.1}
+.brick-home .project-card-compact .perspectives-board{display:none}
+.brick-home .project-card-compact .perspectives-characters{margin-top:8px;gap:2px;height:32px}
+.brick-home .project-card-compact .perspectives-characters img{width:24px;height:30px;object-fit:contain}
+.brick-home .curated-work .project-card-compact .project-copy{padding:0}
+.brick-home .curated-work .project-card-compact h3{font-size:20px}
+.brick-home .curated-work .project-card-compact .project-copy>p:not(.project-evidence){font-size:13px;margin-bottom:8px}
+.brick-home .curated-work .project-card-compact .project-role{display:none}
+.brick-home .curated-work .project-card-compact .project-evidence{font-size:11px}
+.brick-home .more-work{margin-top:28px;border-top:1px solid #ddd}
+.brick-home .more-work summary{cursor:pointer;min-height:56px;align-content:center;font-size:15px;font-weight:600;padding:14px 0}
+.brick-home .more-work summary span{font-size:12px;font-weight:400;color:#626262;margin-left:12px}
+.brick-home .more-work .compact-project-grid{grid-template-columns:repeat(2,minmax(0,1fr));padding-top:16px}
+.brick-home .profile-section{padding:32px 0;border-top:1px solid #ddd;scroll-margin-top:24px}
+.brick-home .profile-section-heading{margin-bottom:24px}
+.brick-home .profile-section-heading .eyebrow{color:#626262;font-size:10px;margin:0 0 12px}
+.brick-home .profile-section h2{font-size:36px;line-height:1.1;letter-spacing:-.04em;font-weight:650;margin:0;text-wrap:balance}
+.brick-home .profile-section-heading>p:last-child:not(.eyebrow){font-size:14px;line-height:1.6;margin:12px 0 0;color:#626262}
+.brick-home .about-copy .education-line{font-size:14px;line-height:1.65;text-wrap:pretty}
+.brick-home .professional-capabilities .professional-proof a{font-size:13px}
+.brick-home .professional-capabilities h3{font-size:21px;line-height:1.2}
+.brick-home .professional-experience-row h3{font-size:19px;line-height:1.2;margin-bottom:6px;display:block;letter-spacing:-.025em}
+.brick-home .professional-history p{font-size:15px;line-height:1.65;margin:0}
+.brick-home .professional-history .professional-role{font-size:13px;line-height:1.65}
+@media(max-width:1000px){.brick-home .curated-work .compact-project-grid{grid-template-columns:1fr}.brick-home .curated-work .project-card-compact .project-link{grid-template-columns:140px minmax(0,1fr)}.brick-home .curated-work .project-card-compact .project-cover{aspect-ratio:16/10}}
+@media(max-width:700px){
+ .brick-home .curated-work .section-heading{display:block;margin-bottom:24px}
+ .brick-home .curated-work .section-heading h2{font-size:34px;letter-spacing:-.04em}
+ .brick-home .curated-work .section-heading>p{display:block;margin:12px 0 0}
+ .brick-home .curated-work .featured-project-grid{grid-template-columns:1fr;gap:32px}
+ .brick-home .curated-work .project-copy{padding-top:12px}
+ .brick-home .curated-work .project-card h3{font-size:25px}
+ .brick-home .curated-work .project-footer{flex-direction:row;flex-wrap:wrap;gap:4px 16px;align-items:center}
+ .brick-home .curated-work .project-role{font-size:11px}
+ .brick-home .work-group-heading{display:block;margin-top:28px;padding-top:24px}
+ .brick-home .work-group-heading h3{font-size:24px}
+ .brick-home .work-group-heading p{margin-top:10px}
+ .brick-home .curated-work .project-card-compact .project-link{grid-template-columns:100px minmax(0,1fr);gap:16px}
+ .brick-home .curated-work .project-card-compact h3{font-size:20px}
+ .brick-home .curated-work .project-card-compact .project-cover{aspect-ratio:1}
+ .brick-home .more-work .compact-project-grid{grid-template-columns:1fr}
+ .brick-home .profile-section{padding:28px 0}
+ .brick-home .profile-section h2{font-size:30px}
+ .brick-home .professional-history p{font-size:14px}
+ .brick-home .about-copy h2{font-size:30px;line-height:1.1;letter-spacing:-.04em;text-wrap:balance}
+ .brick-home .contact-section h2{font-size:30px;text-wrap:balance}
+}

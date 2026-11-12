@@ -1,7 +1,7 @@
 export type Area = 'main' | 'bonus';
 export interface Platform {x:number;y:number;w:number;color:string}
 export interface World {width:number;portal:number;spawn:number;platforms:Platform[]}
-export type LandmarkId = 'coffee-cart' | 'terminal' | 'comic-kiosk' | 'reactor' | 'board-table' | 'feeling-meter' | 'bookshelf' | 'cinema' | 'schoolhouse';
+export type LandmarkId = 'coffee-cart' | 'terminal' | 'comic-kiosk' | 'reactor' | 'board-table' | 'feeling-meter' | 'bookshelf' | 'cinema' | 'schoolhouse' | 'reset-station';
 export interface Project {id:string;landmark:LandmarkId;area:Area;name:string;type:string;role:string;hook:string;description:string;url:string;x:number;y:number;color:string}
 export const projects: Project[] =[
  {id:'brew',area:'main',landmark:'coffee-cart',name:'Indian Coffee Stories',type:'Publication & connected product',role:'Communication strategy, writing, research, design and full-stack development',hook:'Stories, channels, discovery tools and a brewing app. Built together.',description:'Indian Coffee Stories brings together my writing, video, communication strategy, discovery tools and Brew Tracker. The app is one part of the coffee ecosystem I am building.',url:'/projects/coffee-tools.html',x:330,y:198,color:'#f5f3ee'},
@@ -12,7 +12,8 @@ export const projects: Project[] =[
  {id:'emotions',area:'bonus',landmark:'feeling-meter',name:'Emotion Identifier',type:'Guided reflection tool',role:'Concept, guided interaction and development',hook:'Try the live tool at your own pace.',description:'Sometimes I know something is going on before I have the words for it. This tool helps turn a broad feeling into something easier to name.',url:'https://cynyassy.github.io/emotions/',x:760,y:130,color:'#3f88c5'},
  {id:'book',area:'bonus',landmark:'bookshelf',name:'Not Everything Is Urgent',type:'Published illustrated book',role:'Writer, illustrator and designer, with Kim and Ian through The Pound Project',hook:'Read a story and see how we made the two-part book.',description:'A book about attention, pressure and remembering that not everything needs us right now. The same simple drawings, with more room to breathe.',url:'/projects/not-everything-is-urgent.html',x:1160,y:190,color:'#f5f3ee'},
  {id:'film',area:'bonus',landmark:'cinema',name:'Film Festival Friday',type:'Filmmaking practice & prompt bot',role:'Creative practice, prompt design and bot development',hook:'A weekend prompt, a small film and a reason to keep making.',description:'I wanted to do more with my love of films than keep a watchlist. A weekly prompt became a reason to watch closely, notice the craft and make something.',url:'/projects/film-festival-friday.html',x:1570,y:126,color:'#ffba08'},
- {id:'school',area:'bonus',landmark:'schoolhouse',name:'Four Names',type:'Playable social-impact game',role:'Original board-game design, writing, illustration and digital development',hook:'Forty students. Three reviews. What do the marks leave out?',description:'Based on my experience teaching in a Delhi municipal school, this game asks you to submit four names for transfer, then reveals the lives behind their marks. A digital reconstruction of a game I first made at design school.',url:'/projects/school-decision.html',x:1985,y:198,color:'#ffffff'}
+ {id:'school',area:'bonus',landmark:'schoolhouse',name:'Four Names',type:'Playable social-impact game',role:'Original board-game design, writing, illustration and digital development',hook:'Forty students. Three reviews. What do the marks leave out?',description:'Based on my experience teaching in a Delhi municipal school, this game asks you to submit four names for transfer, then reveals the lives behind their marks. A digital reconstruction of a game I first made at design school.',url:'/projects/school-decision.html',x:1985,y:198,color:'#ffffff'},
+ {id:'reset',area:'bonus',landmark:'reset-station',name:'Project RESET',type:'Client product & event experience',role:'Production UX, full-stack development, conversation experience and event design',hook:'From a supplied prototype to a working app, event experience and handover.',description:'An interactive companion to a documentary. I built the production check-in and shared Learning Lab, developed the conversation experience, and helped connect the app to the screening itself.',url:'/projects/project-reset.html',x:2400,y:198,color:'#ffffff'}
 ];
 export const areaCount = (area:Area) => projects.filter(project=>project.area===area).length;
 export const worlds: Record<Area, World> ={
@@ -20,7 +21,7 @@ export const worlds: Record<Area, World> ={
   {x:515,y:330,w:92,color:'#b7becb'},{x:650,y:295,w:345,color:'#f5f3ee'},
   {x:1100,y:325,w:95,color:'#b7becb'},{x:1220,y:278,w:340,color:'#f5f3ee'},
   {x:1665,y:330,w:95,color:'#b7becb'},{x:1785,y:295,w:340,color:'#3f88c5'}]},
- bonus:{width:2250,portal:82,spawn:185,platforms:[
+ bonus:{width:2670,portal:82,spawn:185,platforms:[
   {x:520,y:330,w:92,color:'#b7becb'},{x:630,y:295,w:280,color:'#f5f3ee'},
   {x:1320,y:330,w:92,color:'#b7becb'},{x:1440,y:290,w:280,color:'#ffba08'}]}
 };

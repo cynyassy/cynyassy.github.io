@@ -1,0 +1,29 @@
+/* Full-bleed edge layer. Its absolute positioning adds no height to the hero. */
+.brick-home .profile-intro.has-drawings{position:relative;display:block;isolation:isolate}
+.hero-drawings{position:absolute;top:0;left:50%;transform:translateX(-50%);width:100vw;height:100%;min-width:0;color:#353535;pointer-events:none;z-index:2}
+.drawing-field{position:absolute;inset:0;overflow:clip}
+.drawing-side{position:absolute;top:0;bottom:0;width:max(24px,calc((100vw - 1176px)/2 - 12px));overflow:clip;pointer-events:none}
+.drawing-side-left{left:0}.drawing-side-right{right:0}
+.drawing-float{position:absolute;left:50%;will-change:transform}
+.drawing-shashank{width:78px;margin-left:-39px;top:3%}
+.drawing-kim{width:78px;margin-left:-39px;top:8%}
+.drawing-ian{width:72px;margin-left:-36px;top:62%}
+.drawing-chaddiman{width:74px;margin-left:-37px;top:57%}
+.hero-drawings .drawing-character{position:relative;display:block;width:100%;padding:0;border:0;background:transparent;cursor:pointer;min-height:44px;border-radius:12px;color:inherit;touch-action:manipulation;pointer-events:auto}
+.drawing-character svg{display:block;width:100%;height:auto;overflow:hidden}
+.hero-drawings .drawing-character:focus-visible{outline:2px solid #3f88c5;outline-offset:3px}
+.drawing-reply{position:absolute;top:0;left:50%;transform:translateX(-50%) rotate(-7deg);background:white;border:1px solid #353535;border-radius:50%;padding:3px 7px;min-width:32px;font:600 13px/1.2 Helvetica,Arial,sans-serif;box-shadow:2px 2px 0 #ffba08;pointer-events:none}
+.drawing-tools{position:absolute;bottom:0;right:max(32px,calc((100vw - 1176px)/2));pointer-events:auto}
+.hero-drawings .drawing-tools button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;font:16px/1 Helvetica,Arial,sans-serif;padding:0;color:#626262;background:#fff;border:1px solid #ddd;border-radius:50%;cursor:pointer}
+.drawing-tools button:focus-visible{outline:2px solid #3f88c5;outline-offset:4px}
+.brick-home .has-drawings .experience-signal{max-width:calc(100% - 56px)}
+@media(max-width:700px){
+ .drawing-side{width:18px}
+ .hero-drawings .drawing-character{pointer-events:none}
+ .drawing-shashank{width:56px;left:-28px;margin-left:0;top:10%}
+ .drawing-kim{width:56px;left:-10px;margin-left:0;top:65%}
+ .drawing-ian,.drawing-chaddiman{display:none}
+ .drawing-tools{right:20px}
+ .drawing-reply{display:none}
+}
+@media(prefers-reduced-motion:reduce){.drawing-float{will-change:auto;transform:none!important}}

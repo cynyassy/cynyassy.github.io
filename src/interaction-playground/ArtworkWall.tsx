@@ -1,0 +1,8 @@
+import {useState} from 'react';
+import {artwork,work,type ArtItem,type WorkId} from './data';
+export function WorkLink({id}:{id:WorkId}){const item=work[id];return <div className="lab-work-link"><p className="lab-label">From my portfolio</p><h3>{item.title}</h3><p>{item.description}</p><p className="lab-role">{item.role}</p><a href={item.href} target="_blank" rel="noopener noreferrer">Open project ↗</a></div>}
+export function ArtworkWall(){
+ const [filter,setFilter]=useState('All'),[selected,setSelected]=useState<ArtItem>(artwork[0]);
+ const visible=artwork.filter(item=>filter==='All'||item.category===filter);
+ return <><div className="lab-filter" role="group" aria-label="Filter artwork">{['All','Stories','Products','Games'].map(value=><button key={value} aria-pressed={filter===value} onClick={()=>{setFilter(value);const first=artwork.find(item=>value==='All'||item.category===value);if(first)setSelected(first);}}>{value}</button>)}</div><div className="wall-layout"><div className="art-wall" aria-label="Artwork collection">{visible.map((item,i)=><button key={item.id} className="art-tile" style={{'--tilt':`${(i%5-2)*1.2}deg`} as React.CSSProperties} aria-label={`Explore ${item.title}: ${item.description}`} aria-pressed={selected.id===item.id} onClick={()=>setSelected(item)}><img src={item.src} alt="" loading="lazy" decoding="async"/><span>{item.title}</span></button>)}</div><a className="wall-selection-link" href="#art-selection" aria-live="polite">View selected artwork: {selected.title} ↓</a><aside id="art-selection" className="art-detail" aria-label="Selected artwork"><figure><img src={selected.src} alt={selected.description}/><figcaption>{selected.title}</figcaption></figure><WorkLink id={selected.project}/></aside></div></>;
+}

@@ -1366,3 +1366,7 @@
  .brick-home .about-copy h2{font-size:30px;line-height:1.1;letter-spacing:-.04em;text-wrap:balance}
  .brick-home .contact-section h2{font-size:30px;text-wrap:balance}
 }
+
+/* Keep the type of work visible alongside its evidence. */
+.brick-home .curated-work .project-evidence span{display:block}
+.brick-home .curated-work .project-category{font-weight:600;color:#353535}

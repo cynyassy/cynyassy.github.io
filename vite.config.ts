@@ -33,6 +33,7 @@ export default defineConfig({
         projectReset: path.resolve(__dirname, 'projects/project-reset.html'),
         filmFestivalFriday: path.resolve(__dirname, 'projects/film-festival-friday.html'),
         otherProjects: path.resolve(__dirname, 'projects/other-projects.html'),
+        playAndSystems: path.resolve(__dirname, 'projects/play-and-systems.html'),
         workWithMe: path.resolve(__dirname, 'projects/work-with-me.html'),
       },
     },

@@ -2034,11 +2034,17 @@ body:has(.brick-home) {
     font-size: 26px;
   }
 
+  /* Use normal flow inside the constrained scroll area. Grid auto rows can
+   * shrink below the artifact's contents, drawing the description over it. */
   .brick-home #preview .reveal-layout {
+    display: block;
     overflow: auto;
     min-height: 0;
     overscroll-behavior: contain;
-    gap: 16px;
+  }
+
+  .brick-home #preview .reveal-copy {
+    margin-top: 20px;
   }
 
   .brick-home #preview .bonus-artifact-heading {

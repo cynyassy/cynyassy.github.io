@@ -1,3 +1,4 @@
+import {projectCatalogue,type ProjectId} from '../shared/project-catalogue';
 import {comicStories} from '../cynyassy/comics';
 import breathe from '../book-story/assets/breathe.webp';
 import clocks from '../book-story/assets/clocks.webp';
@@ -11,16 +12,12 @@ import coffee from '../brick-trail/assets/brew-tracker.webp';
 import school from '../brick-trail/assets/gallery/four-names.png';
 import reactor from '../design-adventure/assets/reactor-mars-neo-mobile.webp';
 
-export const work={
- book:{title:'Not Everything Is Urgent',href:'/projects/not-everything-is-urgent.html',role:'Co-writing, illustration and book design',description:'I co-wrote the stories, drew the illustrations and designed the layouts for a book in two parts.'},
- comics:{title:'ChaddiMan',href:'/projects/cynyassy.html',role:'Writing, illustration and audience building',description:'I built a comic channel to 100K+ followers through original stories and illustrations.'},
- coffee:{title:'Indian Coffee Stories',href:'/projects/coffee-tools.html',role:'Writing, research, product design and development',description:'A publication, coffee directories and Brew Tracker, with the communication around them.'},
- algotest:{title:'AlgoTest',href:'/projects/algotest.html',role:'Documentation, product education and SEO',description:'I built a documentation hub around the questions traders were asking about setup and the product.'},
- perspectives:{title:'Perspectives',href:'/projects/perspectives.html',role:'Research, game design, illustration and playtesting',description:'My MFA thesis became a facilitated board game about caste, power and access to resources.'},
- adventure:{title:'Design Adventure',href:'/projects/design-adventure.html',role:'Interaction design and development',description:'An interface experiment with six reactor puzzles and 22 visual treatments.'},
- school:{title:'Four Names',href:'/projects/school-decision.html',role:'Game design, writing and development',description:'A school decision game based on my teaching experience. Student stories are fictionalised composites.'},
-};
-export type WorkId=keyof typeof work;
+const workAliases={book:'book',comics:'chaddiman',coffee:'brew',algotest:'algotest',perspectives:'perspectives',adventure:'adventure',school:'school'} as const satisfies Record<string,ProjectId>;
+export type WorkId=keyof typeof workAliases;
+export const work=Object.fromEntries(Object.entries(workAliases).map(([alias,id])=>{
+ const project=projectCatalogue[id],copy=project.playground!;
+ return [alias,{title:project.name,href:project.url,role:copy.role,description:copy.description}];
+})) as Record<WorkId,{title:string;href:string;role:string;description:string}>;
 export type ArtItem={id:string;src:string;title:string;description:string;project:WorkId;category:'Stories'|'Products'|'Games'};
 const comicArt:ArtItem[]=comicStories.flatMap(story=>story.panels.slice(0,story.id==='solid'?2:4).map((panel,index)=>({id:`${story.id}-${index}`,src:panel.src,title:story.title,description:panel.description,project:'comics',category:'Stories'})));
 export const artwork:ArtItem[]=[...comicArt,

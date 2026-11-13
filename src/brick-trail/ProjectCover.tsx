@@ -12,19 +12,6 @@ import emotions from './assets/emotion-identifier.webp';
 import farmer from '../assets/perspectives/d7eee63e5d931ab5ac6b52272cadaf9a9cf4e474.png';
 import king from '../assets/perspectives/fd62593ed3a99dc48c1587c439fc5a0ee82e8ff2.png';
 import woman from '../assets/perspectives/b57fa03efae908dc0ffc9d2d8992cf3c0e8877fc.png';
-export interface ProjectPresentation{category:string;summary:string;role:string;proof:string;action:string}
-export const presentation:Record<string,ProjectPresentation>={
- reset:{category:'Client product & event experience',summary:'Taking a documentary’s companion from prototype to the event screen.',role:'Production UX · Development · Event design',proof:'NYC Climate Week · Columbia screening',action:'View case study'},
- school:{category:'Social-impact game',summary:'A game about the lives that school marks leave out.',role:'Game design · Writing · Illustration · Development',proof:'3 reviews · 12 decisions',action:'Play Four Names'},
- algotest:{category:'Product education & growth',summary:'Turning product knowledge into a growth engine.',role:'Strategy · Documentation · SEO',proof:'6× organic clicks',action:'View case study'},
- chaddiman:{category:'Comics & storytelling',summary:'Comics that make room for life’s messy questions.',role:'Writing · Illustration · Audience building',proof:'100K+ followers',action:'Explore the comics'},
- adventure:{category:'Interaction experiment',summary:'Six puzzles. One reactor. 22 ways to play with design.',role:'Interaction design · Development',proof:'22 visual styles',action:'Play the experiment'},
- perspectives:{category:'Game & service design',summary:'A board game about how unequal beginnings shape outcomes.',role:'Research · Game & service design',proof:'MFA thesis · SVA',action:'View case study'},
- brew:{category:'Publication & connected product',summary:'Stories, channels, discovery tools and a brewing app. Built together.',role:'Communication · Writing · Design · Development',proof:'From idea to working product',action:'View case study'},
- emotions:{category:'Guided reflection tool',summary:'Find the words for what you’re feeling.',role:'Concept · Interaction design · Development',proof:'Interactive tool',action:'Try the tool'},
- book:{category:'Published illustrated book',summary:'An illustrated book about attention, pressure and slowing down.',role:'Writing · Illustration · Design',proof:'Published book',action:'See the book'},
- film:{category:'Filmmaking & creative practice',summary:'Weekly film prompts that turn watching into making.',role:'Creative practice · Bot development',proof:'Film & code',action:'Explore the project'},
-};
 const imgProps={loading:'lazy' as const,decoding:'async' as const};
 export function ProjectCover({id}:{id:string}){
  if(id==='reset')return <div className="project-cover cover-reset"><ResetArtwork/></div>;

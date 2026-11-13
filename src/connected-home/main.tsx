@@ -2,6 +2,7 @@ import {useEffect,useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import {BrickHomepage} from '../brick-trail/BrickHomepage';
 import {ConnectedHero} from './ConnectedHero';
+import './preview.css';
 type Layout='split'|'surround';
 const readLayout=():Layout=>new URLSearchParams(location.search).get('layout')==='surround'?'surround':'split';
 function HomepagePreview(){

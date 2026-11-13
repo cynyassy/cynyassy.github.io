@@ -10,7 +10,6 @@
 .capability-details>summary{cursor:pointer;min-height:52px;align-content:center;font-size:15px;font-weight:600;padding:12px 0}.capability-details[open]>summary{margin-bottom:20px}
 .research-invitation{padding:32px 0;border-bottom:1px solid #ddd}.research-invitation p{font-size:16px;line-height:1.65;max-width:65ch}
 :is(.product-proof,.first-project,.research-invitation,.capability-details) :is(a,summary):focus-visible{outline:2px solid #3f88c5;outline-offset:4px}
-.brick-home .profile-intro .personal-line{font-size:14px;color:#626262;line-height:1.6;margin:12px 0 0;text-wrap:pretty}
 .brick-home .play-introduction .play-skip{font-size:12px;display:inline-flex;align-items:center;min-height:44px;margin-left:14px;font-weight:400;text-decoration:underline;text-underline-offset:4px}
 .brick-home .research-link{margin-left:24px}
 @media(max-width:700px){.product-proof,.first-project{grid-template-columns:1fr;gap:20px;padding:24px 0}.product-proof .product-proof-image{max-width:430px}.product-proof h2,.first-project h2{font-size:27px}.brick-home .play-introduction{flex-wrap:wrap;gap:0}.brick-home .play-introduction p{display:flex;flex-direction:column}.brick-home .play-introduction .play-skip{margin-left:0}.brick-home .research-link{margin-left:0;display:flex}.product-proof{margin-bottom:24px}}

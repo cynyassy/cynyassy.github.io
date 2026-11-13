@@ -1,0 +1,5 @@
+/* Only loaded by the noindex homepage comparison entry. */
+.home-layout-comparison{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px 16px;margin:0 0 16px;font-size:11px;color:#626262}
+.brick-home .home-layout-comparison button{background:#fff;border:0;border-bottom:2px solid transparent;padding:8px 0;min-height:44px;font-size:12px}
+.brick-home .home-layout-comparison button[aria-pressed=true]{border-bottom-color:#d00000;color:#353535}
+@media(max-width:760px){.home-layout-comparison{justify-content:flex-start;margin:0 0 20px;gap:8px 14px}.home-layout-comparison>span{flex-basis:100%}}

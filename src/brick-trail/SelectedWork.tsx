@@ -1,5 +1,5 @@
 import {projects, type Project} from './data';
-import {ProjectCover,presentation} from './ProjectCover';
+import {ProjectCover} from './ProjectCover';
 
 // Editorial order is deliberately independent of the game world's stable IDs and positions.
 const select=(ids:string[])=>ids.map(id=>projects.find(project=>project.id===id)!).filter(Boolean);
@@ -8,7 +8,7 @@ const stories=select(['chaddiman','perspectives','book']);
 const experiments=select(['adventure','emotions','school','film']);
 
 function ProjectCard({project,onOpen,compact=false}:{project:Project;onOpen:()=>void;compact?:boolean}) {
-  const copy=presentation[project.id];
+  const copy=project.card;
   return <article className={`project-card${compact?' project-card-compact':''}`}><a className="project-link" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`${project.name}: ${copy.action}. Opens in a new tab.`} onClick={onOpen}><div className="project-image"><ProjectCover id={project.id}/></div><div className="project-copy"><p className="project-evidence"><span className="project-category">{copy.category}</span><span>{copy.proof}</span></p><h3>{project.name}</h3><p>{copy.summary}</p><div className="project-footer"><span className="project-role">{copy.role}</span><span className="project-action">{copy.action} <span aria-hidden="true">↗</span></span></div></div></a></article>;
 }
 

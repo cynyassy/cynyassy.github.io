@@ -1,34 +1,70 @@
-import {useRef,useState,type CSSProperties} from 'react';
-import comic from '../cynyassy/assets/decide-04.webp';
-import coffee from '../brick-trail/assets/brew-tracker.webp';
-import board from '../assets/perspectives/thesis/final-board.webp';
-import docs from '../brick-trail/assets/gallery/algotest.webp';
+import {useLayoutEffect,useRef,useState,type CSSProperties} from 'react';
+import {pieces,connections,curve,type HeroProjectId} from './artwork';
+import {ConnectionPreview} from './ConnectionPreview';
 import './hero.css';
 
-const pieces=[
- {id:'comics',title:'ChaddiMan',src:comic,alt:'ChaddiMan in I get to decide',angle:-8,x:15,y:25,skills:['Writing','Illustration'],role:'Writing, illustration and audience building',description:'Original comics about everyday feelings. I built the channel to 100K+ followers.',url:'/projects/cynyassy.html'},
- {id:'coffee',title:'Indian Coffee Stories',src:coffee,alt:'The Indian Coffee Stories website and Brew Tracker',angle:7,x:85,y:25,skills:['Writing','Research','Design','Development'],role:'Communication, research, design and development',description:'A coffee publication, discovery tools and Brew Tracker, with the communication around them.',url:'/projects/coffee-tools.html'},
- {id:'perspectives',title:'Perspectives',src:board,alt:'The illustrated Perspectives board game',angle:6,x:15,y:76,skills:['Research','Illustration','Design'],role:'Research, game design, illustration and playtesting',description:'My MFA thesis became a board game about caste, power and access to resources.',url:'/projects/perspectives.html'},
- {id:'algotest',title:'AlgoTest',src:docs,alt:'AlgoTest documentation and product guides',angle:-6,x:85,y:76,skills:['Writing','Research'],role:'Documentation, product education and SEO',description:'I built guides around traders’ questions to help them get started with a complex product.',url:'/projects/algotest.html'},
-] as const;
-type PieceId=typeof pieces[number]['id'];
-const connections:[PieceId,PieceId,string][]=[['comics','coffee','Writing'],['comics','perspectives','Illustration'],['comics','algotest','Writing'],['coffee','perspectives','Research and design'],['coffee','algotest','Writing and research'],['perspectives','algotest','Research']];
-function curve(from:PieceId,to:PieceId,split=false){const a=pieces.find(p=>p.id===from)!,b=pieces.find(p=>p.id===to)!;const ax=(split?(a.x<50?25:75):a.x)*10,ay=a.y*6.4,bx=(split?(b.x<50?25:75):b.x)*10,by=b.y*6.4;if(ax===bx)return `M${ax} ${ay} Q${ax<500?35:965} ${(ay+by)/2} ${bx} ${by}`;if(ay===by)return `M${ax} ${ay} Q500 ${ay<320?35:620} ${bx} ${by}`;return `M${ax} ${ay} C${ax} ${ay<320?600:20},${bx} ${by<320?20:600},${bx} ${by}`;}
 export function ConnectedHero({layout='split'}:{layout?:'split'|'surround'}={}){
- const [selected,setSelected]=useState<PieceId|null>(null),[hovered,setHovered]=useState<PieceId|null>(null),[focused,setFocused]=useState<PieceId|null>(null);
- const triggers=useRef<Partial<Record<PieceId,HTMLButtonElement>>>({});
+ const [selected,setSelected]=useState<HeroProjectId|null>(null);
+ const [hovered,setHovered]=useState<HeroProjectId|null>(null);
+ const [focused,setFocused]=useState<HeroProjectId|null>(null);
+ const triggers=useRef<Partial<Record<HeroProjectId,HTMLButtonElement>>>({});
+ const mobileHeading=useRef<HTMLHeadingElement>(null);
+ const revealRequested=useRef(false),pendingFrame=useRef(0);
  const active=hovered??focused??selected,piece=pieces.find(p=>p.id===selected);
- function select(id:PieceId){setSelected(id);triggers.current[id]?.focus({preventScroll:matchMedia('(min-width: 761px)').matches});}
- function clear(){setSelected(null);if(selected)triggers.current[selected]?.focus({preventScroll:matchMedia('(min-width: 761px)').matches});}
- const preview=(<div className="connected-home-preview" aria-live="polite" aria-atomic="true">{piece&&<div className="connected-home-preview-inner"><div className="home-preview-heading"><h2>{piece.title}</h2><button onClick={clear} aria-label="Close connection preview">×</button></div><p>{piece.description}</p><p className="home-preview-role">{piece.role}</p><div className="home-preview-actions"><a href={piece.url}>View project ↗</a><div role="group" aria-label={`Related to ${piece.title}`}>{connections.filter(([a,b])=>a===selected||b===selected).map(([a,b,skill])=>{const id=a===selected?b:a;return <button key={id} onClick={()=>select(id)} title={`${skill}: ${pieces.find(p=>p.id===id)!.title}`} aria-label={`${skill}: ${pieces.find(p=>p.id===id)!.title}`}><small>{skill}</small><span>{pieces.find(p=>p.id===id)!.title} ↗</span></button>})}</div></div></div>}</div>);
- return <section className="connected-home-hero" data-layout={layout} aria-labelledby="home-title" onKeyDown={e=>{if(e.key==='Escape'&&selected){e.stopPropagation();clear();}}}>
-  <svg className="home-connection-lines" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true">{connections.map(([a,b])=><path key={`${a}-${b}`} d={curve(a,b,layout==='split')} className={active===a||active===b?'is-lit':''} data-quiet={!!active&&active!==a&&active!==b} pathLength="1"/>)}</svg>
-  <div className="connected-home-copy"><p className="connected-home-eyebrow">SHASHANK SHARMA / CYNYASSY</p><h1 id="home-title">I <span>build products</span> and the <em>stories</em> around them.</h1><p className="connected-home-byline">I’m a designer, developer and storyteller. These are a few of the things I’ve made.</p><div className="connected-home-actions"><a href="#projects">Browse projects ↓</a><a href="/projects/work-with-me.html">Work with me ↗</a></div>
-   {layout==='surround'&&preview}
+
+ // Selection requests reveal once. Viewport changes never initiate navigation.
+ useLayoutEffect(()=>{
+  if(!selected||!revealRequested.current)return;
+  revealRequested.current=false;
+  pendingFrame.current=requestAnimationFrame(()=>{
+   pendingFrame.current=0;
+   if(!matchMedia('(max-width: 760px)').matches)return;
+   const heading=mobileHeading.current;
+   heading?.focus({preventScroll:true});
+   heading?.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+  });
+  return()=>cancelAnimationFrame(pendingFrame.current);
+ },[selected]);
+
+ function select(id:HeroProjectId){
+  cancelAnimationFrame(pendingFrame.current);
+  revealRequested.current=matchMedia('(max-width: 760px)').matches;
+  setSelected(id);
+  if(!revealRequested.current)triggers.current[id]?.focus({preventScroll:true});
+ }
+ function clear(){
+  cancelAnimationFrame(pendingFrame.current);
+  revealRequested.current=false;
+  if(matchMedia('(max-width: 760px)').matches)window.scrollTo({top:window.scrollY,behavior:'instant'});
+  setSelected(null);
+  if(selected)triggers.current[selected]?.focus({preventScroll:matchMedia('(min-width: 761px)').matches});
+ }
+ const preview=piece?<ConnectionPreview piece={piece} onSelect={select} onClose={clear}/>:null;
+ return <section className="connected-home-hero" data-layout={layout} aria-labelledby="home-title"
+  onKeyDown={e=>{if(e.key==='Escape'&&selected){e.stopPropagation();clear();}}}>
+  <svg className="home-connection-lines" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true">
+   {connections.map(([a,b])=><path key={`${a}-${b}`} d={curve(a,b,layout==='split')}
+    className={active===a||active===b?'is-lit':''} data-quiet={!!active&&active!==a&&active!==b} pathLength="1"/>)}
+  </svg>
+  <div className="connected-home-copy">
+   <p className="connected-home-eyebrow">SHASHANK SHARMA / CYNYASSY</p>
+   <h1 id="home-title">I <span>build products</span> and the <em>stories</em> around them.</h1>
+   <p className="connected-home-byline">I’m a designer, developer and storyteller. These are a few of the things I’ve made.</p>
+   <div className="connected-home-actions"><a href="#projects">Browse projects ↓</a><a href="/projects/work-with-me.html">Work with me ↗</a></div>
+   {layout==='surround'&&<div className="surround-preview-space">{preview}</div>}
   </div>
   <p className="home-artwork-hint">Pick a project to see the connections.</p>
-  <div className="connected-home-artworks" role="group" aria-label="Explore connections between my projects">{pieces.map(p=><button key={p.id} ref={el=>{if(el)triggers.current[p.id]=el;}} className="home-artwork" style={{left:`${layout==='split'?(p.x<50?25:75):p.x}%`,top:`${p.y}%`,'--art-angle':`${p.angle}deg`} as CSSProperties} aria-label={`Explore ${p.title}`} aria-expanded={selected===p.id} data-active={active===p.id} onPointerEnter={e=>{if(e.pointerType!=='touch')setHovered(p.id);}} onPointerLeave={()=>setHovered(null)} onFocus={()=>setFocused(p.id)} onBlur={()=>setFocused(null)} onClick={()=>setSelected(current=>current===p.id?null:p.id)}><span className="home-artwork-image"><img src={p.src} alt={p.alt} width="240" height="160" decoding="async"/></span><span className="home-artwork-title">{p.title}</span><small>{p.skills.slice(0,2).join(' · ')}</small></button>)}</div>
+  <div className="connected-home-artworks" role="group" aria-label="Explore connections between my projects">
+   {pieces.map(p=><button key={p.id} ref={el=>{if(el)triggers.current[p.id]=el;}}
+    className="home-artwork" style={{left:`${layout==='split'?(p.x<50?25:75):p.x}%`,top:`${p.y}%`,'--art-angle':`${p.angle}deg`} as CSSProperties}
+    aria-label={`Explore ${p.title}`} aria-expanded={selected===p.id} data-active={active===p.id}
+    onPointerEnter={e=>{if(e.pointerType!=='touch')setHovered(p.id);}} onPointerLeave={()=>setHovered(null)}
+    onFocus={()=>setFocused(p.id)} onBlur={()=>setFocused(null)} onClick={()=>selected===p.id?clear():select(p.id)}>
+    <span className="home-artwork-image"><img src={p.src} alt={p.alt} width="240" height="160" decoding="async"/></span>
+    <span className="home-artwork-title">{p.title}</span><small>{p.skills.slice(0,2).join(' · ')}</small>
+   </button>)}
+  </div>
   {layout==='split'&&piece&&<div className="split-project-preview">{preview}</div>}
-  <div className="connected-mobile-preview" aria-live="polite" aria-atomic="true">{piece&&<div className="connected-mobile-preview-content"><div className="home-preview-heading"><h2>{piece.title}</h2><button onClick={clear} aria-label="Close mobile connection preview">×</button></div><p>{piece.description}</p><p className="home-preview-role">{piece.role}</p><a href={piece.url}>View project ↗</a><p className="home-related-label">Connected through</p><div className="home-mobile-related">{connections.filter(([a,b])=>a===selected||b===selected).map(([a,b,skill])=>{const id=a===selected?b:a;return <button key={id} onClick={()=>select(id)}>{skill} <span>{pieces.find(p=>p.id===id)!.title} ↗</span></button>})}</div></div>}</div>
+  {piece&&<ConnectionPreview piece={piece} onSelect={select} onClose={clear} mobile headingRef={mobileHeading}/>}
  </section>;
 }

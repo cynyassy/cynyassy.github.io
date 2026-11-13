@@ -17,7 +17,7 @@ The homepage enters through `src/main.tsx` and `src/app/App.tsx`. Its CSS is sco
 
 ## Responsibilities
 
-- `BrickHomepage.tsx` owns navigation, mode controls, accessible project blocks, dialogs, the eight-project list, About and contact. `ProjectArtifact.tsx` renders the existing preview concepts with bundled artwork and transcript text.
+- `BrickHomepage.tsx` owns navigation, mode controls, accessible project blocks, dialogs, the ten-project list, About and contact. `ProjectArtifact.tsx` renders the existing preview concepts with bundled artwork and transcript text.
 - `controller.ts` mounts one canvas loop, routes input to the active mode, coordinates saves/previews and pauses, and releases listeners, animation frames and observers on disposal.
 - `explore.ts` owns room position and discovery state. `runner.ts` owns arcade rules and its score store. `physics.ts` shares jump constants and vertical movement. `renderer.ts` shares the sprites and draws each scene. React renders the interactive block overlays from the same camera positions used by Canvas.
 - `skills.ts` owns the Boot.dev-backed skill descriptions and the repeatable question-mark brick. `data.ts` owns the eight stable project IDs, project copy and trail geometry. Portfolio case studies use local URLs; Emotion Identifier and the other standalone destinations retain their established external URLs.
@@ -105,3 +105,9 @@ The controller owns a wakeable animation loop. Physics and canvas drawing stay s
 ## Uncapped runner speed, 2 November 2026
 
 Removed the former 330-unit ceiling. Constant acceleration continues at 2 units/s², with analytically integrated travel. Encounter spacing predicts speed after the preceding obstacle clears the full player width. Unchanged jump and Duck physics remain clearable. A non-flashing Jump/Duck/optional-bonus cue protects reaction time when an encounter crosses a narrow viewport quickly. The controller publishes cues through its existing 10 Hz HUD path. Existing best scores and save formats remain. Older verification notes about a speed cap describe the earlier release.
+
+## Shared content and homepage composition
+
+Project identity and context-specific copy live in `src/shared/project-catalogue.ts`; `ProjectId` is derived from its keys. The catalogue imports no artwork or game logic. `data.ts` combines catalogue content with stable game IDs, room positions, landmarks and physics-world data. Selected Work reads `project.card`; the connected introduction reads `project.hero`; playground aliases read `project.playground`. Keep different summaries intentional, rather than introducing another metadata array.
+
+`BrickHomepage` requires an `introduction` React node. Production supplies ConnectedHero; the noindex comparison entry supplies its controls plus ConnectedHero. The retired floating-art implementation and its original introduction styles remain under `src/hero-drawings/`, outside the active import path.

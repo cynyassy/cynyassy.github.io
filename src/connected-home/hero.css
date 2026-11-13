@@ -1,4 +1,4 @@
-/* Alternate homepage only. No production homepage selectors are overridden. */
+/* Connected introduction shared by the homepage and saved layout comparison. */
 .brick-home .connected-home-hero{position:relative;isolation:isolate;width:min(1440px,100vw);margin:0 calc((100% - min(1440px,100vw))/2) 28px;height:650px;color:#353535;background:#fff}
 .home-connection-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1}
 .home-connection-lines path{fill:none;stroke:#d4d4d4;stroke-width:1;stroke-dasharray:.006 .008;vector-effect:non-scaling-stroke;transition:stroke 160ms,opacity 160ms}
@@ -12,16 +12,17 @@
 .connected-home-byline{font-size:15px;line-height:1.65;margin:20px 0 8px;text-wrap:pretty}
 .brick-home .connected-home-actions{display:flex;flex-wrap:wrap;gap:8px 24px}
 .connected-home-actions>a{display:inline-flex;align-items:center;min-height:44px;font-size:13px;font-weight:600}
-.connected-home-preview{min-height:230px;margin-top:18px;background:white}
+.connected-home-preview{background:white}
+.surround-preview-space{min-height:230px;margin-top:18px}
 .connected-home-preview-inner{padding-top:12px;border-top:1px solid #dedede}
 .home-preview-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brick-home .home-preview-heading h2{font-size:17px;font-weight:650;line-height:1.35;letter-spacing:-.02em;margin:0}
 .brick-home .home-preview-heading button{display:grid;place-items:center;border:0;background:transparent;width:44px;min-height:44px;font:24px/1 Helvetica,Arial,sans-serif;margin:-9px -10px -9px 0;padding:0}
 .connected-home-preview p,.connected-mobile-preview p{font-size:13px;line-height:1.6;margin:8px 0;text-wrap:pretty}
 .connected-home-preview .home-preview-role,.connected-mobile-preview .home-preview-role{font-size:11px;color:#626262}
-.home-preview-actions>a,.connected-mobile-preview-content>a{display:inline-flex;align-items:center;min-height:44px;font-size:13px;font-weight:650}
-.home-preview-actions>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:4px}
-.brick-home .home-preview-actions button{display:block;background:white;border:0;padding:0;min-height:44px;text-align:left;font-size:11px;line-height:1.45}.home-preview-actions button small{display:block;font-size:10px;color:#626262}.home-preview-actions button span{display:block;text-decoration:underline;text-underline-offset:4px}
+.home-preview-actions>a,.connected-mobile-preview .home-preview-actions>a{display:inline-flex;align-items:center;min-height:44px;font-size:13px;font-weight:650}
+.home-preview-related{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:4px}
+.brick-home .home-preview-actions button{display:block;background:white;border:0;padding:0;min-height:44px;text-align:left;font-size:11px;line-height:1.45}.home-preview-related button small{display:block;font-size:10px;color:#626262}.home-preview-related button span{display:block;text-decoration:underline;text-underline-offset:4px}
 .brick-home .home-artwork{position:absolute;width:220px;transform:translate(-50%,-50%);border:0;padding:8px;background:transparent;text-align:center;z-index:3}
 .home-artwork-image{display:block;padding:8px;border:1px solid #ddd;background:#fff;transform:rotate(var(--art-angle));box-shadow:3px 5px 0 #f1f1f1;transition:transform 180ms,border-color 180ms}
 .home-artwork img{display:block;width:100%;height:140px;object-fit:contain;background:#fff}
@@ -31,13 +32,14 @@
 .home-artwork[aria-expanded=true] .home-artwork-title{text-decoration:underline;text-decoration-color:#d00000;text-underline-offset:5px}
 .connected-home-hero :is(a,button):focus-visible{outline:2px solid #3f88c5;outline-offset:5px}
 .connected-mobile-preview{display:none}
+.home-related-label{display:none}
 @media(min-width:761px) and (max-width:1100px){
  .brick-home .connected-home-copy{width:390px;padding-inline:24px}.brick-home .connected-home-copy h1{font-size:40px}
  .brick-home .home-artwork{width:170px}.home-artwork img{height:115px}.home-artwork-title{font-size:12px}
 }
 @media(max-width:760px){
  .brick-home .connected-home-hero{width:100%;margin:4px 0 28px;height:auto}
- .home-connection-lines,.connected-home-preview{display:none}
+ .home-connection-lines,.connected-home-preview,.surround-preview-space{display:none}
  .brick-home .connected-home-copy{position:static;transform:none;width:100%;padding:0}
  .connected-home-eyebrow{font-size:10px;margin:0 0 14px}
  .brick-home .connected-home-copy h1{font-size:clamp(32px,8.7vw,40px);max-width:18ch}
@@ -49,21 +51,18 @@
  .home-artwork img{height:100px}
  .home-artwork-title{font-size:13px;margin-top:14px;min-height:36px}
  .home-artwork>small{font-size:10px;margin-top:2px}
- .connected-mobile-preview{display:block}
- .connected-mobile-preview-content{padding:18px 0 16px;border-top:1px solid #dedede}
- .home-mobile-related{display:flex;flex-direction:column}
- .brick-home .home-mobile-related button{background:white;border:0;border-top:1px solid #eee;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:44px;padding:8px 0;text-align:left;font-size:11px}
- .home-mobile-related button>span{font-size:12px;text-decoration:underline;text-underline-offset:4px;text-align:right}
- .connected-mobile-preview .home-related-label{font-size:11px;color:#626262;margin-top:12px}
+ .connected-mobile-preview{display:block;scroll-margin-top:20px}
+ .connected-mobile-preview h2{scroll-margin-top:20px}
+ .connected-mobile-preview .connected-home-preview-inner{padding:18px 0 16px;border-top:1px solid #dedede}
+ .connected-mobile-preview .home-preview-related{display:flex;flex-direction:column;gap:0}
+ .brick-home .connected-mobile-preview .home-preview-related button{background:white;border:0;border-top:1px solid #eee;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:44px;padding:8px 0;text-align:left;font-size:11px}
+ .connected-mobile-preview .home-preview-related button>span{font-size:12px;text-decoration:underline;text-underline-offset:4px;text-align:right}
+ .connected-mobile-preview .home-related-label{display:block;font-size:11px;color:#626262;margin-top:12px}
 }
 @media(prefers-reduced-motion:reduce){.home-connection-lines path.is-lit{animation:none}.home-connection-lines path,.home-artwork-image{transition:none}}
 
 @media(max-width:360px){.home-artwork-title{font-size:12px;letter-spacing:-.025em}}
 
-/* Local comparison controls do not appear on the production homepage. */
-.home-layout-comparison{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px 16px;margin:0 0 16px;font-size:11px;color:#626262}
-.brick-home .home-layout-comparison button{background:#fff;border:0;border-bottom:2px solid transparent;padding:8px 0;min-height:44px;font-size:12px}
-.brick-home .home-layout-comparison button[aria-pressed=true]{border-bottom-color:#d00000;color:#353535}
 .home-artwork-hint{position:absolute;bottom:0;right:0;font-size:11px;color:#626262}
 @media(min-width:761px){
  .brick-home .connected-home-hero[data-layout=split]{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:0 64px;width:100%;height:auto;min-height:530px;margin:12px 0 36px;padding-bottom:36px;align-items:center}
@@ -87,8 +86,6 @@
  .brick-home [data-layout=split] .connected-home-copy h1{font-size:36px}
 }
 @media(max-width:760px){
- .home-layout-comparison{justify-content:flex-start;margin:0 0 20px;gap:8px 14px}
- .home-layout-comparison>span{flex-basis:100%}
  .home-artwork-hint{position:static;margin:16px 0 0}
  .connected-home-artworks{margin-top:16px}
  .split-project-preview{display:none}

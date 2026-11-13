@@ -53,12 +53,6 @@
   text-decoration: none;
 }
 
-.brick-home .intro {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-}
-
 .brick-home .eyebrow {
   font-size: 11px;
   letter-spacing: 1.5px;
@@ -312,10 +306,6 @@
     padding-top: 8px;
   }
 
-  .brick-home .intro {
-    display: block;
-  }
-
   .brick-home .scene-label {
     left: 12px;
     top: 12px;
@@ -382,12 +372,6 @@
   .brick-home .under .touch {
     flex-shrink: 0;
   }
-}
-
-/* Level study: quieter intro, tactile bricks and persistent explored markers. */
-
-.brick-home .intro {
-  margin-top: 24px;
 }
 
 .brick-home .block {
@@ -1114,11 +1098,6 @@ body:has(.brick-home) {
   font-size: 30px;
 }
 
-.brick-home .intro {
-  margin: 24px 0 18px;
-  align-items: end;
-}
-
 .brick-home h1 {
   font-size: clamp(32px,3.2vw,44px);
   font-weight: 650;
@@ -1129,13 +1108,6 @@ body:has(.brick-home) {
 
 .brick-home h1>span {
   color: #797979;
-}
-
-.brick-home .home-byline {
-  font-size: 14px;
-  line-height: 1.6;
-  margin: 12px 0 0;
-  max-width: 570px;
 }
 
 .brick-home .progress {
@@ -1600,11 +1572,6 @@ body:has(.brick-home) {
     letter-spacing: -1.2px;
   }
 
-  .brick-home .home-byline {
-    font-size: 13px;
-    max-width: 360px;
-  }
-
   .brick-home .progress {
     margin: 16px 0 0;
     max-width: none;
@@ -1741,10 +1708,6 @@ body:has(.brick-home) {
 
   .brick-home main {
     padding-top: 18px;
-  }
-
-  .brick-home .intro {
-    margin-top: 18px;
   }
 
   .brick-home h1 {
@@ -1888,10 +1851,6 @@ body:has(.brick-home) {
     padding: 8px 0;
   }
 
-  .brick-home .intro {
-    margin-top: 18px;
-  }
-
   .brick-home .mode-tabs button {
     min-height: 44px;
   }
@@ -1925,20 +1884,6 @@ body:has(.brick-home) {
   .brick-home header.home-header {
     gap: 2px 12px;
     padding-bottom: 8px;
-  }
-
-  .brick-home .intro {
-    margin: 14px 0 12px;
-  }
-
-  .brick-home .intro h1 {
-    font-size: clamp(26px,7vw,28px);
-    line-height: 1.1;
-  }
-
-  .brick-home .home-byline {
-    margin-top: 8px;
-    line-height: 1.45;
   }
 
   .brick-home .progress {
@@ -2096,31 +2041,13 @@ body:has(.brick-home) {
 .brick-home .portfolio-header{display:block}
 .brick-home .portfolio-header-inner{width:100%}
 .brick-home main{width:min(1176px,calc(100% - 64px))}
-.brick-home .home-byline{max-width:62ch;text-wrap:pretty}
 @media(max-width:700px){.brick-home main{width:calc(100% - 40px)}}
 .brick-home main{padding:24px 0}
-
-/* Professional introduction. Game rules, input and scene geometry are unchanged. */
-.brick-home .profile-intro{display:block;margin:24px 0 32px}
-.brick-home .profile-intro .eyebrow{margin:0 0 18px;color:#626262;font-size:11px}
-.brick-home .profile-intro h1{font-size:clamp(38px,4.4vw,58px);line-height:1.05;letter-spacing:-.05em;font-weight:700;max-width:850px;text-wrap:balance;margin:0}
-.brick-home .profile-intro .home-byline{font-size:16px;line-height:1.65;max-width:68ch;margin:20px 0 0;text-wrap:pretty}
-.brick-home .intro-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:20px}
-.brick-home .intro-actions a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;font-weight:600}
-.brick-home .intro-actions .intro-primary{background:#353535;color:#fff;padding:10px 18px;text-decoration:none}
-.brick-home .experience-signal{display:inline-flex;align-items:center;gap:12px;min-height:44px;margin-top:12px;font-size:12px;line-height:1.6;text-decoration:none;color:#626262;text-wrap:pretty}
-.brick-home .experience-signal:hover{text-decoration:underline}
 .brick-home .play-introduction{display:flex;justify-content:space-between;gap:16px;align-items:baseline;margin-bottom:12px}
 .brick-home .play-introduction p{margin:0;font-size:17px;font-weight:600;letter-spacing:-.02em}
 .brick-home .play-introduction>span{font-size:12px;color:#626262}
 .brick-home .portfolio-header nav{width:auto;justify-content:flex-start}
 @media(max-width:700px){
- .brick-home .profile-intro{margin:12px 0 28px}
- .brick-home .profile-intro h1{font-size:clamp(32px,8.5vw,42px)}
- .brick-home .profile-intro .home-byline{font-size:15px;line-height:1.6;margin-top:16px}
- .brick-home .profile-intro .eyebrow{font-size:11px;margin-bottom:14px}
- .brick-home .intro-actions{gap:8px 20px;margin-top:16px}
- .brick-home .experience-signal{max-width:100%;font-size:11px}
  .brick-home .play-introduction{align-items:center;margin-bottom:12px}
  .brick-home .play-introduction p{font-size:16px}
  .brick-home .play-introduction>span{font-size:11px}
@@ -2130,7 +2057,3 @@ body:has(.brick-home) {
  .brick-home .portfolio-header .portfolio-header-inner{padding:16px 20px 8px;gap:0 12px}
  .brick-home .portfolio-header nav{margin-right:auto;gap:20px;flex-wrap:nowrap}
 }
-
-/* Palette accents connect the two parts of the opening proposition. */
-.brick-home .profile-intro h1 .headline-products{color:#3f88c5}
-.brick-home .profile-intro h1 .headline-stories{color:#d00000}

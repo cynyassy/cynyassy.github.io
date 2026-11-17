@@ -34,7 +34,10 @@ export function fieldNotesArchive():Plugin {
     const archive=path.join(research,'UNICEF Interview Archive');
     const cache=new Map<string,{mtime:number;data:ArchiveTranscript}>();
     let cataloguePromise:Promise<{catalogue:ArchiveCatalogue;directories:Map<string,string>}>|undefined;
+    let catalogueMtime=0;
     async function catalogue(){
+      const updated=(await stat(path.join(research,'reader-index.json'))).mtimeMs;
+      if(updated!==catalogueMtime){cataloguePromise=undefined;catalogueMtime=updated;}
       if(!cataloguePromise)cataloguePromise=(async()=>{
         const [sources,index,folders]=await Promise.all([
           readFile(path.join(research,'inventory.json'),'utf8').then(text=>JSON.parse(text)as Source[]),

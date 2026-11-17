@@ -1,39 +1,67 @@
 {
   "cities": {
     "meerut": {
-      "summary": "Repeated visits, local relationships and the daily work around vaccination.",
+      "summary": "The conversations return to what happens at a family’s door: listening before raising vaccination, asking about a child’s health and finding a way to keep talking when a visit is refused.\n\nThey also describe work beyond the immediate campaign. Residents brought other concerns to community workers, who helped carry them to the administration. The discussion connects that everyday help with the trust needed to return, alongside the patience workers said they had learned.",
       "focus": "Repeated visits, local relationships and the daily work around vaccination.",
-      "reflection": ""
+      "reflection": "",
+      "paragraphs": [
+        "The conversations return to what happens at a family’s door: listening before raising vaccination, asking about a child’s health and finding a way to keep talking when a visit is refused.",
+        "They also describe work beyond the immediate campaign. Residents brought other concerns to community workers, who helped carry them to the administration. The discussion connects that everyday help with the trust needed to return, alongside the patience workers said they had learned."
+      ]
     },
     "bijnor": {
-      "summary": "Informal conversations and the local context of the work.",
+      "summary": "These informal conversations range beyond vaccination into people’s relationships with public services and the workers who visit them. One discussion considers how frustration with government can sit behind a family’s refusal, even when the immediate visit concerns a child’s health.\n\nThe recordings also touch on the respect community workers gained and the limits of treating the role simply as paid employment. The speakers draw on experiences from several places, connecting their local work with wider questions about public trust.",
       "focus": "Informal conversations and the local context of the work.",
-      "reflection": ""
+      "reflection": "",
+      "paragraphs": [
+        "These informal conversations range beyond vaccination into people’s relationships with public services and the workers who visit them. One discussion considers how frustration with government can sit behind a family’s refusal, even when the immediate visit concerns a child’s health.",
+        "The recordings also touch on the respect community workers gained and the limits of treating the role simply as paid employment. The speakers draw on experiences from several places, connecting their local work with wider questions about public trust."
+      ]
     },
     "bareilly": {
-      "summary": "Local communication, collaboration and coordination.",
+      "summary": "The meetings discuss how local communication was organised: approaching families, involving people they would listen to and coordinating the activities around a vaccination campaign. The work described extends beyond delivering information to answering questions and sustaining contact.\n\nThe conversation also turns to what workers learned themselves. Speakers describe difficult encounters, learning not to answer abuse with abuse, and recognising how their own behaviour affected whether people would hear them.",
       "focus": "Local communication, collaboration and coordination.",
-      "reflection": ""
+      "reflection": "",
+      "paragraphs": [
+        "The meetings discuss how local communication was organised: approaching families, involving people they would listen to and coordinating the activities around a vaccination campaign. The work described extends beyond delivering information to answering questions and sustaining contact.",
+        "The conversation also turns to what workers learned themselves. Speakers describe difficult encounters, learning not to answer abuse with abuse, and recognising how their own behaviour affected whether people would hear them."
+      ]
     },
     "pilibhit": {
-      "summary": "Follow-up visits, local support and changes over time.",
+      "summary": "The meeting discusses repeated contact with families and how communication changed as workers learned who influenced decisions at home. Fathers’ meetings come up in the context of women telling workers that fathers were refusing vaccination.\n\nAnother part of the conversation asks how to tell whether people had understood the material being shared. The discussion moves from showing information to considering participation and understanding, alongside accounts of local support and people becoming more willing to join the work.",
       "focus": "Follow-up visits, local support and changes over time.",
-      "reflection": ""
+      "reflection": "",
+      "paragraphs": [
+        "The meeting discusses repeated contact with families and how communication changed as workers learned who influenced decisions at home. Fathers’ meetings come up in the context of women telling workers that fathers were refusing vaccination.",
+        "Another part of the conversation asks how to tell whether people had understood the material being shared. The discussion moves from showing information to considering participation and understanding, alongside accounts of local support and people becoming more willing to join the work."
+      ]
     },
     "badaun": {
-      "summary": "Photographs, remembered activities and locally adapted communication.",
+      "summary": "This conversation moves through photographs and memories of earlier activities. Speakers describe poetry gatherings about polio, meetings bringing mothers-in-law and daughters-in-law together, rallies and messages shared at Eid Milan gatherings.\n\nThe examples show how communication fitted into places where people already gathered. Rather than describing a single campaign format, the discussion follows different ways of bringing people into a conversation, including family members who might otherwise point to one another as the reason vaccination was refused.",
       "focus": "Photographs, remembered activities and locally adapted communication.",
-      "reflection": ""
+      "reflection": "",
+      "paragraphs": [
+        "This conversation moves through photographs and memories of earlier activities. Speakers describe poetry gatherings about polio, meetings bringing mothers-in-law and daughters-in-law together, rallies and messages shared at Eid Milan gatherings.",
+        "The examples show how communication fitted into places where people already gathered. Rather than describing a single campaign format, the discussion follows different ways of bringing people into a conversation, including family members who might otherwise point to one another as the reason vaccination was refused."
+      ]
     },
     "shahjahanpur": {
-      "summary": "Working context and recollections of the programme.",
+      "summary": "The long conversation moves between campaign work, household visits and the coordination needed across health services and community networks. It includes accounts of support from people outside the immediate programme team, alongside discussion of institutional responsibilities and practical working conditions.\n\nOne passage brings those different roles together: community members, private practitioners and technical staff contributing to the same effort.",
       "focus": "Working context and recollections of the programme.",
-      "reflection": ""
+      "reflection": "",
+      "paragraphs": [
+        "The long conversation moves between campaign work, household visits and the coordination needed across health services and community networks. It includes accounts of support from people outside the immediate programme team, alongside discussion of institutional responsibilities and practical working conditions.",
+        "One passage brings those different roles together: community members, private practitioners and technical staff contributing to the same effort."
+      ]
     },
     "gautam-buddh-nagar": {
-      "summary": "Record keeping, training discussions and practical coordination.",
+      "summary": "The Bisrakh meetings spend time on the records behind fieldwork: reading forms, deciding how to categorise an area and recording what is known or still uncertain. Participants work through the practical questions they encounter when planning visits and recording vaccination sessions.\n\nExamples include checking whether a vaccination session took place and whether children at a construction site had been surveyed and listed. These conversations show the detailed coordination needed to identify gaps and plan follow-up, alongside the more visible work of meeting families.",
       "focus": "Record keeping, training discussions and practical coordination.",
-      "reflection": ""
+      "reflection": "",
+      "paragraphs": [
+        "The Bisrakh meetings spend time on the records behind fieldwork: reading forms, deciding how to categorise an area and recording what is known or still uncertain. Participants work through the practical questions they encounter when planning visits and recording vaccination sessions.",
+        "Examples include checking whether a vaccination session took place and whether children at a construction site had been surveyed and listed. These conversations show the detailed coordination needed to identify gaps and plan follow-up, alongside the more visible work of meeting families."
+      ]
     }
   },
   "recordings": []

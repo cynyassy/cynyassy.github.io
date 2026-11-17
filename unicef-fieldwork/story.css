@@ -27,7 +27,8 @@
 .unicef-story .fn-city-heading h3>span[lang=hi]{color:var(--uf-city-accent)}
 .unicef-story .fn-city-heading{margin-bottom:18px}
 .fn-city-brief{max-width:70ch;margin-bottom:28px}
-.fn-city-brief>p:last-child{font-size:21px;line-height:1.7}
+.fn-city-brief>p:not(.fn-summary-label){font-size:20px;line-height:1.75}
+.fn-city-brief>p:not(.fn-summary-label)+p{margin-top:14px}
 .fn-public-note{font-size:14px;line-height:1.7;color:#626262;max-width:65ch}
 .unicef-story .fn-interview-cards{grid-template-columns:1fr;gap:0}
 .unicef-story .fn-interview-cards article{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:'title action' 'meta action';gap:6px 24px;border:0;border-top:1px solid var(--fl-line);padding:16px 0;align-items:center}

@@ -2,7 +2,7 @@ export type ArchiveRecording = {
   id: string; title: string; description: string; cityId: string | null;
   duration: number; sourceLanguage: 'hi' | 'en';
 };
-export type ArchiveCity = {summary: string; focus: string; reflection: string};
+export type ArchiveCity = {summary: string; focus: string; reflection: string; paragraphs?:string[]};
 export type ArchiveCatalogue = {cities: Record<string, ArchiveCity>; recordings: ArchiveRecording[]};
 export type ArchivePassage = {start: number; end: number; original: string; english: string};
 export type ArchiveTranscript = ArchiveRecording & {status: 'draft'; passages: ArchivePassage[]};

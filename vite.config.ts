@@ -2,10 +2,12 @@ import { defineConfig } from 'vite'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
+import { fieldNotesArchive } from './dev/field-notes-archive'
 
 export default defineConfig({
   base: '/',
   plugins: [
+    fieldNotesArchive(),
     // The React and Tailwind plugins are both required for Make, even if
     // Tailwind is not being actively used – do not remove them
     react(),
@@ -25,6 +27,9 @@ export default defineConfig({
         designAdventure: path.resolve(__dirname, 'projects/design-adventure.html'),
         styleStudio: path.resolve(__dirname, 'projects/style-studio.html'),
         interactionPlayground: path.resolve(__dirname, 'projects/interaction-playground.html'),
+        fieldNotesLab: path.resolve(__dirname, 'projects/field-notes-lab.html'),
+        unicefFieldwork: path.resolve(__dirname, 'projects/unicef-fieldwork.html'),
+        unicefFieldworkReview: path.resolve(__dirname, 'projects/unicef-fieldwork-review.html'),
         interfaceExperiments: path.resolve(__dirname, 'projects/interface-experiments.html'),
         perspectives: path.resolve(__dirname, 'projects/perspectives.html'),
         coffeeTools: path.resolve(__dirname, 'projects/coffee-tools.html'),

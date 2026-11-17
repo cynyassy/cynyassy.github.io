@@ -14,6 +14,7 @@ import king from '../assets/perspectives/fd62593ed3a99dc48c1587c439fc5a0ee82e8ff
 import woman from '../assets/perspectives/b57fa03efae908dc0ffc9d2d8992cf3c0e8877fc.png';
 const imgProps={loading:'lazy' as const,decoding:'async' as const};
 export function ProjectCover({id}:{id:string}){
+ if(id==='unicef-fieldwork')return <div className="project-cover cover-fieldwork"><img {...imgProps} src="/og/unicef-map-cover.jpg" width="600" height="600" alt="A dotted Uttar Pradesh map connecting seven UNICEF fieldwork locations"/></div>;
  if(id==='reset')return <div className="project-cover cover-reset"><ResetArtwork/></div>;
  if(id==='school')return <div className="project-cover cover-school"><img {...imgProps} src={schoolCover} width="1200" height="630" alt="Four Names, a classroom and four selected student files: the list is submitted, then the stories open"/></div>;
  if(id==='algotest')return <div className="project-cover cover-docs"><img {...imgProps} src={docs} width="1200" height="751" alt="AlgoTest documentation with strategy guides and product navigation"/></div>;

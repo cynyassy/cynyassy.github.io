@@ -1,0 +1,213 @@
+{
+  "downloaded": "2026-11-17",
+  "families": [
+    {
+      "family": "Teko",
+      "googleFonts": "https://fonts.google.com/specimen/Teko",
+      "cssSource": "https://fonts.googleapis.com/css2?family=Teko%3Awght%40400..700&display=swap",
+      "licenseSource": "https://raw.githubusercontent.com/google/fonts/main/ofl/teko/OFL.txt",
+      "license": "SIL OFL 1.1",
+      "files": [
+        {
+          "file": "teko-400-700-devanagari.woff2",
+          "subset": "devanagari",
+          "weight": "400-700",
+          "bytes": 63704,
+          "source": "https://fonts.gstatic.com/s/teko/v23/LYjNdG7kmE0gfaJ9pRtB.woff2"
+        },
+        {
+          "file": "teko-400-700-latin.woff2",
+          "subset": "latin",
+          "weight": "400-700",
+          "bytes": 15420,
+          "source": "https://fonts.gstatic.com/s/teko/v23/LYjNdG7kmE0gfaN9pQ.woff2"
+        }
+      ]
+    },
+    {
+      "family": "Mukta",
+      "googleFonts": "https://fonts.google.com/specimen/Mukta",
+      "cssSource": "https://fonts.googleapis.com/css2?family=Mukta%3Awght%40400%3B600%3B700&display=swap",
+      "licenseSource": "https://raw.githubusercontent.com/google/fonts/main/ofl/mukta/OFL.txt",
+      "license": "SIL OFL 1.1",
+      "files": [
+        {
+          "file": "mukta-400-devanagari.woff2",
+          "subset": "devanagari",
+          "weight": "400",
+          "bytes": 99352,
+          "source": "https://fonts.gstatic.com/s/mukta/v17/iJWKBXyXfDDVXbnArXyi0A.woff2"
+        },
+        {
+          "file": "mukta-400-latin.woff2",
+          "subset": "latin",
+          "weight": "400",
+          "bytes": 20480,
+          "source": "https://fonts.gstatic.com/s/mukta/v17/iJWKBXyXfDDVXbnBrXw.woff2"
+        },
+        {
+          "file": "mukta-600-devanagari.woff2",
+          "subset": "devanagari",
+          "weight": "600",
+          "bytes": 102628,
+          "source": "https://fonts.gstatic.com/s/mukta/v17/iJWHBXyXfDDVXbEeiWmc8WDm7Q.woff2"
+        },
+        {
+          "file": "mukta-600-latin.woff2",
+          "subset": "latin",
+          "weight": "600",
+          "bytes": 21176,
+          "source": "https://fonts.gstatic.com/s/mukta/v17/iJWHBXyXfDDVXbEeiWmd8WA.woff2"
+        },
+        {
+          "file": "mukta-700-devanagari.woff2",
+          "subset": "devanagari",
+          "weight": "700",
+          "bytes": 105040,
+          "source": "https://fonts.gstatic.com/s/mukta/v17/iJWHBXyXfDDVXbF6iGmc8WDm7Q.woff2"
+        },
+        {
+          "file": "mukta-700-latin.woff2",
+          "subset": "latin",
+          "weight": "700",
+          "bytes": 21604,
+          "source": "https://fonts.gstatic.com/s/mukta/v17/iJWHBXyXfDDVXbF6iGmd8WA.woff2"
+        }
+      ]
+    },
+    {
+      "family": "Khand",
+      "googleFonts": "https://fonts.google.com/specimen/Khand",
+      "cssSource": "https://fonts.googleapis.com/css2?family=Khand%3Awght%40500%3B700&display=swap",
+      "licenseSource": "https://raw.githubusercontent.com/google/fonts/main/ofl/khand/OFL.txt",
+      "license": "SIL OFL 1.1",
+      "files": [
+        {
+          "file": "khand-500-devanagari.woff2",
+          "subset": "devanagari",
+          "weight": "500",
+          "bytes": 87092,
+          "source": "https://fonts.gstatic.com/s/khand/v22/TwMN-IINQlQQ0bKhcWExbQe3_w.woff2"
+        },
+        {
+          "file": "khand-500-latin.woff2",
+          "subset": "latin",
+          "weight": "500",
+          "bytes": 14492,
+          "source": "https://fonts.gstatic.com/s/khand/v22/TwMN-IINQlQQ0bKhcWEwbQc.woff2"
+        },
+        {
+          "file": "khand-700-devanagari.woff2",
+          "subset": "devanagari",
+          "weight": "700",
+          "bytes": 88752,
+          "source": "https://fonts.gstatic.com/s/khand/v22/TwMN-IINQlQQ0bLpd2ExbQe3_w.woff2"
+        },
+        {
+          "file": "khand-700-latin.woff2",
+          "subset": "latin",
+          "weight": "700",
+          "bytes": 14952,
+          "source": "https://fonts.gstatic.com/s/khand/v22/TwMN-IINQlQQ0bLpd2EwbQc.woff2"
+        }
+      ]
+    },
+    {
+      "family": "Kalam",
+      "googleFonts": "https://fonts.google.com/specimen/Kalam",
+      "cssSource": "https://fonts.googleapis.com/css2?family=Kalam%3Awght%40400%3B700&display=swap",
+      "licenseSource": "https://raw.githubusercontent.com/google/fonts/main/ofl/kalam/OFL.txt",
+      "license": "SIL OFL 1.1",
+      "files": [
+        {
+          "file": "kalam-400-devanagari.woff2",
+          "subset": "devanagari",
+          "weight": "400",
+          "bytes": 109320,
+          "source": "https://fonts.gstatic.com/s/kalam/v18/YA9dr0Wd4kDdMthQOCfzsw.woff2"
+        },
+        {
+          "file": "kalam-400-latin.woff2",
+          "subset": "latin",
+          "weight": "400",
+          "bytes": 22336,
+          "source": "https://fonts.gstatic.com/s/kalam/v18/YA9dr0Wd4kDdMthROCc.woff2"
+        },
+        {
+          "file": "kalam-700-devanagari.woff2",
+          "subset": "devanagari",
+          "weight": "700",
+          "bytes": 108500,
+          "source": "https://fonts.gstatic.com/s/kalam/v18/YA9Qr0Wd4kDdMtDqHTLNkiQ4tg.woff2"
+        },
+        {
+          "file": "kalam-700-latin.woff2",
+          "subset": "latin",
+          "weight": "700",
+          "bytes": 22144,
+          "source": "https://fonts.gstatic.com/s/kalam/v18/YA9Qr0Wd4kDdMtDqHTLMkiQ.woff2"
+        }
+      ]
+    },
+    {
+      "family": "Yatra One",
+      "googleFonts": "https://fonts.google.com/specimen/Yatra+One",
+      "cssSource": "https://fonts.googleapis.com/css2?family=Yatra+One%3Awght%40400&display=swap",
+      "licenseSource": "https://raw.githubusercontent.com/google/fonts/main/ofl/yatraone/OFL.txt",
+      "license": "SIL OFL 1.1",
+      "files": [
+        {
+          "file": "yatraone-400-devanagari.woff2",
+          "subset": "devanagari",
+          "weight": "400",
+          "bytes": 72032,
+          "source": "https://fonts.gstatic.com/s/yatraone/v16/C8ch4copsHzj8p7NaF0BxVmAXRA.woff2"
+        },
+        {
+          "file": "yatraone-400-latin.woff2",
+          "subset": "latin",
+          "weight": "400",
+          "bytes": 15656,
+          "source": "https://fonts.gstatic.com/s/yatraone/v16/C8ch4copsHzj8p7NaF0BxFmA.woff2"
+        }
+      ]
+    },
+    {
+      "family": "Hind",
+      "googleFonts": "https://fonts.google.com/specimen/Hind",
+      "cssSource": "https://fonts.googleapis.com/css2?family=Hind%3Awght%40400%3B600&display=swap",
+      "licenseSource": "https://raw.githubusercontent.com/google/fonts/main/ofl/hind/OFL.txt",
+      "license": "SIL OFL 1.1",
+      "files": [
+        {
+          "file": "hind-400-devanagari.woff2",
+          "subset": "devanagari",
+          "weight": "400",
+          "bytes": 74936,
+          "source": "https://fonts.gstatic.com/s/hind/v18/5aU69_a8oxmIdGh4BCOz.woff2"
+        },
+        {
+          "file": "hind-400-latin.woff2",
+          "subset": "latin",
+          "weight": "400",
+          "bytes": 16216,
+          "source": "https://fonts.gstatic.com/s/hind/v18/5aU69_a8oxmIdGl4BA.woff2"
+        },
+        {
+          "file": "hind-600-devanagari.woff2",
+          "subset": "devanagari",
+          "weight": "600",
+          "bytes": 71512,
+          "source": "https://fonts.gstatic.com/s/hind/v18/5aU19_a8oxmIfLZcER2SjQpf.woff2"
+        },
+        {
+          "file": "hind-600-latin.woff2",
+          "subset": "latin",
+          "weight": "600",
+          "bytes": 16612,
+          "source": "https://fonts.gstatic.com/s/hind/v18/5aU19_a8oxmIfLZcERySjQ.woff2"
+        }
+      ]
+    }
+  ]
+}

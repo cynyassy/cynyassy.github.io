@@ -1,0 +1,98 @@
+[
+  {
+    "id": "listen-first",
+    "chapterId": "listening-to-families",
+    "hi": "पहले उनकी बात अच्छे से सुनें, सवाल पूरा होने दें, फिर जवाब दें। सीधे अपने विषय पर न जाएँ। पहले बातचीत का माहौल बनाएँ।",
+    "en": "Listen carefully first. Let them finish their question, then respond. Don’t go straight to your topic. First make room for a conversation.",
+    "status": "draft",
+    "edited": true
+  },
+  {
+    "id": "family-needs",
+    "chapterId": "listening-to-families",
+    "hi": "पहले यह देखें कि उस परिवार को क्या ज़रूरत है। बच्चे का हालचाल पूछें। बुखार है तो पूछें कि डॉक्टर को दिखाया या नहीं, और क्या ध्यान रखना है।",
+    "en": "First understand what the family needs. Ask how the child is. If the child has a fever, ask whether they have seen a doctor and discuss what care is needed.",
+    "status": "draft",
+    "edited": true
+  },
+  {
+    "id": "carry-concerns",
+    "chapterId": "listening-to-families",
+    "hi": "लोग कहते थे, आपको भी तो सरकार ने भेजा है। आप हमारी बात सरकार तक पहुँचाइए। हम वादा नहीं करते थे कि काम हो जाएगा, लेकिन उनकी बात आगे पहुँचाते थे।",
+    "en": "People would say: the government sent you too, so take our concerns to the government. We didn’t promise that the work would get done, but we passed their concerns on.",
+    "status": "draft",
+    "edited": true
+  },
+  {
+    "id": "building-trust",
+    "chapterId": "listening-to-families",
+    "hi": "लोगों को भरोसा होने लगा कि सीएमसी को कुछ बताएँगे तो वह बात ऊपर तक जाएगी। स्थानीय प्रशासन और समुदाय के बीच हमने एक कड़ी का काम किया।",
+    "en": "People began to trust that if they told a CMC something, it would be taken further. We worked as a link between the local administration and the community.",
+    "status": "draft",
+    "edited": true
+  },
+  {
+    "id": "their-time",
+    "chapterId": "keeping-going",
+    "hi": "मीटिंग का समय ऐसा चुनते थे जब लोग खाली हों। उनकी सुविधा के हिसाब से समय रखते थे, ताकि सब एक जगह बैठ सकें।",
+    "en": "For a meeting, we chose a time when people were free. We worked around their convenience so everyone could come together.",
+    "status": "draft",
+    "edited": true
+  },
+  {
+    "id": "staying-involved",
+    "chapterId": "keeping-going",
+    "hi": "सीएमसी की भूमिका से हटने के बाद भी वे कार्यक्रम और नेटवर्क से जुड़े रहे। तब से निशुल्क सेवा कर रहे हैं। टीम चलती है तो उसी समय सुपरवाइज़री का मानदेय मिलता है।",
+    "en": "Even after leaving the CMC role, he stayed connected with the programme and the network, continuing to help without payment. He receives a supervisor’s honorarium when the teams are operating.",
+    "status": "draft",
+    "edited": true
+  },
+  {
+    "id": "bring-both",
+    "chapterId": "keeping-going",
+    "hi": "बहू कहती थी कि सास नहीं मानतीं। सास कहती थीं कि बहू नहीं मानती। इसलिए दोनों को एक साथ बुलाया और सास-बहू सम्मेलन किया।",
+    "en": "The daughter-in-law would say her mother-in-law wouldn’t agree. The mother-in-law would say the daughter-in-law wouldn’t agree. So we brought them both together for a meeting.",
+    "status": "draft",
+    "edited": true
+  },
+  {
+    "id": "never-miss",
+    "chapterId": "keeping-going",
+    "hi": "समुदाय में कहीं कुछ हो रहा होता तो हम मौका नहीं छोड़ते थे। अपना बैनर उठाते और वहाँ पहुँच जाते।",
+    "en": "Whenever something was happening in the community, we didn’t miss the opportunity. We would pick up our banner and go.",
+    "status": "draft",
+    "edited": true
+  },
+  {
+    "id": "learning-restraint",
+    "chapterId": "what-changed",
+    "hi": "हमें अपने आप पर काबू रखना सीखना पड़ा। लोग गाली देते रहते थे और हम प्रतिक्रिया नहीं देते थे। यह हमारे अपने अंदर बहुत बड़ा बदलाव था।",
+    "en": "We had to learn to control ourselves. People would keep abusing us and we wouldn’t react. That was a major change within us.",
+    "status": "draft",
+    "edited": true
+  },
+  {
+    "id": "our-behaviour",
+    "chapterId": "what-changed",
+    "hi": "लोग हमारी बात मानते हैं क्योंकि हमारा व्यवहार उनके साथ अच्छा है। अगर व्यवहार ही अच्छा नहीं होगा, तो हमारी बात कौन मानेगा?",
+    "en": "People listen to us because we treat them well. If our behaviour isn’t good, who will listen to what we have to say?",
+    "status": "draft",
+    "edited": true
+  },
+  {
+    "id": "everyday-independence",
+    "chapterId": "what-changed",
+    "hi": "पहले कहीं जाने के लिए साथ में किसी की ज़रूरत होती थी। अब बैंक, बाज़ार और बच्चों के स्कूल का काम हम खुद करते हैं। दूसरे लोग भी हमें अपने साथ ले जाते हैं।",
+    "en": "Before, we needed someone to accompany us. Now we handle the banking, market errands and the children’s school work ourselves. Other people ask us to go with them too.",
+    "status": "draft",
+    "edited": true
+  },
+  {
+    "id": "helping-neighbours",
+    "chapterId": "what-changed",
+    "hi": "पहले डॉक्टर के पास भी किसी को साथ लेकर जाना होता था। अब मैं अकेली चली जाती हूँ, या किसी और को भी साथ ले जाती हूँ। मोहल्ले वालों की मदद करती हूँ।",
+    "en": "Before, I needed someone with me even to see a doctor. Now I go alone, or take someone else along. I help people in the neighbourhood.",
+    "status": "draft",
+    "edited": true
+  }
+]

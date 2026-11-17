@@ -1,0 +1,75 @@
+{
+  "name": "Uttar Pradesh",
+  "source": "geoBoundaries IND ADM1, build 9469f09; DataMeet India community / Election Commission of India",
+  "license": "CC BY 2.5 India",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.5/in/",
+  "sourceUrl": "https://www.geoboundaries.org/api/current/gbOpen/IND/ADM1/",
+  "downloadUrl": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/IND/ADM1/geoBoundaries-IND-ADM1_simplified.geojson",
+  "boundaryYear": 2011,
+  "notes": "Simplified for an illustrative travel study. Points are approximate city centres; connections are not roads or a confirmed itinerary.",
+  "places": [
+    {
+      "id": "meerut",
+      "lon": 77.7064,
+      "lat": 28.9845,
+      "point": [
+        105.7,
+        158.8
+      ]
+    },
+    {
+      "id": "bijnor",
+      "lon": 78.1365,
+      "lat": 29.3724,
+      "point": [
+        134.9,
+        129.1
+      ]
+    },
+    {
+      "id": "bareilly",
+      "lon": 79.4304,
+      "lat": 28.367,
+      "point": [
+        222.9,
+        206.0
+      ]
+    },
+    {
+      "id": "pilibhit",
+      "lon": 79.8058,
+      "lat": 28.6267,
+      "point": [
+        248.4,
+        186.1
+      ]
+    },
+    {
+      "id": "badaun",
+      "lon": 79.1205,
+      "lat": 28.0337,
+      "point": [
+        201.8,
+        231.5
+      ]
+    },
+    {
+      "id": "gautam-buddh-nagar",
+      "lon": 77.4391,
+      "lat": 28.571,
+      "point": [
+        87.5,
+        190.4
+      ]
+    },
+    {
+      "id": "shahjahanpur",
+      "lon": 79.9112,
+      "lat": 27.8837,
+      "point": [
+        255.6,
+        243.0
+      ]
+    }
+  ]
+}

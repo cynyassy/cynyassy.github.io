@@ -1,0 +1,40 @@
+{
+  "cities": {
+    "meerut": {
+      "summary": "Repeated visits, local relationships and the daily work around vaccination.",
+      "focus": "Repeated visits, local relationships and the daily work around vaccination.",
+      "reflection": ""
+    },
+    "bijnor": {
+      "summary": "Informal conversations and the local context of the work.",
+      "focus": "Informal conversations and the local context of the work.",
+      "reflection": ""
+    },
+    "bareilly": {
+      "summary": "Local communication, collaboration and coordination.",
+      "focus": "Local communication, collaboration and coordination.",
+      "reflection": ""
+    },
+    "pilibhit": {
+      "summary": "Follow-up visits, local support and changes over time.",
+      "focus": "Follow-up visits, local support and changes over time.",
+      "reflection": ""
+    },
+    "badaun": {
+      "summary": "Photographs, remembered activities and locally adapted communication.",
+      "focus": "Photographs, remembered activities and locally adapted communication.",
+      "reflection": ""
+    },
+    "shahjahanpur": {
+      "summary": "Working context and recollections of the programme.",
+      "focus": "Working context and recollections of the programme.",
+      "reflection": ""
+    },
+    "gautam-buddh-nagar": {
+      "summary": "Record keeping, training discussions and practical coordination.",
+      "focus": "Record keeping, training discussions and practical coordination.",
+      "reflection": ""
+    }
+  },
+  "recordings": []
+}

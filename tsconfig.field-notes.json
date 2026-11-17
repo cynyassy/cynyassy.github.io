@@ -1,0 +1,1 @@
+{"extends":"./tsconfig.adventure.json","include":["src/field-notes-lab/**/*.ts","src/field-notes-lab/**/*.tsx","unicef-fieldwork/**/*.ts","unicef-fieldwork/**/*.tsx","dev/field-notes-archive.ts"]}

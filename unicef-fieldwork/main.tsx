@@ -4,6 +4,7 @@ import {FieldMap} from '../src/field-notes-lab/FieldMap';
 import {MapAttribution} from '../src/field-notes-lab/MapAttribution';
 import {chapters,reflection} from './content';
 import {useFeaturedExcerpts} from './useFeaturedExcerpts';
+import {FieldNote} from './FieldNotes';
 import '../src/field-notes-lab/fonts.css';
 import '../src/field-notes-lab/study.css';
 import './story.css';
@@ -28,6 +29,8 @@ function FieldworkStory(){
     <div className="uf-chapter-heading"><h2 id={`${chapter.id}-heading`}>{chapter.title}</h2><div className="uf-word"><span lang="hi">{chapter.word}</span><span>{chapter.wordMeaning}</span></div></div>
     {excerpts.filter(excerpt=>excerpt.chapterId===chapter.id).map(excerpt=><blockquote className="uf-featured-excerpt" key={excerpt.id}><p lang="hi">"... {excerpt.hi} ..."</p><p lang="en">{excerpt.en}</p></blockquote>)}
     {!excerpts.length&&<p className="uf-passage-pending">{failed?'Interview excerpts could not load. Please refresh to try again.':local?'Loading interview excerpts…':'Interview excerpts are available in the local draft.'}</p>}
+    {chapter.id==='listening-to-families'&&<FieldNote id="inspection"/>}
+    {chapter.id==='keeping-going'&&<FieldNote id="magistrate"/>}
    </section>)}
 
    <section id="driving-home" className="uf-reflection" aria-labelledby="reflection-heading"><div><h2 id="reflection-heading">Driving home</h2><p className="uf-reflection-note">Returning from Aligarh</p><span className="uf-giving" lang="hi">देना</span><span className="uf-giving-caption">to give</span></div><div className="uf-reflection-copy">{reflection.map((paragraph,index)=><p key={index}>{paragraph}</p>)}<a href="/projects/cynyassy.html">Read about Cynyassy ↗</a></div></section>
